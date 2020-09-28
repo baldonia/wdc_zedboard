@@ -4,10 +4,10 @@
 // Top level module for the CUPPA WDC prototype zedboard project
 
 module top (
-	// 100 MHz input clock	
-	input GCLK,
+  // 100 MHz input clock  
+  input GCLK,
 
-	// User LEDs
+  // User LEDs
   output LD0,
   output LD1,
   output LD2,
@@ -46,9 +46,9 @@ assign LD6 = LEDs[6];
 assign LD7 = LEDs[7];
 knight_rider KR_0
 (
-	.clk(lclk),
-	.rst(lclk_rst),
-	.y(LEDs)
+  .clk(lclk),
+  .rst(lclk_rst),
+  .y(LEDs)
 );
 
 endmodule
