@@ -93,20 +93,14 @@ class wdcZedboard:
 
         full_word = (high_bits << 16) | low_bits
 
-        # print(f"Would be writing: 0x{full_word:06x}")
-
         if dac_num in (0, 1):
             self.fpga_write("dac_sel", dac_num)
         else:
             raise ValueError(f"Invalid DAC number ({dac_num})")
 
-        # print(f"high write: 0x{high_bits:04x}")
-        # print(f"low write: 0x{low_bits:04x}")
-
         self.fpga_write("dac_spi_wr_high", high_bits)
         self.fpga_write("dac_spi_wr_low", low_bits)
         self.fpga_write("dac_task_reg", 0x1)
-        print('wrote')
 
     def register_dump(self):
         """ read all the FPGA DPRAM addresses.
