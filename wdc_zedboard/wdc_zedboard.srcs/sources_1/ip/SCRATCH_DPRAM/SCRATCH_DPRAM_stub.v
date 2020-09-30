@@ -1,0 +1,30 @@
+// Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+// --------------------------------------------------------------------------------
+// Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
+// Date        : Tue Sep 29 17:23:55 2020
+// Host        : LAPTOP-GBOUD091 running 64-bit major release  (build 9200)
+// Command     : write_verilog -force -mode synth_stub
+//               c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/SCRATCH_DPRAM/SCRATCH_DPRAM_stub.v
+// Design      : SCRATCH_DPRAM
+// Purpose     : Stub declaration of top-level module interface
+// Device      : xc7z020clg484-1
+// --------------------------------------------------------------------------------
+
+// This empty module with port declaration file causes synthesis tools to infer a black box for IP.
+// The synthesis directives are for Synopsys Synplify support to prevent IO buffer insertion.
+// Please paste the declaration into a Verilog source file or add the file as an additional source.
+(* x_core_info = "blk_mem_gen_v8_4_3,Vivado 2019.1" *)
+module SCRATCH_DPRAM(clka, wea, addra, dina, douta, clkb, web, addrb, dinb, 
+  doutb)
+/* synthesis syn_black_box black_box_pad_pin="clka,wea[0:0],addra[10:0],dina[15:0],douta[15:0],clkb,web[0:0],addrb[10:0],dinb[15:0],doutb[15:0]" */;
+  input clka;
+  input [0:0]wea;
+  input [10:0]addra;
+  input [15:0]dina;
+  output [15:0]douta;
+  input clkb;
+  input [0:0]web;
+  input [10:0]addrb;
+  input [15:0]dinb;
+  output [15:0]doutb;
+endmodule

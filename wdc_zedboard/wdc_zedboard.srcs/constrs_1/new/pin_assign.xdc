@@ -18,3 +18,8 @@ set_property IOSTANDARD LVCMOS33 [get_ports GCLK]
 set_property IOSTANDARD LVCMOS33 [get_ports LD1]
 
 set_property DRIVE 12 [get_ports LD0]
+
+set_property PACKAGE_PIN AA11 [get_ports UART_RXD]
+set_property IOSTANDARD LVCMOS33 [get_ports UART_RXD]
+set_property PACKAGE_PIN Y11 [get_ports UART_TXD]
+set_property IOSTANDARD LVCMOS33 [get_ports UART_TXD]

@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Tue Sep 29 17:22:24 2020
+# Process ID: 16412
+# Current directory: C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/SCRATCH_DPRAM_synth_1
+# Command line: vivado.exe -log SCRATCH_DPRAM.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source SCRATCH_DPRAM.tcl
+# Log file: C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/SCRATCH_DPRAM_synth_1/SCRATCH_DPRAM.vds
+# Journal file: C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/SCRATCH_DPRAM_synth_1\vivado.jou
+#-----------------------------------------------------------
+source SCRATCH_DPRAM.tcl -notrace

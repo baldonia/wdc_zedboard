@@ -1,0 +1,2 @@
+SCRATCH_DPRAM.v,verilog,xil_defaultlib,../../../../wdc_zedboard.srcs/sources_1/ip/SCRATCH_DPRAM/sim/SCRATCH_DPRAM.v,
+glbl.v,Verilog,xil_defaultlib,glbl.v

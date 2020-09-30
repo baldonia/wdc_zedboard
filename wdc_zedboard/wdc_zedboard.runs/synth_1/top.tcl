@@ -26,20 +26,39 @@ set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
 set_property webtalk.parent_dir C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.cache/wt [current_project]
 set_property parent.project_path C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.xpr [current_project]
-set_property XPM_LIBRARIES XPM_CDC [current_project]
+set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property board_part em.avnet.com:zed:part0:1.4 [current_project]
 set_property ip_output_repo c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib {
+  C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/crc16_8b_parallel/crc16_8b_parallel.v
+  C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/crs_master/crs_master.v
+  C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/cuppa/cuppa.v
+  C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/err_mngr/err_mngr.v
+  C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/ft232r_hs/ft232r_hs.v
+  C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/ft232r_proc_buffered/ft232r_proc_buffered.v
   C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/knight_rider/knight_rider.v
+  C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/negedge_detector/negedge_detector.v
+  C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/posedge_detector/posedge_detector.v
+  C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/rs232_des/rs232_des.v
+  C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/rs232_ser/rs232_ser.v
+  C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/sync/sync.v
+  C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/uart_proc_hs/uart_proc_hs.v
   C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/wdc_zedboard_top.v
 }
-read_ip -quiet c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/LCLK_MMCM/LCLK_MMCM.xci
+read_ip -quiet C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/LCLK_MMCM/LCLK_MMCM.xci
 set_property used_in_implementation false [get_files -all c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/LCLK_MMCM/LCLK_MMCM_board.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/LCLK_MMCM/LCLK_MMCM.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/LCLK_MMCM/LCLK_MMCM_ooc.xdc]
+
+read_ip -quiet c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/SCRATCH_DPRAM/SCRATCH_DPRAM.xci
+set_property used_in_implementation false [get_files -all c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/SCRATCH_DPRAM/SCRATCH_DPRAM_ooc.xdc]
+
+read_ip -quiet c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/FIFO_2048_32/FIFO_2048_32.xci
+set_property used_in_implementation false [get_files -all c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/FIFO_2048_32/FIFO_2048_32.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/FIFO_2048_32/FIFO_2048_32_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
