@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date         : Tue Sep 29 17:55:26 2020
+| Date         : Wed Sep 30 16:37:11 2020
 | Host         : LAPTOP-GBOUD091 running 64-bit major release  (build 9200)
 | Command      : report_methodology -file top_methodology_drc_routed.rpt -pb top_methodology_drc_routed.pb -rpx top_methodology_drc_routed.rpx
 | Design       : top
@@ -34,12 +34,12 @@ Table of Contents
 -----------------
 LUTAR-1#1 Warning
 LUT drives async reset alert  
-LUT cell CUPPA_0/UART_DEBUG_0/FT232R_HS_0/RS232_DES_0/SYNC0/FSM_sequential_fsm[1]_i_3__1, with 2 or more inputs, drives asynchronous preset/clear pin(s) CUPPA_0/CRSM_0/NEDGE_0/ff_reg/CLR, CUPPA_0/UART_DEBUG_0/FT232R_HS_0/NEDGE_0/ff_reg/CLR, CUPPA_0/UART_DEBUG_0/FT232R_HS_0/RS232_DES_0/NEDGE0/ff_reg/CLR, CUPPA_0/UART_DEBUG_0/FT232R_HS_0/RS232_DES_0/SYNC0/ff_reg[0]/CLR, CUPPA_0/UART_DEBUG_0/FT232R_HS_0/RS232_DES_0/SYNC0/ff_reg[1]/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell CUPPA_0/UART_DEBUG_0/UART_PROC_HS_0/CRC16_8B_P_0/FSM_sequential_fsm[4]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) CUPPA_0/UART_DEBUG_0/UART_PROC_HS_0/NEDGE_0/ff_reg/CLR, CUPPA_0/UART_DEBUG_0/UART_PROC_HS_0/NEDGE_1/ff_reg/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#2 Warning
 LUT drives async reset alert  
-LUT cell CUPPA_0/UART_DEBUG_0/UART_PROC_HS_0/CRC16_8B_P_0/FSM_sequential_fsm[4]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) CUPPA_0/UART_DEBUG_0/UART_PROC_HS_0/NEDGE_0/ff_reg/CLR, CUPPA_0/UART_DEBUG_0/UART_PROC_HS_0/NEDGE_1/ff_reg/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell SPIM_0/IILC_MISO_0/FSM_sequential_fsm[1]_i_203, with 2 or more inputs, drives asynchronous preset/clear pin(s) CUPPA_0/CRSM_0/NEDGE_0/ff_reg/CLR, CUPPA_0/UART_DEBUG_0/FT232R_HS_0/NEDGE_0/ff_reg/CLR, CUPPA_0/UART_DEBUG_0/FT232R_HS_0/RS232_DES_0/NEDGE0/ff_reg/CLR, CUPPA_0/UART_DEBUG_0/FT232R_HS_0/RS232_DES_0/SYNC0/ff_reg[0]/CLR, CUPPA_0/UART_DEBUG_0/FT232R_HS_0/RS232_DES_0/SYNC0/ff_reg[1]/CLR, SPIM_0/IILC_MOSI_0/cnt_reg[0]/CLR, SPIM_0/IILC_MOSI_0/cnt_reg[10]/CLR, SPIM_0/IILC_MOSI_0/cnt_reg[11]/CLR, SPIM_0/IILC_MOSI_0/cnt_reg[12]/CLR, SPIM_0/IILC_MOSI_0/cnt_reg[13]/CLR, SPIM_0/IILC_MOSI_0/cnt_reg[14]/CLR, SPIM_0/IILC_MOSI_0/cnt_reg[15]/CLR, SPIM_0/IILC_MOSI_0/cnt_reg[16]/CLR, SPIM_0/IILC_MOSI_0/cnt_reg[17]/CLR, SPIM_0/IILC_MOSI_0/cnt_reg[18]/CLR (the first 15 of 267 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 

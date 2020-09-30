@@ -19,10 +19,16 @@ module top (
   output LD4,
   output LD5,
   output LD6,
-  output LD7
+  output LD7,
+
+  // WDC DAC controls
+  output DAC0_CSn,
+  output DAC1_CSn,
+  output DAC_SCK,
+  output DAC_SDI
 );
 
-localparam[15:0] FW_VNUM = 16'h1;
+localparam[15:0] FW_VNUM = 16'h3;
 
 wire lclk;
 wire ref_clk;
@@ -43,21 +49,82 @@ wire lclk_rst = !lclk_mmcm_locked;
 // cuppa register interface
 // Addressing:
 //     12'hfff: Version/build number
+//
+//     12'hbff: [0] DAC spi chip select (0 or 1)
+//     12'hbfe: [0] DAC spi task reg
+//     12'hbfd: [7:0] DAC spi wr data [23:16]
+//     12'hbfc: [15:0] DAC spi wr data [15:0]
+//
 //     12'8ff: LED toggle
 
 wire led_toggle;
+
+// LTC2612 DAC controls
+wire        dac_spi_ack;
+wire        dac_spi_wr_req;
+wire [23:0] dac_spi_wr_data;
+wire        dac_sel;
 
 cuppa CUPPA_0
 (
   .clk(lclk),
   .rst(lclk_rst),
   .vnum(FW_VNUM),
+
+  .dac_sel(dac_sel),
+  .dac_spi_wr_req(dac_spi_wr_req),
+  .dac_spi_ack(dac_spi_ack),
+  .dac_spi_wr_data(dac_spi_wr_data),
+
   .led_toggle(led_toggle),
+
   .debug_txd(UART_TXD),
   .debug_rxd(UART_RXD),
   .debug_rts_n(1'b0),
   .debug_cts_n()
 );
+
+
+//
+// LTC2612 DAC controls
+//
+wire        dac_spi_mosi;
+wire        dac_spi_sclk; 
+spi_master #(.P_RD_DATA_WIDTH(24),.P_WR_DATA_WIDTH(24)) SPIM_0
+ (
+  // Outputs
+  .rd_data (),
+  .ack     (dac_spi_ack),
+  .mosi    (dac_spi_mosi),
+  .sclk    (dac_spi_sclk),
+  // Inputs
+  .clk     (lclk),
+  .rst     (lclk_rst),
+  // MOSI
+  .nb_mosi (8'd24),
+  .y0_mosi (1'b0),
+  .n0_mosi (32'd1),
+  .n1_mosi (32'd300),
+  // MISO
+  .nb_miso (8'd24),
+  .n0_miso (32'd150),
+  .n1_miso (32'd150),
+  // SCLK
+  .nb_sclk (8'd24),
+  .y0_sclk (1'b0),
+  .n0_sclk (32'd150),
+  .n1_sclk (32'd150),
+  .n2_sclk (32'd150),
+  .wr_req  (dac_spi_wr_req),
+  .wr_data (dac_spi_wr_data),
+  .rd_req  (1'b0),
+  .miso    (1'b0)
+);
+// associated output signal assignments
+assign DAC0_CSn = !(dac_spi_wr_req && (dac_sel == 0));
+assign DAC1_CSn = !(dac_spi_wr_req && (dac_sel == 1));
+assign DAC_SCK = dac_spi_sclk;
+assign DAC_SDI = dac_spi_mosi;
 
 wire[7:0] LEDs;
 assign LD0 = led_toggle && LEDs[0];

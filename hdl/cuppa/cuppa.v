@@ -12,6 +12,12 @@ module cuppa
   // Version number
   input [15:0]      vnum,
 
+  // DAC SPI controls
+  output reg dac_sel = 0,
+  output dac_spi_wr_req, 
+  input dac_spi_ack,
+  output reg[23:0] dac_spi_wr_data = 0,
+
   // turn KR pattern on and off
   output reg led_toggle = 1,
 
@@ -112,6 +118,24 @@ crs_master CRSM_0
   .a3_buf_wr_data   ()
 );
 
+// task regs
+wire[15:0] dac_task_val;
+wire[15:0] dac_task_req;
+wire[15:0] dac_task_ack;
+task_reg #(.P_TASK_ADR(12'hbfe)) DAC_SPI_TASK_0
+(
+  .clk(clk),
+  .rst(rst),
+  .adr(y_adr),
+  .data(y_wr_data),
+  .wr(y_wr),
+  .req(dac_task_req),
+  .ack(dac_task_ack),
+  .val(dac_task_val)
+);
+assign dac_spi_wr_req = dac_task_req[0];
+assign dac_task_ack[0] = dac_spi_ack;
+
 //////////////////////////////////////////////////////////////////////////////
 // Read registers
 reg[15:0] reg_dpram_rd_data;
@@ -119,6 +143,10 @@ reg[15:0] reg_dpram_rd_data;
 always @(*) begin
   case(y_adr)
     12'hfff: begin y_rd_data =       vnum;                                  end
+    12'hbff: begin y_rd_data =       dac_sel;                               end
+    12'hbfe: begin y_rd_data =       dac_task_val;                          end
+    12'hbfd: begin y_rd_data =       {8'b0, dac_spi_wr_data[23:16]};        end
+    12'hbfc: begin y_rd_data =       dac_spi_wr_data[15:0];                 end    
     12'h8ff: begin y_rd_data =       {15'h0, led_toggle};                   end
     default: 
       begin
@@ -132,6 +160,9 @@ end
 always @(posedge clk) begin
   if (y_wr) 
     case (y_adr)
+      12'hbff: begin dac_sel <= y_wr_data[0];                               end
+      12'hbfd: begin dac_spi_wr_data[23:16] <= y_wr_data[7:0];              end
+      12'hbfc: begin dac_spi_wr_data[15:0] <= y_wr_data;                    end
       12'h8ff: begin led_toggle <= y_wr_data[0];                            end
       default: begin																										    end
     endcase

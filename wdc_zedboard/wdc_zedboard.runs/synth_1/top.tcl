@@ -39,12 +39,18 @@ read_verilog -library xil_defaultlib {
   C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/err_mngr/err_mngr.v
   C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/ft232r_hs/ft232r_hs.v
   C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/ft232r_proc_buffered/ft232r_proc_buffered.v
+  C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/iter_integer_linear_cal/iter_integer_linear_calc.v
   C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/knight_rider/knight_rider.v
   C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/negedge_detector/negedge_detector.v
   C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/posedge_detector/posedge_detector.v
   C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/rs232_des/rs232_des.v
   C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/rs232_ser/rs232_ser.v
+  C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/serial_ck/serial_ck.v
+  C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/serial_rx/serial_rx.v
+  C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/serial_tx/serial_tx.v
+  C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/spi_master/spi_master.v
   C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/sync/sync.v
+  C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/task_reg/task_reg.v
   C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/uart_proc_hs/uart_proc_hs.v
   C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/wdc_zedboard_top.v
 }
@@ -53,10 +59,10 @@ set_property used_in_implementation false [get_files -all c:/Users/atfie/watchma
 set_property used_in_implementation false [get_files -all c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/LCLK_MMCM/LCLK_MMCM.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/LCLK_MMCM/LCLK_MMCM_ooc.xdc]
 
-read_ip -quiet c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/SCRATCH_DPRAM/SCRATCH_DPRAM.xci
+read_ip -quiet C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/SCRATCH_DPRAM/SCRATCH_DPRAM.xci
 set_property used_in_implementation false [get_files -all c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/SCRATCH_DPRAM/SCRATCH_DPRAM_ooc.xdc]
 
-read_ip -quiet c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/FIFO_2048_32/FIFO_2048_32.xci
+read_ip -quiet C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/FIFO_2048_32/FIFO_2048_32.xci
 set_property used_in_implementation false [get_files -all c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/FIFO_2048_32/FIFO_2048_32.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/FIFO_2048_32/FIFO_2048_32_ooc.xdc]
 

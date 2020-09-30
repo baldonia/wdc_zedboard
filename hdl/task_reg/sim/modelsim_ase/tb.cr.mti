@@ -1,0 +1,15 @@
+C:/gen2dom-fw/pdommb_rev1_fw_psu/hdl/task_reg/task_reg.v {1 {vlog -work work -stats=none C:/gen2dom-fw/pdommb_rev1_fw_psu/hdl/task_reg/task_reg.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module task_reg
+
+Top level modules:
+	task_reg
+
+} {} {}} C:/gen2dom-fw/pdommb_rev1_fw_psu/hdl/task_reg/sim/tb.v {1 {vlog -work work -stats=none C:/gen2dom-fw/pdommb_rev1_fw_psu/hdl/task_reg/sim/tb.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module tb
+
+Top level modules:
+	tb
+
+} {} {}}

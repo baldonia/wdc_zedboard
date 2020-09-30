@@ -1,0 +1,83 @@
+# Loading project tb
+# reading C:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/../modelsim.ini
+# Loading project tb
+# Compile of tb.v was successful.
+# Compile of pdommb_fw_top.v was successful.
+# Compile of build_number.v was successful.
+# Compile of config_ind.v was successful.
+# Compile of crc16_8b_parallel.v was successful.
+# Compile of err_mngr.v was successful.
+# Compile of ft232r_hs.v was successful.
+# Compile of ft232r_proc_buffered.v was successful.
+# Compile of negedge_detector.v was successful.
+# Compile of posedge_detector.v was successful.
+# Compile of rs232_des.v was successful.
+# Compile of rs232_ser.v was successful.
+# Compile of rst_gen.v was successful.
+# Compile of sync.v was successful.
+# Compile of task_reg.v was successful.
+# Compile of uart_proc.v was successful.
+# Compile of uart_proc_hs.v was successful.
+# Compile of xdom.v failed with 4 errors.
+# Compile of altera_mf.v was successful.
+# 19 compiles, 1 failed with 4 errors.
+# Compile of tb.v was successful.
+# Compile of pdommb_fw_top.v was successful.
+# Compile of build_number.v was successful.
+# Compile of config_ind.v was successful.
+# Compile of crc16_8b_parallel.v was successful.
+# Compile of err_mngr.v was successful.
+# Compile of ft232r_hs.v was successful.
+# Compile of ft232r_proc_buffered.v was successful.
+# Compile of negedge_detector.v was successful.
+# Compile of posedge_detector.v was successful.
+# Compile of rs232_des.v was successful.
+# Compile of rs232_ser.v was successful.
+# Compile of rst_gen.v was successful.
+# Compile of sync.v was successful.
+# Compile of task_reg.v was successful.
+# Compile of uart_proc.v was successful.
+# Compile of uart_proc_hs.v was successful.
+# Compile of xdom.v failed with 6 errors.
+# Compile of altera_mf.v was successful.
+# 19 compiles, 1 failed with 6 errors.
+# Compile of tb.v was successful.
+# Compile of pdommb_fw_top.v was successful.
+# Compile of build_number.v was successful.
+# Compile of config_ind.v was successful.
+# Compile of crc16_8b_parallel.v was successful.
+# Compile of err_mngr.v was successful.
+# Compile of ft232r_hs.v was successful.
+# Compile of ft232r_proc_buffered.v was successful.
+# Compile of negedge_detector.v was successful.
+# Compile of posedge_detector.v was successful.
+# Compile of rs232_des.v was successful.
+# Compile of rs232_ser.v was successful.
+# Compile of rst_gen.v was successful.
+# Compile of sync.v was successful.
+# Compile of task_reg.v was successful.
+# Compile of uart_proc.v was successful.
+# Compile of uart_proc_hs.v was successful.
+# Compile of xdom.v failed with 7 errors.
+# Compile of altera_mf.v was successful.
+# 19 compiles, 1 failed with 7 errors.
+# Compile of tb.v was successful.
+# Compile of pdommb_fw_top.v was successful.
+# Compile of build_number.v was successful.
+# Compile of config_ind.v was successful.
+# Compile of crc16_8b_parallel.v was successful.
+# Compile of err_mngr.v was successful.
+# Compile of ft232r_hs.v was successful.
+# Compile of ft232r_proc_buffered.v was successful.
+# Compile of negedge_detector.v was successful.
+# Compile of posedge_detector.v was successful.
+# Compile of rs232_des.v was successful.
+# Compile of rs232_ser.v was successful.
+# Compile of rst_gen.v was successful.
+# Compile of sync.v was successful.
+# Compile of task_reg.v was successful.
+# Compile of uart_proc.v was successful.
+# Compile of uart_proc_hs.v was successful.
+# Compile of xdom.v was successful.
+# Compile of altera_mf.v was successful.
+# 19 compiles, 0 failed with no errors.
