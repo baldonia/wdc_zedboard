@@ -41,7 +41,6 @@ read_verilog -library xil_defaultlib {
   C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/ft232r_hs/ft232r_hs.v
   C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/ft232r_proc_buffered/ft232r_proc_buffered.v
   C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/iter_integer_linear_cal/iter_integer_linear_calc.v
-  C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/knight_rider/knight_rider.v
   C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/negedge_detector/negedge_detector.v
   C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/posedge_detector/posedge_detector.v
   C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/rs232_des/rs232_des.v
@@ -67,6 +66,12 @@ read_ip -quiet C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboar
 set_property used_in_implementation false [get_files -all c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/FIFO_2048_32/FIFO_2048_32.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/FIFO_2048_32/FIFO_2048_32_ooc.xdc]
 
+read_ip -quiet c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/DIG0_MMCM/DIG0_MMCM.xci
+set_property used_in_implementation false [get_files -all c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/DIG0_MMCM/DIG0_MMCM_board.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/DIG0_MMCM/DIG0_MMCM.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/DIG0_MMCM/DIG0_MMCM_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/DIG0_MMCM/DIG0_MMCM_late.xdc]
+
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
 # design are intentionally left as such for best results. Dcp files will be
@@ -77,6 +82,9 @@ foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
 }
 read_xdc C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/constrs_1/new/pin_assign.xdc
 set_property used_in_implementation false [get_files C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/constrs_1/new/pin_assign.xdc]
+
+read_xdc C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/manual_io_constr.xdc
+set_property used_in_implementation false [get_files C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/manual_io_constr.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]

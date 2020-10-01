@@ -7,6 +7,14 @@ module top (
   // 100 MHz input clock  
   input GCLK,
 
+  // ADC 0 input clock
+  input DIG0_CLKOUT_P,
+  input DIG0_CLKOUT_N,
+
+  // ADC 1 input 
+  input DIG1_CLKOUT_P,
+  input DIG1_CLKOUT_N,
+
   // USB UART signals
   output UART_RXD,
   input UART_TXD,
@@ -39,22 +47,50 @@ module top (
   input DIG1_OVR_SDOUT
 );
 
-localparam[15:0] FW_VNUM = 16'h4;
+localparam[15:0] FW_VNUM = 16'h5;
 
-wire lclk;
+// PLL for ADC 0 input clock
+wire i_dig0_clk;
+wire i_dig1_clk;
+IBUFGDS #(.DIFF_TERM(1)) IBUFGDS_DIG0(.I(DIG0_CLKOUT_P), .IB(DIG0_CLKOUT_N), .O(i_dig0_clk));
+IBUFGDS #(.DIFF_TERM(1)) IBUFGDS_DIG1(.I(DIG1_CLKOUT_P), .IB(DIG1_CLKOUT_N), .O(i_dig1_clk));
+wire clk_245_76_MHz;
+wire clk_122_88_MHz;
+wire dig0_pll_locked;
+DIG0_MMCM dig0_mmcm_0
+(
+  .clk_in1(i_dig1_clk),
+  .reset(1'b0),
+  .locked(dig0_pll_locked),
+  .clk_245_76_MHz(clk_245_76_MHz),
+  .clk_122_88_MHz(clk_122_88_MHz)
+);
+
+assign LD0 = dig0_pll_locked;
+assign LD1 = !dig0_pll_locked;
+
+wire clk_125MHz;
 wire ref_clk;
 wire enc_clk;
 wire lclk_mmcm_locked;
 LCLK_MMCM lclk_mmcm_0
 (
   .clk_in1(GCLK),
-  .clk_125MHz(lclk),
+  .clk_125MHz(clk_125MHz),
   .clk_200MHz(ref_clk),
   .clk_250MHz(enc_clk),
   .reset(1'b0),
   .locked(lclk_mmcm_locked)  
 );
+
+assign lclk = clk_125MHz;
 wire lclk_rst = !lclk_mmcm_locked;
+
+assign LD2 = lclk_mmcm_locked;
+assign LD3 = !lclk_mmcm_locked;
+
+// assign lclk = clk_122_88_MHz;
+// assign lclk_rst = dig0_pll_locked;
 
 /////////////////////////////////////////////////////////////////////////
 // cuppa register interface
@@ -213,20 +249,20 @@ assign DIG_DFS = 0;
 // LED controls
 //
 
-wire[7:0] LEDs;
-assign LD0 = led_toggle && LEDs[0];
-assign LD1 = led_toggle && LEDs[1];
-assign LD2 = led_toggle && LEDs[2];
-assign LD3 = led_toggle && LEDs[3];
-assign LD4 = led_toggle && LEDs[4];
-assign LD5 = led_toggle && LEDs[5];
-assign LD6 = led_toggle && LEDs[6];
-assign LD7 = led_toggle && LEDs[7];
-knight_rider KR_0
-(
-  .clk(lclk),
-  .rst(lclk_rst),
-  .y(LEDs)
-);
+// wire[7:0] LEDs;
+// assign LD0 = led_toggle && LEDs[0];
+// assign LD1 = led_toggle && LEDs[1];
+// assign LD2 = led_toggle && LEDs[2];
+// assign LD3 = led_toggle && LEDs[3];
+// assign LD4 = led_toggle && LEDs[4];
+// assign LD5 = led_toggle && LEDs[5];
+// assign LD6 = led_toggle && LEDs[6];
+// assign LD7 = led_toggle && LEDs[7];
+// knight_rider KR_0
+// (
+//   .clk(lclk),
+//   .rst(lclk_rst),
+//   .y(LEDs)
+// );
 
 endmodule

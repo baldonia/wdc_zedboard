@@ -51,3 +51,6 @@ set_property PACKAGE_PIN D15 [get_ports DIG_SCK]
 set_property IOSTANDARD LVCMOS25 [get_ports DIG_SCK]
 set_property PACKAGE_PIN T16 [get_ports DIG_SDATA]
 set_property IOSTANDARD LVCMOS25 [get_ports DIG_SDATA]
+
+set_property IOSTANDARD LVDS_25 [get_ports DIG0_CLKOUT_P]
+set_property PACKAGE_PIN B19 [get_ports DIG0_CLKOUT_P]
