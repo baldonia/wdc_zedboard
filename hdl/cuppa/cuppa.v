@@ -18,6 +18,13 @@ module cuppa
   input dac_spi_ack,
   output reg[23:0] dac_spi_wr_data = 0,
 
+  // dig SPI controls
+  output reg dig_sel = 0,
+  output dig_spi_req,
+  input dig_spi_ack,
+  output reg[15:0] dig_spi_wr_data = 0,
+  input[7:0] dig_spi_rd_data,
+
   // turn KR pattern on and off
   output reg led_toggle = 1,
 
@@ -136,6 +143,23 @@ task_reg #(.P_TASK_ADR(12'hbfe)) DAC_SPI_TASK_0
 assign dac_spi_wr_req = dac_task_req[0];
 assign dac_task_ack[0] = dac_spi_ack;
 
+wire[15:0] dig_task_val;
+wire[15:0] dig_task_req;
+wire[15:0] dig_task_ack;
+task_reg #(.P_TASK_ADR(12'hbee)) DIG_SPI_TASK
+(
+  .clk(clk),
+  .rst(rst),
+  .adr(y_adr),
+  .data(y_wr_data),
+  .wr(y_wr),
+  .req(dig_task_req),
+  .ack(dig_task_ack),
+  .val(dig_task_val)
+);
+assign dig_spi_req = dig_task_req[0];
+assign dig_task_ack[0] = dig_spi_ack;
+
 //////////////////////////////////////////////////////////////////////////////
 // Read registers
 reg[15:0] reg_dpram_rd_data;
@@ -147,6 +171,10 @@ always @(*) begin
     12'hbfe: begin y_rd_data =       dac_task_val;                          end
     12'hbfd: begin y_rd_data =       {8'b0, dac_spi_wr_data[23:16]};        end
     12'hbfc: begin y_rd_data =       dac_spi_wr_data[15:0];                 end    
+    12'hbef: begin y_rd_data =       dig_sel;                               end
+    12'hbee: begin y_rd_data =       dig_task_val;                          end
+    12'hbed: begin y_rd_data =       dig_spi_wr_data;                       end
+    12'hbec: begin y_rd_data =       {8'b0, dig_spi_rd_data};               end    
     12'h8ff: begin y_rd_data =       {15'h0, led_toggle};                   end
     default: 
       begin
@@ -163,6 +191,8 @@ always @(posedge clk) begin
       12'hbff: begin dac_sel <= y_wr_data[0];                               end
       12'hbfd: begin dac_spi_wr_data[23:16] <= y_wr_data[7:0];              end
       12'hbfc: begin dac_spi_wr_data[15:0] <= y_wr_data;                    end
+      12'hbef: begin dig_sel <= y_wr_data[0];                               end
+      12'hbed: begin dig_spi_wr_data <= y_wr_data;                          end
       12'h8ff: begin led_toggle <= y_wr_data[0];                            end
       default: begin																										    end
     endcase

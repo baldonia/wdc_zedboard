@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date             : Wed Sep 30 16:37:12 2020
+| Date             : Thu Oct  1 16:24:53 2020
 | Host             : LAPTOP-GBOUD091 running 64-bit major release  (build 9200)
 | Command          : report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb -rpx top_power_routed.rpx
 | Design           : top
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.245        |
+| Total On-Chip Power (W)  | 0.249        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.134        |
+| Dynamic (W)              | 0.138        |
 | Device Static (W)        | 0.111        |
 | Effective TJA (C/W)      | 11.5         |
-| Max Ambient (C)          | 82.2         |
-| Junction Temperature (C) | 27.8         |
+| Max Ambient (C)          | 82.1         |
+| Junction Temperature (C) | 27.9         |
 | Confidence Level         | Medium       |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,19 +52,19 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.007 |        5 |       --- |             --- |
-| Slice Logic    |     0.003 |     2441 |       --- |             --- |
-|   LUT as Logic |     0.003 |     1028 |     53200 |            1.93 |
-|   CARRY4       |    <0.001 |      193 |     13300 |            1.45 |
-|   Register     |    <0.001 |      872 |    106400 |            0.82 |
-|   F7/F8 Muxes  |    <0.001 |        1 |     53200 |           <0.01 |
-|   Others       |     0.000 |       66 |       --- |             --- |
-| Signals        |     0.003 |     1527 |       --- |             --- |
+| Clocks         |     0.011 |        5 |       --- |             --- |
+| Slice Logic    |     0.004 |     4293 |       --- |             --- |
+|   LUT as Logic |     0.003 |     1826 |     53200 |            3.43 |
+|   CARRY4       |    <0.001 |      374 |     13300 |            2.81 |
+|   Register     |    <0.001 |     1531 |    106400 |            1.44 |
+|   F7/F8 Muxes  |    <0.001 |        4 |     53200 |           <0.01 |
+|   Others       |     0.000 |       80 |       --- |             --- |
+| Signals        |     0.003 |     2528 |       --- |             --- |
 | Block RAM      |     0.002 |        3 |       140 |            2.14 |
 | MMCM           |     0.106 |        1 |         4 |           25.00 |
-| I/O            |     0.013 |       15 |       200 |            7.50 |
+| I/O            |     0.012 |       23 |       200 |           11.50 |
 | Static Power   |     0.111 |          |           |                 |
-| Total          |     0.245 |          |           |                 |
+| Total          |     0.249 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -74,7 +74,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.023 |       0.016 |      0.008 |
+| Vccint    |       1.000 |     0.028 |       0.020 |      0.008 |
 | Vccaux    |       1.800 |     0.070 |       0.059 |      0.011 |
 | Vcco33    |       3.300 |     0.004 |       0.003 |      0.001 |
 | Vcco25    |       2.500 |     0.002 |       0.001 |      0.001 |
@@ -152,16 +152,20 @@ Table of Contents
 +----------------------+-----------+
 | Name                 | Power (W) |
 +----------------------+-----------+
-| top                  |     0.134 |
+| top                  |     0.138 |
 |   CUPPA_0            |     0.007 |
 |     PG_DPRAM         |     0.002 |
 |       U0             |     0.002 |
 |     UART_DEBUG_0     |     0.003 |
 |       UART_PROC_HS_0 |     0.002 |
-|   SPIM_0             |     0.007 |
+|   DAC_SPI            |     0.006 |
+|     IILC_MISO_0      |     0.001 |
+|     IILC_MOSI_0      |     0.001 |
+|     IILC_SCLK_0      |     0.001 |
+|   DIG_SPI            |     0.006 |
 |     IILC_MISO_0      |     0.002 |
-|     IILC_MOSI_0      |     0.002 |
-|     IILC_SCLK_0      |     0.002 |
+|     IILC_MOSI_0      |     0.001 |
+|     IILC_SCLK_0      |     0.001 |
 |   lclk_mmcm_0        |     0.107 |
 |     inst             |     0.107 |
 +----------------------+-----------+

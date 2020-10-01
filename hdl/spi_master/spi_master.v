@@ -54,8 +54,8 @@ module spi_master #(parameter P_RD_DATA_WIDTH=256, parameter P_WR_DATA_WIDTH=256
    reg 		 is_wr=0;
   
    // This manages determining the max count.
-   reg [31:0] 	 max_cnt;
-   wire 	 valid_max_cnt; 
+   reg [31:0] 	 i_max_cnt;
+   wire 	 i_valid_max_cnt; 
    wire [31:0] 	 max_cnt_mosi;
    wire [31:0] 	 max_cnt_sclk;
    wire [31:0] 	 max_cnt_miso;   
@@ -67,17 +67,25 @@ module spi_master #(parameter P_RD_DATA_WIDTH=256, parameter P_WR_DATA_WIDTH=256
    reg [31:0] 	 cnt=0; // main counter 
 
    // This handles the max count
-   assign valid_max_cnt = valid_max_cnt_mosi && valid_max_cnt_miso && valid_max_cnt_sclk; 
+   assign i_valid_max_cnt = valid_max_cnt_mosi && valid_max_cnt_miso && valid_max_cnt_sclk; 
    always @(*)
      if( (max_cnt_mosi >= max_cnt_sclk) && (max_cnt_mosi >= max_cnt_miso) )
-       max_cnt = max_cnt_mosi;
+       i_max_cnt = max_cnt_mosi;
      else if( (max_cnt_sclk >= max_cnt_mosi) && (max_cnt_sclk >= max_cnt_miso) )
-       max_cnt = max_cnt_sclk;
+       i_max_cnt = max_cnt_sclk;
      else if( (max_cnt_miso >= max_cnt_sclk) && (max_cnt_miso >= max_cnt_mosi) )
-       max_cnt = max_cnt_miso;
+       i_max_cnt = max_cnt_miso;
      else
-       max_cnt = 32'hffffffff; 
+       i_max_cnt = 32'hffffffff; 
    
+   // pipeline max_cnt and valid_max_cnt for timing
+   reg[31:0] max_cnt = 0;
+   reg valid_max_cnt = 0;
+   always @(posedge clk) begin
+     max_cnt <= i_max_cnt;
+     valid_max_cnt <= i_valid_max_cnt;
+   end 
+
    // these iteratively calculate max count, so as to allow arbitrary bit lengths. 
    iter_integer_linear_calc IILC_MOSI_0
      (
