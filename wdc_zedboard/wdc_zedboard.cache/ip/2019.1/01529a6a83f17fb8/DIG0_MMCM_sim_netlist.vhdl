@@ -3,8 +3,8 @@
 -- Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
 -- Date        : Fri Oct  2 14:21:18 2020
 -- Host        : LAPTOP-GBOUD091 running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim
---               C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/DIG0_MMCM/DIG0_MMCM_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
+--               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ DIG0_MMCM_sim_netlist.vhdl
 -- Design      : DIG0_MMCM
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -14,7 +14,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity DIG0_MMCM_DIG0_MMCM_clk_wiz is
+entity decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_DIG0_MMCM_clk_wiz is
   port (
     clk_245_76_MHz : out STD_LOGIC;
     clk_122_88_MHz : out STD_LOGIC;
@@ -22,11 +22,9 @@ entity DIG0_MMCM_DIG0_MMCM_clk_wiz is
     locked : out STD_LOGIC;
     clk_in1 : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of DIG0_MMCM_DIG0_MMCM_clk_wiz : entity is "DIG0_MMCM_clk_wiz";
-end DIG0_MMCM_DIG0_MMCM_clk_wiz;
+end decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_DIG0_MMCM_clk_wiz;
 
-architecture STRUCTURE of DIG0_MMCM_DIG0_MMCM_clk_wiz is
+architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_DIG0_MMCM_clk_wiz is
   signal clk_122_88_MHz_DIG0_MMCM : STD_LOGIC;
   signal clk_245_76_MHz_DIG0_MMCM : STD_LOGIC;
   signal clk_in1_DIG0_MMCM : STD_LOGIC;
@@ -165,7 +163,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity DIG0_MMCM is
+entity decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix is
   port (
     clk_245_76_MHz : out STD_LOGIC;
     clk_122_88_MHz : out STD_LOGIC;
@@ -174,12 +172,12 @@ entity DIG0_MMCM is
     clk_in1 : in STD_LOGIC
   );
   attribute NotValidForBitStream : boolean;
-  attribute NotValidForBitStream of DIG0_MMCM : entity is true;
-end DIG0_MMCM;
+  attribute NotValidForBitStream of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix : entity is true;
+end decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix;
 
-architecture STRUCTURE of DIG0_MMCM is
+architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix is
 begin
-inst: entity work.DIG0_MMCM_DIG0_MMCM_clk_wiz
+inst: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_DIG0_MMCM_clk_wiz
      port map (
       clk_122_88_MHz => clk_122_88_MHz,
       clk_245_76_MHz => clk_245_76_MHz,

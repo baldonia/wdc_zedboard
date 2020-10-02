@@ -59,7 +59,7 @@ wire clk_122_88_MHz;
 wire dig0_pll_locked;
 DIG0_MMCM dig0_mmcm_0
 (
-  .clk_in1(i_dig1_clk),
+  .clk_in1(i_dig0_clk),
   .reset(1'b0),
   .locked(dig0_pll_locked),
   .clk_245_76_MHz(clk_245_76_MHz),

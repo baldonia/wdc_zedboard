@@ -3,8 +3,8 @@
 // Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
 // Date        : Fri Oct  2 14:21:18 2020
 // Host        : LAPTOP-GBOUD091 running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim
-//               C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/DIG0_MMCM/DIG0_MMCM_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
+//               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ DIG0_MMCM_sim_netlist.v
 // Design      : DIG0_MMCM
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -13,7 +13,7 @@
 `timescale 1 ps / 1 ps
 
 (* NotValidForBitStream *)
-module DIG0_MMCM
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix
    (clk_245_76_MHz,
     clk_122_88_MHz,
     reset,
@@ -31,7 +31,7 @@ module DIG0_MMCM
   wire locked;
   wire reset;
 
-  DIG0_MMCM_DIG0_MMCM_clk_wiz inst
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_DIG0_MMCM_clk_wiz inst
        (.clk_122_88_MHz(clk_122_88_MHz),
         .clk_245_76_MHz(clk_245_76_MHz),
         .clk_in1(clk_in1),
@@ -39,8 +39,7 @@ module DIG0_MMCM
         .reset(reset));
 endmodule
 
-(* ORIG_REF_NAME = "DIG0_MMCM_clk_wiz" *) 
-module DIG0_MMCM_DIG0_MMCM_clk_wiz
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_DIG0_MMCM_clk_wiz
    (clk_245_76_MHz,
     clk_122_88_MHz,
     reset,

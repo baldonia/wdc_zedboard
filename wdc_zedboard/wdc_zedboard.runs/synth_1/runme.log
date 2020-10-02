@@ -15,9 +15,9 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Device 21-403] Loading part xc7z020clg484-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 17136 
+INFO: Helper process launched with PID 9096 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 742.098 ; gain = 177.359
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 741.594 ; gain = 177.738
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'top' [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/wdc_zedboard_top.v:6]
 	Parameter FW_VNUM bound to: 16'b0000000000000101 
@@ -28,10 +28,10 @@ INFO: [Synth 8-6157] synthesizing module 'IBUFGDS' [C:/Xilinx/Vivado/2019.1/scri
 	Parameter IBUF_LOW_PWR bound to: TRUE - type: string 
 	Parameter IOSTANDARD bound to: DEFAULT - type: string 
 INFO: [Synth 8-6155] done synthesizing module 'IBUFGDS' (1#1) [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:33335]
-INFO: [Synth 8-6157] synthesizing module 'DIG0_MMCM' [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-17324-LAPTOP-GBOUD091/realtime/DIG0_MMCM_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'DIG0_MMCM' (2#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-17324-LAPTOP-GBOUD091/realtime/DIG0_MMCM_stub.v:5]
-INFO: [Synth 8-6157] synthesizing module 'LCLK_MMCM' [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-17324-LAPTOP-GBOUD091/realtime/LCLK_MMCM_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'LCLK_MMCM' (3#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-17324-LAPTOP-GBOUD091/realtime/LCLK_MMCM_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'DIG0_MMCM' [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-8980-LAPTOP-GBOUD091/realtime/DIG0_MMCM_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'DIG0_MMCM' (2#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-8980-LAPTOP-GBOUD091/realtime/DIG0_MMCM_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'LCLK_MMCM' [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-8980-LAPTOP-GBOUD091/realtime/LCLK_MMCM_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'LCLK_MMCM' (3#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-8980-LAPTOP-GBOUD091/realtime/LCLK_MMCM_stub.v:5]
 INFO: [Synth 8-6157] synthesizing module 'cuppa' [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/cuppa/cuppa.v:7]
 INFO: [Synth 8-6157] synthesizing module 'ft232r_proc_buffered' [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/ft232r_proc_buffered/ft232r_proc_buffered.v:9]
 INFO: [Synth 8-6157] synthesizing module 'ft232r_hs' [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/ft232r_hs/ft232r_hs.v:17]
@@ -118,8 +118,8 @@ INFO: [Synth 8-6155] done synthesizing module 'err_mngr' (11#1) [C:/Users/atfie/
 WARNING: [Synth 8-6014] Unused sequential element n_burst_reg was removed.  [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/uart_proc_hs/uart_proc_hs.v:222]
 WARNING: [Synth 8-6014] Unused sequential element err_reg was removed.  [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/uart_proc_hs/uart_proc_hs.v:223]
 INFO: [Synth 8-6155] done synthesizing module 'uart_proc_hs' (12#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/uart_proc_hs/uart_proc_hs.v:16]
-INFO: [Synth 8-6157] synthesizing module 'FIFO_2048_32' [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-17324-LAPTOP-GBOUD091/realtime/FIFO_2048_32_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'FIFO_2048_32' (13#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-17324-LAPTOP-GBOUD091/realtime/FIFO_2048_32_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'FIFO_2048_32' [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-8980-LAPTOP-GBOUD091/realtime/FIFO_2048_32_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'FIFO_2048_32' (13#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-8980-LAPTOP-GBOUD091/realtime/FIFO_2048_32_stub.v:6]
 INFO: [Synth 8-6155] done synthesizing module 'ft232r_proc_buffered' (14#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/ft232r_proc_buffered/ft232r_proc_buffered.v:9]
 INFO: [Synth 8-6157] synthesizing module 'crs_master' [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/crs_master/crs_master.v:12]
 	Parameter S_IDLE bound to: 0 - type: integer 
@@ -137,8 +137,8 @@ INFO: [Synth 8-6155] done synthesizing module 'task_reg' (16#1) [C:/Users/atfie/
 INFO: [Synth 8-6157] synthesizing module 'task_reg__parameterized0' [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/task_reg/task_reg.v:12]
 	Parameter P_TASK_ADR bound to: 12'b101111101110 
 INFO: [Synth 8-6155] done synthesizing module 'task_reg__parameterized0' (16#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/task_reg/task_reg.v:12]
-INFO: [Synth 8-6157] synthesizing module 'SCRATCH_DPRAM' [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-17324-LAPTOP-GBOUD091/realtime/SCRATCH_DPRAM_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'SCRATCH_DPRAM' (17#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-17324-LAPTOP-GBOUD091/realtime/SCRATCH_DPRAM_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'SCRATCH_DPRAM' [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-8980-LAPTOP-GBOUD091/realtime/SCRATCH_DPRAM_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'SCRATCH_DPRAM' (17#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-8980-LAPTOP-GBOUD091/realtime/SCRATCH_DPRAM_stub.v:6]
 WARNING: [Synth 8-3848] Net debug_err_ack in module/entity cuppa does not have driver. [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/cuppa/cuppa.v:48]
 INFO: [Synth 8-6155] done synthesizing module 'cuppa' (18#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/cuppa/cuppa.v:7]
 INFO: [Synth 8-6157] synthesizing module 'spi_master' [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/spi_master/spi_master.v:14]
@@ -235,7 +235,7 @@ WARNING: [Synth 8-3331] design top has unconnected port LD5
 WARNING: [Synth 8-3331] design top has unconnected port LD6
 WARNING: [Synth 8-3331] design top has unconnected port LD7
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 809.754 ; gain = 245.016
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 809.633 ; gain = 245.777
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -248,10 +248,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 809.754 ; gain = 245.016
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 809.633 ; gain = 245.777
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 809.754 ; gain = 245.016
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 809.633 ; gain = 245.777
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 2 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -277,23 +277,23 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 963.031 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 960.223 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 2 instances were transformed.
   IBUFGDS => IBUFDS: 2 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.033 . Memory (MB): peak = 963.031 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.028 . Memory (MB): peak = 960.223 ; gain = 0.000
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'CUPPA_0/PG_DPRAM' at clock pin 'clka' is different from the actual clock period '8.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'CUPPA_0/UART_DEBUG_0/FIFO_2048_32_0' at clock pin 'clk' is different from the actual clock period '8.000', this can lead to different synthesis results.
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 965.988 ; gain = 401.250
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 962.188 ; gain = 398.332
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 965.988 ; gain = 401.250
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 962.188 ; gain = 398.332
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -305,7 +305,7 @@ Applied set_property DONT_TOUCH = true for CUPPA_0/PG_DPRAM. (constraint file  a
 Applied set_property DONT_TOUCH = true for CUPPA_0/UART_DEBUG_0/FIFO_2048_32_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for dig0_mmcm_0. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 965.988 ; gain = 401.250
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 962.188 ; gain = 398.332
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'fsm_reg' in module 'rs232_ser'
 INFO: [Synth 8-802] inferred FSM for state register 'fsm_reg' in module 'rs232_des'
@@ -427,7 +427,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'fsm_reg' using encoding 's
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'fsm_reg' using encoding 'sequential' in module 'spi_master__parameterized0'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 965.988 ; gain = 401.250
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 962.188 ; gain = 398.332
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -935,7 +935,7 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (DAC_SPI/I
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (DAC_SPI/IILC_MISO_0/\y_reg[0] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (DAC_SPI/IILC_MOSI_0/\y_reg[1] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 965.988 ; gain = 401.250
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:28 ; elapsed = 00:00:28 . Memory (MB): peak = 962.188 ; gain = 398.332
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -964,18 +964,18 @@ INFO: [Synth 8-5578] Moved timing constraint from pin 'lclk_mmcm_0/clk_125MHz' t
 INFO: [Synth 8-5578] Moved timing constraint from pin 'lclk_mmcm_0/clk_200MHz' to pin 'lclk_mmcm_0/bbstub_clk_200MHz/O'
 INFO: [Synth 8-5578] Moved timing constraint from pin 'lclk_mmcm_0/clk_250MHz' to pin 'lclk_mmcm_0/bbstub_clk_250MHz/O'
 INFO: [Synth 8-5578] Moved timing constraint from pin 'dig0_mmcm_0/clk_122_88_MHz' to pin 'dig0_mmcm_0/bbstub_clk_122_88_MHz/O'
-INFO: [Synth 8-5783] Moving clock source from hierarchical pin 'dig0_mmcm_0/clk_in1' to 'IBUFGDS_DIG1/O'
+INFO: [Synth 8-5783] Moving clock source from hierarchical pin 'dig0_mmcm_0/clk_in1' to 'IBUFGDS_DIG0/O'
 INFO: [Synth 8-5578] Moved timing constraint from pin 'dig0_mmcm_0/clk_245_76_MHz' to pin 'dig0_mmcm_0/bbstub_clk_245_76_MHz/O'
-INFO: [Synth 8-5783] Moving clock source from hierarchical pin 'dig0_mmcm_0/clk_in1' to 'IBUFGDS_DIG1/O'
+INFO: [Synth 8-5783] Moving clock source from hierarchical pin 'dig0_mmcm_0/clk_in1' to 'IBUFGDS_DIG0/O'
 INFO: [Synth 8-5819] Moved 6 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:38 ; elapsed = 00:00:39 . Memory (MB): peak = 965.988 ; gain = 401.250
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 962.188 ; gain = 398.332
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 983.387 ; gain = 418.648
+Finished Timing Optimization : Time (s): cpu = 00:00:39 ; elapsed = 00:00:40 . Memory (MB): peak = 985.340 ; gain = 421.484
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -987,7 +987,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:43 ; elapsed = 00:00:44 . Memory (MB): peak = 984.445 ; gain = 419.707
+Finished Technology Mapping : Time (s): cpu = 00:00:41 ; elapsed = 00:00:41 . Memory (MB): peak = 986.359 ; gain = 422.504
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1011,7 +1011,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:45 ; elapsed = 00:00:46 . Memory (MB): peak = 985.262 ; gain = 420.523
+Finished IO Insertion : Time (s): cpu = 00:00:43 ; elapsed = 00:00:44 . Memory (MB): peak = 986.359 ; gain = 422.504
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -1024,7 +1024,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:45 ; elapsed = 00:00:46 . Memory (MB): peak = 985.262 ; gain = 420.523
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:43 ; elapsed = 00:00:44 . Memory (MB): peak = 986.359 ; gain = 422.504
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1036,25 +1036,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:45 ; elapsed = 00:00:46 . Memory (MB): peak = 985.262 ; gain = 420.523
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:43 ; elapsed = 00:00:44 . Memory (MB): peak = 986.359 ; gain = 422.504
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:45 ; elapsed = 00:00:46 . Memory (MB): peak = 985.262 ; gain = 420.523
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:43 ; elapsed = 00:00:44 . Memory (MB): peak = 986.359 ; gain = 422.504
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:45 ; elapsed = 00:00:46 . Memory (MB): peak = 985.262 ; gain = 420.523
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:43 ; elapsed = 00:00:44 . Memory (MB): peak = 986.359 ; gain = 422.504
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:45 ; elapsed = 00:00:46 . Memory (MB): peak = 985.262 ; gain = 420.523
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:43 ; elapsed = 00:00:44 . Memory (MB): peak = 986.359 ; gain = 422.504
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -1133,17 +1133,17 @@ Report Instance Areas:
 |31    |    SERIAL_TX_0      |serial_tx__parameterized0  |   161|
 +------+---------------------+---------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:45 ; elapsed = 00:00:46 . Memory (MB): peak = 985.262 ; gain = 420.523
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:43 ; elapsed = 00:00:44 . Memory (MB): peak = 986.359 ; gain = 422.504
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 22 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:35 ; elapsed = 00:00:42 . Memory (MB): peak = 985.262 ; gain = 264.289
-Synthesis Optimization Complete : Time (s): cpu = 00:00:46 ; elapsed = 00:00:46 . Memory (MB): peak = 985.262 ; gain = 420.523
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:34 ; elapsed = 00:00:41 . Memory (MB): peak = 986.359 ; gain = 269.949
+Synthesis Optimization Complete : Time (s): cpu = 00:00:43 ; elapsed = 00:00:44 . Memory (MB): peak = 986.359 ; gain = 422.504
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 364 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 999.227 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 986.359 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 2 instances were transformed.
   IBUFGDS => IBUFDS: 2 instances
@@ -1151,10 +1151,10 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 INFO: [Common 17-83] Releasing license: Synthesis
 237 Infos, 64 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:51 ; elapsed = 00:00:53 . Memory (MB): peak = 999.227 ; gain = 698.402
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 999.227 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:49 ; elapsed = 00:00:51 . Memory (MB): peak = 986.359 ; gain = 685.613
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 986.359 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Oct  1 19:37:32 2020...
+INFO: [Common 17-206] Exiting Vivado at Fri Oct  2 14:23:08 2020...
