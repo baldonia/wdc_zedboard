@@ -59,6 +59,7 @@
 // clk_125MHz___125.000______0.000______50.0______125.247_____98.575
 // clk_200MHz___200.000______0.000______50.0______114.829_____98.575
 // clk_250MHz___250.000______0.000______50.0______110.209_____98.575
+// clk_250MHz_180___250.000____180.000______50.0______110.209_____98.575
 //
 //----------------------------------------------------------------------------
 // Input Clock   Freq (MHz)    Input Jitter (UI)
@@ -67,7 +68,7 @@
 
 `timescale 1ps/1ps
 
-(* CORE_GENERATION_INFO = "LCLK_MMCM,clk_wiz_v6_0_3_0_0,{component_name=LCLK_MMCM,use_phase_alignment=true,use_min_o_jitter=false,use_max_i_jitter=false,use_dyn_phase_shift=false,use_inclk_switchover=false,use_dyn_reconfig=false,enable_axi=0,feedback_source=FDBK_AUTO,PRIMITIVE=MMCM,num_out_clk=3,clkin1_period=10.000,clkin2_period=10.000,use_power_down=false,use_reset=true,use_locked=true,use_inclk_stopped=false,feedback_type=SINGLE,CLOCK_MGR_TYPE=NA,manual_override=false}" *)
+(* CORE_GENERATION_INFO = "LCLK_MMCM,clk_wiz_v6_0_3_0_0,{component_name=LCLK_MMCM,use_phase_alignment=true,use_min_o_jitter=false,use_max_i_jitter=false,use_dyn_phase_shift=false,use_inclk_switchover=false,use_dyn_reconfig=false,enable_axi=0,feedback_source=FDBK_AUTO,PRIMITIVE=MMCM,num_out_clk=4,clkin1_period=10.000,clkin2_period=10.000,use_power_down=false,use_reset=true,use_locked=true,use_inclk_stopped=false,feedback_type=SINGLE,CLOCK_MGR_TYPE=NA,manual_override=false}" *)
 
 module LCLK_MMCM 
  (
@@ -75,6 +76,7 @@ module LCLK_MMCM
   output        clk_125MHz,
   output        clk_200MHz,
   output        clk_250MHz,
+  output        clk_250MHz_180,
   // Status and control signals
   input         reset,
   output        locked,
@@ -88,6 +90,7 @@ module LCLK_MMCM
   .clk_125MHz(clk_125MHz),
   .clk_200MHz(clk_200MHz),
   .clk_250MHz(clk_250MHz),
+  .clk_250MHz_180(clk_250MHz_180),
   // Status and control signals               
   .reset(reset), 
   .locked(locked),

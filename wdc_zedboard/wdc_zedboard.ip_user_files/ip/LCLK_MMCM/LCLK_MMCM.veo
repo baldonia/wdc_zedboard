@@ -58,6 +58,7 @@
 // clk_125MHz___125.000______0.000______50.0______125.247_____98.575
 // clk_200MHz___200.000______0.000______50.0______114.829_____98.575
 // clk_250MHz___250.000______0.000______50.0______110.209_____98.575
+// clk_250MHz_180___250.000____180.000______50.0______110.209_____98.575
 //
 //----------------------------------------------------------------------------
 // Input Clock   Freq (MHz)    Input Jitter (UI)
@@ -76,6 +77,7 @@
     .clk_125MHz(clk_125MHz),     // output clk_125MHz
     .clk_200MHz(clk_200MHz),     // output clk_200MHz
     .clk_250MHz(clk_250MHz),     // output clk_250MHz
+    .clk_250MHz_180(clk_250MHz_180),     // output clk_250MHz_180
     // Status and control signals
     .reset(reset), // input reset
     .locked(locked),       // output locked

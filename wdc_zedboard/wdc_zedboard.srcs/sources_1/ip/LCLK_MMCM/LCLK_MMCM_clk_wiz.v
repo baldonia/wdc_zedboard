@@ -59,6 +59,7 @@
 // clk_125MHz___125.000______0.000______50.0______125.247_____98.575
 // clk_200MHz___200.000______0.000______50.0______114.829_____98.575
 // clk_250MHz___250.000______0.000______50.0______110.209_____98.575
+// clk_250MHz_180___250.000____180.000______50.0______110.209_____98.575
 //
 //----------------------------------------------------------------------------
 // Input Clock   Freq (MHz)    Input Jitter (UI)
@@ -74,6 +75,7 @@ module LCLK_MMCM_clk_wiz
   output        clk_125MHz,
   output        clk_200MHz,
   output        clk_250MHz,
+  output        clk_250MHz_180,
   // Status and control signals
   input         reset,
   output        locked,
@@ -100,7 +102,7 @@ wire clk_in2_LCLK_MMCM;
   wire        clk_125MHz_LCLK_MMCM;
   wire        clk_200MHz_LCLK_MMCM;
   wire        clk_250MHz_LCLK_MMCM;
-  wire        clk_out4_LCLK_MMCM;
+  wire        clk_250MHz_180_LCLK_MMCM;
   wire        clk_out5_LCLK_MMCM;
   wire        clk_out6_LCLK_MMCM;
   wire        clk_out7_LCLK_MMCM;
@@ -114,7 +116,6 @@ wire clk_in2_LCLK_MMCM;
   wire        clkfboutb_unused;
     wire clkout0b_unused;
    wire clkout1b_unused;
-   wire clkout2b_unused;
    wire clkout3_unused;
    wire clkout3b_unused;
    wire clkout4_unused;
@@ -156,7 +157,7 @@ wire clk_in2_LCLK_MMCM;
     .CLKOUT1             (clk_200MHz_LCLK_MMCM),
     .CLKOUT1B            (clkout1b_unused),
     .CLKOUT2             (clk_250MHz_LCLK_MMCM),
-    .CLKOUT2B            (clkout2b_unused),
+    .CLKOUT2B            (clk_250MHz_180_LCLK_MMCM),
     .CLKOUT3             (clkout3_unused),
     .CLKOUT3B            (clkout3b_unused),
     .CLKOUT4             (clkout4_unused),
@@ -216,6 +217,10 @@ wire clk_in2_LCLK_MMCM;
   BUFG clkout3_buf
    (.O   (clk_250MHz),
     .I   (clk_250MHz_LCLK_MMCM));
+
+  BUFG clkout4_buf
+   (.O   (clk_250MHz_180),
+    .I   (clk_250MHz_180_LCLK_MMCM));
 
 
 

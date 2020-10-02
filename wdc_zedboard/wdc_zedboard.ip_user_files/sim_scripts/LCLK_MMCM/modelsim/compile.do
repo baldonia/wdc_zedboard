@@ -9,6 +9,7 @@ vmap xpm modelsim_lib/msim/xpm
 
 vlog -work xil_defaultlib -64 -incr -sv "+incdir+../../../ipstatic" \
 "C:/Xilinx/Vivado/2019.1/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv" \
+"C:/Xilinx/Vivado/2019.1/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv" \
 
 vcom -work xpm -64 -93 \
 "C:/Xilinx/Vivado/2019.1/data/ip/xpm/xpm_VCOMP.vhd" \

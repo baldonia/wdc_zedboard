@@ -7,13 +7,19 @@ module top (
   // 100 MHz input clock  
   input GCLK,
 
-  // ADC 0 input clock
+  // ADC 0 clocks
+  // from ADC
   input DIG0_CLKOUT_P,
   input DIG0_CLKOUT_N,
+  // to ADC
+  output DIG0_CLK_P,
+  output DIG0_CLK_N,
 
   // ADC 1 input 
   input DIG1_CLKOUT_P,
   input DIG1_CLKOUT_N,
+  output DIG1_CLK_P,
+  output DIG1_CLK_N,
 
   // USB UART signals
   output UART_RXD,
@@ -47,13 +53,13 @@ module top (
   input DIG1_OVR_SDOUT
 );
 
-localparam[15:0] FW_VNUM = 16'h5;
+localparam[15:0] FW_VNUM = 16'h6;
 
 // PLL for ADC 0 input clock
 wire i_dig0_clk;
 wire i_dig1_clk;
-IBUFGDS #(.DIFF_TERM(1)) IBUFGDS_DIG0(.I(DIG0_CLKOUT_P), .IB(DIG0_CLKOUT_N), .O(i_dig0_clk));
-IBUFGDS #(.DIFF_TERM(1)) IBUFGDS_DIG1(.I(DIG1_CLKOUT_P), .IB(DIG1_CLKOUT_N), .O(i_dig1_clk));
+IBUFGDS #(.DIFF_TERM("TRUE")) IBUFGDS_DIG0(.I(DIG0_CLKOUT_P), .IB(DIG0_CLKOUT_N), .O(i_dig0_clk));
+IBUFGDS #(.DIFF_TERM("TRUE")) IBUFGDS_DIG1(.I(DIG1_CLKOUT_P), .IB(DIG1_CLKOUT_N), .O(i_dig1_clk));
 wire clk_245_76_MHz;
 wire clk_122_88_MHz;
 wire dig0_pll_locked;
@@ -71,17 +77,56 @@ assign LD1 = !dig0_pll_locked;
 
 wire clk_125MHz;
 wire ref_clk;
-wire enc_clk;
+wire enc_clk0;
+wire enc_clk1;
 wire lclk_mmcm_locked;
 LCLK_MMCM lclk_mmcm_0
 (
   .clk_in1(GCLK),
   .clk_125MHz(clk_125MHz),
   .clk_200MHz(ref_clk),
-  .clk_250MHz(enc_clk),
+  .clk_250MHz(enc_clk0),
+  .clk_250MHz_180(enc_clk1),
   .reset(1'b0),
   .locked(lclk_mmcm_locked)  
 );
+
+// forward encoder clocks to ADCs
+wire i_dig0_clk_out;
+ODDR #(
+       .DDR_CLK_EDGE("SAME_EDGE"),
+       .INIT(1'b0),
+       .SRTYPE("SYNC")
+     )
+ clk_forward_0
+ (
+   .Q(i_dig0_clk_out),
+   .C(enc_clk0),
+   .D1(1'b1),
+   .D2(1'b0),
+   .CE(1'b1),
+   .R(1'b0),
+   .S(1'b0)
+ );
+OBUFDS obuf_dig_clock_0(.I(i_dig0_clk_out), .O(DIG0_CLK_P), .OB(DIG0_CLK_N));
+
+wire i_dig1_clk_out;
+ODDR #(
+       .DDR_CLK_EDGE("SAME_EDGE"),
+       .INIT(1'b0),
+       .SRTYPE("SYNC")
+     )
+ clk_forward_1
+ (
+   .Q(i_dig1_clk_out),
+   .C(enc_clk1),
+   .D1(1'b1),
+   .D2(1'b0),
+   .CE(1'b1),
+   .R(1'b0),
+   .S(1'b0)
+ );
+OBUFDS obuf_dig_clock_1(.I(i_dig1_clk_out), .O(DIG1_CLK_P), .OB(DIG1_CLK_N));
 
 assign lclk = clk_125MHz;
 wire lclk_rst = !lclk_mmcm_locked;

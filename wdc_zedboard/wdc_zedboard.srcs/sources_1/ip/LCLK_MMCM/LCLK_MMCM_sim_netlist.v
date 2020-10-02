@@ -1,10 +1,10 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-// Date        : Mon Sep 28 14:06:52 2020
+// Date        : Fri Oct  2 16:17:38 2020
 // Host        : LAPTOP-GBOUD091 running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
-//               c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/LCLK_MMCM/LCLK_MMCM_sim_netlist.v
+//               C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/LCLK_MMCM/LCLK_MMCM_sim_netlist.v
 // Design      : LCLK_MMCM
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -17,12 +17,14 @@ module LCLK_MMCM
    (clk_125MHz,
     clk_200MHz,
     clk_250MHz,
+    clk_250MHz_180,
     reset,
     locked,
     clk_in1);
   output clk_125MHz;
   output clk_200MHz;
   output clk_250MHz;
+  output clk_250MHz_180;
   input reset;
   output locked;
   input clk_in1;
@@ -30,6 +32,7 @@ module LCLK_MMCM
   wire clk_125MHz;
   wire clk_200MHz;
   wire clk_250MHz;
+  wire clk_250MHz_180;
   (* IBUF_LOW_PWR *) wire clk_in1;
   wire locked;
   wire reset;
@@ -38,6 +41,7 @@ module LCLK_MMCM
        (.clk_125MHz(clk_125MHz),
         .clk_200MHz(clk_200MHz),
         .clk_250MHz(clk_250MHz),
+        .clk_250MHz_180(clk_250MHz_180),
         .clk_in1(clk_in1),
         .locked(locked),
         .reset(reset));
@@ -48,12 +52,14 @@ module LCLK_MMCM_LCLK_MMCM_clk_wiz
    (clk_125MHz,
     clk_200MHz,
     clk_250MHz,
+    clk_250MHz_180,
     reset,
     locked,
     clk_in1);
   output clk_125MHz;
   output clk_200MHz;
   output clk_250MHz;
+  output clk_250MHz_180;
   input reset;
   output locked;
   input clk_in1;
@@ -63,6 +69,8 @@ module LCLK_MMCM_LCLK_MMCM_clk_wiz
   wire clk_200MHz;
   wire clk_200MHz_LCLK_MMCM;
   wire clk_250MHz;
+  wire clk_250MHz_180;
+  wire clk_250MHz_180_LCLK_MMCM;
   wire clk_250MHz_LCLK_MMCM;
   wire clk_in1;
   wire clk_in1_LCLK_MMCM;
@@ -75,7 +83,6 @@ module LCLK_MMCM_LCLK_MMCM_clk_wiz
   wire NLW_mmcm_adv_inst_CLKINSTOPPED_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKOUT0B_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKOUT1B_UNCONNECTED;
-  wire NLW_mmcm_adv_inst_CLKOUT2B_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKOUT3_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKOUT3B_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKOUT4_UNCONNECTED;
@@ -110,6 +117,10 @@ module LCLK_MMCM_LCLK_MMCM_clk_wiz
   BUFG clkout3_buf
        (.I(clk_250MHz_LCLK_MMCM),
         .O(clk_250MHz));
+  (* BOX_TYPE = "PRIMITIVE" *) 
+  BUFG clkout4_buf
+       (.I(clk_250MHz_180_LCLK_MMCM),
+        .O(clk_250MHz_180));
   (* BOX_TYPE = "PRIMITIVE" *) 
   MMCME2_ADV #(
     .BANDWIDTH("OPTIMIZED"),
@@ -174,7 +185,7 @@ module LCLK_MMCM_LCLK_MMCM_clk_wiz
         .CLKOUT1(clk_200MHz_LCLK_MMCM),
         .CLKOUT1B(NLW_mmcm_adv_inst_CLKOUT1B_UNCONNECTED),
         .CLKOUT2(clk_250MHz_LCLK_MMCM),
-        .CLKOUT2B(NLW_mmcm_adv_inst_CLKOUT2B_UNCONNECTED),
+        .CLKOUT2B(clk_250MHz_180_LCLK_MMCM),
         .CLKOUT3(NLW_mmcm_adv_inst_CLKOUT3_UNCONNECTED),
         .CLKOUT3B(NLW_mmcm_adv_inst_CLKOUT3B_UNCONNECTED),
         .CLKOUT4(NLW_mmcm_adv_inst_CLKOUT4_UNCONNECTED),
