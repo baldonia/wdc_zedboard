@@ -94,7 +94,7 @@ LCLK_MMCM lclk_mmcm_0
 // forward encoder clocks to ADCs
 wire i_dig0_clk_out;
 ODDR #(
-       .DDR_CLK_EDGE("SAME_EDGE"),
+       .DDR_CLK_EDGE("OPPOSITE_EDGE"),
        .INIT(1'b0),
        .SRTYPE("SYNC")
      )
@@ -102,8 +102,8 @@ ODDR #(
  (
    .Q(i_dig0_clk_out),
    .C(enc_clk0),
-   .D1(1'b1),
-   .D2(1'b0),
+   .D1(1'b0),
+   .D2(1'b1),
    .CE(1'b1),
    .R(1'b0),
    .S(1'b0)
@@ -112,7 +112,7 @@ OBUFDS obuf_dig_clock_0(.I(i_dig0_clk_out), .O(DIG0_CLK_P), .OB(DIG0_CLK_N));
 
 wire i_dig1_clk_out;
 ODDR #(
-       .DDR_CLK_EDGE("SAME_EDGE"),
+       .DDR_CLK_EDGE("OPPOSITE_EDGE"),
        .INIT(1'b0),
        .SRTYPE("SYNC")
      )
@@ -120,8 +120,8 @@ ODDR #(
  (
    .Q(i_dig1_clk_out),
    .C(enc_clk1),
-   .D1(1'b1),
-   .D2(1'b0),
+   .D1(1'b0),
+   .D2(1'b1),
    .CE(1'b1),
    .R(1'b0),
    .S(1'b0)
