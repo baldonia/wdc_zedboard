@@ -48,7 +48,7 @@ module top (
   output DIG_SDATA,
   output DIG_RESET,
   output DIG_DFS,
-  // output DIG_OE, ATF: leaving this out should leave ADC outputs always enabled 
+  output DIG_OE,
   input DIG0_OVR_SDOUT,
   input DIG1_OVR_SDOUT
 );
@@ -284,10 +284,10 @@ assign dig_spi_miso = dig_sel == 0 ? DIG0_OVR_SDOUT : DIG1_OVR_SDOUT;
 // for now hold reset at 0 
 // (could add it to reg interface, but datasheet indicates that SW reset is sufficient)
 assign DIG_RESET = 0;
-// tie DIG_DFS to 0 to get twos complement DDR LVDS
-assign DIG_DFS = 0;
-// set DIG_OE to high impedence
-// assign DIG_OE = 1'bz;
+// set DIG_DFS to 1'bz
+assign DIG_DFS = 1'bz;
+// drive DIG_OE high
+assign DIG_OE = 1'b1;
 // (leaving it out of the project entirely should work?)
 
 //

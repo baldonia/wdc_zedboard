@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date                      : Fri Oct  2 17:00:40 2020
+| Date                      : Mon Oct  5 12:32:30 2020
 | Host                      : LAPTOP-GBOUD091 running 64-bit major release  (build 9200)
 | Command                   : report_io -file top_io_placed.rpt
 | Design                    : top
@@ -25,7 +25,7 @@ Table of Contents
 +---------------+
 | Total User IO |
 +---------------+
-|            31 |
+|            32 |
 +---------------+
 
 
@@ -295,8 +295,8 @@ Table of Contents
 | K16        |                | High Range | IO_L3P_T0_DQS_PUDC_B_34 | User IO     |             |      34 |            |      |                      |                      |         |            |           |          |      |                  |              |                   |              |
 | K17        |                | High Range | VCCO_34                 | VCCO        |             |      34 |            |      |                      |                      |    2.50 |            |           |          |      |                  |              |                   |              |
 | K18        |                | High Range | IO_L7N_T1_34            | User IO     |             |      34 |            |      |                      |                      |         |            |           |          |      |                  |              |                   |              |
-| K19        |                | High Range | IO_L11P_T1_SRCC_34      | User IO     |             |      34 |            |      |                      |                      |         |            |           |          |      |                  |              |                   |              |
-| K20        | DIG_DFS        | High Range | IO_L11N_T1_SRCC_34      | OUTPUT      | LVCMOS25    |      34 |         12 | SLOW |                      |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
+| K19        | DIG_OE         | High Range | IO_L11P_T1_SRCC_34      | OUTPUT      | LVCMOS25    |      34 |         12 | SLOW |                      |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
+| K20        | DIG_DFS        | High Range | IO_L11N_T1_SRCC_34      | TRISTATE    | LVCMOS25    |      34 |         12 | SLOW |                      |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | K21        | DAC1_CSn       | High Range | IO_L9N_T1_DQS_34        | OUTPUT      | LVCMOS25    |      34 |         12 | SLOW |                      |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | K22        |                |            | GND                     | GND         |             |         |            |      |                      |                      |     0.0 |            |           |          |      |                  |              |                   |              |
 | L1         |                |            | PS_DDR_DQ10_502         | PSS IO      |             |         |            |      |                      |                      |         |            |           |          |      |                  |              |                   |              |
