@@ -2,7 +2,7 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Mon Oct  5 16:43:49 2020
+# Start of session at: Mon Oct  5 16:58:35 2020
 # Process ID: 2444
 # Current directory: C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1
 # Command line: vivado.exe -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
@@ -16,9 +16,9 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Device 21-403] Loading part xc7z020clg484-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 11856 
+INFO: Helper process launched with PID 17388 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 742.477 ; gain = 177.379
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 743.789 ; gain = 176.703
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'top' [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/wdc_zedboard_top.v:6]
 	Parameter FW_VNUM bound to: 16'b0000000000000110 
@@ -33,19 +33,11 @@ INFO: [Synth 8-6157] synthesizing module 'DIG0_MMCM' [C:/Users/atfie/watchman-ne
 INFO: [Synth 8-6155] done synthesizing module 'DIG0_MMCM' (2#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-2444-LAPTOP-GBOUD091/realtime/DIG0_MMCM_stub.v:5]
 INFO: [Synth 8-6157] synthesizing module 'LCLK_MMCM' [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-2444-LAPTOP-GBOUD091/realtime/LCLK_MMCM_stub.v:5]
 INFO: [Synth 8-6155] done synthesizing module 'LCLK_MMCM' (3#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-2444-LAPTOP-GBOUD091/realtime/LCLK_MMCM_stub.v:5]
-INFO: [Synth 8-6157] synthesizing module 'ODDR' [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:49468]
-	Parameter DDR_CLK_EDGE bound to: OPPOSITE_EDGE - type: string 
-	Parameter INIT bound to: 1'b0 
-	Parameter IS_C_INVERTED bound to: 1'b0 
-	Parameter IS_D1_INVERTED bound to: 1'b0 
-	Parameter IS_D2_INVERTED bound to: 1'b0 
-	Parameter SRTYPE bound to: SYNC - type: string 
-INFO: [Synth 8-6155] done synthesizing module 'ODDR' (4#1) [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:49468]
 INFO: [Synth 8-6157] synthesizing module 'OBUFDS' [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:46012]
 	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
 	Parameter IOSTANDARD bound to: DEFAULT - type: string 
 	Parameter SLEW bound to: SLOW - type: string 
-INFO: [Synth 8-6155] done synthesizing module 'OBUFDS' (5#1) [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:46012]
+INFO: [Synth 8-6155] done synthesizing module 'OBUFDS' (4#1) [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:46012]
 INFO: [Synth 8-6157] synthesizing module 'cuppa' [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/cuppa/cuppa.v:7]
 INFO: [Synth 8-6157] synthesizing module 'ft232r_proc_buffered' [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/ft232r_proc_buffered/ft232r_proc_buffered.v:9]
 INFO: [Synth 8-6157] synthesizing module 'ft232r_hs' [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/ft232r_hs/ft232r_hs.v:17]
@@ -64,9 +56,9 @@ INFO: [Synth 8-6157] synthesizing module 'rs232_ser' [C:/Users/atfie/watchman-ne
 	Parameter LAUNCH_CNT_MAX bound to: 41 - type: integer 
 	Parameter NBITS_LAUNCH_CNT bound to: 6 - type: integer 
 INFO: [Synth 8-226] default block is never used [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/rs232_ser/rs232_ser.v:78]
-INFO: [Synth 8-6155] done synthesizing module 'rs232_ser' (6#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/rs232_ser/rs232_ser.v:17]
+INFO: [Synth 8-6155] done synthesizing module 'rs232_ser' (5#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/rs232_ser/rs232_ser.v:17]
 INFO: [Synth 8-6157] synthesizing module 'posedge_detector' [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/posedge_detector/posedge_detector.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'posedge_detector' (7#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/posedge_detector/posedge_detector.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'posedge_detector' (6#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/posedge_detector/posedge_detector.v:5]
 INFO: [Synth 8-6157] synthesizing module 'rs232_des' [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/rs232_des/rs232_des.v:16]
 	Parameter P_CLK_FREQ_HZ bound to: 125000000 - type: integer 
 	Parameter P_BAUD_RATE bound to: 3000000 - type: integer 
@@ -83,12 +75,12 @@ INFO: [Synth 8-6157] synthesizing module 'sync' [C:/Users/atfie/watchman-ne1/wdc
 	Parameter P_NFF bound to: 2 - type: integer 
 	Parameter NFF bound to: 2 - type: integer 
 INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/sync/sync.v:22]
-INFO: [Synth 8-6155] done synthesizing module 'sync' (8#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/sync/sync.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'sync' (7#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/sync/sync.v:5]
 INFO: [Synth 8-6157] synthesizing module 'negedge_detector' [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/negedge_detector/negedge_detector.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'negedge_detector' (9#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/negedge_detector/negedge_detector.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'negedge_detector' (8#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/negedge_detector/negedge_detector.v:5]
 INFO: [Synth 8-226] default block is never used [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/rs232_des/rs232_des.v:78]
-INFO: [Synth 8-6155] done synthesizing module 'rs232_des' (10#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/rs232_des/rs232_des.v:16]
-INFO: [Synth 8-6155] done synthesizing module 'ft232r_hs' (11#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/ft232r_hs/ft232r_hs.v:17]
+INFO: [Synth 8-6155] done synthesizing module 'rs232_des' (9#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/rs232_des/rs232_des.v:16]
+INFO: [Synth 8-6155] done synthesizing module 'ft232r_hs' (10#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/ft232r_hs/ft232r_hs.v:17]
 INFO: [Synth 8-6157] synthesizing module 'uart_proc_hs' [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/uart_proc_hs/uart_proc_hs.v:16]
 	Parameter P_TIMEOUT_CNT_MAX bound to: 125000000 - type: integer 
 	Parameter L_HDR1 bound to: 8'b10001111 
@@ -123,18 +115,18 @@ INFO: [Synth 8-6157] synthesizing module 'uart_proc_hs' [C:/Users/atfie/watchman
 	Parameter S_RD_CRC0 bound to: 22 - type: integer 
 	Parameter S_BWR_BUF_CLR bound to: 23 - type: integer 
 INFO: [Synth 8-6157] synthesizing module 'crc' [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/crc16_8b_parallel/crc16_8b_parallel.v:14]
-INFO: [Synth 8-6155] done synthesizing module 'crc' (12#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/crc16_8b_parallel/crc16_8b_parallel.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'crc' (11#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/crc16_8b_parallel/crc16_8b_parallel.v:14]
 INFO: [Synth 8-6157] synthesizing module 'err_mngr' [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/err_mngr/err_mngr.v:11]
 	Parameter S_IDLE bound to: 0 - type: integer 
 	Parameter S_HANDSHAKE bound to: 1 - type: integer 
 INFO: [Synth 8-226] default block is never used [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/err_mngr/err_mngr.v:55]
-INFO: [Synth 8-6155] done synthesizing module 'err_mngr' (13#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/err_mngr/err_mngr.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'err_mngr' (12#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/err_mngr/err_mngr.v:11]
 WARNING: [Synth 8-6014] Unused sequential element n_burst_reg was removed.  [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/uart_proc_hs/uart_proc_hs.v:222]
 WARNING: [Synth 8-6014] Unused sequential element err_reg was removed.  [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/uart_proc_hs/uart_proc_hs.v:223]
-INFO: [Synth 8-6155] done synthesizing module 'uart_proc_hs' (14#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/uart_proc_hs/uart_proc_hs.v:16]
+INFO: [Synth 8-6155] done synthesizing module 'uart_proc_hs' (13#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/uart_proc_hs/uart_proc_hs.v:16]
 INFO: [Synth 8-6157] synthesizing module 'FIFO_2048_32' [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-2444-LAPTOP-GBOUD091/realtime/FIFO_2048_32_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'FIFO_2048_32' (15#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-2444-LAPTOP-GBOUD091/realtime/FIFO_2048_32_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'ft232r_proc_buffered' (16#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/ft232r_proc_buffered/ft232r_proc_buffered.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'FIFO_2048_32' (14#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-2444-LAPTOP-GBOUD091/realtime/FIFO_2048_32_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'ft232r_proc_buffered' (15#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/ft232r_proc_buffered/ft232r_proc_buffered.v:9]
 INFO: [Synth 8-6157] synthesizing module 'crs_master' [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/crs_master/crs_master.v:12]
 	Parameter S_IDLE bound to: 0 - type: integer 
 	Parameter S_BWR_BUF_EMPTY bound to: 1 - type: integer 
@@ -144,17 +136,17 @@ INFO: [Synth 8-6157] synthesizing module 'crs_master' [C:/Users/atfie/watchman-n
 	Parameter S_RD_WAIT bound to: 5 - type: integer 
 	Parameter L_RD_WAIT_CNT_MAX bound to: 0 - type: integer 
 WARNING: [Synth 8-3936] Found unconnected internal register 'i_buf_wr_data_reg' and it is trimmed from '32' to '28' bits. [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/crs_master/crs_master.v:133]
-INFO: [Synth 8-6155] done synthesizing module 'crs_master' (17#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/crs_master/crs_master.v:12]
+INFO: [Synth 8-6155] done synthesizing module 'crs_master' (16#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/crs_master/crs_master.v:12]
 INFO: [Synth 8-6157] synthesizing module 'task_reg' [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/task_reg/task_reg.v:12]
 	Parameter P_TASK_ADR bound to: 12'b101111111110 
-INFO: [Synth 8-6155] done synthesizing module 'task_reg' (18#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/task_reg/task_reg.v:12]
+INFO: [Synth 8-6155] done synthesizing module 'task_reg' (17#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/task_reg/task_reg.v:12]
 INFO: [Synth 8-6157] synthesizing module 'task_reg__parameterized0' [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/task_reg/task_reg.v:12]
 	Parameter P_TASK_ADR bound to: 12'b101111101110 
-INFO: [Synth 8-6155] done synthesizing module 'task_reg__parameterized0' (18#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/task_reg/task_reg.v:12]
+INFO: [Synth 8-6155] done synthesizing module 'task_reg__parameterized0' (17#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/task_reg/task_reg.v:12]
 INFO: [Synth 8-6157] synthesizing module 'SCRATCH_DPRAM' [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-2444-LAPTOP-GBOUD091/realtime/SCRATCH_DPRAM_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'SCRATCH_DPRAM' (19#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-2444-LAPTOP-GBOUD091/realtime/SCRATCH_DPRAM_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'SCRATCH_DPRAM' (18#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-2444-LAPTOP-GBOUD091/realtime/SCRATCH_DPRAM_stub.v:6]
 WARNING: [Synth 8-3848] Net debug_err_ack in module/entity cuppa does not have driver. [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/cuppa/cuppa.v:48]
-INFO: [Synth 8-6155] done synthesizing module 'cuppa' (20#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/cuppa/cuppa.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'cuppa' (19#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/cuppa/cuppa.v:7]
 INFO: [Synth 8-6157] synthesizing module 'spi_master' [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/spi_master/spi_master.v:14]
 	Parameter P_RD_DATA_WIDTH bound to: 24 - type: integer 
 	Parameter P_WR_DATA_WIDTH bound to: 24 - type: integer 
@@ -167,7 +159,7 @@ INFO: [Synth 8-6157] synthesizing module 'iter_integer_linear_calc' [C:/Users/at
 	Parameter S_CALC bound to: 1 - type: integer 
 WARNING: [Synth 8-5788] Register i_m_0_reg in module iter_integer_linear_calc is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/iter_integer_linear_cal/iter_integer_linear_calc.v:57]
 WARNING: [Synth 8-5788] Register i_x_0_reg in module iter_integer_linear_calc is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/iter_integer_linear_cal/iter_integer_linear_calc.v:57]
-INFO: [Synth 8-6155] done synthesizing module 'iter_integer_linear_calc' (21#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/iter_integer_linear_cal/iter_integer_linear_calc.v:19]
+INFO: [Synth 8-6155] done synthesizing module 'iter_integer_linear_calc' (20#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/iter_integer_linear_cal/iter_integer_linear_calc.v:19]
 INFO: [Synth 8-6157] synthesizing module 'serial_ck' [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/serial_ck/serial_ck.v:11]
 	Parameter P_Y_INIT bound to: 0 - type: integer 
 	Parameter S0 bound to: 0 - type: integer 
@@ -177,7 +169,7 @@ WARNING: [Synth 8-5788] Register y_reg in module serial_ck is has both Set and r
 WARNING: [Synth 8-5788] Register i_cnt_0_1_reg in module serial_ck is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/serial_ck/serial_ck.v:67]
 WARNING: [Synth 8-5788] Register i_cnt_1_2_reg in module serial_ck is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/serial_ck/serial_ck.v:68]
 WARNING: [Synth 8-5788] Register i_cnt_2_1_reg in module serial_ck is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/serial_ck/serial_ck.v:69]
-INFO: [Synth 8-6155] done synthesizing module 'serial_ck' (22#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/serial_ck/serial_ck.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'serial_ck' (21#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/serial_ck/serial_ck.v:11]
 INFO: [Synth 8-6157] synthesizing module 'serial_rx' [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/serial_rx/serial_rx.v:12]
 	Parameter P_Y_INIT bound to: 0 - type: integer 
 	Parameter P_DATA_WIDTH bound to: 24 - type: integer 
@@ -186,16 +178,16 @@ INFO: [Synth 8-6157] synthesizing module 'serial_rx' [C:/Users/atfie/watchman-ne
 INFO: [Synth 8-226] default block is never used [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/serial_rx/serial_rx.v:58]
 WARNING: [Synth 8-5788] Register i_cnt_0_reg in module serial_rx is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/serial_rx/serial_rx.v:63]
 WARNING: [Synth 8-5788] Register i_cnt_1_reg in module serial_rx is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/serial_rx/serial_rx.v:64]
-INFO: [Synth 8-6155] done synthesizing module 'serial_rx' (23#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/serial_rx/serial_rx.v:12]
+INFO: [Synth 8-6155] done synthesizing module 'serial_rx' (22#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/serial_rx/serial_rx.v:12]
 INFO: [Synth 8-6157] synthesizing module 'serial_tx' [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/serial_tx/serial_tx.v:12]
 	Parameter P_Y_INIT bound to: 0 - type: integer 
 	Parameter P_DATA_WIDTH bound to: 24 - type: integer 
 	Parameter S0 bound to: 0 - type: integer 
 	Parameter S1 bound to: 1 - type: integer 
 INFO: [Synth 8-226] default block is never used [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/serial_tx/serial_tx.v:61]
-INFO: [Synth 8-6155] done synthesizing module 'serial_tx' (24#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/serial_tx/serial_tx.v:12]
+INFO: [Synth 8-6155] done synthesizing module 'serial_tx' (23#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/serial_tx/serial_tx.v:12]
 INFO: [Synth 8-226] default block is never used [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/spi_master/spi_master.v:204]
-INFO: [Synth 8-6155] done synthesizing module 'spi_master' (25#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/spi_master/spi_master.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'spi_master' (24#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/spi_master/spi_master.v:14]
 INFO: [Synth 8-6157] synthesizing module 'spi_master__parameterized0' [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/spi_master/spi_master.v:14]
 	Parameter P_RD_DATA_WIDTH bound to: 8 - type: integer 
 	Parameter P_WR_DATA_WIDTH bound to: 16 - type: integer 
@@ -211,21 +203,21 @@ INFO: [Synth 8-6157] synthesizing module 'serial_rx__parameterized0' [C:/Users/a
 INFO: [Synth 8-226] default block is never used [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/serial_rx/serial_rx.v:58]
 WARNING: [Synth 8-5788] Register i_cnt_0_reg in module serial_rx__parameterized0 is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/serial_rx/serial_rx.v:63]
 WARNING: [Synth 8-5788] Register i_cnt_1_reg in module serial_rx__parameterized0 is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/serial_rx/serial_rx.v:64]
-INFO: [Synth 8-6155] done synthesizing module 'serial_rx__parameterized0' (25#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/serial_rx/serial_rx.v:12]
+INFO: [Synth 8-6155] done synthesizing module 'serial_rx__parameterized0' (24#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/serial_rx/serial_rx.v:12]
 INFO: [Synth 8-6157] synthesizing module 'serial_tx__parameterized0' [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/serial_tx/serial_tx.v:12]
 	Parameter P_Y_INIT bound to: 0 - type: integer 
 	Parameter P_DATA_WIDTH bound to: 16 - type: integer 
 	Parameter S0 bound to: 0 - type: integer 
 	Parameter S1 bound to: 1 - type: integer 
 INFO: [Synth 8-226] default block is never used [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/serial_tx/serial_tx.v:61]
-INFO: [Synth 8-6155] done synthesizing module 'serial_tx__parameterized0' (25#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/serial_tx/serial_tx.v:12]
+INFO: [Synth 8-6155] done synthesizing module 'serial_tx__parameterized0' (24#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/serial_tx/serial_tx.v:12]
 INFO: [Synth 8-226] default block is never used [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/spi_master/spi_master.v:204]
-INFO: [Synth 8-6155] done synthesizing module 'spi_master__parameterized0' (25#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/spi_master/spi_master.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'spi_master__parameterized0' (24#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/spi_master/spi_master.v:14]
 WARNING: [Synth 8-3848] Net LD4 in module/entity top does not have driver. [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/wdc_zedboard_top.v:33]
 WARNING: [Synth 8-3848] Net LD5 in module/entity top does not have driver. [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/wdc_zedboard_top.v:34]
 WARNING: [Synth 8-3848] Net LD6 in module/entity top does not have driver. [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/wdc_zedboard_top.v:35]
 WARNING: [Synth 8-3848] Net LD7 in module/entity top does not have driver. [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/wdc_zedboard_top.v:36]
-INFO: [Synth 8-6155] done synthesizing module 'top' (26#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/wdc_zedboard_top.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'top' (25#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/wdc_zedboard_top.v:6]
 WARNING: [Synth 8-3917] design top has port DIG_RESET driven by constant 0
 WARNING: [Synth 8-3917] design top has port DIG_OE driven by constant 1
 WARNING: [Synth 8-3331] design crs_master has unconnected port a0_buf_wr_data[31]
@@ -249,7 +241,7 @@ WARNING: [Synth 8-3331] design top has unconnected port LD5
 WARNING: [Synth 8-3331] design top has unconnected port LD6
 WARNING: [Synth 8-3331] design top has unconnected port LD7
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 810.035 ; gain = 244.938
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 812.227 ; gain = 245.141
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -262,12 +254,12 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 810.035 ; gain = 244.938
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 812.227 ; gain = 245.141
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 810.035 ; gain = 244.938
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 812.227 ; gain = 245.141
 ---------------------------------------------------------------------------------
-INFO: [Netlist 29-17] Analyzing 6 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
@@ -291,24 +283,24 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 961.934 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 963.125 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 4 instances were transformed.
   IBUFGDS => IBUFDS: 2 instances
   OBUFDS => OBUFDS: 2 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.029 . Memory (MB): peak = 961.934 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.029 . Memory (MB): peak = 963.125 ; gain = 0.000
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'CUPPA_0/PG_DPRAM' at clock pin 'clka' is different from the actual clock period '8.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'CUPPA_0/UART_DEBUG_0/FIFO_2048_32_0' at clock pin 'clk' is different from the actual clock period '8.000', this can lead to different synthesis results.
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 964.063 ; gain = 398.965
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 966.148 ; gain = 399.063
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 964.063 ; gain = 398.965
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 966.148 ; gain = 399.063
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -320,7 +312,7 @@ Applied set_property DONT_TOUCH = true for CUPPA_0/PG_DPRAM. (constraint file  a
 Applied set_property DONT_TOUCH = true for CUPPA_0/UART_DEBUG_0/FIFO_2048_32_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for dig0_mmcm_0. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 964.063 ; gain = 398.965
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 966.148 ; gain = 399.063
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'fsm_reg' in module 'rs232_ser'
 INFO: [Synth 8-802] inferred FSM for state register 'fsm_reg' in module 'rs232_des'
@@ -442,7 +434,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'fsm_reg' using encoding 's
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'fsm_reg' using encoding 'sequential' in module 'spi_master__parameterized0'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 964.063 ; gain = 398.965
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 966.148 ; gain = 399.063
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -950,7 +942,7 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (DAC_SPI/I
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (DAC_SPI/IILC_MISO_0/\y_reg[0] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (DAC_SPI/IILC_MOSI_0/\y_reg[1] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 964.063 ; gain = 398.965
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 966.148 ; gain = 399.063
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -985,13 +977,13 @@ INFO: [Synth 8-5578] Moved timing constraint from pin 'dig0_mmcm_0/clk_245_76_MH
 INFO: [Synth 8-5783] Moving clock source from hierarchical pin 'dig0_mmcm_0/clk_in1' to 'IBUFGDS_DIG0/O'
 INFO: [Synth 8-5819] Moved 7 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:37 ; elapsed = 00:00:39 . Memory (MB): peak = 964.063 ; gain = 398.965
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 966.148 ; gain = 399.063
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 985.180 ; gain = 420.082
+Finished Timing Optimization : Time (s): cpu = 00:00:39 ; elapsed = 00:00:40 . Memory (MB): peak = 985.672 ; gain = 418.586
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1003,7 +995,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:42 ; elapsed = 00:00:44 . Memory (MB): peak = 986.207 ; gain = 421.109
+Finished Technology Mapping : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 986.699 ; gain = 419.613
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1027,7 +1019,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 986.207 ; gain = 421.109
+Finished IO Insertion : Time (s): cpu = 00:00:43 ; elapsed = 00:00:44 . Memory (MB): peak = 987.535 ; gain = 420.449
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -1040,7 +1032,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 986.207 ; gain = 421.109
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:43 ; elapsed = 00:00:44 . Memory (MB): peak = 987.535 ; gain = 420.449
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1052,25 +1044,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:45 ; elapsed = 00:00:46 . Memory (MB): peak = 986.207 ; gain = 421.109
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:43 ; elapsed = 00:00:45 . Memory (MB): peak = 987.535 ; gain = 420.449
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:45 ; elapsed = 00:00:46 . Memory (MB): peak = 986.207 ; gain = 421.109
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:43 ; elapsed = 00:00:45 . Memory (MB): peak = 987.535 ; gain = 420.449
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:45 ; elapsed = 00:00:46 . Memory (MB): peak = 986.207 ; gain = 421.109
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:43 ; elapsed = 00:00:45 . Memory (MB): peak = 987.535 ; gain = 420.449
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:45 ; elapsed = 00:00:47 . Memory (MB): peak = 986.207 ; gain = 421.109
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:43 ; elapsed = 00:00:45 . Memory (MB): peak = 987.535 ; gain = 420.449
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -1102,23 +1094,22 @@ Report Cell Usage:
 |10    |LUT5          |   191|
 |11    |LUT6          |   294|
 |12    |MUXF7         |     4|
-|13    |ODDR          |     2|
-|14    |FDCE          |   568|
-|15    |FDPE          |     3|
-|16    |FDRE          |   750|
-|17    |FDSE          |   121|
-|18    |IBUF          |     3|
-|19    |IBUFGDS       |     2|
-|20    |OBUF          |    15|
-|21    |OBUFDS        |     2|
-|22    |OBUFT         |     5|
+|13    |FDCE          |   568|
+|14    |FDPE          |     3|
+|15    |FDRE          |   750|
+|16    |FDSE          |   121|
+|17    |IBUF          |     3|
+|18    |IBUFGDS       |     2|
+|19    |OBUF          |    15|
+|20    |OBUFDS        |     2|
+|21    |OBUFT         |     5|
 +------+--------------+------+
 
 Report Instance Areas: 
 +------+---------------------+---------------------------+------+
 |      |Instance             |Module                     |Cells |
 +------+---------------------+---------------------------+------+
-|1     |top                  |                           |  4122|
+|1     |top                  |                           |  4120|
 |2     |  CUPPA_0            |cuppa                      |   911|
 |3     |    CRSM_0           |crs_master                 |   214|
 |4     |      NEDGE_0        |negedge_detector_9         |     7|
@@ -1151,29 +1142,29 @@ Report Instance Areas:
 |31    |    SERIAL_TX_0      |serial_tx__parameterized0  |   161|
 +------+---------------------+---------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:45 ; elapsed = 00:00:47 . Memory (MB): peak = 986.207 ; gain = 421.109
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:44 ; elapsed = 00:00:45 . Memory (MB): peak = 987.535 ; gain = 420.449
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 22 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:36 ; elapsed = 00:00:43 . Memory (MB): peak = 986.207 ; gain = 267.082
-Synthesis Optimization Complete : Time (s): cpu = 00:00:45 ; elapsed = 00:00:47 . Memory (MB): peak = 986.207 ; gain = 421.109
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:35 ; elapsed = 00:00:41 . Memory (MB): peak = 987.535 ; gain = 266.527
+Synthesis Optimization Complete : Time (s): cpu = 00:00:44 ; elapsed = 00:00:45 . Memory (MB): peak = 987.535 ; gain = 420.449
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 368 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 366 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 986.207 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 999.613 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 4 instances were transformed.
   IBUFGDS => IBUFDS: 2 instances
   OBUFDS => OBUFDS_DUAL_BUF (INV, OBUFDS, OBUFDS): 2 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-242 Infos, 64 Warnings, 0 Critical Warnings and 0 Errors encountered.
+240 Infos, 64 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:52 ; elapsed = 00:00:54 . Memory (MB): peak = 986.207 ; gain = 687.227
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 986.207 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:50 ; elapsed = 00:00:52 . Memory (MB): peak = 999.613 ; gain = 698.324
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 999.613 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon Oct  5 16:44:49 2020...
+INFO: [Common 17-206] Exiting Vivado at Mon Oct  5 16:59:33 2020...
