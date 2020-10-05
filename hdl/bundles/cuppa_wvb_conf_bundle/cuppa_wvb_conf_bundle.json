@@ -1,0 +1,52 @@
+[
+    {
+      "output"    : "cuppa_wvb_conf_bundle",
+      "min_width" : 0,
+      "element"   : [
+          {
+            "input" : "cnst_conf",
+            "width" : 15,
+            "description" : "const config"
+          },
+
+          {
+            "input" : "test_conf",
+            "width" : 15,
+            "description" : "test config (sw and external triggers)"
+          },
+
+          {
+            "input" : "post_conf",
+            "width" : 15,
+            "description" : "post config"
+          },
+          
+          {
+            "input" : "pre_conf",
+            "width" : 6,
+            "description" : "pre config"
+          }, 
+
+          {
+            "input" : "arm",
+            "width" : 1,
+            "description" : "arm trigger"
+          },
+
+          {
+            "input" : "trig_mode",
+            "width" : 1,
+            "description" : "trig mode (1 for arm logic)"
+          },
+          
+          {
+            "input" : "cnst_run",
+            "width" : 1,
+            "description" : "const waveform length mode"
+          }
+
+    ]
+    }
+]
+
+

@@ -1,0 +1,45 @@
+[
+    {
+	   "output"    : "cuppa_wvb_hdr_bundle_0",
+	   "min_width" : 0,
+	   "element"   : [
+	    {
+		   "input" : "evt_ltc",
+		   "width" : 48,
+		   "description" : "Local time counter value for starting trigger"
+	    },
+	    
+	    {
+		   "input" : "start_addr",
+		   "width" : 15,
+		   "description" : "Starting address in waveform buffer RAM" 
+	    },	    	  
+	    
+	    {
+		   "input" : "stop_addr",
+		   "width" : 15,
+		   "description" : "Stopping address for the event by the wvb writer" 
+	    },
+
+	    {
+		   "input" : "trig_src",
+		   "width" : 2,
+		   "description" : "source of initial trigger" 
+	    },
+
+	    {
+	       "input" : "cnst_run",
+	       "width" : 1,
+	       "description" : "const run setting"
+	    },
+
+	    {
+	       "input" : "pre_conf",
+	       "width" : 6,
+	       "description" : "pretrigger buffer conf setting"
+	    }
+	]
+    }
+]
+
+

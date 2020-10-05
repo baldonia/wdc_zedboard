@@ -92,41 +92,41 @@ LCLK_MMCM lclk_mmcm_0
 );
 
 // forward encoder clocks to ADCs
-// wire i_dig0_clk_out;
-// ODDR #(
-//        .DDR_CLK_EDGE("OPPOSITE_EDGE"),
-//        .INIT(1'b0),
-//        .SRTYPE("SYNC")
-//      )
-//  clk_forward_0
-//  (
-//    .Q(i_dig0_clk_out),
-//    .C(enc_clk0),
-//    .D1(1'b0),
-//    .D2(1'b1),
-//    .CE(1'b1),
-//    .R(1'b0),
-//    .S(1'b0)
-//  );
-OBUFDS obuf_dig_clock_0(.I(enc_clk0), .O(DIG0_CLK_P), .OB(DIG0_CLK_N));
+wire i_dig0_clk_out;
+ODDR #(
+       .DDR_CLK_EDGE("OPPOSITE_EDGE"),
+       .INIT(1'b0),
+       .SRTYPE("SYNC")
+     )
+ clk_forward_0
+ (
+   .Q(i_dig0_clk_out),
+   .C(enc_clk0),
+   .D1(1'b0),
+   .D2(1'b1),
+   .CE(1'b1),
+   .R(1'b0),
+   .S(1'b0)
+ );
+OBUFDS obuf_dig_clock_0(.I(i_dig0_clk_out), .O(DIG0_CLK_P), .OB(DIG0_CLK_N));
 
-// wire i_dig1_clk_out;
-// ODDR #(
-//        .DDR_CLK_EDGE("OPPOSITE_EDGE"),
-//        .INIT(1'b0),
-//        .SRTYPE("SYNC")
-//      )
-//  clk_forward_1
-//  (
-//    .Q(i_dig1_clk_out),
-//    .C(enc_clk1),
-//    .D1(1'b0),
-//    .D2(1'b1),
-//    .CE(1'b1),
-//    .R(1'b0),
-//    .S(1'b0)
-//  );
-OBUFDS obuf_dig_clock_1(.I(enc_clk1), .O(DIG1_CLK_P), .OB(DIG1_CLK_N));
+wire i_dig1_clk_out;
+ODDR #(
+       .DDR_CLK_EDGE("OPPOSITE_EDGE"),
+       .INIT(1'b0),
+       .SRTYPE("SYNC")
+     )
+ clk_forward_1
+ (
+   .Q(i_dig1_clk_out),
+   .C(enc_clk1),
+   .D1(1'b0),
+   .D2(1'b1),
+   .CE(1'b1),
+   .R(1'b0),
+   .S(1'b0)
+ );
+OBUFDS obuf_dig_clock_1(.I(i_dig1_clk_out), .O(DIG1_CLK_P), .OB(DIG1_CLK_N));
 
 assign lclk = clk_125MHz;
 wire lclk_rst = !lclk_mmcm_locked;

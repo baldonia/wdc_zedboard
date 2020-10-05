@@ -1,0 +1,52 @@
+[
+    {
+	  "output"    : "cuppa_trig_bundle",
+	  "min_width" : 0,
+	  "element"   : [
+	      {
+	  	    "input" : "trig_et",
+	  	    "width" : 1,
+	  	    "description" : "threshold trig equal to"
+	      },
+
+	      {
+	  	    "input" : "trig_gt",
+	  	    "width" : 1,
+	  	    "description" : "threshold trig greater than"
+	      },
+
+	      {
+	  	    "input" : "trig_lt",
+	  	    "width" : 1,
+	  	    "description" : "threshold trig less than"
+	      },
+	      
+	      {
+	  	    "input" : "trig_run",
+	  	    "width" : 1,
+	  	    "description" : "threshold trig run (sw trig)"
+	      }, 
+	   
+	      {
+	  	    "input" : "trig_thresh",
+	  	    "width" : 12,
+	  	    "description" : "threshold trigger threshold"
+	      },
+	   
+	      {
+	  	    "input" : "thresh_trig_en",
+	  	    "width" : 1,
+	  	    "description" : "threshold trigger enable"
+	      },
+
+	      {
+	  	    "input" : "ext_trig_en",
+	  	    "width" : 1,
+	  	    "description" : "external trigger enable"
+	      }
+
+	]
+    }
+]
+
+
