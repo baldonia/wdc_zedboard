@@ -30,14 +30,18 @@ module cuppa #(parameter N_CHANNELS = 2)
 
   // trigger/wvb conf
   output[17:0] trig_bundle_0,
+  output[17:0] trig_bundle_1,
   output[53:0] wvb_conf_bundle_0,
+  output[53:0] wvb_conf_bundle_1,
   output reg[N_CHANNELS-1:0] wvb_rst = 0,
 
   input[N_CHANNELS-1:0] wvb_armed,
   input[N_CHANNELS-1:0] wvb_overflow,
   input[N_CHANNELS-1:0] wvb_hdr_full,
   input[9:0] wvb_n_wvf_in_buf_0,
+  input[9:0] wvb_n_wvf_in_buf_1,
   input[15:0] wvb_wused_0,
+  input[15:0] wvb_wused_1,
 
   // wvb reader
   input[15:0] dpram_len_in,
@@ -201,6 +205,26 @@ cuppa_trig_bundle_fan_in TRIG_FAN_IN_0
    .ext_trig_en(wvb_trig_ext_trig_en_0)
   );
 
+// Dig 1 wvb trig bundle
+reg wvb_trig_et_1 = 0;
+reg wvb_trig_gt_1 = 0;    
+reg wvb_trig_lt_1 = 0;   
+reg wvb_trig_run_1 = 0;
+reg [11:0] wvb_trig_thr_1 = 0;   
+reg wvb_trig_thresh_trig_en_1 = 0; 
+reg wvb_trig_ext_trig_en_1 = 0; 
+cuppa_trig_bundle_fan_in TRIG_FAN_IN_1
+  (
+   .bundle(trig_bundle_1),
+   .trig_et(wvb_trig_et_1),
+   .trig_gt(wvb_trig_gt_1),
+   .trig_lt(wvb_trig_lt_1),
+   .trig_run(wvb_trig_run_1),
+   .trig_thresh(wvb_trig_thr_1),
+   .thresh_trig_en(wvb_trig_thresh_trig_en_1),
+   .ext_trig_en(wvb_trig_ext_trig_en_1)
+  );
+
 // Dig 0 wvb conf bundle
 reg[14:0] wvb_cnst_config_0 = 0;
 reg[14:0] wvb_post_config_0 = 0;
@@ -219,6 +243,26 @@ cuppa_wvb_conf_bundle_fan_in WVB_CONF_FAN_IN_0
    .arm(wvb_arm_0),
    .trig_mode(wvb_trig_mode_0),
    .cnst_run(wvb_cnst_run_0)
+  );
+
+// Dig 1 wvb conf bundle
+reg[14:0] wvb_cnst_config_1 = 0;
+reg[14:0] wvb_post_config_1 = 0;
+reg[5:0] wvb_pre_config_1 = 0;
+reg[14:0] wvb_test_config_1 = 0;
+reg wvb_arm_1 = 0;
+reg wvb_trig_mode_1 = 0;
+reg wvb_cnst_run_1 = 0;
+cuppa_wvb_conf_bundle_fan_in WVB_CONF_FAN_IN_1
+  (
+   .bundle(wvb_conf_bundle_1),
+   .cnst_conf(wvb_cnst_config_1),
+   .test_conf(wvb_test_config_1),
+   .post_conf(wvb_post_config_1),
+   .pre_conf(wvb_pre_config_1),
+   .arm(wvb_arm_1),
+   .trig_mode(wvb_trig_mode_1),
+   .cnst_run(wvb_cnst_run_1)
   );
 
 //////////////////////////////////////////////////////////////////////////////
@@ -240,15 +284,30 @@ always @(*) begin
                                       wvb_trig_gt_0,
                                       wvb_trig_et_0};                       end
     12'hffd: begin y_rd_data =       {4'b0, wvb_trig_thr_0};                end
-    12'hffc: begin y_rd_data =       {15'b0, wvb_trig_run_0};               end
+    12'hffc: begin y_rd_data =       {14'b0, wvb_trig_run_1,
+                                             wvb_trig_run_0};               end
     12'hffb: begin y_rd_data =       {15'b0, wvb_trig_mode_0};              end
-    12'hffa: begin y_rd_data =       {15'b0, wvb_arm_0};                    end
+    12'hffa: begin y_rd_data =       {14'b0, wvb_arm_1,
+                                             wvb_arm_0};                    end
     12'hff9: begin y_rd_data =       {14'b0, wvb_armed};                    end
     12'hff8: begin y_rd_data =       {15'b0, wvb_cnst_run_0};               end
     12'hff7: begin y_rd_data =       {1'b0, wvb_cnst_config_0};             end
     12'hff6: begin y_rd_data =       {1'b0, wvb_test_config_0};             end
     12'hff5: begin y_rd_data =       {1'b0, wvb_post_config_0};             end
     12'hff4: begin y_rd_data =       {10'b0, wvb_pre_config_0};             end
+    12'hefe: begin y_rd_data =       {11'b0, 
+                                      wvb_trig_ext_trig_en_1,
+                                      wvb_trig_thresh_trig_en_1,
+                                      wvb_trig_lt_1,
+                                      wvb_trig_gt_1,
+                                      wvb_trig_et_1};                       end
+    12'hefd: begin y_rd_data =       {4'b0, wvb_trig_thr_1};                end
+    12'hefb: begin y_rd_data =       {15'b0, wvb_trig_mode_1};              end
+    12'hef8: begin y_rd_data =       {15'b0, wvb_cnst_run_1};               end
+    12'hef7: begin y_rd_data =       {1'b0, wvb_cnst_config_1};             end
+    12'hef6: begin y_rd_data =       {1'b0, wvb_test_config_1};             end
+    12'hef5: begin y_rd_data =       {1'b0, wvb_post_config_1};             end
+    12'hef4: begin y_rd_data =       {10'b0, wvb_pre_config_1};             end
     12'hdff: begin y_rd_data =       dpram_len;                             end
     12'hdfe: begin y_rd_data =       {15'b0, dpram_done};                   end
     12'hdfd: begin y_rd_data =       {15'b0, dpram_sel};                    end
@@ -259,6 +318,8 @@ always @(*) begin
     12'hdf8: begin y_rd_data =       {15'b0, wvb_reader_enable};            end
     12'hdf7: begin y_rd_data =       {15'b0, wvb_reader_dpram_mode};        end
     12'hdf6: begin y_rd_data =       {14'b0, wvb_hdr_full};                 end
+    12'hdf5: begin y_rd_data =       {6'b0, wvb_n_wvf_in_buf_1};            end
+    12'hdf4: begin y_rd_data =       wvb_wused_1;                           end
     12'hbff: begin y_rd_data =       dac_sel;                               end
     12'hbfe: begin y_rd_data =       dac_task_val;                          end
     12'hbfd: begin y_rd_data =       {8'b0, dac_spi_wr_data[23:16]};        end
@@ -280,8 +341,12 @@ end
 always @(posedge clk) begin
   if (y_wr) 
     wvb_trig_run_0 <= 0;
+    wvb_trig_run_1 <= 0;
+    
     dpram_done <= 0;
+    
     wvb_arm_0 <= 0;
+    wvb_arm_1 <= 0;
 
     case (y_adr)
       12'hffe: begin
@@ -292,14 +357,30 @@ always @(posedge clk) begin
          wvb_trig_ext_trig_en_0 <= y_wr_data[4];
       end
       12'hffd: begin wvb_trig_thr_0 <= y_wr_data[11:0];                     end
-      12'hffc: begin wvb_trig_run_0 <= y_wr_data[0];                        end
+      12'hffc: begin wvb_trig_run_0 <= y_wr_data[0];
+                     wvb_trig_run_1 <= y_wr_data[1];                        end
       12'hffb: begin wvb_trig_mode_0 <= y_wr_data[0];                       end
-      12'hffa: begin wvb_arm_0  <= y_wr_data[0];                            end
+      12'hffa: begin wvb_arm_0 <= y_wr_data[0];
+                     wvb_arm_1 <= y_wr_data[1];                             end
       12'hff8: begin wvb_cnst_run_0 <= y_wr_data[0];                        end
       12'hff7: begin wvb_cnst_config_0 <= y_wr_data[14:0];                  end
       12'hff6: begin wvb_test_config_0 <= y_wr_data[14:0];                  end
       12'hff5: begin wvb_post_config_0 <= y_wr_data[14:0];                  end
       12'hff4: begin wvb_pre_config_0 <= y_wr_data[5:0];                    end
+      12'hefe: begin
+         wvb_trig_et_1 <= y_wr_data[0];
+         wvb_trig_gt_1 <= y_wr_data[1];
+         wvb_trig_lt_1 <= y_wr_data[2];
+         wvb_trig_thresh_trig_en_1 <= y_wr_data[3];
+         wvb_trig_ext_trig_en_1 <= y_wr_data[4];
+      end
+      12'hefd: begin wvb_trig_thr_1 <= y_wr_data[11:0];                     end
+      12'hefb: begin wvb_trig_mode_1 <= y_wr_data[0];                       end
+      12'hef8: begin wvb_cnst_run_1 <= y_wr_data[0];                        end
+      12'hef7: begin wvb_cnst_config_1 <= y_wr_data[14:0];                  end
+      12'hef6: begin wvb_test_config_1 <= y_wr_data[14:0];                  end
+      12'hef5: begin wvb_post_config_1 <= y_wr_data[14:0];                  end
+      12'hef4: begin wvb_pre_config_1 <= y_wr_data[5:0];                    end
       12'hdfe: begin dpram_done <= y_wr_data[0];                            end
       12'hdfd: begin dpram_sel <= y_wr_data[0];                             end
       12'hdf9: begin wvb_rst[1:0] <= y_wr_data[1:0];                        end

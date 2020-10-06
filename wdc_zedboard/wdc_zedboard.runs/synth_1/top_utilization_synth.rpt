@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date         : Tue Oct  6 17:27:48 2020
+| Date         : Tue Oct  6 18:21:28 2020
 | Host         : LAPTOP-GBOUD091 running 64-bit major release  (build 9200)
 | Command      : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
 | Design       : top
@@ -30,13 +30,13 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| Slice LUTs*             | 2491 |     0 |     53200 |  4.68 |
-|   LUT as Logic          | 2491 |     0 |     53200 |  4.68 |
+| Slice LUTs*             | 2937 |     0 |     53200 |  5.52 |
+|   LUT as Logic          | 2937 |     0 |     53200 |  5.52 |
 |   LUT as Memory         |    0 |     0 |     17400 |  0.00 |
-| Slice Registers         | 2401 |     0 |    106400 |  2.26 |
-|   Register as Flip Flop | 2401 |     0 |    106400 |  2.26 |
+| Slice Registers         | 3009 |     0 |    106400 |  2.83 |
+|   Register as Flip Flop | 3009 |     0 |    106400 |  2.83 |
 |   Register as Latch     |    0 |     0 |    106400 |  0.00 |
-| F7 Muxes                |    1 |     0 |     26600 | <0.01 |
+| F7 Muxes                |   15 |     0 |     26600 |  0.06 |
 | F8 Muxes                |    0 |     0 |     13300 |  0.00 |
 +-------------------------+------+-------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
@@ -56,8 +56,8 @@ Table of Contents
 | 0     |          Yes |           - |            - |
 | 3     |          Yes |           - |          Set |
 | 568   |          Yes |           - |        Reset |
-| 156   |          Yes |         Set |            - |
-| 1674  |          Yes |       Reset |            - |
+| 192   |          Yes |         Set |            - |
+| 2246  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -147,25 +147,25 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| FDRE     | 1674 |        Flop & Latch |
-| LUT2     |  998 |                 LUT |
-| LUT4     |  753 |                 LUT |
+| FDRE     | 2246 |        Flop & Latch |
+| LUT2     |  959 |                 LUT |
+| LUT4     |  841 |                 LUT |
+| LUT3     |  748 |                 LUT |
+| LUT6     |  622 |                 LUT |
+| CARRY4   |  590 |          CarryLogic |
 | FDCE     |  568 |        Flop & Latch |
-| LUT6     |  532 |                 LUT |
-| LUT3     |  518 |                 LUT |
-| CARRY4   |  492 |          CarryLogic |
-| LUT5     |  223 |                 LUT |
-| FDSE     |  156 |        Flop & Latch |
-| LUT1     |  155 |                 LUT |
-| OBUF     |   15 |                  IO |
-| OBUFT    |    5 |                  IO |
+| LUT5     |  294 |                 LUT |
+| LUT1     |  263 |                 LUT |
+| FDSE     |  192 |        Flop & Latch |
+| OBUF     |   19 |                  IO |
+| MUXF7    |   15 |               MuxFx |
 | OBUFDS   |    4 |                  IO |
 | IBUF     |    3 |                  IO |
 | FDPE     |    3 |        Flop & Latch |
 | ODDR     |    2 |                  IO |
 | INV      |    2 |                 LUT |
 | IBUFDS   |    2 |                  IO |
-| MUXF7    |    1 |               MuxFx |
+| OBUFT    |    1 |                  IO |
 +----------+------+---------------------+
 
 
@@ -175,14 +175,14 @@ Table of Contents
 +--------------------+------+
 |      Ref Name      | Used |
 +--------------------+------+
+| FIFO_1024_87       |    2 |
+| DIST_BUFFER_64_28  |    2 |
+| BUFFER_32K_28      |    2 |
 | SCRATCH_DPRAM      |    1 |
 | LCLK_MMCM          |    1 |
 | FIFO_2048_32       |    1 |
-| FIFO_1024_87       |    1 |
-| DIST_BUFFER_64_28  |    1 |
 | DIRECT_RDOUT_DPRAM |    1 |
 | DIG0_MMCM          |    1 |
-| BUFFER_32K_28      |    1 |
 +--------------------+------+
 
 

@@ -15,9 +15,9 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Device 21-403] Loading part xc7z020clg484-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 15796 
+INFO: Helper process launched with PID 2876 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 742.973 ; gain = 176.688
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 743.539 ; gain = 176.895
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'top' [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/wdc_zedboard_top.v:6]
 	Parameter L_WIDTH_CUPPA_TRIG_BUNDLE_TRIG_ET bound to: 1 - type: integer 
@@ -78,10 +78,10 @@ INFO: [Synth 8-6157] synthesizing module 'IBUFGDS' [C:/Xilinx/Vivado/2019.1/scri
 	Parameter IBUF_LOW_PWR bound to: TRUE - type: string 
 	Parameter IOSTANDARD bound to: DEFAULT - type: string 
 INFO: [Synth 8-6155] done synthesizing module 'IBUFGDS' (1#1) [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:33335]
-INFO: [Synth 8-6157] synthesizing module 'DIG0_MMCM' [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-8488-LAPTOP-GBOUD091/realtime/DIG0_MMCM_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'DIG0_MMCM' (2#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-8488-LAPTOP-GBOUD091/realtime/DIG0_MMCM_stub.v:5]
-INFO: [Synth 8-6157] synthesizing module 'LCLK_MMCM' [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-8488-LAPTOP-GBOUD091/realtime/LCLK_MMCM_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'LCLK_MMCM' (3#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-8488-LAPTOP-GBOUD091/realtime/LCLK_MMCM_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'DIG0_MMCM' [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-14088-LAPTOP-GBOUD091/realtime/DIG0_MMCM_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'DIG0_MMCM' (2#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-14088-LAPTOP-GBOUD091/realtime/DIG0_MMCM_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'LCLK_MMCM' [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-14088-LAPTOP-GBOUD091/realtime/LCLK_MMCM_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'LCLK_MMCM' (3#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-14088-LAPTOP-GBOUD091/realtime/LCLK_MMCM_stub.v:5]
 INFO: [Synth 8-6157] synthesizing module 'ODDR' [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:49468]
 	Parameter DDR_CLK_EDGE bound to: OPPOSITE_EDGE - type: string 
 	Parameter INIT bound to: 1'b0 
@@ -182,8 +182,8 @@ INFO: [Synth 8-6155] done synthesizing module 'err_mngr' (13#1) [C:/Users/atfie/
 WARNING: [Synth 8-6014] Unused sequential element n_burst_reg was removed.  [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/uart_proc_hs/uart_proc_hs.v:222]
 WARNING: [Synth 8-6014] Unused sequential element err_reg was removed.  [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/uart_proc_hs/uart_proc_hs.v:223]
 INFO: [Synth 8-6155] done synthesizing module 'uart_proc_hs' (14#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/uart_proc_hs/uart_proc_hs.v:16]
-INFO: [Synth 8-6157] synthesizing module 'FIFO_2048_32' [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-8488-LAPTOP-GBOUD091/realtime/FIFO_2048_32_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'FIFO_2048_32' (15#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-8488-LAPTOP-GBOUD091/realtime/FIFO_2048_32_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'FIFO_2048_32' [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-14088-LAPTOP-GBOUD091/realtime/FIFO_2048_32_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'FIFO_2048_32' (15#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-14088-LAPTOP-GBOUD091/realtime/FIFO_2048_32_stub.v:6]
 INFO: [Synth 8-6155] done synthesizing module 'ft232r_proc_buffered' (16#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/ft232r_proc_buffered/ft232r_proc_buffered.v:9]
 INFO: [Synth 8-6157] synthesizing module 'crs_master' [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/crs_master/crs_master.v:12]
 	Parameter S_IDLE bound to: 0 - type: integer 
@@ -251,17 +251,20 @@ INFO: [Synth 8-6157] synthesizing module 'cuppa_wvb_conf_bundle_fan_in' [C:/User
 	Parameter L_WIDTH_CUPPA_WVB_CONF_BUNDLE_ZERO_PAD bound to: 0 - type: integer 
 	Parameter L_WIDTH_CUPPA_WVB_CONF_BUNDLE bound to: 54 - type: integer 
 INFO: [Synth 8-6155] done synthesizing module 'cuppa_wvb_conf_bundle_fan_in' (20#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/bundles/cuppa_wvb_conf_bundle/cuppa_wvb_conf_bundle_fan_in.v:1]
-INFO: [Synth 8-6157] synthesizing module 'SCRATCH_DPRAM' [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-8488-LAPTOP-GBOUD091/realtime/SCRATCH_DPRAM_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'SCRATCH_DPRAM' (21#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-8488-LAPTOP-GBOUD091/realtime/SCRATCH_DPRAM_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'DIRECT_RDOUT_DPRAM' [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-8488-LAPTOP-GBOUD091/realtime/DIRECT_RDOUT_DPRAM_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'DIRECT_RDOUT_DPRAM' (22#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-8488-LAPTOP-GBOUD091/realtime/DIRECT_RDOUT_DPRAM_stub.v:6]
-INFO: [Synth 8-226] default block is never used [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/cuppa/cuppa.v:373]
-WARNING: [Synth 8-3848] Net debug_err_ack in module/entity cuppa does not have driver. [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/cuppa/cuppa.v:69]
+INFO: [Synth 8-6157] synthesizing module 'SCRATCH_DPRAM' [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-14088-LAPTOP-GBOUD091/realtime/SCRATCH_DPRAM_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'SCRATCH_DPRAM' (21#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-14088-LAPTOP-GBOUD091/realtime/SCRATCH_DPRAM_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'DIRECT_RDOUT_DPRAM' [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-14088-LAPTOP-GBOUD091/realtime/DIRECT_RDOUT_DPRAM_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'DIRECT_RDOUT_DPRAM' (22#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-14088-LAPTOP-GBOUD091/realtime/DIRECT_RDOUT_DPRAM_stub.v:6]
+INFO: [Synth 8-226] default block is never used [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/cuppa/cuppa.v:454]
+WARNING: [Synth 8-3848] Net debug_err_ack in module/entity cuppa does not have driver. [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/cuppa/cuppa.v:73]
 INFO: [Synth 8-6155] done synthesizing module 'cuppa' (23#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/cuppa/cuppa.v:7]
 INFO: [Synth 8-6157] synthesizing module 'data_gen' [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/data_gen/data_gen.v:8]
 	Parameter P_ADC_RAMP_START bound to: 12'b000000000000 
 INFO: [Synth 8-5534] Detected attribute (* DONT_TOUCH = "true" *) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/data_gen/data_gen.v:17]
 INFO: [Synth 8-6155] done synthesizing module 'data_gen' (24#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/data_gen/data_gen.v:8]
+INFO: [Synth 8-6157] synthesizing module 'data_gen__parameterized0' [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/data_gen/data_gen.v:8]
+	Parameter P_ADC_RAMP_START bound to: 12'b000000000001 
+INFO: [Synth 8-6155] done synthesizing module 'data_gen__parameterized0' (24#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/data_gen/data_gen.v:8]
 INFO: [Synth 8-6157] synthesizing module 'waveform_acquisition' [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/waveform_acquisition/waveform_acquisition.v:9]
 	Parameter P_DATA_WIDTH bound to: 28 - type: integer 
 	Parameter P_ADC_BIT_WIDTH bound to: 12 - type: integer 
@@ -349,18 +352,18 @@ INFO: [Synth 8-6157] synthesizing module 'pretrigger_buffer' [C:/Users/atfie/wat
 	Parameter P_USE_DISTRIBUTED_RAM bound to: 1 - type: integer 
 	Parameter RDY_CNT bound to: 32'b00000000000000000000000001000000 
 	Parameter RD_ADDR_OFFSET bound to: 32'b00000000000000000000000000000010 
-INFO: [Synth 8-6157] synthesizing module 'DIST_BUFFER_64_28' [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-8488-LAPTOP-GBOUD091/realtime/DIST_BUFFER_64_28_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'DIST_BUFFER_64_28' (29#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-8488-LAPTOP-GBOUD091/realtime/DIST_BUFFER_64_28_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'DIST_BUFFER_64_28' [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-14088-LAPTOP-GBOUD091/realtime/DIST_BUFFER_64_28_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'DIST_BUFFER_64_28' (29#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-14088-LAPTOP-GBOUD091/realtime/DIST_BUFFER_64_28_stub.v:6]
 INFO: [Synth 8-6155] done synthesizing module 'pretrigger_buffer' (30#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/pretrigger_buffer/pretrigger_buffer.v:7]
 INFO: [Synth 8-6157] synthesizing module 'waveform_buffer_storage' [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/waveform_buffer_storage/waveform_buffer_storage.v:7]
 	Parameter P_DATA_WIDTH bound to: 28 - type: integer 
 	Parameter P_ADR_WIDTH bound to: 15 - type: integer 
 	Parameter P_HDR_WIDTH bound to: 87 - type: integer 
 	Parameter P_N_WVF_IN_BUF_WIDTH bound to: 10 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'BUFFER_32K_28' [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-8488-LAPTOP-GBOUD091/realtime/BUFFER_32K_28_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'BUFFER_32K_28' (31#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-8488-LAPTOP-GBOUD091/realtime/BUFFER_32K_28_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'FIFO_1024_87' [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-8488-LAPTOP-GBOUD091/realtime/FIFO_1024_87_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'FIFO_1024_87' (32#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-8488-LAPTOP-GBOUD091/realtime/FIFO_1024_87_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'BUFFER_32K_28' [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-14088-LAPTOP-GBOUD091/realtime/BUFFER_32K_28_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'BUFFER_32K_28' (31#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-14088-LAPTOP-GBOUD091/realtime/BUFFER_32K_28_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'FIFO_1024_87' [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-14088-LAPTOP-GBOUD091/realtime/FIFO_1024_87_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'FIFO_1024_87' (32#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-14088-LAPTOP-GBOUD091/realtime/FIFO_1024_87_stub.v:6]
 INFO: [Synth 8-6155] done synthesizing module 'waveform_buffer_storage' (33#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/waveform_buffer_storage/waveform_buffer_storage.v:7]
 INFO: [Synth 8-6157] synthesizing module 'wvb_wr_ctrl' [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/wvb_wr_ctrl/wvb_wr_ctrl.v:7]
 	Parameter P_DATA_WIDTH bound to: 28 - type: integer 
@@ -561,10 +564,6 @@ INFO: [Synth 8-226] default block is never used [C:/Users/atfie/watchman-ne1/wdc
 INFO: [Synth 8-6155] done synthesizing module 'serial_tx__parameterized0' (48#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/serial_tx/serial_tx.v:12]
 INFO: [Synth 8-226] default block is never used [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/spi_master/spi_master.v:204]
 INFO: [Synth 8-6155] done synthesizing module 'spi_master__parameterized0' (48#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/spi_master/spi_master.v:14]
-WARNING: [Synth 8-3848] Net LD4 in module/entity top does not have driver. [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/wdc_zedboard_top.v:33]
-WARNING: [Synth 8-3848] Net LD5 in module/entity top does not have driver. [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/wdc_zedboard_top.v:34]
-WARNING: [Synth 8-3848] Net LD6 in module/entity top does not have driver. [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/wdc_zedboard_top.v:35]
-WARNING: [Synth 8-3848] Net LD7 in module/entity top does not have driver. [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/wdc_zedboard_top.v:36]
 INFO: [Synth 8-6155] done synthesizing module 'top' (49#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/wdc_zedboard_top.v:6]
 WARNING: [Synth 8-3917] design top has port DIG_RESET driven by constant 0
 WARNING: [Synth 8-3917] design top has port DIG_OE driven by constant 1
@@ -599,12 +598,8 @@ WARNING: [Synth 8-3331] design crs_master has unconnected port a3_buf_wr_data[31
 WARNING: [Synth 8-3331] design crs_master has unconnected port a3_buf_wr_data[30]
 WARNING: [Synth 8-3331] design crs_master has unconnected port a3_buf_wr_data[29]
 WARNING: [Synth 8-3331] design crs_master has unconnected port a3_buf_wr_data[28]
-WARNING: [Synth 8-3331] design top has unconnected port LD4
-WARNING: [Synth 8-3331] design top has unconnected port LD5
-WARNING: [Synth 8-3331] design top has unconnected port LD6
-WARNING: [Synth 8-3331] design top has unconnected port LD7
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 822.383 ; gain = 256.098
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 824.539 ; gain = 257.895
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -617,10 +612,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 822.383 ; gain = 256.098
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 824.539 ; gain = 257.895
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 822.383 ; gain = 256.098
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 824.539 ; gain = 257.895
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 6 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -638,10 +633,16 @@ Parsing XDC File [c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedb
 Finished Parsing XDC File [c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/DIG0_MMCM/DIG0_MMCM/DIG0_MMCM_in_context.xdc] for cell 'dig0_mmcm_0'
 Parsing XDC File [c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/DIST_BUFFER_64_28/DIST_BUFFER_64_28/DIST_BUFFER_64_28_in_context.xdc] for cell 'WFM_ACQ_0/WVB/PTB/DIST_PTB'
 Finished Parsing XDC File [c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/DIST_BUFFER_64_28/DIST_BUFFER_64_28/DIST_BUFFER_64_28_in_context.xdc] for cell 'WFM_ACQ_0/WVB/PTB/DIST_PTB'
+Parsing XDC File [c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/DIST_BUFFER_64_28/DIST_BUFFER_64_28/DIST_BUFFER_64_28_in_context.xdc] for cell 'WFM_ACQ_1/WVB/PTB/DIST_PTB'
+Finished Parsing XDC File [c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/DIST_BUFFER_64_28/DIST_BUFFER_64_28/DIST_BUFFER_64_28_in_context.xdc] for cell 'WFM_ACQ_1/WVB/PTB/DIST_PTB'
 Parsing XDC File [c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/BUFFER_32K_28/BUFFER_32K_28/BUFFER_32K_28_in_context.xdc] for cell 'WFM_ACQ_0/WVB/WBS/WAVEFORM_BUFFER'
 Finished Parsing XDC File [c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/BUFFER_32K_28/BUFFER_32K_28/BUFFER_32K_28_in_context.xdc] for cell 'WFM_ACQ_0/WVB/WBS/WAVEFORM_BUFFER'
+Parsing XDC File [c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/BUFFER_32K_28/BUFFER_32K_28/BUFFER_32K_28_in_context.xdc] for cell 'WFM_ACQ_1/WVB/WBS/WAVEFORM_BUFFER'
+Finished Parsing XDC File [c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/BUFFER_32K_28/BUFFER_32K_28/BUFFER_32K_28_in_context.xdc] for cell 'WFM_ACQ_1/WVB/WBS/WAVEFORM_BUFFER'
 Parsing XDC File [c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/FIFO_1024_87/FIFO_1024_87/FIFO_1024_87_in_context.xdc] for cell 'WFM_ACQ_0/WVB/WBS/HDR_FIFO_FMT_0'
 Finished Parsing XDC File [c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/FIFO_1024_87/FIFO_1024_87/FIFO_1024_87_in_context.xdc] for cell 'WFM_ACQ_0/WVB/WBS/HDR_FIFO_FMT_0'
+Parsing XDC File [c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/FIFO_1024_87/FIFO_1024_87/FIFO_1024_87_in_context.xdc] for cell 'WFM_ACQ_1/WVB/WBS/HDR_FIFO_FMT_0'
+Finished Parsing XDC File [c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/FIFO_1024_87/FIFO_1024_87/FIFO_1024_87_in_context.xdc] for cell 'WFM_ACQ_1/WVB/WBS/HDR_FIFO_FMT_0'
 Parsing XDC File [c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/DIRECT_RDOUT_DPRAM/DIRECT_RDOUT_DPRAM/DIRECT_RDOUT_DPRAM_in_context.xdc] for cell 'CUPPA_0/RDOUT_DPRAM'
 Finished Parsing XDC File [c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/DIRECT_RDOUT_DPRAM/DIRECT_RDOUT_DPRAM/DIRECT_RDOUT_DPRAM_in_context.xdc] for cell 'CUPPA_0/RDOUT_DPRAM'
 Parsing XDC File [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/constrs_1/new/pin_assign.xdc]
@@ -654,28 +655,31 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 979.457 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 982.129 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 4 instances were transformed.
   IBUFGDS => IBUFDS: 2 instances
   OBUFDS => OBUFDS: 2 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.047 . Memory (MB): peak = 979.457 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.048 . Memory (MB): peak = 982.129 ; gain = 0.000
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'CUPPA_0/PG_DPRAM' at clock pin 'clka' is different from the actual clock period '8.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'CUPPA_0/RDOUT_DPRAM' at clock pin 'clka' is different from the actual clock period '8.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'CUPPA_0/UART_DEBUG_0/FIFO_2048_32_0' at clock pin 'clk' is different from the actual clock period '8.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'WFM_ACQ_0/WVB/PTB/DIST_PTB' at clock pin 'clk' is different from the actual clock period '8.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'WFM_ACQ_0/WVB/WBS/HDR_FIFO_FMT_0' at clock pin 'clk' is different from the actual clock period '8.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'WFM_ACQ_0/WVB/WBS/WAVEFORM_BUFFER' at clock pin 'clka' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'WFM_ACQ_1/WVB/PTB/DIST_PTB' at clock pin 'clk' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'WFM_ACQ_1/WVB/WBS/HDR_FIFO_FMT_0' at clock pin 'clk' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'WFM_ACQ_1/WVB/WBS/WAVEFORM_BUFFER' at clock pin 'clka' is different from the actual clock period '8.000', this can lead to different synthesis results.
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 982.488 ; gain = 416.203
+Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 985.074 ; gain = 418.430
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 982.488 ; gain = 416.203
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 985.074 ; gain = 418.430
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -687,11 +691,14 @@ Applied set_property DONT_TOUCH = true for CUPPA_0/PG_DPRAM. (constraint file  a
 Applied set_property DONT_TOUCH = true for CUPPA_0/UART_DEBUG_0/FIFO_2048_32_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for dig0_mmcm_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for WFM_ACQ_0/WVB/PTB/DIST_PTB. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for WFM_ACQ_1/WVB/PTB/DIST_PTB. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for WFM_ACQ_0/WVB/WBS/WAVEFORM_BUFFER. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for WFM_ACQ_1/WVB/WBS/WAVEFORM_BUFFER. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for WFM_ACQ_0/WVB/WBS/HDR_FIFO_FMT_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for WFM_ACQ_1/WVB/WBS/HDR_FIFO_FMT_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for CUPPA_0/RDOUT_DPRAM. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 982.488 ; gain = 416.203
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 985.074 ; gain = 418.430
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'fsm_reg' in module 'rs232_ser'
 INFO: [Synth 8-802] inferred FSM for state register 'fsm_reg' in module 'rs232_des'
@@ -711,6 +718,14 @@ INFO: [Synth 8-5546] ROM "wvb_cnst_config_0" won't be mapped to RAM because it i
 INFO: [Synth 8-5546] ROM "wvb_test_config_0" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "wvb_post_config_0" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "wvb_pre_config_0" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "wvb_trig_et_1" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "wvb_trig_thr_1" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "wvb_trig_mode_1" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "wvb_cnst_run_1" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "wvb_cnst_config_1" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "wvb_test_config_1" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "wvb_post_config_1" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "wvb_pre_config_1" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "dpram_sel" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "wvb_rst" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "wvb_reader_enable" won't be mapped to RAM because it is too sparse
@@ -873,7 +888,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'fsm_reg' using encoding 's
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'fsm_reg' using encoding 'sequential' in module 'spi_master__parameterized0'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 982.488 ; gain = 416.203
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 985.074 ; gain = 418.430
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -886,22 +901,22 @@ Start RTL Component Statistics
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     32 Bit       Adders := 39    
+	   2 Input     32 Bit       Adders := 44    
 	   3 Input     32 Bit       Adders := 2     
 	   2 Input     16 Bit       Adders := 2     
-	   3 Input     16 Bit       Adders := 1     
-	   2 Input     15 Bit       Adders := 7     
+	   3 Input     16 Bit       Adders := 2     
+	   2 Input     15 Bit       Adders := 14    
 	   3 Input     15 Bit       Adders := 1     
 	   2 Input     12 Bit       Adders := 2     
 	   2 Input     11 Bit       Adders := 1     
 	   2 Input     10 Bit       Adders := 1     
 	   2 Input      8 Bit       Adders := 2     
-	   2 Input      7 Bit       Adders := 1     
-	   2 Input      6 Bit       Adders := 4     
-	   3 Input      6 Bit       Adders := 1     
+	   2 Input      7 Bit       Adders := 2     
+	   2 Input      6 Bit       Adders := 6     
+	   3 Input      6 Bit       Adders := 2     
 	   2 Input      5 Bit       Adders := 1     
 	   2 Input      4 Bit       Adders := 1     
-	   2 Input      3 Bit       Adders := 3     
+	   2 Input      3 Bit       Adders := 4     
 +---XORs : 
 	   2 Input      1 Bit         XORs := 12    
 	   5 Input      1 Bit         XORs := 1     
@@ -914,29 +929,29 @@ Detailed RTL Component Info :
 	              174 Bit    Registers := 1     
 	               87 Bit    Registers := 1     
 	               56 Bit    Registers := 1     
-	               54 Bit    Registers := 1     
-	               48 Bit    Registers := 1     
-	               32 Bit    Registers := 44    
+	               54 Bit    Registers := 2     
+	               48 Bit    Registers := 2     
+	               32 Bit    Registers := 45    
 	               28 Bit    Registers := 1     
 	               24 Bit    Registers := 3     
-	               18 Bit    Registers := 1     
+	               18 Bit    Registers := 2     
 	               16 Bit    Registers := 18    
-	               15 Bit    Registers := 14    
-	               12 Bit    Registers := 5     
+	               15 Bit    Registers := 28    
+	               12 Bit    Registers := 8     
 	               10 Bit    Registers := 1     
 	                8 Bit    Registers := 7     
-	                7 Bit    Registers := 1     
-	                6 Bit    Registers := 6     
+	                7 Bit    Registers := 2     
+	                6 Bit    Registers := 10    
 	                5 Bit    Registers := 2     
 	                4 Bit    Registers := 1     
-	                3 Bit    Registers := 3     
-	                2 Bit    Registers := 5     
-	                1 Bit    Registers := 95    
+	                3 Bit    Registers := 4     
+	                2 Bit    Registers := 8     
+	                1 Bit    Registers := 116   
 +---Muxes : 
 	   2 Input     87 Bit        Muxes := 1     
 	  24 Input     32 Bit        Muxes := 1     
-	   2 Input     32 Bit        Muxes := 36    
-	   6 Input     32 Bit        Muxes := 2     
+	   2 Input     32 Bit        Muxes := 43    
+	   6 Input     32 Bit        Muxes := 3     
 	  10 Input     32 Bit        Muxes := 2     
 	   3 Input     32 Bit        Muxes := 6     
 	   4 Input     32 Bit        Muxes := 2     
@@ -948,45 +963,45 @@ Detailed RTL Component Info :
 	   4 Input     16 Bit        Muxes := 1     
 	   6 Input     16 Bit        Muxes := 1     
 	   2 Input     16 Bit        Muxes := 41    
-	  32 Input     16 Bit        Muxes := 1     
+	  42 Input     16 Bit        Muxes := 1     
 	  10 Input     16 Bit        Muxes := 1     
-	   2 Input     15 Bit        Muxes := 5     
-	   6 Input     15 Bit        Muxes := 1     
+	   2 Input     15 Bit        Muxes := 10    
+	   6 Input     15 Bit        Muxes := 2     
 	   3 Input     12 Bit        Muxes := 1     
 	  24 Input     12 Bit        Muxes := 2     
 	   4 Input     12 Bit        Muxes := 1     
 	   6 Input     12 Bit        Muxes := 1     
 	   2 Input     12 Bit        Muxes := 1     
-	   2 Input     10 Bit        Muxes := 1     
+	   2 Input     10 Bit        Muxes := 2     
 	  10 Input     10 Bit        Muxes := 1     
 	   4 Input      8 Bit        Muxes := 1     
 	  24 Input      8 Bit        Muxes := 2     
 	   2 Input      8 Bit        Muxes := 1     
-	   2 Input      6 Bit        Muxes := 7     
+	   2 Input      6 Bit        Muxes := 9     
 	   4 Input      6 Bit        Muxes := 2     
+	  42 Input      6 Bit        Muxes := 1     
 	  24 Input      5 Bit        Muxes := 2     
 	   2 Input      5 Bit        Muxes := 12    
 	   3 Input      5 Bit        Muxes := 2     
-	  32 Input      5 Bit        Muxes := 1     
 	   6 Input      5 Bit        Muxes := 1     
 	   2 Input      4 Bit        Muxes := 6     
 	   6 Input      4 Bit        Muxes := 1     
 	  10 Input      4 Bit        Muxes := 1     
 	   3 Input      4 Bit        Muxes := 1     
-	   2 Input      3 Bit        Muxes := 16    
-	   4 Input      3 Bit        Muxes := 3     
-	   6 Input      3 Bit        Muxes := 3     
+	   2 Input      3 Bit        Muxes := 23    
+	   4 Input      3 Bit        Muxes := 4     
+	   6 Input      3 Bit        Muxes := 4     
 	   3 Input      3 Bit        Muxes := 2     
 	   4 Input      2 Bit        Muxes := 5     
 	   2 Input      2 Bit        Muxes := 7     
 	   3 Input      2 Bit        Muxes := 1     
-	  22 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 194   
+	  30 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 211   
 	   4 Input      1 Bit        Muxes := 39    
 	   3 Input      1 Bit        Muxes := 20    
 	  24 Input      1 Bit        Muxes := 18    
-	   6 Input      1 Bit        Muxes := 22    
-	  22 Input      1 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 27    
+	  30 Input      1 Bit        Muxes := 1     
 	  10 Input      1 Bit        Muxes := 14    
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
@@ -1146,21 +1161,25 @@ Detailed RTL Component Info :
 +---Registers : 
 	               24 Bit    Registers := 1     
 	               16 Bit    Registers := 2     
-	               15 Bit    Registers := 3     
-	               12 Bit    Registers := 1     
-	                6 Bit    Registers := 1     
+	               15 Bit    Registers := 6     
+	               12 Bit    Registers := 2     
+	                6 Bit    Registers := 2     
 	                2 Bit    Registers := 1     
-	                1 Bit    Registers := 17    
+	                1 Bit    Registers := 26    
 +---Muxes : 
 	   3 Input     24 Bit        Muxes := 1     
 	   2 Input     24 Bit        Muxes := 1     
 	   2 Input     16 Bit        Muxes := 3     
-	  32 Input     16 Bit        Muxes := 1     
-	  32 Input      5 Bit        Muxes := 1     
-	  22 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 22    
-	  22 Input      1 Bit        Muxes := 1     
+	  42 Input     16 Bit        Muxes := 1     
+	  42 Input      6 Bit        Muxes := 1     
+	  30 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 32    
+	  30 Input      1 Bit        Muxes := 1     
 Module data_gen 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+Module data_gen__parameterized0 
 Detailed RTL Component Info : 
 +---Registers : 
 	                1 Bit    Registers := 1     
@@ -1172,7 +1191,7 @@ Detailed RTL Component Info :
 	                1 Bit    Registers := 2     
 +---Muxes : 
 	   2 Input      1 Bit        Muxes := 1     
-Module pretrigger_buffer 
+Module pretrigger_buffer__xdcDup__1 
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input      7 Bit       Adders := 1     
@@ -1183,7 +1202,7 @@ Detailed RTL Component Info :
 	                6 Bit    Registers := 1     
 +---Muxes : 
 	   2 Input      6 Bit        Muxes := 1     
-Module waveform_buffer_storage 
+Module waveform_buffer_storage__xdcDup__1 
 Detailed RTL Component Info : 
 +---Muxes : 
 	   2 Input     10 Bit        Muxes := 1     
@@ -1230,6 +1249,31 @@ Detailed RTL Component Info :
 	   2 Input     15 Bit       Adders := 1     
 +---Registers : 
 	               15 Bit    Registers := 1     
+Module waveform_buffer__xdcDup__1 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+Module waveform_acquisition__xdcDup__1 
+Detailed RTL Component Info : 
++---Registers : 
+	               54 Bit    Registers := 1     
+	               18 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
+Module pretrigger_buffer 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      7 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 1     
+	   3 Input      6 Bit       Adders := 1     
++---Registers : 
+	                7 Bit    Registers := 1     
+	                6 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      6 Bit        Muxes := 1     
+Module waveform_buffer_storage 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     10 Bit        Muxes := 1     
 Module waveform_buffer 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -1435,9 +1479,18 @@ INFO: [Synth 8-5546] ROM "wvb_cnst_config_0" won't be mapped to RAM because it i
 INFO: [Synth 8-5546] ROM "wvb_test_config_0" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "wvb_post_config_0" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "wvb_pre_config_0" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "wvb_trig_et_1" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "wvb_trig_thr_1" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "wvb_trig_mode_1" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "wvb_cnst_run_1" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "wvb_cnst_config_1" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "wvb_test_config_1" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "wvb_post_config_1" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "wvb_pre_config_1" won't be mapped to RAM because it is too sparse
 WARNING: [Synth 8-3917] design top has port DIG_RESET driven by constant 0
 WARNING: [Synth 8-3917] design top has port DIG_OE driven by constant 1
 WARNING: [Synth 8-3331] design waveform_acquisition has unconnected port wvb_trig_test_out
+WARNING: [Synth 8-3331] design waveform_acquisition__xdcDup__1 has unconnected port wvb_trig_test_out
 WARNING: [Synth 8-3331] design crs_master has unconnected port a0_buf_wr_data[31]
 WARNING: [Synth 8-3331] design crs_master has unconnected port a0_buf_wr_data[30]
 WARNING: [Synth 8-3331] design crs_master has unconnected port a0_buf_wr_data[29]
@@ -1454,122 +1507,120 @@ WARNING: [Synth 8-3331] design crs_master has unconnected port a3_buf_wr_data[31
 WARNING: [Synth 8-3331] design crs_master has unconnected port a3_buf_wr_data[30]
 WARNING: [Synth 8-3331] design crs_master has unconnected port a3_buf_wr_data[29]
 WARNING: [Synth 8-3331] design crs_master has unconnected port a3_buf_wr_data[28]
-WARNING: [Synth 8-3331] design top has unconnected port LD4
-WARNING: [Synth 8-3331] design top has unconnected port LD5
-WARNING: [Synth 8-3331] design top has unconnected port LD6
-WARNING: [Synth 8-3331] design top has unconnected port LD7
-INFO: [Synth 8-3886] merging instance 'WVB_READER/hdr_data_reg_reg[150]' (FDR) to 'WVB_READER/hdr_data_reg_reg[87]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/hdr_data_reg_reg[135]' (FDR) to 'WVB_READER/hdr_data_reg_reg[87]'
 INFO: [Synth 8-3886] merging instance 'WVB_READER/RD_CTRL/dpram_len_reg[12]' (FDRE) to 'WVB_READER/RD_CTRL/dpram_len_reg[15]'
 INFO: [Synth 8-3886] merging instance 'WVB_READER/RD_CTRL/dpram_len_reg[13]' (FDRE) to 'WVB_READER/RD_CTRL/dpram_len_reg[15]'
 INFO: [Synth 8-3886] merging instance 'WVB_READER/RD_CTRL/dpram_len_reg[15]' (FDRE) to 'WVB_READER/RD_CTRL/dpram_len_reg[14]'
 INFO: [Synth 8-3886] merging instance 'WVB_READER/RD_CTRL/dpram_len_reg[14]' (FDRE) to 'WVB_READER/RD_CTRL/dpram_len_reg[0]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/hdr_data_reg_reg[151]' (FDR) to 'WVB_READER/hdr_data_reg_reg[87]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/hdr_data_reg_reg[136]' (FDR) to 'WVB_READER/hdr_data_reg_reg[87]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/hdr_data_reg_reg[152]' (FDR) to 'WVB_READER/hdr_data_reg_reg[87]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/hdr_data_reg_reg[137]' (FDR) to 'WVB_READER/hdr_data_reg_reg[87]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/hdr_data_reg_reg[153]' (FDR) to 'WVB_READER/hdr_data_reg_reg[87]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/hdr_data_reg_reg[138]' (FDR) to 'WVB_READER/hdr_data_reg_reg[87]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/hdr_data_reg_reg[154]' (FDR) to 'WVB_READER/hdr_data_reg_reg[87]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/hdr_data_reg_reg[139]' (FDR) to 'WVB_READER/hdr_data_reg_reg[87]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/hdr_data_reg_reg[155]' (FDR) to 'WVB_READER/hdr_data_reg_reg[87]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/hdr_data_reg_reg[140]' (FDR) to 'WVB_READER/hdr_data_reg_reg[87]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/hdr_data_reg_reg[156]' (FDR) to 'WVB_READER/hdr_data_reg_reg[87]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/hdr_data_reg_reg[141]' (FDR) to 'WVB_READER/hdr_data_reg_reg[87]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/hdr_data_reg_reg[157]' (FDR) to 'WVB_READER/hdr_data_reg_reg[87]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/hdr_data_reg_reg[142]' (FDR) to 'WVB_READER/hdr_data_reg_reg[87]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/hdr_data_reg_reg[158]' (FDR) to 'WVB_READER/hdr_data_reg_reg[87]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/hdr_data_reg_reg[143]' (FDR) to 'WVB_READER/hdr_data_reg_reg[87]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/hdr_data_reg_reg[159]' (FDR) to 'WVB_READER/hdr_data_reg_reg[87]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/hdr_data_reg_reg[144]' (FDR) to 'WVB_READER/hdr_data_reg_reg[87]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/hdr_data_reg_reg[160]' (FDR) to 'WVB_READER/hdr_data_reg_reg[87]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/hdr_data_reg_reg[145]' (FDR) to 'WVB_READER/hdr_data_reg_reg[87]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/hdr_data_reg_reg[161]' (FDR) to 'WVB_READER/hdr_data_reg_reg[87]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/hdr_data_reg_reg[146]' (FDR) to 'WVB_READER/hdr_data_reg_reg[87]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/hdr_data_reg_reg[162]' (FDR) to 'WVB_READER/hdr_data_reg_reg[87]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/hdr_data_reg_reg[147]' (FDR) to 'WVB_READER/hdr_data_reg_reg[87]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/hdr_data_reg_reg[163]' (FDR) to 'WVB_READER/hdr_data_reg_reg[87]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/hdr_data_reg_reg[148]' (FDR) to 'WVB_READER/hdr_data_reg_reg[87]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/hdr_data_reg_reg[164]' (FDR) to 'WVB_READER/hdr_data_reg_reg[87]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/hdr_data_reg_reg[149]' (FDR) to 'WVB_READER/hdr_data_reg_reg[87]'
 INFO: [Synth 8-3886] merging instance 'WVB_READER/dpram_len_reg[12]' (FDRE) to 'WVB_READER/dpram_len_reg[15]'
 INFO: [Synth 8-3886] merging instance 'WVB_READER/dpram_len_reg[13]' (FDRE) to 'WVB_READER/dpram_len_reg[15]'
 INFO: [Synth 8-3886] merging instance 'WVB_READER/dpram_len_reg[15]' (FDRE) to 'WVB_READER/dpram_len_reg[14]'
 INFO: [Synth 8-3886] merging instance 'WVB_READER/dpram_len_reg[14]' (FDRE) to 'WVB_READER/dpram_len_reg[0]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/hdr_data_reg_reg[103]' (FDR) to 'WVB_READER/hdr_data_reg_reg[87]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/wvb_data_reg_reg[29]' (FDR) to 'WVB_READER/hdr_data_reg_reg[87]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/hdr_data_reg_reg[104]' (FDR) to 'WVB_READER/hdr_data_reg_reg[87]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/wvb_data_reg_reg[30]' (FDR) to 'WVB_READER/hdr_data_reg_reg[87]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/hdr_data_reg_reg[105]' (FDR) to 'WVB_READER/hdr_data_reg_reg[87]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/wvb_data_reg_reg[31]' (FDR) to 'WVB_READER/hdr_data_reg_reg[87]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/hdr_data_reg_reg[106]' (FDR) to 'WVB_READER/hdr_data_reg_reg[87]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/wvb_data_reg_reg[32]' (FDR) to 'WVB_READER/hdr_data_reg_reg[87]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/hdr_data_reg_reg[107]' (FDR) to 'WVB_READER/hdr_data_reg_reg[87]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/wvb_data_reg_reg[33]' (FDR) to 'WVB_READER/hdr_data_reg_reg[87]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/hdr_data_reg_reg[108]' (FDR) to 'WVB_READER/hdr_data_reg_reg[87]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/wvb_data_reg_reg[34]' (FDR) to 'WVB_READER/hdr_data_reg_reg[87]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/hdr_data_reg_reg[109]' (FDR) to 'WVB_READER/hdr_data_reg_reg[87]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/wvb_data_reg_reg[35]' (FDR) to 'WVB_READER/hdr_data_reg_reg[87]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/hdr_data_reg_reg[110]' (FDR) to 'WVB_READER/hdr_data_reg_reg[87]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/wvb_data_reg_reg[36]' (FDR) to 'WVB_READER/hdr_data_reg_reg[87]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/hdr_data_reg_reg[111]' (FDR) to 'WVB_READER/hdr_data_reg_reg[87]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/wvb_data_reg_reg[37]' (FDR) to 'WVB_READER/hdr_data_reg_reg[87]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/hdr_data_reg_reg[112]' (FDR) to 'WVB_READER/hdr_data_reg_reg[87]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/wvb_data_reg_reg[38]' (FDR) to 'WVB_READER/hdr_data_reg_reg[87]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/hdr_data_reg_reg[113]' (FDR) to 'WVB_READER/hdr_data_reg_reg[87]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/wvb_data_reg_reg[39]' (FDR) to 'WVB_READER/hdr_data_reg_reg[87]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/hdr_data_reg_reg[114]' (FDR) to 'WVB_READER/hdr_data_reg_reg[87]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/wvb_data_reg_reg[40]' (FDR) to 'WVB_READER/hdr_data_reg_reg[87]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/hdr_data_reg_reg[115]' (FDR) to 'WVB_READER/hdr_data_reg_reg[87]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/wvb_data_reg_reg[41]' (FDR) to 'WVB_READER/hdr_data_reg_reg[87]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/hdr_data_reg_reg[116]' (FDR) to 'WVB_READER/hdr_data_reg_reg[87]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/hdr_data_reg_reg[117]' (FDR) to 'WVB_READER/hdr_data_reg_reg[87]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/hdr_data_reg_reg[118]' (FDR) to 'WVB_READER/hdr_data_reg_reg[87]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/hdr_data_reg_reg[165]' (FDR) to 'WVB_READER/hdr_data_reg_reg[87]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/hdr_data_reg_reg[87]' (FDR) to 'WVB_READER/hdr_data_reg_reg[88]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/hdr_data_reg_reg[119]' (FDR) to 'WVB_READER/hdr_data_reg_reg[88]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/hdr_data_reg_reg[166]' (FDR) to 'WVB_READER/hdr_data_reg_reg[88]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/wvb_data_reg_reg[43]' (FDR) to 'WVB_READER/hdr_data_reg_reg[88]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/hdr_data_reg_reg[88]' (FDR) to 'WVB_READER/hdr_data_reg_reg[89]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/hdr_data_reg_reg[120]' (FDR) to 'WVB_READER/hdr_data_reg_reg[89]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/wvb_data_reg_reg[44]' (FDR) to 'WVB_READER/hdr_data_reg_reg[89]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/hdr_data_reg_reg[89]' (FDR) to 'WVB_READER/hdr_data_reg_reg[90]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/hdr_data_reg_reg[121]' (FDR) to 'WVB_READER/hdr_data_reg_reg[90]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/wvb_data_reg_reg[45]' (FDR) to 'WVB_READER/hdr_data_reg_reg[90]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/hdr_data_reg_reg[90]' (FDR) to 'WVB_READER/hdr_data_reg_reg[91]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/hdr_data_reg_reg[122]' (FDR) to 'WVB_READER/hdr_data_reg_reg[91]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/wvb_data_reg_reg[46]' (FDR) to 'WVB_READER/hdr_data_reg_reg[91]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/hdr_data_reg_reg[91]' (FDR) to 'WVB_READER/hdr_data_reg_reg[92]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/hdr_data_reg_reg[123]' (FDR) to 'WVB_READER/hdr_data_reg_reg[92]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/wvb_data_reg_reg[47]' (FDR) to 'WVB_READER/hdr_data_reg_reg[92]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/hdr_data_reg_reg[92]' (FDR) to 'WVB_READER/hdr_data_reg_reg[93]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/hdr_data_reg_reg[124]' (FDR) to 'WVB_READER/hdr_data_reg_reg[93]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/wvb_data_reg_reg[48]' (FDR) to 'WVB_READER/hdr_data_reg_reg[93]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/hdr_data_reg_reg[93]' (FDR) to 'WVB_READER/hdr_data_reg_reg[94]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/hdr_data_reg_reg[125]' (FDR) to 'WVB_READER/hdr_data_reg_reg[94]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/wvb_data_reg_reg[49]' (FDR) to 'WVB_READER/hdr_data_reg_reg[94]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/hdr_data_reg_reg[94]' (FDR) to 'WVB_READER/hdr_data_reg_reg[95]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/hdr_data_reg_reg[126]' (FDR) to 'WVB_READER/hdr_data_reg_reg[95]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/wvb_data_reg_reg[50]' (FDR) to 'WVB_READER/hdr_data_reg_reg[95]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/hdr_data_reg_reg[95]' (FDR) to 'WVB_READER/hdr_data_reg_reg[96]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/hdr_data_reg_reg[127]' (FDR) to 'WVB_READER/hdr_data_reg_reg[96]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/hdr_data_reg_reg[167]' (FDR) to 'WVB_READER/hdr_data_reg_reg[96]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/wvb_data_reg_reg[51]' (FDR) to 'WVB_READER/hdr_data_reg_reg[96]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/hdr_data_reg_reg[96]' (FDR) to 'WVB_READER/hdr_data_reg_reg[97]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/hdr_data_reg_reg[128]' (FDR) to 'WVB_READER/hdr_data_reg_reg[97]'
-INFO: [Synth 8-3886] merging instance 'WVB_READER/hdr_data_reg_reg[168]' (FDR) to 'WVB_READER/hdr_data_reg_reg[97]'
-INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (WVB_READER/\wvb_data_reg_reg[28] )
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_MOSI_0/i_x_0_reg[0]' (FDE) to 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[0]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_MOSI_0/i_x_0_reg[1]' (FDE) to 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[0]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_MOSI_0/i_x_0_reg[2]' (FDE) to 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[0]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_SCLK_0/i_x_0_reg[0]' (FDE) to 'DIG_SPI/IILC_SCLK_0/i_m_0_reg[1]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_SCLK_0/i_x_0_reg[1]' (FDE) to 'DIG_SPI/IILC_SCLK_0/i_m_0_reg[1]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_SCLK_0/i_x_0_reg[2]' (FDE) to 'DIG_SPI/IILC_SCLK_0/i_m_0_reg[1]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_MISO_0/i_x_0_reg[0]' (FDE) to 'DIG_SPI/IILC_MISO_0/i_m_0_reg[0]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_MISO_0/i_x_0_reg[1]' (FDE) to 'DIG_SPI/IILC_MISO_0/i_m_0_reg[0]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_MISO_0/i_x_0_reg[2]' (FDE) to 'DIG_SPI/IILC_MISO_0/i_m_0_reg[0]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_SCLK_0/i_m_0_reg[1]' (FDE) to 'DIG_SPI/IILC_SCLK_0/i_m_0_reg[6]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_SCLK_0/i_m_0_reg[2]' (FDE) to 'DIG_SPI/IILC_SCLK_0/i_m_0_reg[3]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_MISO_0/i_m_0_reg[0]' (FDE) to 'DIG_SPI/IILC_MISO_0/i_m_0_reg[1]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_MISO_0/i_m_0_reg[1]' (FDE) to 'DIG_SPI/IILC_MISO_0/i_m_0_reg[6]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_MISO_0/i_m_0_reg[2]' (FDE) to 'DIG_SPI/IILC_MISO_0/i_m_0_reg[3]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[0]' (FDE) to 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[1]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[1]' (FDE) to 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[6]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[2]' (FDE) to 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[3]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/SERIAL_RX_0/i_cnt_0_reg[1]' (FDE) to 'DIG_SPI/SERIAL_RX_0/i_cnt_0_reg[6]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/SERIAL_RX_0/i_cnt_0_reg[2]' (FDE) to 'DIG_SPI/SERIAL_RX_0/i_cnt_0_reg[3]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (WVB_READER/\RD_CTRL/dpram_len_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\FAKE_CHAN_0/adc_stream_0_reg[0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (i_2/\FAKE_CHAN_0/adc_stream_1_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (WFM_ACQ_0/\CUPPA_TRIG/trig_src_reg[1] )
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_MOSI_0/i_x_0_reg[3]' (FDE) to 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[6]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_MOSI_0/i_x_0_reg[4]' (FDE) to 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[3]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_MOSI_0/i_x_0_reg[5]' (FDE) to 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[6]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_MOSI_0/i_x_0_reg[6]' (FDE) to 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[6]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_MOSI_0/i_x_0_reg[7]' (FDE) to 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[6]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_MOSI_0/i_x_0_reg[8]' (FDE) to 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[6]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_MOSI_0/i_x_0_reg[9]' (FDE) to 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[6]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_MOSI_0/i_x_0_reg[10]' (FDE) to 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[6]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_MOSI_0/i_x_0_reg[11]' (FDE) to 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[6]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_MOSI_0/i_x_0_reg[12]' (FDE) to 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[6]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_MOSI_0/i_x_0_reg[13]' (FDE) to 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[6]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_MOSI_0/i_x_0_reg[14]' (FDE) to 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[6]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_MOSI_0/i_x_0_reg[15]' (FDE) to 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[6]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_MOSI_0/i_x_0_reg[16]' (FDE) to 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[6]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_MOSI_0/i_x_0_reg[17]' (FDE) to 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[6]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_MOSI_0/i_x_0_reg[18]' (FDE) to 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[6]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_MOSI_0/i_x_0_reg[19]' (FDE) to 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[6]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_MOSI_0/i_x_0_reg[20]' (FDE) to 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[6]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_MOSI_0/i_x_0_reg[21]' (FDE) to 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[6]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_MOSI_0/i_x_0_reg[22]' (FDE) to 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[6]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_MOSI_0/i_x_0_reg[23]' (FDE) to 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[6]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_MOSI_0/i_x_0_reg[24]' (FDE) to 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[6]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_MOSI_0/i_x_0_reg[25]' (FDE) to 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[6]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_MOSI_0/i_x_0_reg[26]' (FDE) to 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[6]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_MOSI_0/i_x_0_reg[27]' (FDE) to 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[6]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_MOSI_0/i_x_0_reg[28]' (FDE) to 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[6]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_MOSI_0/i_x_0_reg[29]' (FDE) to 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[6]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_MOSI_0/i_x_0_reg[30]' (FDE) to 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[6]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_MOSI_0/i_x_0_reg[31]' (FDE) to 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[6]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[3]' (FDE) to 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[4]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[4]' (FDE) to 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[5]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[6]' (FDE) to 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[7]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[7]' (FDE) to 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[8]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[8]' (FDE) to 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[9]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[9]' (FDE) to 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[10]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[10]' (FDE) to 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[11]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[11]' (FDE) to 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[12]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[12]' (FDE) to 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[13]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[13]' (FDE) to 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[14]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[14]' (FDE) to 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[15]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[15]' (FDE) to 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[16]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[16]' (FDE) to 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[17]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[17]' (FDE) to 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[18]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[18]' (FDE) to 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[19]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[19]' (FDE) to 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[20]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[20]' (FDE) to 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[21]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[21]' (FDE) to 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[22]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[22]' (FDE) to 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[23]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[23]' (FDE) to 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[24]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[24]' (FDE) to 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[25]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[25]' (FDE) to 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[26]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[26]' (FDE) to 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[27]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[27]' (FDE) to 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[28]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[28]' (FDE) to 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[29]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[29]' (FDE) to 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[30]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[30]' (FDE) to 'DIG_SPI/IILC_MOSI_0/i_m_0_reg[31]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (DIG_SPI/\IILC_MOSI_0/i_m_0_reg[31] )
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_SCLK_0/i_x_0_reg[3]' (FDE) to 'DIG_SPI/IILC_SCLK_0/i_m_0_reg[6]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_SCLK_0/i_x_0_reg[4]' (FDE) to 'DIG_SPI/IILC_SCLK_0/i_m_0_reg[3]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_SCLK_0/i_x_0_reg[5]' (FDE) to 'DIG_SPI/IILC_SCLK_0/i_m_0_reg[6]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_SCLK_0/i_x_0_reg[6]' (FDE) to 'DIG_SPI/IILC_SCLK_0/i_m_0_reg[6]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_SCLK_0/i_x_0_reg[7]' (FDE) to 'DIG_SPI/IILC_SCLK_0/i_m_0_reg[6]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_SCLK_0/i_x_0_reg[8]' (FDE) to 'DIG_SPI/IILC_SCLK_0/i_m_0_reg[6]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_SCLK_0/i_x_0_reg[9]' (FDE) to 'DIG_SPI/IILC_SCLK_0/i_m_0_reg[6]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_SCLK_0/i_x_0_reg[10]' (FDE) to 'DIG_SPI/IILC_SCLK_0/i_m_0_reg[6]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_SCLK_0/i_x_0_reg[11]' (FDE) to 'DIG_SPI/IILC_SCLK_0/i_m_0_reg[6]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_SCLK_0/i_x_0_reg[12]' (FDE) to 'DIG_SPI/IILC_SCLK_0/i_m_0_reg[6]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_SCLK_0/i_x_0_reg[13]' (FDE) to 'DIG_SPI/IILC_SCLK_0/i_m_0_reg[6]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_SCLK_0/i_x_0_reg[14]' (FDE) to 'DIG_SPI/IILC_SCLK_0/i_m_0_reg[6]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_SCLK_0/i_x_0_reg[15]' (FDE) to 'DIG_SPI/IILC_SCLK_0/i_m_0_reg[6]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_SCLK_0/i_x_0_reg[16]' (FDE) to 'DIG_SPI/IILC_SCLK_0/i_m_0_reg[6]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_SCLK_0/i_x_0_reg[17]' (FDE) to 'DIG_SPI/IILC_SCLK_0/i_m_0_reg[6]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_SCLK_0/i_x_0_reg[18]' (FDE) to 'DIG_SPI/IILC_SCLK_0/i_m_0_reg[6]'
+INFO: [Synth 8-3886] merging instance 'DIG_SPI/IILC_SCLK_0/i_x_0_reg[19]' (FDE) to 'DIG_SPI/IILC_SCLK_0/i_m_0_reg[6]'
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (DIG_SPI/\IILC_SCLK_0/i_m_0_reg[31] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (DIG_SPI/\IILC_MISO_0/i_m_0_reg[31] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (DIG_SPI/\SERIAL_RX_0/i_cnt_0_reg[31] )
 INFO: [Synth 8-3333] propagating constant 1 across sequential element (DIG_SPI/\SERIAL_TX_0/i_cnt_0_reg[0] )
 INFO: [Synth 8-3333] propagating constant 1 across sequential element (DAC_SPI/SERIAL_TX_0/\i_cnt_0_reg[0] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (i_3/\FAKE_CHAN_1/adc_stream_0_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_4/\FAKE_CHAN_1/adc_stream_1_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (WFM_ACQ_1/\CUPPA_TRIG/trig_src_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\FAKE_CHAN_0/adc_stream_0_reg[0] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (i_2/\FAKE_CHAN_0/adc_stream_1_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (WFM_ACQ_0/\CUPPA_TRIG/trig_src_reg[1] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (DIG_SPI/\SERIAL_TX_0/i_cnt_0_reg[31] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (DIG_SPI/\SERIAL_CK_0/i_cnt_0_1_reg[31] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (DAC_SPI/SERIAL_TX_0/\i_cnt_0_reg[31] )
@@ -1586,7 +1637,7 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (DAC_SPI/I
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (DAC_SPI/IILC_MISO_0/\y_reg[0] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (DAC_SPI/IILC_MOSI_0/\y_reg[1] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:39 ; elapsed = 00:00:40 . Memory (MB): peak = 982.488 ; gain = 416.203
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:46 ; elapsed = 00:00:47 . Memory (MB): peak = 985.074 ; gain = 418.430
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -1621,13 +1672,13 @@ INFO: [Synth 8-5578] Moved timing constraint from pin 'dig0_mmcm_0/clk_245_76_MH
 INFO: [Synth 8-5783] Moving clock source from hierarchical pin 'dig0_mmcm_0/clk_in1' to 'IBUFGDS_DIG0/O'
 INFO: [Synth 8-5819] Moved 7 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:48 ; elapsed = 00:00:49 . Memory (MB): peak = 982.488 ; gain = 416.203
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:54 ; elapsed = 00:00:55 . Memory (MB): peak = 985.074 ; gain = 418.430
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:50 ; elapsed = 00:00:51 . Memory (MB): peak = 982.488 ; gain = 416.203
+Finished Timing Optimization : Time (s): cpu = 00:00:56 ; elapsed = 00:00:57 . Memory (MB): peak = 985.074 ; gain = 418.430
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1639,8 +1690,9 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\WFM_ACQ_0/WVB/RD_ADDR/hdr_rd_cnt_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\WFM_ACQ_1/WVB/RD_ADDR/hdr_rd_cnt_reg[2] )
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:53 ; elapsed = 00:00:54 . Memory (MB): peak = 1010.176 ; gain = 443.891
+Finished Technology Mapping : Time (s): cpu = 00:01:00 ; elapsed = 00:01:01 . Memory (MB): peak = 1018.777 ; gain = 452.133
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1663,7 +1715,10 @@ Start Final Netlist Cleanup
 INFO: [Synth 8-5365] Flop WFM_ACQ_0/WVB/WR_CTRL/i_post_conf_reg[14] is being inverted and renamed to WFM_ACQ_0/WVB/WR_CTRL/i_post_conf_reg[14]_inv.
 INFO: [Synth 8-5365] Flop WFM_ACQ_0/WVB/WR_CTRL/i_test_conf_reg[14] is being inverted and renamed to WFM_ACQ_0/WVB/WR_CTRL/i_test_conf_reg[14]_inv.
 INFO: [Synth 8-5365] Flop WFM_ACQ_0/WVB/WR_CTRL/i_const_conf_reg[14] is being inverted and renamed to WFM_ACQ_0/WVB/WR_CTRL/i_const_conf_reg[14]_inv.
-INFO: [Synth 8-4618] Found max_fanout attribute set to 20 on net \WVB_READER/chan_index [0]. Fanout reduced from 121 to 18 by creating 6 replicas.
+INFO: [Synth 8-5365] Flop WFM_ACQ_1/WVB/WR_CTRL/i_post_conf_reg[14] is being inverted and renamed to WFM_ACQ_1/WVB/WR_CTRL/i_post_conf_reg[14]_inv.
+INFO: [Synth 8-5365] Flop WFM_ACQ_1/WVB/WR_CTRL/i_test_conf_reg[14] is being inverted and renamed to WFM_ACQ_1/WVB/WR_CTRL/i_test_conf_reg[14]_inv.
+INFO: [Synth 8-5365] Flop WFM_ACQ_1/WVB/WR_CTRL/i_const_conf_reg[14] is being inverted and renamed to WFM_ACQ_1/WVB/WR_CTRL/i_const_conf_reg[14]_inv.
+INFO: [Synth 8-4618] Found max_fanout attribute set to 20 on net \WVB_READER/chan_index [0]. Fanout reduced from 124 to 18 by creating 6 replicas.
 INFO: [Synth 8-4618] Found max_fanout attribute set to 5 on net \WFM_ACQ_0/WVB/hdr_data_in [75]. Fanout reduced from 7 to 4 by creating 1 replicas.
 INFO: [Synth 8-4618] Found max_fanout attribute set to 5 on net \WFM_ACQ_0/WVB/hdr_data_in [76]. Fanout reduced from 7 to 4 by creating 1 replicas.
 INFO: [Synth 8-4618] Found max_fanout attribute set to 5 on net \WFM_ACQ_0/WVB/hdr_data_in [77]. Fanout reduced from 7 to 4 by creating 1 replicas.
@@ -1679,11 +1734,26 @@ INFO: [Synth 8-4618] Found max_fanout attribute set to 5 on net \WFM_ACQ_0/WVB/h
 INFO: [Synth 8-4618] Found max_fanout attribute set to 5 on net \WFM_ACQ_0/WVB/hdr_data_in [64]. Fanout reduced from 7 to 4 by creating 1 replicas.
 INFO: [Synth 8-4618] Found max_fanout attribute set to 5 on net \WFM_ACQ_0/WVB/hdr_data_in [65]. Fanout reduced from 7 to 4 by creating 1 replicas.
 INFO: [Synth 8-4618] Found max_fanout attribute set to 5 on net \WFM_ACQ_0/WVB/hdr_data_in [66]. Fanout reduced from 7 to 4 by creating 1 replicas.
+INFO: [Synth 8-4618] Found max_fanout attribute set to 5 on net \WFM_ACQ_1/WVB/hdr_data_in [75]. Fanout reduced from 7 to 4 by creating 1 replicas.
+INFO: [Synth 8-4618] Found max_fanout attribute set to 5 on net \WFM_ACQ_1/WVB/hdr_data_in [76]. Fanout reduced from 7 to 4 by creating 1 replicas.
+INFO: [Synth 8-4618] Found max_fanout attribute set to 5 on net \WFM_ACQ_1/WVB/hdr_data_in [77]. Fanout reduced from 7 to 4 by creating 1 replicas.
+INFO: [Synth 8-4618] Found max_fanout attribute set to 5 on net \WFM_ACQ_1/WVB/hdr_data_in [71]. Fanout reduced from 7 to 4 by creating 1 replicas.
+INFO: [Synth 8-4618] Found max_fanout attribute set to 5 on net \WFM_ACQ_1/WVB/hdr_data_in [72]. Fanout reduced from 7 to 4 by creating 1 replicas.
+INFO: [Synth 8-4618] Found max_fanout attribute set to 5 on net \WFM_ACQ_1/WVB/hdr_data_in [73]. Fanout reduced from 7 to 4 by creating 1 replicas.
+INFO: [Synth 8-4618] Found max_fanout attribute set to 5 on net \WFM_ACQ_1/WVB/hdr_data_in [74]. Fanout reduced from 7 to 4 by creating 1 replicas.
+INFO: [Synth 8-4618] Found max_fanout attribute set to 5 on net \WFM_ACQ_1/WVB/hdr_data_in [67]. Fanout reduced from 7 to 4 by creating 1 replicas.
+INFO: [Synth 8-4618] Found max_fanout attribute set to 5 on net \WFM_ACQ_1/WVB/hdr_data_in [68]. Fanout reduced from 7 to 4 by creating 1 replicas.
+INFO: [Synth 8-4618] Found max_fanout attribute set to 5 on net \WFM_ACQ_1/WVB/hdr_data_in [69]. Fanout reduced from 7 to 4 by creating 1 replicas.
+INFO: [Synth 8-4618] Found max_fanout attribute set to 5 on net \WFM_ACQ_1/WVB/hdr_data_in [70]. Fanout reduced from 7 to 4 by creating 1 replicas.
+INFO: [Synth 8-4618] Found max_fanout attribute set to 5 on net \WFM_ACQ_1/WVB/hdr_data_in [63]. Fanout reduced from 8 to 4 by creating 1 replicas.
+INFO: [Synth 8-4618] Found max_fanout attribute set to 5 on net \WFM_ACQ_1/WVB/hdr_data_in [64]. Fanout reduced from 7 to 4 by creating 1 replicas.
+INFO: [Synth 8-4618] Found max_fanout attribute set to 5 on net \WFM_ACQ_1/WVB/hdr_data_in [65]. Fanout reduced from 7 to 4 by creating 1 replicas.
+INFO: [Synth 8-4618] Found max_fanout attribute set to 5 on net \WFM_ACQ_1/WVB/hdr_data_in [66]. Fanout reduced from 7 to 4 by creating 1 replicas.
 ---------------------------------------------------------------------------------
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:55 ; elapsed = 00:00:56 . Memory (MB): peak = 1015.980 ; gain = 449.695
+Finished IO Insertion : Time (s): cpu = 00:01:02 ; elapsed = 00:01:03 . Memory (MB): peak = 1023.547 ; gain = 456.902
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -1696,7 +1766,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:55 ; elapsed = 00:00:56 . Memory (MB): peak = 1015.980 ; gain = 449.695
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:02 ; elapsed = 00:01:03 . Memory (MB): peak = 1023.547 ; gain = 456.902
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1708,25 +1778,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:56 ; elapsed = 00:00:57 . Memory (MB): peak = 1015.980 ; gain = 449.695
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:03 ; elapsed = 00:01:04 . Memory (MB): peak = 1023.547 ; gain = 456.902
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:56 ; elapsed = 00:00:57 . Memory (MB): peak = 1015.980 ; gain = 449.695
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:03 ; elapsed = 00:01:04 . Memory (MB): peak = 1023.547 ; gain = 456.902
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:56 ; elapsed = 00:00:57 . Memory (MB): peak = 1015.980 ; gain = 449.695
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:03 ; elapsed = 00:01:04 . Memory (MB): peak = 1023.547 ; gain = 456.902
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:56 ; elapsed = 00:00:57 . Memory (MB): peak = 1015.980 ; gain = 449.695
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:03 ; elapsed = 00:01:04 . Memory (MB): peak = 1023.547 ; gain = 456.902
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -1741,117 +1811,132 @@ Report BlackBoxes:
 |3     |SCRATCH_DPRAM      |         1|
 |4     |DIRECT_RDOUT_DPRAM |         1|
 |5     |FIFO_2048_32       |         1|
-|6     |DIST_BUFFER_64_28  |         1|
-|7     |BUFFER_32K_28      |         1|
-|8     |FIFO_1024_87       |         1|
+|6     |DIST_BUFFER_64_28  |         2|
+|7     |BUFFER_32K_28      |         2|
+|8     |FIFO_1024_87       |         2|
 +------+-------------------+----------+
 
 Report Cell Usage: 
-+------+-------------------+------+
-|      |Cell               |Count |
-+------+-------------------+------+
-|1     |BUFFER_32K_28      |     1|
-|2     |DIG0_MMCM          |     1|
-|3     |DIRECT_RDOUT_DPRAM |     1|
-|4     |DIST_BUFFER_64_28  |     1|
-|5     |FIFO_1024_87       |     1|
-|6     |FIFO_2048_32       |     1|
-|7     |LCLK_MMCM          |     1|
-|8     |SCRATCH_DPRAM      |     1|
-|9     |CARRY4             |   492|
-|10    |LUT1               |   155|
-|11    |LUT2               |   998|
-|12    |LUT3               |   518|
-|13    |LUT4               |   753|
-|14    |LUT5               |   223|
-|15    |LUT6               |   532|
-|16    |MUXF7              |     1|
-|17    |ODDR               |     2|
-|18    |FDCE               |   568|
-|19    |FDPE               |     3|
-|20    |FDRE               |  1674|
-|21    |FDSE               |   156|
-|22    |IBUF               |     3|
-|23    |IBUFGDS            |     2|
-|24    |OBUF               |    15|
-|25    |OBUFDS             |     2|
-|26    |OBUFT              |     5|
-+------+-------------------+------+
++------+---------------------+------+
+|      |Cell                 |Count |
++------+---------------------+------+
+|1     |BUFFER_32K_28        |     1|
+|2     |BUFFER_32K_28__2     |     1|
+|3     |DIG0_MMCM            |     1|
+|4     |DIRECT_RDOUT_DPRAM   |     1|
+|5     |DIST_BUFFER_64_28    |     1|
+|6     |DIST_BUFFER_64_28__2 |     1|
+|7     |FIFO_1024_87         |     1|
+|8     |FIFO_1024_87__2      |     1|
+|9     |FIFO_2048_32         |     1|
+|10    |LCLK_MMCM            |     1|
+|11    |SCRATCH_DPRAM        |     1|
+|12    |CARRY4               |   590|
+|13    |LUT1                 |   263|
+|14    |LUT2                 |   959|
+|15    |LUT3                 |   748|
+|16    |LUT4                 |   841|
+|17    |LUT5                 |   294|
+|18    |LUT6                 |   622|
+|19    |MUXF7                |    15|
+|20    |ODDR                 |     2|
+|21    |FDCE                 |   568|
+|22    |FDPE                 |     3|
+|23    |FDRE                 |  2246|
+|24    |FDSE                 |   192|
+|25    |IBUF                 |     3|
+|26    |IBUFGDS              |     2|
+|27    |OBUF                 |    19|
+|28    |OBUFDS               |     2|
+|29    |OBUFT                |     1|
++------+---------------------+------+
 
 Report Instance Areas: 
-+------+---------------------+---------------------------+------+
-|      |Instance             |Module                     |Cells |
-+------+---------------------+---------------------------+------+
-|1     |top                  |                           |  6347|
-|2     |  CUPPA_0            |cuppa                      |  1137|
-|3     |    CRSM_0           |crs_master                 |   332|
-|4     |      NEDGE_0        |negedge_detector_11        |     6|
-|5     |    DAC_SPI_TASK_0   |task_reg                   |    37|
-|6     |    DIG_SPI_TASK     |task_reg__parameterized0   |    37|
-|7     |    UART_DEBUG_0     |ft232r_proc_buffered       |   547|
-|8     |      FT232R_HS_0    |ft232r_hs                  |   122|
-|9     |        NEDGE_0      |negedge_detector_8         |     2|
-|10    |        PEDGE_0      |posedge_detector_9         |     1|
-|11    |        RS232_DES_0  |rs232_des                  |    67|
-|12    |          NEDGE0     |negedge_detector_10        |     1|
-|13    |          SYNC0      |sync                       |     7|
-|14    |        RS232_SER_0  |rs232_ser                  |    49|
-|15    |      UART_PROC_HS_0 |uart_proc_hs               |   391|
-|16    |        CRC16_8B_P_0 |crc                        |    64|
-|17    |        NEDGE_0      |negedge_detector           |     1|
-|18    |        NEDGE_1      |negedge_detector_7         |     3|
-|19    |  DAC_SPI            |spi_master                 |  1494|
-|20    |    IILC_MISO_0      |iter_integer_linear_calc_3 |   285|
-|21    |    IILC_MOSI_0      |iter_integer_linear_calc_4 |   305|
-|22    |    IILC_SCLK_0      |iter_integer_linear_calc_5 |   281|
-|23    |    SERIAL_CK_0      |serial_ck_6                |   317|
-|24    |    SERIAL_TX_0      |serial_tx                  |   163|
-|25    |  DIG_SPI            |spi_master__parameterized0 |  1677|
-|26    |    IILC_MISO_0      |iter_integer_linear_calc   |   318|
-|27    |    IILC_MOSI_0      |iter_integer_linear_calc_1 |   263|
-|28    |    IILC_SCLK_0      |iter_integer_linear_calc_2 |   277|
-|29    |    SERIAL_CK_0      |serial_ck                  |   317|
-|30    |    SERIAL_RX_0      |serial_rx__parameterized0  |   212|
-|31    |    SERIAL_TX_0      |serial_tx__parameterized0  |   161|
-|32    |  FAKE_CHAN_0        |data_gen                   |    58|
-|33    |  WFM_ACQ_0          |waveform_acquisition       |  1081|
-|34    |    CUPPA_TRIG       |cuppa_trigger              |    72|
-|35    |      CMP_0          |cmp                        |     5|
-|36    |      CMP_1          |cmp_0                      |     5|
-|37    |      PEDGE_RUN      |posedge_detector           |     1|
-|38    |    WVB              |waveform_buffer            |   936|
-|39    |      OVERFLOW_CTRL  |wvb_overflow_ctrl          |    26|
-|40    |      PTB            |pretrigger_buffer          |    69|
-|41    |      RD_ADDR        |wvb_rd_addr_ctrl           |    52|
-|42    |      WBS            |waveform_buffer_storage    |   129|
-|43    |      WR_CTRL        |wvb_wr_ctrl                |   659|
-|44    |  WVB_READER         |wvb_reader                 |   800|
-|45    |    RD_CTRL          |wvb_rd_ctrl_fmt_0          |   333|
-+------+---------------------+---------------------------+------+
++------+---------------------+-----------------------------------+------+
+|      |Instance             |Module                             |Cells |
++------+---------------------+-----------------------------------+------+
+|1     |top                  |                                   |  7770|
+|2     |  CUPPA_0            |cuppa                              |  1286|
+|3     |    CRSM_0           |crs_master                         |   418|
+|4     |      NEDGE_0        |negedge_detector_18                |     6|
+|5     |    DAC_SPI_TASK_0   |task_reg                           |    37|
+|6     |    DIG_SPI_TASK     |task_reg__parameterized0           |    37|
+|7     |    UART_DEBUG_0     |ft232r_proc_buffered               |   539|
+|8     |      FT232R_HS_0    |ft232r_hs                          |   129|
+|9     |        NEDGE_0      |negedge_detector_15                |     3|
+|10    |        PEDGE_0      |posedge_detector_16                |     1|
+|11    |        RS232_DES_0  |rs232_des                          |    72|
+|12    |          NEDGE0     |negedge_detector_17                |     1|
+|13    |          SYNC0      |sync                               |     7|
+|14    |        RS232_SER_0  |rs232_ser                          |    50|
+|15    |      UART_PROC_HS_0 |uart_proc_hs                       |   376|
+|16    |        CRC16_8B_P_0 |crc                                |    71|
+|17    |        NEDGE_0      |negedge_detector                   |     1|
+|18    |        NEDGE_1      |negedge_detector_14                |     5|
+|19    |  DAC_SPI            |spi_master                         |  1494|
+|20    |    IILC_MISO_0      |iter_integer_linear_calc_10        |   285|
+|21    |    IILC_MOSI_0      |iter_integer_linear_calc_11        |   305|
+|22    |    IILC_SCLK_0      |iter_integer_linear_calc_12        |   281|
+|23    |    SERIAL_CK_0      |serial_ck_13                       |   317|
+|24    |    SERIAL_TX_0      |serial_tx                          |   163|
+|25    |  DIG_SPI            |spi_master__parameterized0         |  1677|
+|26    |    IILC_MISO_0      |iter_integer_linear_calc           |   318|
+|27    |    IILC_MOSI_0      |iter_integer_linear_calc_8         |   263|
+|28    |    IILC_SCLK_0      |iter_integer_linear_calc_9         |   277|
+|29    |    SERIAL_CK_0      |serial_ck                          |   317|
+|30    |    SERIAL_RX_0      |serial_rx__parameterized0          |   212|
+|31    |    SERIAL_TX_0      |serial_tx__parameterized0          |   161|
+|32    |  FAKE_CHAN_0        |data_gen                           |    58|
+|33    |  FAKE_CHAN_1        |data_gen__parameterized0           |    58|
+|34    |  WFM_ACQ_0          |waveform_acquisition__xdcDup__1    |  1082|
+|35    |    CUPPA_TRIG       |cuppa_trigger_1                    |    72|
+|36    |      CMP_0          |cmp_5                              |     5|
+|37    |      CMP_1          |cmp_6                              |     5|
+|38    |      PEDGE_RUN      |posedge_detector_7                 |     1|
+|39    |    WVB              |waveform_buffer__xdcDup__1         |   937|
+|40    |      OVERFLOW_CTRL  |wvb_overflow_ctrl_2                |    25|
+|41    |      PTB            |pretrigger_buffer__xdcDup__1       |    69|
+|42    |      RD_ADDR        |wvb_rd_addr_ctrl_3                 |    52|
+|43    |      WBS            |waveform_buffer_storage__xdcDup__1 |   128|
+|44    |      WR_CTRL        |wvb_wr_ctrl_4                      |   662|
+|45    |  WFM_ACQ_1          |waveform_acquisition               |  1092|
+|46    |    CUPPA_TRIG       |cuppa_trigger                      |    72|
+|47    |      CMP_0          |cmp                                |     5|
+|48    |      CMP_1          |cmp_0                              |     5|
+|49    |      PEDGE_RUN      |posedge_detector                   |     1|
+|50    |    WVB              |waveform_buffer                    |   947|
+|51    |      OVERFLOW_CTRL  |wvb_overflow_ctrl                  |    26|
+|52    |      PTB            |pretrigger_buffer                  |    69|
+|53    |      RD_ADDR        |wvb_rd_addr_ctrl                   |    52|
+|54    |      WBS            |waveform_buffer_storage            |   139|
+|55    |      WR_CTRL        |wvb_wr_ctrl                        |   660|
+|56    |  WVB_READER         |wvb_reader                         |   923|
+|57    |    RD_CTRL          |wvb_rd_ctrl_fmt_0                  |   339|
++------+---------------------+-----------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:56 ; elapsed = 00:00:57 . Memory (MB): peak = 1015.980 ; gain = 449.695
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:03 ; elapsed = 00:01:04 . Memory (MB): peak = 1023.547 ; gain = 456.902
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 23 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:45 ; elapsed = 00:00:53 . Memory (MB): peak = 1015.980 ; gain = 289.590
-Synthesis Optimization Complete : Time (s): cpu = 00:00:56 ; elapsed = 00:00:57 . Memory (MB): peak = 1015.980 ; gain = 449.695
+Synthesis finished with 0 errors, 0 critical warnings and 20 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:51 ; elapsed = 00:00:59 . Memory (MB): peak = 1023.547 ; gain = 296.367
+Synthesis Optimization Complete : Time (s): cpu = 00:01:03 ; elapsed = 00:01:04 . Memory (MB): peak = 1023.547 ; gain = 456.902
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 499 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 611 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1015.980 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1026.813 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 4 instances were transformed.
   IBUFGDS => IBUFDS: 2 instances
   OBUFDS => OBUFDS_DUAL_BUF (INV, OBUFDS, OBUFDS): 2 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-368 Infos, 86 Warnings, 0 Critical Warnings and 0 Errors encountered.
+407 Infos, 78 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:03 ; elapsed = 00:01:05 . Memory (MB): peak = 1015.980 ; gain = 715.352
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1015.980 ; gain = 0.000
+synth_design: Time (s): cpu = 00:01:10 ; elapsed = 00:01:12 . Memory (MB): peak = 1026.813 ; gain = 726.629
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1026.813 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue Oct  6 17:27:48 2020...
+INFO: [Common 17-206] Exiting Vivado at Tue Oct  6 18:21:28 2020...

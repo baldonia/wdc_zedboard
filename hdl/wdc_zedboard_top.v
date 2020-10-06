@@ -160,9 +160,9 @@ assign LD3 = !lclk_mmcm_locked;
 //             [i] sw_trig (channel i, up to 1)
 //     12'hffb: DIG 0
 //             [0] trig_mode
-//     12'hffa: DIG 0
+//     12'hffa:
 //             [i] trig_arm (channel i)
-//     12'hff9: DIG 0
+//     12'hff9:
 //             [i] trig_armed (channel i)
 //     12'hff8: DIG 0
 //             [0] cnst_run
@@ -170,6 +170,21 @@ assign LD3 = !lclk_mmcm_locked;
 //     12'hff6: DIG 0 test config  [14:0]
 //     12'hff5: DIG 0 post config [14:0] 
 //     12'hff4: DIG 0 pre config [5:0]
+//     12'hefe: DIG 1 trig settings
+//             [0] et
+//             [1] gt
+//             [2] lt
+//             [3] thresh_trig_en
+//             [4] ext_trig_en
+//     12'hefd: DIG 1 trig threshold [11:0]
+//     12'hefb: DIG 1
+//             [0] trig_mode
+//     12'hef8: DIG 1
+//             [0] cnst_run
+//     12'hef7: DIG 1 const config [14:0]
+//     12'hef6: DIG 1 test config  [14:0]
+//     12'hef5: DIG 1 post config [14:0] 
+//     12'hef4: DIG 1 pre config [5:0]
 //     12'hdff: dpram_len [10:0]
 //     12'hdfe: 
 //             [0] dpram_done  
@@ -182,6 +197,8 @@ assign LD3 = !lclk_mmcm_locked;
 //     12'hdf8: wvb_reader enable 
 //     12'hdf7: wvb_reader dpram mode 
 //     12'hdf6: wvb header full ([i] for channel i, up to 1)
+//     12'hdf5: DIG 1 n_waveforms in waveform buffer
+//     12'hdf4: DIG 1 words used in waveform buffer
 // 
 //     12'hbff: [0] DAC spi chip select (0 or 1)
 //     12'hbfe: [0] DAC spi task reg
@@ -212,7 +229,9 @@ wire        dig_sel;
 
 // Dig 0 trigger / wvb conf
 wire[L_WIDTH_CUPPA_TRIG_BUNDLE-1:0] cuppa_trig_bundle_0;
+wire[L_WIDTH_CUPPA_TRIG_BUNDLE-1:0] cuppa_trig_bundle_1;
 wire[L_WIDTH_CUPPA_WVB_CONF_BUNDLE-1:0] cuppa_wvb_conf_bundle_0;
+wire[L_WIDTH_CUPPA_WVB_CONF_BUNDLE-1:0] cuppa_wvb_conf_bundle_1;
 
 // Acquisition controls / status
 wire[N_CHANNELS-1:0] cuppa_wvb_rst;
@@ -221,7 +240,9 @@ wire[N_CHANNELS-1:0] cuppa_wvb_overflow;
 wire[N_CHANNELS-1:0] cuppa_wvb_hdr_full; 
 
 wire[15:0] cuppa_wvb_wused_0;
+wire[15:0] cuppa_wvb_wused_1;
 wire[9:0] cuppa_wvb_n_wvf_in_buf_0;
+wire[9:0] cuppa_wvb_n_wvf_in_buf_1;
 
 // wvb reader
 wire[15:0] rdout_dpram_len;
@@ -254,13 +275,17 @@ cuppa CUPPA_0
 
   // trig / wvb conf
   .trig_bundle_0(cuppa_trig_bundle_0),
+  .trig_bundle_1(cuppa_trig_bundle_1),
   .wvb_conf_bundle_0(cuppa_wvb_conf_bundle_0),
+  .wvb_conf_bundle_1(cuppa_wvb_conf_bundle_1),
   .wvb_rst(cuppa_wvb_rst),
   .wvb_armed(cuppa_wvb_armed),
   .wvb_overflow(cuppa_wvb_overflow),
   .wvb_hdr_full(cuppa_wvb_hdr_full),
   .wvb_n_wvf_in_buf_0(cuppa_wvb_n_wvf_in_buf_0),
+  .wvb_n_wvf_in_buf_1(cuppa_wvb_n_wvf_in_buf_1),
   .wvb_wused_0(cuppa_wvb_wused_0),
+  .wvb_wused_1(cuppa_wvb_wused_1),
 
   // wvb reader
   .dpram_len_in(rdout_dpram_len),
@@ -308,7 +333,18 @@ data_gen #(.P_ADC_RAMP_START(0)) FAKE_CHAN_0
   .adc_stream_1(adc_stream_1_0)
  );
 
-// Waveform acquisition; start with one channel
+// to be replaced with SERDES + idelay, etc
+wire[11:0] adc_stream_0_1;
+wire[11:0] adc_stream_1_1;
+data_gen #(.P_ADC_RAMP_START(1)) FAKE_CHAN_1
+ (
+  .clk(lclk),
+  .rst(lclk_rst || cuppa_wvb_rst[1]),
+  .adc_stream_0(adc_stream_0_1),
+  .adc_stream_1(adc_stream_1_1)
+ );
+
+// Waveform acquisition modules
 
 wire[N_CHANNELS-1:0] wvb_hdr_empty;
 wire[N_CHANNELS-1:0] wvb_hdr_rdreq;
@@ -317,7 +353,8 @@ wire[N_CHANNELS-1:0] wvb_rddone;
 wire[N_CHANNELS*P_WVB_DATA_WIDTH-1:0] wvb_data_out;
 wire[N_CHANNELS*P_HDR_WIDTH-1:0] wvb_hdr_data;
 
-waveform_acquisition #(.P_ADR_WIDTH(P_WVB_ADR_WIDTH),
+waveform_acquisition #(.P_DATA_WIDTH(P_WVB_DATA_WIDTH),
+                       .P_ADR_WIDTH(P_WVB_ADR_WIDTH),
                        .P_HDR_WIDTH(P_HDR_WIDTH)) 
 WFM_ACQ_0
 (
@@ -354,14 +391,56 @@ WFM_ACQ_0
   .cuppa_wvb_overflow(cuppa_wvb_overflow[0])
 );
 
-// tie wvb_hdr_empty[1] to 1 until I've added channel 1
-assign wvb_hdr_empty[1] = 1'b1;
+waveform_acquisition #(.P_DATA_WIDTH(P_WVB_DATA_WIDTH),
+                       .P_ADR_WIDTH(P_WVB_ADR_WIDTH),
+                       .P_HDR_WIDTH(P_HDR_WIDTH))
+WFM_ACQ_1
+(
+  .clk(lclk),
+  .rst(lclk_rst || cuppa_wvb_rst[1]),
+  
+  // WVB reader interface
+  .wvb_data_out(wvb_data_out[P_WVB_DATA_WIDTH*(1+1)-1:P_WVB_DATA_WIDTH*1]),
+  .wvb_hdr_data_out(wvb_hdr_data[P_HDR_WIDTH*(1+1)-1:P_HDR_WIDTH*1]),  
+  .wvb_hdr_full(cuppa_wvb_hdr_full[1]),
+  .wvb_hdr_empty(wvb_hdr_empty[1]),
+  .wvb_n_wvf_in_buf(cuppa_wvb_n_wvf_in_buf_1),
+  .wvb_wused(cuppa_wvb_wused_1), 
+  .wvb_hdr_rdreq(wvb_hdr_rdreq[1]), 
+  .wvb_wvb_rdreq(wvb_wvb_rdreq[1]), 
+  .wvb_wvb_rddone(wvb_rddone[1]), 
+  
+  // datastream
+  .adc_samp_0_0(adc_stream_0_1),
+  .adc_samp_1_0(adc_stream_1_1),
+
+  // Local time counter
+  .ltc_in(ltc), 
+  
+  // External
+  .ext_trig_in(1'b0),
+  .wvb_trig_out(),
+  .wvb_trig_test_out(),
+
+  // cuppa interface
+  .cuppa_wvb_trig_bundle(cuppa_trig_bundle_1),
+  .cuppa_wvb_config_bundle(cuppa_wvb_conf_bundle_1),  
+  .cuppa_wvb_armed(cuppa_wvb_armed[1]), 
+  .cuppa_wvb_overflow(cuppa_wvb_overflow[1])
+);
+
+// use LEDs for coarse buffer status indicators
+assign LD4 = !wvb_hdr_empty[0];
+assign LD5 = cuppa_wvb_overflow[0];
+assign LD6 = !wvb_hdr_empty[1];
+assign LD7 = cuppa_wvb_overflow[1];
 
 //
 // Waveform buffer reader
 // 
 
 wvb_reader #(.N_CHANNELS(N_CHANNELS),
+             .P_DATA_WIDTH(P_WVB_DATA_WIDTH),
              .P_WVB_ADR_WIDTH(P_WVB_ADR_WIDTH),
              .P_HDR_WIDTH(P_HDR_WIDTH))
 WVB_READER 
