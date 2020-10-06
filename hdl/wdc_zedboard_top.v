@@ -52,8 +52,16 @@ module top (
   input DIG0_OVR_SDOUT,
   input DIG1_OVR_SDOUT
 );
+`include "cuppa_trig_bundle_inc.v"
+`include "cuppa_wvb_conf_bundle_inc.v"
 
-localparam[15:0] FW_VNUM = 16'h6;
+
+localparam N_CHANNELS = 2;
+localparam[15:0] FW_VNUM = 16'h7;
+
+localparam P_WVB_DATA_WIDTH = 28;
+localparam P_HDR_WIDTH = 87;
+localparam P_WVB_ADR_WIDTH = 15;
 
 // PLL for ADC 0 input clock
 wire i_dig0_clk;
@@ -141,7 +149,40 @@ assign LD3 = !lclk_mmcm_locked;
 // cuppa register interface
 // Addressing:
 //     12'hfff: Version/build number
-//
+//     12'hffe: DIG 0 trig settings
+//             [0] et
+//             [1] gt
+//             [2] lt
+//             [3] thresh_trig_en
+//             [4] ext_trig_en
+//     12'hffd: DIG 0 trig threshold [11:0]
+//     12'hffc: 
+//             [i] sw_trig (channel i, up to 1)
+//     12'hffb: DIG 0
+//             [0] trig_mode
+//     12'hffa: DIG 0
+//             [i] trig_arm (channel i)
+//     12'hff9: DIG 0
+//             [i] trig_armed (channel i)
+//     12'hff8: DIG 0
+//             [0] cnst_run
+//     12'hff7: DIG 0 const config [14:0]
+//     12'hff6: DIG 0 test config  [14:0]
+//     12'hff5: DIG 0 post config [14:0] 
+//     12'hff4: DIG 0 pre config [5:0]
+//     12'hdff: dpram_len [10:0]
+//     12'hdfe: 
+//             [0] dpram_done  
+//     12'hdfd: 
+//             [0] dpram_sel (0: scratch dpram, 1: direct rdout (rd only))       
+//     12'hdfc: DIG 0 n_waveforms in waveform buffer
+//     12'hdfb: DIG 0 words used in waveform buffer
+//     12'hdfa: waveform buffer overflow [1:0] (DIG 1, DIG 0)
+//     12'hdf9: waveform buffer reset [1:0] (DIG 1, DIG 0)
+//     12'hdf8: wvb_reader enable 
+//     12'hdf7: wvb_reader dpram mode 
+//     12'hdf6: wvb header full ([i] for channel i, up to 1)
+// 
 //     12'hbff: [0] DAC spi chip select (0 or 1)
 //     12'hbfe: [0] DAC spi task reg
 //     12'hbfd: [7:0] DAC spi wr data [23:16]
@@ -169,6 +210,29 @@ wire [15:0] dig_spi_wr_data;
 wire [7:0]  dig_spi_rd_data;
 wire        dig_sel;
 
+// Dig 0 trigger / wvb conf
+wire[L_WIDTH_CUPPA_TRIG_BUNDLE-1:0] cuppa_trig_bundle_0;
+wire[L_WIDTH_CUPPA_WVB_CONF_BUNDLE-1:0] cuppa_wvb_conf_bundle_0;
+
+// Acquisition controls / status
+wire[N_CHANNELS-1:0] cuppa_wvb_rst;
+wire[N_CHANNELS-1:0] cuppa_wvb_armed;
+wire[N_CHANNELS-1:0] cuppa_wvb_overflow;
+wire[N_CHANNELS-1:0] cuppa_wvb_hdr_full; 
+
+wire[15:0] cuppa_wvb_wused_0;
+wire[9:0] cuppa_wvb_n_wvf_in_buf_0;
+
+// wvb reader
+wire[15:0] rdout_dpram_len;
+wire rdout_dpram_run;
+wire rdout_dpram_busy;
+wire rdout_dpram_wren;
+wire[9:0] rdout_dpram_wr_addr;
+wire[31:0] rdout_dpram_data;
+wire wvb_reader_enable;
+wire wvb_reader_dpram_mode;
+
 cuppa CUPPA_0
 (
   .clk(lclk),
@@ -188,6 +252,26 @@ cuppa CUPPA_0
   .dig_spi_wr_data(dig_spi_wr_data),
   .dig_spi_rd_data(dig_spi_rd_data),
 
+  // trig / wvb conf
+  .trig_bundle_0(cuppa_trig_bundle_0),
+  .wvb_conf_bundle_0(cuppa_wvb_conf_bundle_0),
+  .wvb_rst(cuppa_wvb_rst),
+  .wvb_armed(cuppa_wvb_armed),
+  .wvb_overflow(cuppa_wvb_overflow),
+  .wvb_hdr_full(cuppa_wvb_hdr_full),
+  .wvb_n_wvf_in_buf_0(cuppa_wvb_n_wvf_in_buf_0),
+  .wvb_wused_0(cuppa_wvb_wused_0),
+
+  // wvb reader
+  .dpram_len_in(rdout_dpram_len),
+  .rdout_dpram_run(rdout_dpram_run),
+  .dpram_busy(rdout_dpram_busy),
+  .rdout_dpram_wren(rdout_dpram_wren),
+  .rdout_dpram_wr_addr(rdout_dpram_wr_addr),
+  .rdout_dpram_data(rdout_dpram_data),
+  .wvb_reader_enable(wvb_reader_enable),
+  .wvb_reader_dpram_mode(wvb_reader_dpram_mode),
+
   .led_toggle(led_toggle),
 
   .debug_txd(UART_TXD),
@@ -196,6 +280,113 @@ cuppa CUPPA_0
   .debug_cts_n()
 );
 
+//
+// LTC counter
+//
+reg[47:0] ltc = 0;
+always @(posedge lclk) begin
+  if (lclk_rst) begin
+    ltc <= 0;
+  end
+
+  else begin
+    ltc <= ltc + 1;
+  end
+end
+
+// 
+// fake data generation
+// 
+// to be replaced with SERDES + idelay, etc
+wire[11:0] adc_stream_0_0;
+wire[11:0] adc_stream_1_0;
+data_gen #(.P_ADC_RAMP_START(0)) FAKE_CHAN_0
+ (
+  .clk(lclk),
+  .rst(lclk_rst || cuppa_wvb_rst[0]),
+  .adc_stream_0(adc_stream_0_0),
+  .adc_stream_1(adc_stream_1_0)
+ );
+
+// Waveform acquisition; start with one channel
+
+wire[N_CHANNELS-1:0] wvb_hdr_empty;
+wire[N_CHANNELS-1:0] wvb_hdr_rdreq;
+wire[N_CHANNELS-1:0] wvb_wvb_rdreq;
+wire[N_CHANNELS-1:0] wvb_rddone;
+wire[N_CHANNELS*P_WVB_DATA_WIDTH-1:0] wvb_data_out;
+wire[N_CHANNELS*P_HDR_WIDTH-1:0] wvb_hdr_data;
+
+waveform_acquisition #(.P_ADR_WIDTH(P_WVB_ADR_WIDTH),
+                       .P_HDR_WIDTH(P_HDR_WIDTH)) 
+WFM_ACQ_0
+(
+  .clk(lclk),
+  .rst(lclk_rst || cuppa_wvb_rst[0]),
+  
+  // WVB reader interface
+  .wvb_data_out(wvb_data_out[P_WVB_DATA_WIDTH*(0+1)-1:P_WVB_DATA_WIDTH*0]),
+  .wvb_hdr_data_out(wvb_hdr_data[P_HDR_WIDTH*(0+1)-1:P_HDR_WIDTH*0]),  
+  .wvb_hdr_full(cuppa_wvb_hdr_full[0]),
+  .wvb_hdr_empty(wvb_hdr_empty[0]),
+  .wvb_n_wvf_in_buf(cuppa_wvb_n_wvf_in_buf_0),
+  .wvb_wused(cuppa_wvb_wused_0), 
+  .wvb_hdr_rdreq(wvb_hdr_rdreq[0]), 
+  .wvb_wvb_rdreq(wvb_wvb_rdreq[0]), 
+  .wvb_wvb_rddone(wvb_rddone[0]), 
+  
+  // datastream
+  .adc_samp_0_0(adc_stream_0_0),
+  .adc_samp_1_0(adc_stream_1_0),
+
+  // Local time counter
+  .ltc_in(ltc), 
+  
+  // External
+  .ext_trig_in(1'b0),
+  .wvb_trig_out(),
+  .wvb_trig_test_out(),
+
+  // cuppa interface
+  .cuppa_wvb_trig_bundle(cuppa_trig_bundle_0),
+  .cuppa_wvb_config_bundle(cuppa_wvb_conf_bundle_0),  
+  .cuppa_wvb_armed(cuppa_wvb_armed[0]), 
+  .cuppa_wvb_overflow(cuppa_wvb_overflow[0])
+);
+
+// tie wvb_hdr_empty[1] to 1 until I've added channel 1
+assign wvb_hdr_empty[1] = 1'b1;
+
+//
+// Waveform buffer reader
+// 
+
+wvb_reader #(.N_CHANNELS(N_CHANNELS),
+             .P_WVB_ADR_WIDTH(P_WVB_ADR_WIDTH),
+             .P_HDR_WIDTH(P_HDR_WIDTH))
+WVB_READER 
+(
+  .clk(lclk),
+  .rst(lclk_rst),
+  .en(wvb_reader_enable),
+
+  // dpram interface 
+  .dpram_data(rdout_dpram_data),
+  .dpram_addr(rdout_dpram_wr_addr),
+  .dpram_wren(rdout_dpram_wren),
+  .dpram_len(rdout_dpram_len),
+  .dpram_run(rdout_dpram_run),
+  .dpram_busy(rdout_dpram_busy),
+  .dpram_mode(wvb_reader_dpram_mode),
+
+  // wvb interface
+  .hdr_rdreq(wvb_hdr_rdreq),
+  .wvb_rdreq(wvb_wvb_rdreq),
+  .wvb_rddone(wvb_rddone),
+  .wvb_data(wvb_data_out),
+  .hdr_data(wvb_hdr_data),
+  .hdr_empty(wvb_hdr_empty)
+);
 
 //
 // LTC2612 DAC controls

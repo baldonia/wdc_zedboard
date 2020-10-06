@@ -4,7 +4,7 @@
 // Like xdom, but for cuppa
 // provides the cuppa register interface
 
-module cuppa
+module cuppa #(parameter N_CHANNELS = 2)
 (
   input clk,
   input rst,
@@ -27,6 +27,27 @@ module cuppa
 
   // turn KR pattern on and off
   output reg led_toggle = 1,
+
+  // trigger/wvb conf
+  output[17:0] trig_bundle_0,
+  output[53:0] wvb_conf_bundle_0,
+  output reg[N_CHANNELS-1:0] wvb_rst = 0,
+
+  input[N_CHANNELS-1:0] wvb_armed,
+  input[N_CHANNELS-1:0] wvb_overflow,
+  input[N_CHANNELS-1:0] wvb_hdr_full,
+  input[9:0] wvb_n_wvf_in_buf_0,
+  input[15:0] wvb_wused_0,
+
+  // wvb reader
+  input[15:0] dpram_len_in,
+  input rdout_dpram_run,
+  output reg dpram_busy = 0,
+  input rdout_dpram_wren,
+  input[9:0] rdout_dpram_wr_addr,
+  input[31:0] rdout_dpram_data,
+  output reg wvb_reader_enable = 0,
+  output reg wvb_reader_dpram_mode = 0,
 
   // Debug FT232R I/O
   input             debug_txd,
@@ -160,13 +181,84 @@ task_reg #(.P_TASK_ADR(12'hbee)) DIG_SPI_TASK
 assign dig_spi_req = dig_task_req[0];
 assign dig_task_ack[0] = dig_spi_ack;
 
+// Dig 0 wvb trig bundle
+reg wvb_trig_et_0 = 0;
+reg wvb_trig_gt_0 = 0;    
+reg wvb_trig_lt_0 = 0;   
+reg wvb_trig_run_0 = 0;
+reg [11:0] wvb_trig_thr_0 = 0;   
+reg wvb_trig_thresh_trig_en_0 = 0; 
+reg wvb_trig_ext_trig_en_0 = 0; 
+cuppa_trig_bundle_fan_in TRIG_FAN_IN_0
+  (
+   .bundle(trig_bundle_0),
+   .trig_et(wvb_trig_et_0),
+   .trig_gt(wvb_trig_gt_0),
+   .trig_lt(wvb_trig_lt_0),
+   .trig_run(wvb_trig_run_0),
+   .trig_thresh(wvb_trig_thr_0),
+   .thresh_trig_en(wvb_trig_thresh_trig_en_0),
+   .ext_trig_en(wvb_trig_ext_trig_en_0)
+  );
+
+// Dig 0 wvb conf bundle
+reg[14:0] wvb_cnst_config_0 = 0;
+reg[14:0] wvb_post_config_0 = 0;
+reg[5:0] wvb_pre_config_0 = 0;
+reg[14:0] wvb_test_config_0 = 0;
+reg wvb_arm_0 = 0;
+reg wvb_trig_mode_0 = 0;
+reg wvb_cnst_run_0 = 0;
+cuppa_wvb_conf_bundle_fan_in WVB_CONF_FAN_IN_0
+  (
+   .bundle(wvb_conf_bundle_0),
+   .cnst_conf(wvb_cnst_config_0),
+   .test_conf(wvb_test_config_0),
+   .post_conf(wvb_post_config_0),
+   .pre_conf(wvb_pre_config_0),
+   .arm(wvb_arm_0),
+   .trig_mode(wvb_trig_mode_0),
+   .cnst_run(wvb_cnst_run_0)
+  );
+
 //////////////////////////////////////////////////////////////////////////////
 // Read registers
 reg[15:0] reg_dpram_rd_data;
 
+reg[15:0] dpram_len;
+reg dpram_done = 0;
+reg dpram_sel = 0;
+reg[15:0] xdom_dpram_rd_data;
+
 always @(*) begin
   case(y_adr)
     12'hfff: begin y_rd_data =       vnum;                                  end
+    12'hffe: begin y_rd_data =       {11'b0, 
+                                      wvb_trig_ext_trig_en_0,
+                                      wvb_trig_thresh_trig_en_0,
+                                      wvb_trig_lt_0,
+                                      wvb_trig_gt_0,
+                                      wvb_trig_et_0};                       end
+    12'hffd: begin y_rd_data =       {4'b0, wvb_trig_thr_0};                end
+    12'hffc: begin y_rd_data =       {15'b0, wvb_trig_run_0};               end
+    12'hffb: begin y_rd_data =       {15'b0, wvb_trig_mode_0};              end
+    12'hffa: begin y_rd_data =       {15'b0, wvb_arm_0};                    end
+    12'hff9: begin y_rd_data =       {14'b0, wvb_armed};                    end
+    12'hff8: begin y_rd_data =       {15'b0, wvb_cnst_run_0};               end
+    12'hff7: begin y_rd_data =       {1'b0, wvb_cnst_config_0};             end
+    12'hff6: begin y_rd_data =       {1'b0, wvb_test_config_0};             end
+    12'hff5: begin y_rd_data =       {1'b0, wvb_post_config_0};             end
+    12'hff4: begin y_rd_data =       {10'b0, wvb_pre_config_0};             end
+    12'hdff: begin y_rd_data =       dpram_len;                             end
+    12'hdfe: begin y_rd_data =       {15'b0, dpram_done};                   end
+    12'hdfd: begin y_rd_data =       {15'b0, dpram_sel};                    end
+    12'hdfc: begin y_rd_data =       {6'b0, wvb_n_wvf_in_buf_0};            end
+    12'hdfb: begin y_rd_data =       wvb_wused_0;                           end
+    12'hdfa: begin y_rd_data =       {14'b0, wvb_overflow};                 end
+    12'hdf9: begin y_rd_data =       {14'b0, wvb_rst};                      end
+    12'hdf8: begin y_rd_data =       {15'b0, wvb_reader_enable};            end
+    12'hdf7: begin y_rd_data =       {15'b0, wvb_reader_dpram_mode};        end
+    12'hdf6: begin y_rd_data =       {14'b0, wvb_hdr_full};                 end
     12'hbff: begin y_rd_data =       dac_sel;                               end
     12'hbfe: begin y_rd_data =       dac_task_val;                          end
     12'hbfd: begin y_rd_data =       {8'b0, dac_spi_wr_data[23:16]};        end
@@ -178,7 +270,7 @@ always @(*) begin
     12'h8ff: begin y_rd_data =       {15'h0, led_toggle};                   end
     default: 
       begin
-  	    y_rd_data = reg_dpram_rd_data;
+  	    y_rd_data = xdom_dpram_rd_data;
       end 
   endcase
 end
@@ -187,7 +279,32 @@ end
 // Write registers (not task regs)
 always @(posedge clk) begin
   if (y_wr) 
+    wvb_trig_run_0 <= 0;
+    dpram_done <= 0;
+    wvb_arm_0 <= 0;
+
     case (y_adr)
+      12'hffe: begin
+         wvb_trig_et_0 <= y_wr_data[0];
+         wvb_trig_gt_0 <= y_wr_data[1];
+         wvb_trig_lt_0 <= y_wr_data[2];
+         wvb_trig_thresh_trig_en_0 <= y_wr_data[3];
+         wvb_trig_ext_trig_en_0 <= y_wr_data[4];
+      end
+      12'hffd: begin wvb_trig_thr_0 <= y_wr_data[11:0];                     end
+      12'hffc: begin wvb_trig_run_0 <= y_wr_data[0];                        end
+      12'hffb: begin wvb_trig_mode_0 <= y_wr_data[0];                       end
+      12'hffa: begin wvb_arm_0  <= y_wr_data[0];                            end
+      12'hff8: begin wvb_cnst_run_0 <= y_wr_data[0];                        end
+      12'hff7: begin wvb_cnst_config_0 <= y_wr_data[14:0];                  end
+      12'hff6: begin wvb_test_config_0 <= y_wr_data[14:0];                  end
+      12'hff5: begin wvb_post_config_0 <= y_wr_data[14:0];                  end
+      12'hff4: begin wvb_pre_config_0 <= y_wr_data[5:0];                    end
+      12'hdfe: begin dpram_done <= y_wr_data[0];                            end
+      12'hdfd: begin dpram_sel <= y_wr_data[0];                             end
+      12'hdf9: begin wvb_rst[1:0] <= y_wr_data[1:0];                        end
+      12'hdf8: begin wvb_reader_enable <= y_wr_data[0];                     end
+      12'hdf7: begin wvb_reader_dpram_mode <= y_wr_data[0];                 end
       12'hbff: begin dac_sel <= y_wr_data[0];                               end
       12'hbfd: begin dac_spi_wr_data[23:16] <= y_wr_data[7:0];              end
       12'hbfc: begin dac_spi_wr_data[15:0] <= y_wr_data;                    end
@@ -199,14 +316,14 @@ always @(posedge clk) begin
 end
 
 // scratch DPRAM for comms testing currently 
-wire[15:0] scratch_dpram_reg_out;
+wire[15:0] scratch_dpram_rd_data;
 SCRATCH_DPRAM PG_DPRAM
 (
   .clka(clk),
   .wea(y_wr && (y_adr[11]==0)),
   .addra(y_adr[10:0]),
   .dina(y_wr_data),
-  .douta(scratch_dpram_reg_out),
+  .douta(scratch_dpram_rd_data),
   .clkb(clk),
   .web(1'b0),
   .addrb(11'b0),
@@ -214,9 +331,50 @@ SCRATCH_DPRAM PG_DPRAM
   .doutb()
 );
 
-// placeholder for DPRAM mux
+// direct readout DPRAM (rd only from xdom)
+wire[15:0] direct_rdout_dpram_data;
+DIRECT_RDOUT_DPRAM RDOUT_DPRAM
+(
+  .clka(clk),
+  .wea(rdout_dpram_wren),
+  .addra(rdout_dpram_wr_addr),
+  .dina(rdout_dpram_data),
+  .clkb(clk),
+  .addrb(y_adr[10:0]),
+  .doutb(direct_rdout_dpram_data)
+);
+
+//
+// place rbd logic here for now
+//
+always @(posedge clk) begin
+  if (rst) begin
+    dpram_busy <= 0;
+    dpram_len <= 0;
+  end
+
+  else begin
+    if (rdout_dpram_run) begin
+      dpram_len <= dpram_len_in;
+      dpram_busy <= 1;
+    end
+
+    else if (dpram_done) begin
+      dpram_busy <= 0;
+      dpram_len <= 0;
+    end
+  end
+end
+
+//
+// DPRAM read mux
+//
 always @(*) begin
-	reg_dpram_rd_data = scratch_dpram_reg_out;
+  case (dpram_sel) 
+    0: xdom_dpram_rd_data = scratch_dpram_rd_data;
+    1: xdom_dpram_rd_data = direct_rdout_dpram_data;
+    default: xdom_dpram_rd_data = scratch_dpram_rd_data;
+  endcase
 end
 
 endmodule

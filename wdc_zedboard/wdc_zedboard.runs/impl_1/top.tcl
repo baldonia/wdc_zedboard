@@ -80,6 +80,10 @@ set rc [catch {
   read_ip -quiet C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/SCRATCH_DPRAM/SCRATCH_DPRAM.xci
   read_ip -quiet C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/FIFO_2048_32/FIFO_2048_32.xci
   read_ip -quiet C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/DIG0_MMCM/DIG0_MMCM.xci
+  read_ip -quiet C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/DIST_BUFFER_64_28/DIST_BUFFER_64_28.xci
+  read_ip -quiet C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/BUFFER_32K_28/BUFFER_32K_28.xci
+  read_ip -quiet C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/FIFO_1024_87/FIFO_1024_87.xci
+  read_ip -quiet c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/DIRECT_RDOUT_DPRAM/DIRECT_RDOUT_DPRAM.xci
   read_xdc C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/constrs_1/new/pin_assign.xdc
   read_xdc C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/manual_io_constr.xdc
   link_design -top top -part xc7z020clg484-1

@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date         : Mon Oct  5 16:59:33 2020
+| Date         : Tue Oct  6 17:27:48 2020
 | Host         : LAPTOP-GBOUD091 running 64-bit major release  (build 9200)
 | Command      : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
 | Design       : top
@@ -30,13 +30,13 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| Slice LUTs*             | 1753 |     0 |     53200 |  3.30 |
-|   LUT as Logic          | 1753 |     0 |     53200 |  3.30 |
+| Slice LUTs*             | 2491 |     0 |     53200 |  4.68 |
+|   LUT as Logic          | 2491 |     0 |     53200 |  4.68 |
 |   LUT as Memory         |    0 |     0 |     17400 |  0.00 |
-| Slice Registers         | 1442 |     0 |    106400 |  1.36 |
-|   Register as Flip Flop | 1442 |     0 |    106400 |  1.36 |
+| Slice Registers         | 2401 |     0 |    106400 |  2.26 |
+|   Register as Flip Flop | 2401 |     0 |    106400 |  2.26 |
 |   Register as Latch     |    0 |     0 |    106400 |  0.00 |
-| F7 Muxes                |    4 |     0 |     26600 |  0.02 |
+| F7 Muxes                |    1 |     0 |     26600 | <0.01 |
 | F8 Muxes                |    0 |     0 |     13300 |  0.00 |
 +-------------------------+------+-------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
@@ -56,8 +56,8 @@ Table of Contents
 | 0     |          Yes |           - |            - |
 | 3     |          Yes |           - |          Set |
 | 568   |          Yes |           - |        Reset |
-| 121   |          Yes |         Set |            - |
-| 750   |          Yes |       Reset |            - |
+| 156   |          Yes |         Set |            - |
+| 1674  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -103,7 +103,8 @@ Table of Contents
 | PHASER_IN/PHASER_IN_PHY     |    0 |     0 |        16 |  0.00 |
 | IDELAYE2/IDELAYE2_FINEDELAY |    0 |     0 |       200 |  0.00 |
 | ILOGIC                      |    0 |     0 |       200 |  0.00 |
-| OLOGIC                      |    0 |     0 |       200 |  0.00 |
+| OLOGIC                      |    2 |     0 |       200 |  1.00 |
+|   ODDR                      |    2 |       |           |       |
 +-----------------------------+------+-------+-----------+-------+
 
 
@@ -146,38 +147,43 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| FDRE     |  750 |        Flop & Latch |
-| LUT2     |  731 |                 LUT |
-| LUT4     |  592 |                 LUT |
+| FDRE     | 1674 |        Flop & Latch |
+| LUT2     |  998 |                 LUT |
+| LUT4     |  753 |                 LUT |
 | FDCE     |  568 |        Flop & Latch |
-| LUT3     |  358 |                 LUT |
-| CARRY4   |  358 |          CarryLogic |
-| LUT6     |  294 |                 LUT |
-| LUT5     |  191 |                 LUT |
-| FDSE     |  121 |        Flop & Latch |
-| LUT1     |   49 |                 LUT |
+| LUT6     |  532 |                 LUT |
+| LUT3     |  518 |                 LUT |
+| CARRY4   |  492 |          CarryLogic |
+| LUT5     |  223 |                 LUT |
+| FDSE     |  156 |        Flop & Latch |
+| LUT1     |  155 |                 LUT |
 | OBUF     |   15 |                  IO |
 | OBUFT    |    5 |                  IO |
 | OBUFDS   |    4 |                  IO |
-| MUXF7    |    4 |               MuxFx |
 | IBUF     |    3 |                  IO |
 | FDPE     |    3 |        Flop & Latch |
+| ODDR     |    2 |                  IO |
 | INV      |    2 |                 LUT |
 | IBUFDS   |    2 |                  IO |
+| MUXF7    |    1 |               MuxFx |
 +----------+------+---------------------+
 
 
 8. Black Boxes
 --------------
 
-+---------------+------+
-|    Ref Name   | Used |
-+---------------+------+
-| SCRATCH_DPRAM |    1 |
-| LCLK_MMCM     |    1 |
-| FIFO_2048_32  |    1 |
-| DIG0_MMCM     |    1 |
-+---------------+------+
++--------------------+------+
+|      Ref Name      | Used |
++--------------------+------+
+| SCRATCH_DPRAM      |    1 |
+| LCLK_MMCM          |    1 |
+| FIFO_2048_32       |    1 |
+| FIFO_1024_87       |    1 |
+| DIST_BUFFER_64_28  |    1 |
+| DIRECT_RDOUT_DPRAM |    1 |
+| DIG0_MMCM          |    1 |
+| BUFFER_32K_28      |    1 |
++--------------------+------+
 
 
 9. Instantiated Netlists

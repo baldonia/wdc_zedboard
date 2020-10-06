@@ -68,7 +68,7 @@ wire[P_WVB_ADR_WIDTH-1:0] stop_addr;
 wire[47:0] evt_ltc;
 wire[1:0] trig_src;
 wire cnst_run;
-wire[4:0] pre_conf;
+wire[5:0] pre_conf;
 
 cuppa_wvb_hdr_bundle_0_fan_out HDR_FAN_OUT 
 (
@@ -93,7 +93,7 @@ wire wvb_tot_0 = wvb_data[1];
 wire wvb_eoe = wvb_data[0];
 
 // header 0 word
-wire[15:0] hdr_0 = {pre_conf, cnst_run, 8'b0, trig_src};
+wire[15:0] hdr_0 = {pre_conf, cnst_run, 7'b0, trig_src};
 
 // constants
 localparam L_FMT = 8'h80;

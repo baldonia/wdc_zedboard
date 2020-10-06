@@ -21,7 +21,7 @@ module waveform_buffer
   input rst,
   
   // Outputs
-  output[P_ADR_WIDTH+1:0] wvb_wused,
+  output[P_ADR_WIDTH:0] wvb_wused,
   output[P_N_WVF_IN_BUF_WIDTH-1:0] n_wvf_in_buf,
   output wvb_overflow,
   output armed,

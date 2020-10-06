@@ -33,7 +33,7 @@ wire[P_DATA_WIDTH-1:0] buff_din = {wvb_data_in[P_DATA_WIDTH-1:1], eoe_in};
 wire[9:0] hdr_data_cnt;
 generate
 
-  if (P_ADR_WIDTH == 15) begin
+  if (P_ADR_WIDTH == 15 && P_HDR_WIDTH == 87 && P_DATA_WIDTH == 28) begin
     BUFFER_32K_28 WAVEFORM_BUFFER 
       ( 
        .clka(clk),

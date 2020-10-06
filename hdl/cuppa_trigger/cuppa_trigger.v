@@ -49,8 +49,8 @@ posedge_detector PEDGE_RUN(.clk(clk), .rst_n(!i_rst), .a(run), .y(run_p));
 
 // comparator for threshold triggering
 wire[1:0] i_thresh_tot;
-cmp CMP(.a(adc_stream_in_0), .b(thr), .y(i_thresh_tot[0]), .gt(gt), .et(et), .lt(lt));
-cmp CMP(.a(adc_stream_in_1), .b(thr), .y(i_thresh_tot[1]), .gt(gt), .et(et), .lt(lt));
+cmp CMP_0(.a(adc_stream_in_0), .b(thr), .y(i_thresh_tot[0]), .gt(gt), .et(et), .lt(lt));
+cmp CMP_1(.a(adc_stream_in_1), .b(thr), .y(i_thresh_tot[1]), .gt(gt), .et(et), .lt(lt));
 
 always @(posedge clk) begin
   if (i_rst) begin
