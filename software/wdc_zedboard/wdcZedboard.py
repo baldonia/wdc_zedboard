@@ -9,8 +9,7 @@ import logging
 import time
 import numpy as np
 from .uartClass import uartClass
-
-# from .unpack_wfm import unpack_wfm, wfm_n_words
+from .unpack_wfm import unpack_wfm, wfm_n_words
 
 
 class wdcZedboard:
@@ -21,6 +20,25 @@ class wdcZedboard:
     # address and data maps
     fpga_adrs = {
         "fw_vnum": 0xFFF,
+        "trig_settings": [0xFFE, 0xEFE],
+        "trig_threshold": [0xFFD, 0xEFD],
+        "sw_trig": 0xFFC,
+        "trig_mode": [0xFFB, 0xEFB],
+        "trig_arm": 0xFFA,
+        "trig_armed": 0xFF9,
+        "const_conf": [0xFF7, 0xEF7],
+        "test_conf": [0xFF6, 0xEF6],
+        "post_conf": [0xFF5, 0xEF5],
+        "pre_conf": [0xFF4, 0xEF4],
+        "dpram_len": 0xDFF,
+        "dpram_done": 0xDFE,
+        "dpram_sel": 0xDFD,
+        "buf_n_wfms": [0xDFC, 0xDF5],
+        "buf_wds_used": [0xDFB, 0xDF4],
+        "buf_overflow": 0xDFA,
+        "buf_rst": 0xDF9,
+        "buf_reader_enable": 0xDF8,
+        "buf_reader_dpram_mode": 0xDF7,
         "dac_sel": 0xBFF,
         "dac_task_reg": 0xBFE,
         "dac_spi_wr_high": 0xBFD,
@@ -30,6 +48,7 @@ class wdcZedboard:
         "dig_wr_data": 0xBED,
         "dig_rd_data": 0xBEC,
         "led_toggle": 0x8FF,
+        "event_data": 0x000,
     }
 
     fpga_data = {}
@@ -221,6 +240,43 @@ class wdcZedboard:
     @property
     def fw_vnum(self):
         return self.fpga_read("fw_vnum")
+
+    def read_waveform(self):
+        """ read a waveform from the board"""
+        event_len = int(self.fpga_read("dpram_len"))
+
+        if event_len == 0:
+            return None
+
+        self.fpga_write("dpram_sel", 1)
+
+        dpram_mode = self.fpga_read("buf_reader_dpram_mode")
+
+        fragments = [self.fpga_read("event_data", read_len=event_len)]
+
+        if dpram_mode == 0:
+            self.fpga_write("dpram_done", 1)
+            return unpack_wfm(fragments[0])
+
+        expected_total_words = wfm_n_words(fragments[0])
+
+        n_read = event_len
+        while n_read < expected_total_words:
+            self.fpga_write("dpram_done", 1)
+
+            next_len = self.fpga_read("dpram_len")
+
+            if next_len == 0:
+                break
+
+            fragments.append(self.fpga_read("event_data", read_len=next_len))
+            n_read += next_len
+
+        wfm_payload = np.hstack(fragments)
+
+        self.fpga_write("dpram_done", 1)
+
+        return unpack_wfm(wfm_payload)
 
     def sw_reset(self, dig_num):
         """ apply software reset to digitizer <dig_num> """

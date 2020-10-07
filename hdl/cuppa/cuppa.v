@@ -339,15 +339,15 @@ end
 ///////////////////////////////////////////////////////////////////////////////
 // Write registers (not task regs)
 always @(posedge clk) begin
+  wvb_trig_run_0 <= 0;
+  wvb_trig_run_1 <= 0;
+  
+  dpram_done <= 0;
+  
+  wvb_arm_0 <= 0;
+  wvb_arm_1 <= 0;
+  
   if (y_wr) 
-    wvb_trig_run_0 <= 0;
-    wvb_trig_run_1 <= 0;
-    
-    dpram_done <= 0;
-    
-    wvb_arm_0 <= 0;
-    wvb_arm_1 <= 0;
-
     case (y_adr)
       12'hffe: begin
          wvb_trig_et_0 <= y_wr_data[0];

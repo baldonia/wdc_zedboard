@@ -18,7 +18,7 @@
 // CHANNEL      - [15] 1
 //                [14:8] Waveform Format
 //                [7:0]  Channel Number
-// EVT_LEN      - Number of samples in the waveform
+// EVT_LEN      - Half the number of samples in the waveform
 // HDR_0        - [15:10] - preconf (will be 0 for hdr fmt 1)
 //                   [9] - cnst run mode
 //                  [8:2] - 0
