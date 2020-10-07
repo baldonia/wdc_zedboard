@@ -37,7 +37,7 @@ module ft232r_hs
    wire         i_ser_en; 
    wire         i_des_done; 
    // parameter P_CLK_FREQ_HZ = 100000000;
-   parameter P_CLK_FREQ_HZ = 125_000_000; // ATF: switch to 125 MHz
+   parameter P_CLK_FREQ_HZ = 125_000_000; // ATF: switch to 122.88 MHz
    parameter P_BAUD_RATE = 3_000_000; // TBA_NOTE: See if you can get to 3MBaud later
    // parameter P_BAUD_RATE = 1_000_000; // ATF: decrease baud rate to nicely divide 125 MHz
 

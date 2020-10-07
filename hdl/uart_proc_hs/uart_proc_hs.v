@@ -48,7 +48,7 @@ module uart_proc_hs
    parameter P_TIMEOUT_CNT_MAX = 1000; 
 `else
    // parameter P_TIMEOUT_CNT_MAX = 100000000; 
-   parameter P_TIMEOUT_CNT_MAX = 125_000_000;  // ATF: change to 125 MHz
+   parameter P_TIMEOUT_CNT_MAX = 125_000_000;  // ATF: change to 122,88 MHz
 `endif
    wire 	     i_rst;
    wire 	     timeout; 

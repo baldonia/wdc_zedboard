@@ -3,8 +3,8 @@
 -- Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
 -- Date        : Fri Oct  2 14:21:18 2020
 -- Host        : LAPTOP-GBOUD091 running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode synth_stub
---               C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/DIG0_MMCM/DIG0_MMCM_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub -rename_top DIG0_MMCM -prefix
+--               DIG0_MMCM_ DIG0_MMCM_stub.vhdl
 -- Design      : DIG0_MMCM
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7z020clg484-1

@@ -57,7 +57,7 @@ module top (
 
 
 localparam N_CHANNELS = 2;
-localparam[15:0] FW_VNUM = 16'h7;
+localparam[15:0] FW_VNUM = 16'h9;
 
 localparam P_WVB_DATA_WIDTH = 28;
 localparam P_HDR_WIDTH = 87;
@@ -136,14 +136,14 @@ ODDR #(
  );
 OBUFDS obuf_dig_clock_1(.I(i_dig1_clk_out), .O(DIG1_CLK_P), .OB(DIG1_CLK_N));
 
-assign lclk = clk_125MHz;
-wire lclk_rst = !lclk_mmcm_locked;
+// assign lclk = clk_125MHz;
+// wire lclk_rst = !lclk_mmcm_locked;
 
 assign LD2 = lclk_mmcm_locked;
 assign LD3 = !lclk_mmcm_locked;
 
-// assign lclk = clk_122_88_MHz;
-// assign lclk_rst = dig0_pll_locked;
+assign lclk = clk_122_88_MHz;
+wire lclk_rst = !dig0_pll_locked;
 
 /////////////////////////////////////////////////////////////////////////
 // cuppa register interface
@@ -211,6 +211,8 @@ assign LD3 = !lclk_mmcm_locked;
 //     12'hbec: [7:0] dig spi rd data
 //
 //     12'8ff: LED toggle
+//     12'8fe: dig 0 lock PE count
+//     12'8fd: rst dig 0 lock PE
 
 wire led_toggle;
 
@@ -296,6 +298,8 @@ cuppa CUPPA_0
   .rdout_dpram_data(rdout_dpram_data),
   .wvb_reader_enable(wvb_reader_enable),
   .wvb_reader_dpram_mode(wvb_reader_dpram_mode),
+
+  .dig0_mmcm_locked(dig0_pll_locked),
 
   .led_toggle(led_toggle),
 

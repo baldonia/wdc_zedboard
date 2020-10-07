@@ -33,7 +33,7 @@ def check_wfm(wfm):
     assert wfm["samples"][0] % 2 == chan
 
     # check EOE
-    eoe_inds = np.argwhere(wfm['eoe'] == 1)
+    eoe_inds = np.argwhere(wfm["eoe"] == 1)
     assert len(eoe_inds) == 1
     assert eoe_inds[0][0] == len(wfm["samples"]) - 1
 
@@ -91,8 +91,8 @@ def main():
             raise
 
         print(f'chan {chan} adc_samples: {wfm["samples"][:5]}')
-        tot_index = np.argwhere(wfm['tot'] == 1)[0][0]
-        print(f'chan {chan} tot index: {tot_index}')
+        tot_index = np.argwhere(wfm["tot"] == 1)[0][0]
+        print(f"chan {chan} tot index: {tot_index}")
 
         print_wfm_count(zed)
 

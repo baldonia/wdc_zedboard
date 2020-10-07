@@ -6,7 +6,6 @@
 ################################################################
 import serial
 import logging
-import binascii
 import struct
 
 from .cmdClass import cmdClass

@@ -53,6 +53,9 @@ module cuppa #(parameter N_CHANNELS = 2)
   output reg wvb_reader_enable = 0,
   output reg wvb_reader_dpram_mode = 0,
 
+  // dig 0 MMCM lock...
+  input dig0_mmcm_locked,
+
   // Debug FT232R I/O
   input             debug_txd,
   output            debug_rxd,
@@ -274,6 +277,9 @@ reg dpram_done = 0;
 reg dpram_sel = 0;
 reg[15:0] xdom_dpram_rd_data;
 
+reg[15:0] lock_pe_cnt = 0;
+reg rst_lock_pe_cnt = 0;
+
 always @(*) begin
   case(y_adr)
     12'hfff: begin y_rd_data =       vnum;                                  end
@@ -329,6 +335,8 @@ always @(*) begin
     12'hbed: begin y_rd_data =       dig_spi_wr_data;                       end
     12'hbec: begin y_rd_data =       {8'b0, dig_spi_rd_data};               end    
     12'h8ff: begin y_rd_data =       {15'h0, led_toggle};                   end
+    12'h8fe: begin y_rd_data =       lock_pe_cnt;                           end
+    12'h8fd: begin y_rd_data =       {15'h0, rst_lock_pe_cnt};              end
     default: 
       begin
   	    y_rd_data = xdom_dpram_rd_data;
@@ -346,6 +354,8 @@ always @(posedge clk) begin
   
   wvb_arm_0 <= 0;
   wvb_arm_1 <= 0;
+
+  rst_lock_pe_cnt <= 0;
   
   if (y_wr) 
     case (y_adr)
@@ -392,6 +402,7 @@ always @(posedge clk) begin
       12'hbef: begin dig_sel <= y_wr_data[0];                               end
       12'hbed: begin dig_spi_wr_data <= y_wr_data;                          end
       12'h8ff: begin led_toggle <= y_wr_data[0];                            end
+      12'h8fd: begin rst_lock_pe_cnt <= y_wr_data[0];                       end
       default: begin																										    end
     endcase
 end
@@ -457,5 +468,25 @@ always @(*) begin
     default: xdom_dpram_rd_data = scratch_dpram_rd_data;
   endcase
 end
+
+// count dig 0 lock PE
+wire dig0_lock_s;
+wire dig0_lock_pe;
+sync SYNC0(.clk(clk), .rst_n(!rst), 
+           .a(dig0_mmcm_locked), .y(dig0_lock_s));
+posedge_detector LOCK_PE(.clk(clk), .rst_n(!rst), 
+                         .a(dig0_lock_s), .y(dig0_lock_pe));
+
+always @(posedge clk) begin
+  if (rst_lock_pe_cnt) begin
+    lock_pe_cnt <= 0;    
+  end
+
+  else if (dig0_lock_pe && (lock_pe_cnt != 16'hffff)) begin
+    lock_pe_cnt <= lock_pe_cnt + 1;
+  end
+end
+
+
 
 endmodule
