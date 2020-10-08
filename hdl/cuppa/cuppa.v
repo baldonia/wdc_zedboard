@@ -53,8 +53,9 @@ module cuppa #(parameter N_CHANNELS = 2)
   output reg wvb_reader_enable = 0,
   output reg wvb_reader_dpram_mode = 0,
 
-  // dig 0 MMCM lock...
   input dig0_mmcm_locked,
+
+  output reg spi_rst = 0,
 
   // Debug FT232R I/O
   input             debug_txd,
@@ -337,6 +338,7 @@ always @(*) begin
     12'h8ff: begin y_rd_data =       {15'h0, led_toggle};                   end
     12'h8fe: begin y_rd_data =       lock_pe_cnt;                           end
     12'h8fd: begin y_rd_data =       {15'h0, rst_lock_pe_cnt};              end
+    12'h8fc: begin y_rd_data =       {15'h0, spi_rst};                      end
     default: 
       begin
   	    y_rd_data = xdom_dpram_rd_data;
@@ -403,6 +405,7 @@ always @(posedge clk) begin
       12'hbed: begin dig_spi_wr_data <= y_wr_data;                          end
       12'h8ff: begin led_toggle <= y_wr_data[0];                            end
       12'h8fd: begin rst_lock_pe_cnt <= y_wr_data[0];                       end
+      12'h8fc: begin spi_rst <= y_wr_data[0];                               end
       default: begin																										    end
     endcase
 end

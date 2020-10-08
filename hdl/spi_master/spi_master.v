@@ -82,8 +82,15 @@ module spi_master #(parameter P_RD_DATA_WIDTH=256, parameter P_WR_DATA_WIDTH=256
    reg[31:0] max_cnt = 0;
    reg valid_max_cnt = 0;
    always @(posedge clk) begin
-     max_cnt <= i_max_cnt;
-     valid_max_cnt <= i_valid_max_cnt;
+     if (rst) begin
+       max_cnt <= 0;
+       valid_max_cnt <= 0;
+     end
+     
+     else begin
+       max_cnt <= i_max_cnt;
+       valid_max_cnt <= i_valid_max_cnt;
+     end
    end 
 
    // these iteratively calculate max count, so as to allow arbitrary bit lengths. 

@@ -48,6 +48,7 @@ class wdcZedboard:
         "dig_wr_data": 0xBED,
         "dig_rd_data": 0xBEC,
         "led_toggle": 0x8FF,
+        "spi_rst": 0x8FC,
         "event_data": 0x000,
     }
 

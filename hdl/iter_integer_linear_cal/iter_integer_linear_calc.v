@@ -57,8 +57,15 @@ module iter_integer_linear_calc
    wire next_valid = fsm==S_IDLE && (i_m_0 == m) && (i_x_0 == x); 
    // register outputs
    always @(posedge clk) begin
-     y <= next_y;
-     valid <= next_valid;
+     if (rst) begin
+       y <= 0;
+       valid <= 0;
+     end 
+
+     else begin 
+       y <= next_y;
+       valid <= next_valid;
+     end
    end
 
    /////////////////////////////////////////////////////////////////////////////
@@ -69,6 +76,8 @@ module iter_integer_linear_calc
 	  fsm <= S_IDLE;
 	  i_dy <= 0;
 	  cnt <= 0; 
+    i_m_0 <= 0;
+    i_x_0 <= 0;
        end
      else
        case(fsm)

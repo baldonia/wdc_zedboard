@@ -213,6 +213,7 @@ wire lclk_rst = !dig0_pll_locked;
 //     12'8ff: LED toggle
 //     12'8fe: dig 0 lock PE count
 //     12'8fd: rst dig 0 lock PE
+//     12'8fc: spi reset (resets DAC & ADC SPI masters)
 
 wire led_toggle;
 
@@ -255,6 +256,8 @@ wire[9:0] rdout_dpram_wr_addr;
 wire[31:0] rdout_dpram_data;
 wire wvb_reader_enable;
 wire wvb_reader_dpram_mode;
+
+wire spi_rst;
 
 cuppa CUPPA_0
 (
@@ -302,6 +305,8 @@ cuppa CUPPA_0
   .dig0_mmcm_locked(dig0_pll_locked),
 
   .led_toggle(led_toggle),
+
+  .spi_rst(spi_rst),
 
   .debug_txd(UART_TXD),
   .debug_rxd(UART_RXD),
@@ -485,7 +490,7 @@ spi_master #(.P_RD_DATA_WIDTH(24),.P_WR_DATA_WIDTH(24)) DAC_SPI
   .sclk    (dac_spi_sclk),
   // Inputs
   .clk     (lclk),
-  .rst     (lclk_rst),
+  .rst     (lclk_rst || spi_rst),
   // MOSI
   .nb_mosi (8'd24),
   .y0_mosi (1'b0),
@@ -513,7 +518,7 @@ assign DAC_SCK = dac_spi_sclk;
 assign DAC_SDI = dac_spi_mosi;
 
 //
-// LTC2612 DAC controls
+// ADS4129 serial controls
 //
 wire        dig_spi_mosi;
 wire        dig_spi_miso;
@@ -527,7 +532,7 @@ spi_master #(.P_RD_DATA_WIDTH(8),.P_WR_DATA_WIDTH(16)) DIG_SPI
   .sclk    (dig_spi_sclk),
   // Inputs
   .clk     (lclk),
-  .rst     (lclk_rst),
+  .rst     (lclk_rst || spi_rst),
   // MOSI
   .nb_mosi (8'd16),
   .y0_mosi (1'b0),

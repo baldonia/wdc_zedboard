@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date         : Wed Oct  7 18:59:09 2020
+| Date         : Wed Oct  7 20:10:29 2020
 | Host         : LAPTOP-GBOUD091 running 64-bit major release  (build 9200)
 | Command      : report_methodology -file top_methodology_drc_routed.rpt -pb top_methodology_drc_routed.pb -rpx top_methodology_drc_routed.rpx
 | Design       : top
@@ -23,11 +23,11 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 2
+             Violations found: 3
 +---------+----------+------------------------------+------------+
 | Rule    | Severity | Description                  | Violations |
 +---------+----------+------------------------------+------------+
-| LUTAR-1 | Warning  | LUT drives async reset alert | 2          |
+| LUTAR-1 | Warning  | LUT drives async reset alert | 3          |
 +---------+----------+------------------------------+------------+
 
 2. REPORT DETAILS
@@ -39,7 +39,12 @@ Related violations: <none>
 
 LUTAR-1#2 Warning
 LUT drives async reset alert  
-LUT cell WVB_READER/RD_CTRL/ack_i_1__1, with 2 or more inputs, drives asynchronous preset/clear pin(s) CUPPA_0/CRSM_0/NEDGE_0/ff_reg/CLR, CUPPA_0/SYNC0/ff_reg[0]/CLR, CUPPA_0/SYNC0/ff_reg[1]/CLR, CUPPA_0/UART_DEBUG_0/FT232R_HS_0/NEDGE_0/ff_reg/CLR, CUPPA_0/UART_DEBUG_0/FT232R_HS_0/RS232_DES_0/NEDGE0/ff_reg/CLR, CUPPA_0/UART_DEBUG_0/FT232R_HS_0/RS232_DES_0/SYNC0/ff_reg[0]/CLR, CUPPA_0/UART_DEBUG_0/FT232R_HS_0/RS232_DES_0/SYNC0/ff_reg[1]/CLR, DAC_SPI/FSM_sequential_fsm_reg[0]/CLR, DAC_SPI/FSM_sequential_fsm_reg[1]/CLR, DAC_SPI/ack_reg/CLR, DAC_SPI/cnt_reg[0]/CLR, DAC_SPI/cnt_reg[10]/CLR, DAC_SPI/cnt_reg[11]/CLR, DAC_SPI/cnt_reg[12]/CLR, DAC_SPI/cnt_reg[13]/CLR (the first 15 of 571 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell CUPPA_0/y[31]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) DAC_SPI/FSM_sequential_fsm_reg[0]/CLR, DAC_SPI/FSM_sequential_fsm_reg[1]/CLR, DAC_SPI/ack_reg/CLR, DAC_SPI/cnt_reg[0]/CLR, DAC_SPI/cnt_reg[10]/CLR, DAC_SPI/cnt_reg[11]/CLR, DAC_SPI/cnt_reg[12]/CLR, DAC_SPI/cnt_reg[13]/CLR, DAC_SPI/cnt_reg[14]/CLR, DAC_SPI/cnt_reg[15]/CLR, DAC_SPI/cnt_reg[16]/CLR, DAC_SPI/cnt_reg[17]/CLR, DAC_SPI/cnt_reg[18]/CLR, DAC_SPI/cnt_reg[19]/CLR, DAC_SPI/cnt_reg[1]/CLR (the first 15 of 570 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#3 Warning
+LUT drives async reset alert  
+LUT cell WVB_READER/RD_CTRL/ack_i_1__1, with 2 or more inputs, drives asynchronous preset/clear pin(s) CUPPA_0/CRSM_0/NEDGE_0/ff_reg/CLR, CUPPA_0/SYNC0/ff_reg[0]/CLR, CUPPA_0/SYNC0/ff_reg[1]/CLR, CUPPA_0/UART_DEBUG_0/FT232R_HS_0/NEDGE_0/ff_reg/CLR, CUPPA_0/UART_DEBUG_0/FT232R_HS_0/RS232_DES_0/NEDGE0/ff_reg/CLR, CUPPA_0/UART_DEBUG_0/FT232R_HS_0/RS232_DES_0/SYNC0/ff_reg[0]/CLR, CUPPA_0/UART_DEBUG_0/FT232R_HS_0/RS232_DES_0/SYNC0/ff_reg[1]/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 
