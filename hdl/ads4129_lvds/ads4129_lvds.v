@@ -88,6 +88,7 @@ if (P_ODD_CHANNEL == "FALSE") begin
                            raw_bits_out[12]};
 
   always @(posedge clk) begin
+  
     if (rst) begin
       sample_0 <= 0;
       sample_1 <= 0;
@@ -102,7 +103,7 @@ if (P_ODD_CHANNEL == "FALSE") begin
 end
 
 else begin
-  not_yet_implemented odd_chan_not_yet_impleneted();
+  not_yet_implemented odd_chan_not_yet_implemented();
 end
 
 endgenerate

@@ -47,6 +47,11 @@ class wdcZedboard:
         "dig_task_reg": 0xBEE,
         "dig_wr_data": 0xBED,
         "dig_rd_data": 0xBEC,
+        "dig_io_reset": [0xBDF, 0xBDA],
+        "dig_delay_reset": [0xBDE, 0xBD9],
+        "dig_io_ctrl": [0xBDD, 0xBD8],
+        "dig_delay_tapout_high": [0xBDC, 0xBD7],
+        "dig_delay_tapout_low": [0xBDB, 0xBD6],
         "led_toggle": 0x8FF,
         "spi_rst": 0x8FC,
         "event_data": 0x000,
@@ -295,17 +300,19 @@ class wdcZedboard:
         )
 
     def set_custom_pattern(self, dig_num, custom_pattern):
-        ''' Set the custom pattern for dig <dig_num> to <custom_pattern>'''
+        """ Set the custom pattern for dig <dig_num> to <custom_pattern>"""
         if not 0 <= int(custom_pattern) < 0x1000:
-            raise ValueError(f'Invalid custom pattern ({custom_pattern}).'
-                             ' It must be a 12-bit integer.')
+            raise ValueError(
+                f"Invalid custom pattern ({custom_pattern})."
+                " It must be a 12-bit integer."
+            )
 
         #  this seems to work, but doesn't quite match the data sheet...
-        self.adc_write(dig_num, 'custom_pattern_high', custom_pattern >> 6)
-        self.adc_write(dig_num, 'custom_pattern_low', (custom_pattern & 0x3f) << 2)
+        self.adc_write(dig_num, "custom_pattern_high", custom_pattern >> 6)
+        self.adc_write(dig_num, "custom_pattern_low", (custom_pattern & 0x3F) << 2)
 
     def set_deskew_pattern(self, dig_num):
-        self.set_custom_pattern(dig_num, 0xaaa)
+        self.set_custom_pattern(dig_num, 0xAAA)
 
     def set_dac(self, dac_num, channel, value):
         high_bits = (self.dac_cmds["wr_n_up_all"] << 4) + self.dac_addrs[channel]

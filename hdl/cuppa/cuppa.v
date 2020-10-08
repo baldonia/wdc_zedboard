@@ -25,13 +25,21 @@ module cuppa #(parameter N_CHANNELS = 2)
   output reg[15:0] dig_spi_wr_data = 0,
   input[7:0] dig_spi_rd_data,
 
-  // dig 0 LVDS IO
+  // DIG 0 LVDS IO
   output reg io_reset_0 = 1,
   output reg[5:0] bitslip_0 = 0,
   output reg in_delay_reset_0 = 0,
   output reg[5:0] in_delay_ce_0 = 0,
   output reg[5:0] in_delay_inc_0 = 0,
   input[29:0] in_delay_tap_out_0,
+
+  // DIG 1 LVDS IO
+  output reg io_reset_1 = 1,
+  output reg[5:0] bitslip_1 = 0,
+  output reg in_delay_reset_1 = 0,
+  output reg[5:0] in_delay_ce_1 = 0,
+  output reg[5:0] in_delay_inc_1 = 0,
+  input[29:0] in_delay_tap_out_1,
 
   // turn KR pattern on and off
   output reg led_toggle = 1,
@@ -349,7 +357,14 @@ always @(*) begin
                                              in_delay_ce_0[0],
                                              in_delay_inc_0[0]};            end    
     12'hbdc: begin y_rd_data =       {2'b0, in_delay_tap_out_0[29:16]};     end    
-    12'hbdb: begin y_rd_data =       in_delay_tap_out_0[15:0];              end    
+    12'hbdb: begin y_rd_data =       in_delay_tap_out_0[15:0];              end
+    12'hbda: begin y_rd_data =       {15'b0, io_reset_1};                   end    
+    12'hbd9: begin y_rd_data =       {15'b0, in_delay_reset_1};             end    
+    12'hbd8: begin y_rd_data =       {13'b0, bitslip_1[0],
+                                             in_delay_ce_1[0],
+                                             in_delay_inc_1[0]};            end    
+    12'hbd7: begin y_rd_data =       {2'b0, in_delay_tap_out_1[29:16]};     end    
+    12'hbd6: begin y_rd_data =       in_delay_tap_out_1[15:0];              end    
     12'h8ff: begin y_rd_data =       {15'b0, led_toggle};                   end
     12'h8fe: begin y_rd_data =       lock_pe_cnt;                           end
     12'h8fd: begin y_rd_data =       {15'b0, rst_lock_pe_cnt};              end
@@ -376,6 +391,8 @@ always @(posedge clk) begin
 
   in_delay_ce_0 <= 6'b0;
   bitslip_0 <= 6'b0;
+  in_delay_ce_1 <= 6'b0;
+  bitslip_1 <= 6'b0;
   
   if (y_wr) 
     case (y_adr)
@@ -427,6 +444,13 @@ always @(posedge clk) begin
         in_delay_inc_0[5:0] <= {6{y_wr_data[0]}};
         in_delay_ce_0[5:0] <= {6{y_wr_data[1]}};
         bitslip_0[5:0] <= {6{y_wr_data[2]}};
+      end
+      12'hbda: begin io_reset_1 <= y_wr_data[0];                            end
+      12'hbd9: begin in_delay_reset_1 <= y_wr_data[0];                      end
+      12'hbd8: begin 
+        in_delay_inc_1[5:0] <= {6{y_wr_data[0]}};
+        in_delay_ce_1[5:0] <= {6{y_wr_data[1]}};
+        bitslip_1[5:0] <= {6{y_wr_data[2]}};
       end
       12'h8ff: begin led_toggle <= y_wr_data[0];                            end
       12'h8fd: begin rst_lock_pe_cnt <= y_wr_data[0];                       end

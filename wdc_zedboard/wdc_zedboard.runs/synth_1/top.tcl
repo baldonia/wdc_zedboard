@@ -52,7 +52,6 @@ read_verilog -library xil_defaultlib {
   C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/bundles/cuppa_wvb_conf_bundle/cuppa_wvb_conf_bundle_fan_out.v
   C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/bundles/cuppa_wvb_hdr_bundle/cuppa_wvb_hdr_bundle_0_fan_in.v
   C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/bundles/cuppa_wvb_hdr_bundle/cuppa_wvb_hdr_bundle_0_fan_out.v
-  C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/data_gen/data_gen.v
   C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/err_mngr/err_mngr.v
   C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/ft232r_hs/ft232r_hs.v
   C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/ft232r_proc_buffered/ft232r_proc_buffered.v

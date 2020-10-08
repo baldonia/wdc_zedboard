@@ -23,7 +23,6 @@ module top (
   input DIG0_D6_D7_N,
   input DIG0_D8_D9_N,
   input DIG0_D10_D11_N,
-
   // to ADC
   output DIG0_CLK_P,
   output DIG0_CLK_N,
@@ -32,6 +31,18 @@ module top (
   // from ADC
   input DIG1_CLKOUT_P,
   input DIG1_CLKOUT_N,
+  input DIG1_D0_D1_P,
+  input DIG1_D2_D3_P,
+  input DIG1_D4_D5_P,
+  input DIG1_D6_D7_P,
+  input DIG1_D8_D9_P,
+  input DIG1_D10_D11_P,  
+  input DIG1_D0_D1_N,
+  input DIG1_D2_D3_N,
+  input DIG1_D4_D5_N,
+  input DIG1_D6_D7_N,
+  input DIG1_D8_D9_N,
+  input DIG1_D10_D11_N,
   // to ADC
   output DIG1_CLK_P,
   output DIG1_CLK_N,
@@ -72,7 +83,7 @@ module top (
 
 
 localparam N_CHANNELS = 2;
-localparam[15:0] FW_VNUM = 16'ha;
+localparam[15:0] FW_VNUM = 16'hb;
 
 localparam P_WVB_DATA_WIDTH = 28;
 localparam P_HDR_WIDTH = 87;
@@ -231,14 +242,23 @@ wire lclk_rst = !dig0_pll_locked;
 //     12'hbed: [15:0] dig spi wr data
 //     12'hbec: [7:0] dig spi rd data
 //
-//     12'hbdf: [0] dig_0 IO reset (defaults to 1)
-//     12'hbde: [0] dig_0 delay reset
+//     12'hbdf: [0] DIG 0 IO reset (defaults to 1)
+//     12'hbde: [0] DIG 0 delay reset
 //     12'hbdd: DIG 0 IO tuning
 //              [0] delay_inc
 //              [1] delay_ce (resets automatically)
 //              [2] bitslip (resets automatically)
 //     12'hbdc: [13:0] DIG 0 delay tap out [29:16]
 //     12'hbdb: DIG 0 delay tap out [15:0]
+// 
+//     12'hbda: [0] DIG 1 IO reset (defaults to 1)
+//     12'hbd9: [0] DIG 1 delay reset
+//     12'hbd8: DIG 1 IO tuning
+//              [0] delay_inc
+//              [1] delay_ce (resets automatically)
+//              [2] bitslip (resets automatically)
+//     12'hbd7: [13:0] DIG 1 delay tap out [29:16]
+//     12'hbd6: DIG 1 delay tap out [15:0]
 // 
 //     12'8ff: LED toggle
 //     12'8fe: dig 0 lock PE count
@@ -267,6 +287,14 @@ wire in_delay_reset_0;
 wire[5:0] in_delay_ce_0;
 wire[5:0] in_delay_inc_0;
 wire[29:0] in_delay_tap_out_0; 
+
+// DIG 1 lvds IO
+wire io_reset_1;
+wire[5:0] bitslip_1;
+wire in_delay_reset_1;
+wire[5:0] in_delay_ce_1;
+wire[5:0] in_delay_inc_1;
+wire[29:0] in_delay_tap_out_1; 
 
 // Dig 0 trigger / wvb conf
 wire[L_WIDTH_CUPPA_TRIG_BUNDLE-1:0] cuppa_trig_bundle_0;
@@ -316,13 +344,21 @@ cuppa CUPPA_0
   .dig_spi_wr_data(dig_spi_wr_data),
   .dig_spi_rd_data(dig_spi_rd_data),
 
-  // dig 0 LVDS IO
+  // DIG 0 LVDS IO
   .io_reset_0(io_reset_0),
   .bitslip_0(bitslip_0),
   .in_delay_reset_0(in_delay_reset_0),
   .in_delay_ce_0(in_delay_ce_0),
   .in_delay_inc_0(in_delay_inc_0),
-  .in_delay_tap_out_0(in_delay_tap_out_0),
+  .in_delay_tap_out_0(in_delay_tap_out_0),  
+
+  // DIG 1 LVDS IO
+  .io_reset_1(io_reset_1),
+  .bitslip_1(bitslip_1),
+  .in_delay_reset_1(in_delay_reset_1),
+  .in_delay_ce_1(in_delay_ce_1),
+  .in_delay_inc_1(in_delay_inc_1),
+  .in_delay_tap_out_1(in_delay_tap_out_1),
 
   // trig / wvb conf
   .trig_bundle_0(cuppa_trig_bundle_0),
@@ -377,9 +413,9 @@ end
 // 
 // fake data generation
 // 
-// to be replaced with SERDES + idelay, etc
 wire[11:0] adc_stream_0_0;
 wire[11:0] adc_stream_1_0;
+// to be replaced with SERDES + idelay, etc
 // data_gen #(.P_ADC_RAMP_START(0)) FAKE_CHAN_0
 //  (
 //   .clk(lclk),
@@ -420,16 +456,50 @@ ads4129_lvds DIG0_LVDS
   .in_delay_tap_out(in_delay_tap_out_0)
 );
 
-// to be replaced with SERDES + idelay, etc
+
+
 wire[11:0] adc_stream_0_1;
 wire[11:0] adc_stream_1_1;
-data_gen #(.P_ADC_RAMP_START(1)) FAKE_CHAN_1
- (
+// to be replaced with SERDES + idelay, etc
+// data_gen #(.P_ADC_RAMP_START(1)) FAKE_CHAN_1
+//  (
+//   .clk(lclk),
+//   .rst(lclk_rst || cuppa_wvb_rst[1]),
+//   .adc_stream_0(adc_stream_0_1),
+//   .adc_stream_1(adc_stream_1_1)
+//  );
+
+// real data for channel 1
+ads4129_lvds DIG1_LVDS
+(
   .clk(lclk),
+  .dclk(clk_245_76_MHz),
   .rst(lclk_rst || cuppa_wvb_rst[1]),
-  .adc_stream_0(adc_stream_0_1),
-  .adc_stream_1(adc_stream_1_1)
- );
+
+  .data_p({DIG1_D10_D11_P,
+           DIG1_D8_D9_P,
+           DIG1_D6_D7_P,
+           DIG1_D4_D5_P,
+           DIG1_D2_D3_P,
+           DIG1_D0_D1_P}),
+
+  .data_n({DIG1_D10_D11_N,
+           DIG1_D8_D9_N,
+           DIG1_D6_D7_N,
+           DIG1_D4_D5_N,
+           DIG1_D2_D3_N,
+           DIG1_D0_D1_N}),
+
+  .sample_0(adc_stream_0_1),
+  .sample_1(adc_stream_1_1),
+
+  .io_reset(io_reset_1),
+  .bitslip(bitslip_1),
+  .in_delay_reset(in_delay_reset_1),
+  .in_delay_ce(in_delay_ce_1),
+  .in_delay_inc(in_delay_inc_1),
+  .in_delay_tap_out(in_delay_tap_out_1)
+);
 
 // Waveform acquisition modules
 

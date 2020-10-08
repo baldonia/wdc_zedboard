@@ -12,6 +12,7 @@ import time
 
 test_conf = 50
 
+
 def main():
     zed = wdcZedboard(dev_path=read_dev_path("./conf/uart_path.txt"))
 
@@ -24,24 +25,24 @@ def main():
     zed.sw_reset(chan)
     time.sleep(0.1)
     print(f"setting {pattern} test pattern")
-    
-    if pattern == 'deskew':
-        print('Setting deskew')
-        zed.set_deskew_pattern(chan)
-        pattern = 'custom'
 
-    elif pattern not in zed.adc_data['test_patterns']:
+    if pattern == "deskew":
+        print("Setting deskew")
+        zed.set_deskew_pattern(chan)
+        pattern = "custom"
+
+    elif pattern not in zed.adc_data["test_patterns"]:
         try:
             zed.set_custom_pattern(chan, int(pattern))
-            pattern = 'custom'
+            pattern = "custom"
         except ValueError:
             pass
 
     zed.set_adc_test_pattern(chan, pattern)
 
-    zed.adc_write(chan, 'data_format', 'offset_binary')
-    zed.adc_write(chan, 'high_perf_mode_1', 'high_perf_1')
-    zed.adc_write(chan, 'high_perf_mode_2', 'high_perf_2')
+    zed.adc_write(chan, "data_format", "offset_binary")
+    zed.adc_write(chan, "high_perf_mode_1", "high_perf_1")
+    zed.adc_write(chan, "high_perf_mode_2", "high_perf_2")
 
     print("Configuring test conf")
     zed.fpga_write(f"test_conf[{chan}]", test_conf)

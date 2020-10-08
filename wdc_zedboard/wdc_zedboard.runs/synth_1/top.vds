@@ -2,8 +2,8 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Thu Oct  8 16:28:01 2020
-# Process ID: 9784
+# Start of session at: Thu Oct  8 18:10:38 2020
+# Process ID: 6428
 # Current directory: C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1
 # Command line: vivado.exe -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
 # Log file: C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/top.vds
@@ -16,9 +16,9 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Device 21-403] Loading part xc7z020clg484-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 14420 
+INFO: Helper process launched with PID 3796 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 744.262 ; gain = 177.461
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 744.090 ; gain = 177.359
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'top' [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/wdc_zedboard_top.v:6]
 	Parameter L_WIDTH_CUPPA_TRIG_BUNDLE_TRIG_ET bound to: 1 - type: integer 
@@ -68,7 +68,7 @@ INFO: [Synth 8-6157] synthesizing module 'top' [C:/Users/atfie/watchman-ne1/wdc_
 	Parameter L_WIDTH_CUPPA_WVB_CONF_BUNDLE_ZERO_PAD bound to: 0 - type: integer 
 	Parameter L_WIDTH_CUPPA_WVB_CONF_BUNDLE bound to: 54 - type: integer 
 	Parameter N_CHANNELS bound to: 2 - type: integer 
-	Parameter FW_VNUM bound to: 16'b0000000000001010 
+	Parameter FW_VNUM bound to: 16'b0000000000001011 
 	Parameter P_WVB_DATA_WIDTH bound to: 28 - type: integer 
 	Parameter P_HDR_WIDTH bound to: 87 - type: integer 
 	Parameter P_WVB_ADR_WIDTH bound to: 15 - type: integer 
@@ -79,10 +79,10 @@ INFO: [Synth 8-6157] synthesizing module 'IBUFGDS' [C:/Xilinx/Vivado/2019.1/scri
 	Parameter IBUF_LOW_PWR bound to: TRUE - type: string 
 	Parameter IOSTANDARD bound to: DEFAULT - type: string 
 INFO: [Synth 8-6155] done synthesizing module 'IBUFGDS' (1#1) [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:33335]
-INFO: [Synth 8-6157] synthesizing module 'DIG0_MMCM' [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-9784-LAPTOP-GBOUD091/realtime/DIG0_MMCM_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'DIG0_MMCM' (2#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-9784-LAPTOP-GBOUD091/realtime/DIG0_MMCM_stub.v:5]
-INFO: [Synth 8-6157] synthesizing module 'LCLK_MMCM' [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-9784-LAPTOP-GBOUD091/realtime/LCLK_MMCM_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'LCLK_MMCM' (3#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-9784-LAPTOP-GBOUD091/realtime/LCLK_MMCM_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'DIG0_MMCM' [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-6428-LAPTOP-GBOUD091/realtime/DIG0_MMCM_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'DIG0_MMCM' (2#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-6428-LAPTOP-GBOUD091/realtime/DIG0_MMCM_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'LCLK_MMCM' [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-6428-LAPTOP-GBOUD091/realtime/LCLK_MMCM_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'LCLK_MMCM' (3#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-6428-LAPTOP-GBOUD091/realtime/LCLK_MMCM_stub.v:5]
 INFO: [Synth 8-6157] synthesizing module 'IDELAYCTRL' [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:34933]
 	Parameter SIM_DEVICE bound to: 7SERIES - type: string 
 INFO: [Synth 8-6155] done synthesizing module 'IDELAYCTRL' (4#1) [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:34933]
@@ -186,8 +186,8 @@ INFO: [Synth 8-6155] done synthesizing module 'err_mngr' (14#1) [C:/Users/atfie/
 WARNING: [Synth 8-6014] Unused sequential element n_burst_reg was removed.  [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/uart_proc_hs/uart_proc_hs.v:222]
 WARNING: [Synth 8-6014] Unused sequential element err_reg was removed.  [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/uart_proc_hs/uart_proc_hs.v:223]
 INFO: [Synth 8-6155] done synthesizing module 'uart_proc_hs' (15#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/uart_proc_hs/uart_proc_hs.v:16]
-INFO: [Synth 8-6157] synthesizing module 'FIFO_2048_32' [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-9784-LAPTOP-GBOUD091/realtime/FIFO_2048_32_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'FIFO_2048_32' (16#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-9784-LAPTOP-GBOUD091/realtime/FIFO_2048_32_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'FIFO_2048_32' [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-6428-LAPTOP-GBOUD091/realtime/FIFO_2048_32_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'FIFO_2048_32' (16#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-6428-LAPTOP-GBOUD091/realtime/FIFO_2048_32_stub.v:6]
 INFO: [Synth 8-6155] done synthesizing module 'ft232r_proc_buffered' (17#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/ft232r_proc_buffered/ft232r_proc_buffered.v:9]
 INFO: [Synth 8-6157] synthesizing module 'crs_master' [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/crs_master/crs_master.v:12]
 	Parameter S_IDLE bound to: 0 - type: integer 
@@ -255,22 +255,18 @@ INFO: [Synth 8-6157] synthesizing module 'cuppa_wvb_conf_bundle_fan_in' [C:/User
 	Parameter L_WIDTH_CUPPA_WVB_CONF_BUNDLE_ZERO_PAD bound to: 0 - type: integer 
 	Parameter L_WIDTH_CUPPA_WVB_CONF_BUNDLE bound to: 54 - type: integer 
 INFO: [Synth 8-6155] done synthesizing module 'cuppa_wvb_conf_bundle_fan_in' (21#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/bundles/cuppa_wvb_conf_bundle/cuppa_wvb_conf_bundle_fan_in.v:1]
-INFO: [Synth 8-6157] synthesizing module 'SCRATCH_DPRAM' [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-9784-LAPTOP-GBOUD091/realtime/SCRATCH_DPRAM_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'SCRATCH_DPRAM' (22#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-9784-LAPTOP-GBOUD091/realtime/SCRATCH_DPRAM_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'DIRECT_RDOUT_DPRAM' [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-9784-LAPTOP-GBOUD091/realtime/DIRECT_RDOUT_DPRAM_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'DIRECT_RDOUT_DPRAM' (23#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-9784-LAPTOP-GBOUD091/realtime/DIRECT_RDOUT_DPRAM_stub.v:6]
-INFO: [Synth 8-226] default block is never used [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/cuppa/cuppa.v:493]
-WARNING: [Synth 8-3848] Net debug_err_ack in module/entity cuppa does not have driver. [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/cuppa/cuppa.v:85]
+INFO: [Synth 8-6157] synthesizing module 'SCRATCH_DPRAM' [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-6428-LAPTOP-GBOUD091/realtime/SCRATCH_DPRAM_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'SCRATCH_DPRAM' (22#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-6428-LAPTOP-GBOUD091/realtime/SCRATCH_DPRAM_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'DIRECT_RDOUT_DPRAM' [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-6428-LAPTOP-GBOUD091/realtime/DIRECT_RDOUT_DPRAM_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'DIRECT_RDOUT_DPRAM' (23#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-6428-LAPTOP-GBOUD091/realtime/DIRECT_RDOUT_DPRAM_stub.v:6]
+INFO: [Synth 8-226] default block is never used [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/cuppa/cuppa.v:517]
+WARNING: [Synth 8-3848] Net debug_err_ack in module/entity cuppa does not have driver. [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/cuppa/cuppa.v:93]
 INFO: [Synth 8-6155] done synthesizing module 'cuppa' (24#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/cuppa/cuppa.v:7]
 INFO: [Synth 8-6157] synthesizing module 'ads4129_lvds' [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/ads4129_lvds/ads4129_lvds.v:9]
 	Parameter P_ODD_CHANNEL bound to: FALSE - type: string 
-INFO: [Synth 8-6157] synthesizing module 'ADC_SELECT_IO' [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-9784-LAPTOP-GBOUD091/realtime/ADC_SELECT_IO_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'ADC_SELECT_IO' (25#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-9784-LAPTOP-GBOUD091/realtime/ADC_SELECT_IO_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'ADC_SELECT_IO' [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-6428-LAPTOP-GBOUD091/realtime/ADC_SELECT_IO_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'ADC_SELECT_IO' (25#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-6428-LAPTOP-GBOUD091/realtime/ADC_SELECT_IO_stub.v:5]
 INFO: [Synth 8-6155] done synthesizing module 'ads4129_lvds' (26#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/ads4129_lvds/ads4129_lvds.v:9]
-INFO: [Synth 8-6157] synthesizing module 'data_gen' [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/data_gen/data_gen.v:8]
-	Parameter P_ADC_RAMP_START bound to: 12'b000000000001 
-INFO: [Synth 8-5534] Detected attribute (* DONT_TOUCH = "true" *) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/data_gen/data_gen.v:17]
-INFO: [Synth 8-6155] done synthesizing module 'data_gen' (27#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/data_gen/data_gen.v:8]
 INFO: [Synth 8-6157] synthesizing module 'waveform_acquisition' [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/waveform_acquisition/waveform_acquisition.v:9]
 	Parameter P_DATA_WIDTH bound to: 28 - type: integer 
 	Parameter P_ADC_BIT_WIDTH bound to: 12 - type: integer 
@@ -306,7 +302,7 @@ INFO: [Synth 8-6157] synthesizing module 'cuppa_trig_bundle_fan_out' [C:/Users/a
 	Parameter L_STOP_POS_CUPPA_TRIG_BUNDLE_EXT_TRIG_EN bound to: 17 - type: integer 
 	Parameter L_WIDTH_CUPPA_TRIG_BUNDLE_ZERO_PAD bound to: 0 - type: integer 
 	Parameter L_WIDTH_CUPPA_TRIG_BUNDLE bound to: 18 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'cuppa_trig_bundle_fan_out' (28#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/bundles/cuppa_trig_bundle/cuppa_trig_bundle_fan_out.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'cuppa_trig_bundle_fan_out' (27#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/bundles/cuppa_trig_bundle/cuppa_trig_bundle_fan_out.v:1]
 INFO: [Synth 8-6157] synthesizing module 'cuppa_wvb_conf_bundle_fan_out' [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/bundles/cuppa_wvb_conf_bundle/cuppa_wvb_conf_bundle_fan_out.v:1]
 	Parameter L_WIDTH_CUPPA_WVB_CONF_BUNDLE_CNST_CONF bound to: 15 - type: integer 
 	Parameter L_WIDTH_CUPPA_WVB_CONF_BUNDLE_TEST_CONF bound to: 15 - type: integer 
@@ -331,7 +327,7 @@ INFO: [Synth 8-6157] synthesizing module 'cuppa_wvb_conf_bundle_fan_out' [C:/Use
 	Parameter L_STOP_POS_CUPPA_WVB_CONF_BUNDLE_CNST_RUN bound to: 53 - type: integer 
 	Parameter L_WIDTH_CUPPA_WVB_CONF_BUNDLE_ZERO_PAD bound to: 0 - type: integer 
 	Parameter L_WIDTH_CUPPA_WVB_CONF_BUNDLE bound to: 54 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'cuppa_wvb_conf_bundle_fan_out' (29#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/bundles/cuppa_wvb_conf_bundle/cuppa_wvb_conf_bundle_fan_out.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'cuppa_wvb_conf_bundle_fan_out' (28#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/bundles/cuppa_wvb_conf_bundle/cuppa_wvb_conf_bundle_fan_out.v:1]
 INFO: [Synth 8-6157] synthesizing module 'cuppa_trigger' [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/cuppa_trigger/cuppa_trigger.v:7]
 	Parameter TRIG_SRC_SW bound to: 2'b00 
 	Parameter TRIG_SRC_THRESH bound to: 2'b01 
@@ -339,8 +335,8 @@ INFO: [Synth 8-6157] synthesizing module 'cuppa_trigger' [C:/Users/atfie/watchma
 	Parameter TRIG_SRC_EXT bound to: 2'b11 
 INFO: [Synth 8-5534] Detected attribute (* DONT_TOUCH = "true" *) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/cuppa_trigger/cuppa_trigger.v:39]
 INFO: [Synth 8-6157] synthesizing module 'cmp' [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/cmp/cmp.v:15]
-INFO: [Synth 8-6155] done synthesizing module 'cmp' (30#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/cmp/cmp.v:15]
-INFO: [Synth 8-6155] done synthesizing module 'cuppa_trigger' (31#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/cuppa_trigger/cuppa_trigger.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'cmp' (29#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/cmp/cmp.v:15]
+INFO: [Synth 8-6155] done synthesizing module 'cuppa_trigger' (30#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/cuppa_trigger/cuppa_trigger.v:7]
 INFO: [Synth 8-6157] synthesizing module 'waveform_buffer' [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/waveform_buffer/waveform_buffer.v:7]
 	Parameter P_DATA_WIDTH bound to: 28 - type: integer 
 	Parameter P_ADR_WIDTH bound to: 15 - type: integer 
@@ -358,19 +354,19 @@ INFO: [Synth 8-6157] synthesizing module 'pretrigger_buffer' [C:/Users/atfie/wat
 	Parameter P_USE_DISTRIBUTED_RAM bound to: 1 - type: integer 
 	Parameter RDY_CNT bound to: 32'b00000000000000000000000001000000 
 	Parameter RD_ADDR_OFFSET bound to: 32'b00000000000000000000000000000010 
-INFO: [Synth 8-6157] synthesizing module 'DIST_BUFFER_64_28' [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-9784-LAPTOP-GBOUD091/realtime/DIST_BUFFER_64_28_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'DIST_BUFFER_64_28' (32#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-9784-LAPTOP-GBOUD091/realtime/DIST_BUFFER_64_28_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'pretrigger_buffer' (33#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/pretrigger_buffer/pretrigger_buffer.v:7]
+INFO: [Synth 8-6157] synthesizing module 'DIST_BUFFER_64_28' [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-6428-LAPTOP-GBOUD091/realtime/DIST_BUFFER_64_28_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'DIST_BUFFER_64_28' (31#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-6428-LAPTOP-GBOUD091/realtime/DIST_BUFFER_64_28_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'pretrigger_buffer' (32#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/pretrigger_buffer/pretrigger_buffer.v:7]
 INFO: [Synth 8-6157] synthesizing module 'waveform_buffer_storage' [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/waveform_buffer_storage/waveform_buffer_storage.v:7]
 	Parameter P_DATA_WIDTH bound to: 28 - type: integer 
 	Parameter P_ADR_WIDTH bound to: 15 - type: integer 
 	Parameter P_HDR_WIDTH bound to: 87 - type: integer 
 	Parameter P_N_WVF_IN_BUF_WIDTH bound to: 10 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'BUFFER_32K_28' [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-9784-LAPTOP-GBOUD091/realtime/BUFFER_32K_28_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'BUFFER_32K_28' (34#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-9784-LAPTOP-GBOUD091/realtime/BUFFER_32K_28_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'FIFO_1024_87' [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-9784-LAPTOP-GBOUD091/realtime/FIFO_1024_87_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'FIFO_1024_87' (35#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-9784-LAPTOP-GBOUD091/realtime/FIFO_1024_87_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'waveform_buffer_storage' (36#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/waveform_buffer_storage/waveform_buffer_storage.v:7]
+INFO: [Synth 8-6157] synthesizing module 'BUFFER_32K_28' [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-6428-LAPTOP-GBOUD091/realtime/BUFFER_32K_28_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'BUFFER_32K_28' (33#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-6428-LAPTOP-GBOUD091/realtime/BUFFER_32K_28_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'FIFO_1024_87' [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-6428-LAPTOP-GBOUD091/realtime/FIFO_1024_87_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'FIFO_1024_87' (34#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/.Xil/Vivado-6428-LAPTOP-GBOUD091/realtime/FIFO_1024_87_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'waveform_buffer_storage' (35#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/waveform_buffer_storage/waveform_buffer_storage.v:7]
 INFO: [Synth 8-6157] synthesizing module 'wvb_wr_ctrl' [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/wvb_wr_ctrl/wvb_wr_ctrl.v:7]
 	Parameter P_DATA_WIDTH bound to: 28 - type: integer 
 	Parameter P_ADR_WIDTH bound to: 15 - type: integer 
@@ -416,9 +412,9 @@ INFO: [Synth 8-6157] synthesizing module 'cuppa_wvb_hdr_bundle_0_fan_in' [C:/Use
 	Parameter L_STOP_POS_CUPPA_WVB_HDR_BUNDLE_0_PRE_CONF bound to: 86 - type: integer 
 	Parameter L_WIDTH_CUPPA_WVB_HDR_BUNDLE_0_ZERO_PAD bound to: 0 - type: integer 
 	Parameter L_WIDTH_CUPPA_WVB_HDR_BUNDLE_0 bound to: 87 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'cuppa_wvb_hdr_bundle_0_fan_in' (37#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/bundles/cuppa_wvb_hdr_bundle/cuppa_wvb_hdr_bundle_0_fan_in.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'cuppa_wvb_hdr_bundle_0_fan_in' (36#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/bundles/cuppa_wvb_hdr_bundle/cuppa_wvb_hdr_bundle_0_fan_in.v:1]
 WARNING: [Synth 8-6014] Unused sequential element n_writes_reg was removed.  [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/wvb_wr_ctrl/wvb_wr_ctrl.v:145]
-INFO: [Synth 8-6155] done synthesizing module 'wvb_wr_ctrl' (38#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/wvb_wr_ctrl/wvb_wr_ctrl.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'wvb_wr_ctrl' (37#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/wvb_wr_ctrl/wvb_wr_ctrl.v:7]
 INFO: [Synth 8-6157] synthesizing module 'wvb_rd_addr_ctrl' [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/waveform_buffer/wvb_rd_addr_ctrl.v:7]
 	Parameter P_ADR_WIDTH bound to: 15 - type: integer 
 	Parameter P_HDR_WIDTH bound to: 87 - type: integer 
@@ -444,15 +440,15 @@ INFO: [Synth 8-6157] synthesizing module 'cuppa_wvb_hdr_bundle_0_fan_out' [C:/Us
 	Parameter L_STOP_POS_CUPPA_WVB_HDR_BUNDLE_0_PRE_CONF bound to: 86 - type: integer 
 	Parameter L_WIDTH_CUPPA_WVB_HDR_BUNDLE_0_ZERO_PAD bound to: 0 - type: integer 
 	Parameter L_WIDTH_CUPPA_WVB_HDR_BUNDLE_0 bound to: 87 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'cuppa_wvb_hdr_bundle_0_fan_out' (39#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/bundles/cuppa_wvb_hdr_bundle/cuppa_wvb_hdr_bundle_0_fan_out.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'wvb_rd_addr_ctrl' (40#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/waveform_buffer/wvb_rd_addr_ctrl.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'cuppa_wvb_hdr_bundle_0_fan_out' (38#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/bundles/cuppa_wvb_hdr_bundle/cuppa_wvb_hdr_bundle_0_fan_out.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'wvb_rd_addr_ctrl' (39#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/waveform_buffer/wvb_rd_addr_ctrl.v:7]
 INFO: [Synth 8-6157] synthesizing module 'wvb_overflow_ctrl' [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/waveform_buffer/wvb_overflow_ctrl.v:7]
 	Parameter P_ADR_WIDTH bound to: 15 - type: integer 
 	Parameter P_HDR_WIDTH bound to: 87 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'wvb_overflow_ctrl' (41#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/waveform_buffer/wvb_overflow_ctrl.v:7]
-INFO: [Synth 8-6155] done synthesizing module 'waveform_buffer' (42#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/waveform_buffer/waveform_buffer.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'wvb_overflow_ctrl' (40#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/waveform_buffer/wvb_overflow_ctrl.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'waveform_buffer' (41#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/waveform_buffer/waveform_buffer.v:7]
 WARNING: [Synth 8-3848] Net wvb_trig_test_out in module/entity waveform_acquisition does not have driver. [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/waveform_acquisition/waveform_acquisition.v:42]
-INFO: [Synth 8-6155] done synthesizing module 'waveform_acquisition' (43#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/waveform_acquisition/waveform_acquisition.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'waveform_acquisition' (42#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/waveform_acquisition/waveform_acquisition.v:9]
 INFO: [Synth 8-6157] synthesizing module 'wvb_reader' [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/wvb_reader/wvb_reader.v:12]
 	Parameter P_DATA_WIDTH bound to: 28 - type: integer 
 	Parameter N_CHANNELS bound to: 2 - type: integer 
@@ -471,17 +467,17 @@ INFO: [Synth 8-6157] synthesizing module 'n_channel_mux' [C:/Users/atfie/watchma
 	Parameter N_INPUTS bound to: 2 - type: integer 
 	Parameter INPUT_WIDTH bound to: 28 - type: integer 
 	Parameter SEL_WIDTH bound to: 5 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'n_channel_mux' (44#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/n_channel_mux/n_channel_mux.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'n_channel_mux' (43#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/n_channel_mux/n_channel_mux.v:13]
 INFO: [Synth 8-6157] synthesizing module 'n_channel_mux__parameterized0' [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/n_channel_mux/n_channel_mux.v:13]
 	Parameter N_INPUTS bound to: 2 - type: integer 
 	Parameter INPUT_WIDTH bound to: 87 - type: integer 
 	Parameter SEL_WIDTH bound to: 5 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'n_channel_mux__parameterized0' (44#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/n_channel_mux/n_channel_mux.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'n_channel_mux__parameterized0' (43#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/n_channel_mux/n_channel_mux.v:13]
 INFO: [Synth 8-6157] synthesizing module 'n_channel_mux__parameterized1' [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/n_channel_mux/n_channel_mux.v:13]
 	Parameter N_INPUTS bound to: 2 - type: integer 
 	Parameter INPUT_WIDTH bound to: 1 - type: integer 
 	Parameter SEL_WIDTH bound to: 5 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'n_channel_mux__parameterized1' (44#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/n_channel_mux/n_channel_mux.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'n_channel_mux__parameterized1' (43#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/n_channel_mux/n_channel_mux.v:13]
 INFO: [Synth 8-6157] synthesizing module 'wvb_rd_ctrl_fmt_0' [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/wvb_rd_ctrl/wvb_rd_ctrl_fmt_0.v:37]
 	Parameter P_WVB_ADR_WIDTH bound to: 15 - type: integer 
 	Parameter P_DATA_WIDTH bound to: 28 - type: integer 
@@ -502,8 +498,8 @@ INFO: [Synth 8-6157] synthesizing module 'wvb_rd_ctrl_fmt_0' [C:/Users/atfie/wat
 	Parameter S_REQ_WAIT bound to: 7 - type: integer 
 	Parameter S_RD_WAIT bound to: 8 - type: integer 
 	Parameter S_START_STREAM bound to: 9 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'wvb_rd_ctrl_fmt_0' (45#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/wvb_rd_ctrl/wvb_rd_ctrl_fmt_0.v:37]
-INFO: [Synth 8-6155] done synthesizing module 'wvb_reader' (46#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/wvb_reader/wvb_reader.v:12]
+INFO: [Synth 8-6155] done synthesizing module 'wvb_rd_ctrl_fmt_0' (44#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/wvb_rd_ctrl/wvb_rd_ctrl_fmt_0.v:37]
+INFO: [Synth 8-6155] done synthesizing module 'wvb_reader' (45#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/wvb_reader/wvb_reader.v:12]
 INFO: [Synth 8-6157] synthesizing module 'spi_master' [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/spi_master/spi_master.v:14]
 	Parameter P_RD_DATA_WIDTH bound to: 24 - type: integer 
 	Parameter P_WR_DATA_WIDTH bound to: 24 - type: integer 
@@ -514,7 +510,7 @@ INFO: [Synth 8-6157] synthesizing module 'spi_master' [C:/Users/atfie/watchman-n
 INFO: [Synth 8-6157] synthesizing module 'iter_integer_linear_calc' [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/iter_integer_linear_cal/iter_integer_linear_calc.v:19]
 	Parameter S_IDLE bound to: 0 - type: integer 
 	Parameter S_CALC bound to: 1 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'iter_integer_linear_calc' (47#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/iter_integer_linear_cal/iter_integer_linear_calc.v:19]
+INFO: [Synth 8-6155] done synthesizing module 'iter_integer_linear_calc' (46#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/iter_integer_linear_cal/iter_integer_linear_calc.v:19]
 INFO: [Synth 8-6157] synthesizing module 'serial_ck' [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/serial_ck/serial_ck.v:11]
 	Parameter P_Y_INIT bound to: 0 - type: integer 
 	Parameter S0 bound to: 0 - type: integer 
@@ -524,7 +520,7 @@ WARNING: [Synth 8-5788] Register y_reg in module serial_ck is has both Set and r
 WARNING: [Synth 8-5788] Register i_cnt_0_1_reg in module serial_ck is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/serial_ck/serial_ck.v:67]
 WARNING: [Synth 8-5788] Register i_cnt_1_2_reg in module serial_ck is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/serial_ck/serial_ck.v:68]
 WARNING: [Synth 8-5788] Register i_cnt_2_1_reg in module serial_ck is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/serial_ck/serial_ck.v:69]
-INFO: [Synth 8-6155] done synthesizing module 'serial_ck' (48#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/serial_ck/serial_ck.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'serial_ck' (47#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/serial_ck/serial_ck.v:11]
 INFO: [Synth 8-6157] synthesizing module 'serial_rx' [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/serial_rx/serial_rx.v:12]
 	Parameter P_Y_INIT bound to: 0 - type: integer 
 	Parameter P_DATA_WIDTH bound to: 24 - type: integer 
@@ -533,16 +529,16 @@ INFO: [Synth 8-6157] synthesizing module 'serial_rx' [C:/Users/atfie/watchman-ne
 INFO: [Synth 8-226] default block is never used [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/serial_rx/serial_rx.v:58]
 WARNING: [Synth 8-5788] Register i_cnt_0_reg in module serial_rx is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/serial_rx/serial_rx.v:63]
 WARNING: [Synth 8-5788] Register i_cnt_1_reg in module serial_rx is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/serial_rx/serial_rx.v:64]
-INFO: [Synth 8-6155] done synthesizing module 'serial_rx' (49#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/serial_rx/serial_rx.v:12]
+INFO: [Synth 8-6155] done synthesizing module 'serial_rx' (48#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/serial_rx/serial_rx.v:12]
 INFO: [Synth 8-6157] synthesizing module 'serial_tx' [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/serial_tx/serial_tx.v:12]
 	Parameter P_Y_INIT bound to: 0 - type: integer 
 	Parameter P_DATA_WIDTH bound to: 24 - type: integer 
 	Parameter S0 bound to: 0 - type: integer 
 	Parameter S1 bound to: 1 - type: integer 
 INFO: [Synth 8-226] default block is never used [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/serial_tx/serial_tx.v:61]
-INFO: [Synth 8-6155] done synthesizing module 'serial_tx' (50#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/serial_tx/serial_tx.v:12]
+INFO: [Synth 8-6155] done synthesizing module 'serial_tx' (49#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/serial_tx/serial_tx.v:12]
 INFO: [Synth 8-226] default block is never used [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/spi_master/spi_master.v:211]
-INFO: [Synth 8-6155] done synthesizing module 'spi_master' (51#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/spi_master/spi_master.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'spi_master' (50#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/spi_master/spi_master.v:14]
 INFO: [Synth 8-6157] synthesizing module 'spi_master__parameterized0' [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/spi_master/spi_master.v:14]
 	Parameter P_RD_DATA_WIDTH bound to: 8 - type: integer 
 	Parameter P_WR_DATA_WIDTH bound to: 16 - type: integer 
@@ -558,17 +554,17 @@ INFO: [Synth 8-6157] synthesizing module 'serial_rx__parameterized0' [C:/Users/a
 INFO: [Synth 8-226] default block is never used [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/serial_rx/serial_rx.v:58]
 WARNING: [Synth 8-5788] Register i_cnt_0_reg in module serial_rx__parameterized0 is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/serial_rx/serial_rx.v:63]
 WARNING: [Synth 8-5788] Register i_cnt_1_reg in module serial_rx__parameterized0 is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/serial_rx/serial_rx.v:64]
-INFO: [Synth 8-6155] done synthesizing module 'serial_rx__parameterized0' (51#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/serial_rx/serial_rx.v:12]
+INFO: [Synth 8-6155] done synthesizing module 'serial_rx__parameterized0' (50#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/serial_rx/serial_rx.v:12]
 INFO: [Synth 8-6157] synthesizing module 'serial_tx__parameterized0' [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/serial_tx/serial_tx.v:12]
 	Parameter P_Y_INIT bound to: 0 - type: integer 
 	Parameter P_DATA_WIDTH bound to: 16 - type: integer 
 	Parameter S0 bound to: 0 - type: integer 
 	Parameter S1 bound to: 1 - type: integer 
 INFO: [Synth 8-226] default block is never used [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/serial_tx/serial_tx.v:61]
-INFO: [Synth 8-6155] done synthesizing module 'serial_tx__parameterized0' (51#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/serial_tx/serial_tx.v:12]
+INFO: [Synth 8-6155] done synthesizing module 'serial_tx__parameterized0' (50#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/serial_tx/serial_tx.v:12]
 INFO: [Synth 8-226] default block is never used [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/spi_master/spi_master.v:211]
-INFO: [Synth 8-6155] done synthesizing module 'spi_master__parameterized0' (51#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/spi_master/spi_master.v:14]
-INFO: [Synth 8-6155] done synthesizing module 'top' (52#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/wdc_zedboard_top.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'spi_master__parameterized0' (50#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/spi_master/spi_master.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'top' (51#1) [C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/wdc_zedboard_top.v:6]
 WARNING: [Synth 8-3917] design top has port DIG_RESET driven by constant 0
 WARNING: [Synth 8-3917] design top has port DIG_OE driven by constant 1
 WARNING: [Synth 8-3331] design wvb_rd_ctrl_fmt_0 has unconnected port wvb_data[14]
@@ -603,7 +599,7 @@ WARNING: [Synth 8-3331] design crs_master has unconnected port a3_buf_wr_data[30
 WARNING: [Synth 8-3331] design crs_master has unconnected port a3_buf_wr_data[29]
 WARNING: [Synth 8-3331] design crs_master has unconnected port a3_buf_wr_data[28]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 827.688 ; gain = 260.887
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 829.289 ; gain = 262.559
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -616,10 +612,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 827.688 ; gain = 260.887
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 834.129 ; gain = 267.398
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 827.688 ; gain = 260.887
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 834.129 ; gain = 267.398
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 6 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -651,6 +647,8 @@ Parsing XDC File [c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedb
 Finished Parsing XDC File [c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/DIRECT_RDOUT_DPRAM/DIRECT_RDOUT_DPRAM/DIRECT_RDOUT_DPRAM_in_context.xdc] for cell 'CUPPA_0/RDOUT_DPRAM'
 Parsing XDC File [c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/ADC_SELECT_IO/ADC_SELECT_IO/ADC_SELECT_IO_in_context.xdc] for cell 'DIG0_LVDS/ADC_IO_0'
 Finished Parsing XDC File [c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/ADC_SELECT_IO/ADC_SELECT_IO/ADC_SELECT_IO_in_context.xdc] for cell 'DIG0_LVDS/ADC_IO_0'
+Parsing XDC File [c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/ADC_SELECT_IO/ADC_SELECT_IO/ADC_SELECT_IO_in_context.xdc] for cell 'DIG1_LVDS/ADC_IO_0'
+Finished Parsing XDC File [c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/ADC_SELECT_IO/ADC_SELECT_IO/ADC_SELECT_IO_in_context.xdc] for cell 'DIG1_LVDS/ADC_IO_0'
 Parsing XDC File [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/constrs_1/new/pin_assign.xdc]
 Finished Parsing XDC File [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/constrs_1/new/pin_assign.xdc]
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/constrs_1/new/pin_assign.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
@@ -665,17 +663,18 @@ Parsing XDC File [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedb
 Finished Parsing XDC File [C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 987.578 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 992.910 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 4 instances were transformed.
   IBUFGDS => IBUFDS: 2 instances
   OBUFDS => OBUFDS: 2 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.047 . Memory (MB): peak = 987.578 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.064 . Memory (MB): peak = 992.910 ; gain = 0.000
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'CUPPA_0/PG_DPRAM' at clock pin 'clka' is different from the actual clock period '8.138', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'CUPPA_0/RDOUT_DPRAM' at clock pin 'clka' is different from the actual clock period '8.138', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'CUPPA_0/UART_DEBUG_0/FIFO_2048_32_0' at clock pin 'clk' is different from the actual clock period '8.138', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'DIG0_LVDS/ADC_IO_0' at clock pin 'clk_in' is different from the actual clock period '4.069', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'DIG1_LVDS/ADC_IO_0' at clock pin 'clk_in' is different from the actual clock period '4.069', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'WFM_ACQ_0/WVB/PTB/DIST_PTB' at clock pin 'clk' is different from the actual clock period '8.138', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'WFM_ACQ_0/WVB/WBS/HDR_FIFO_FMT_0' at clock pin 'clk' is different from the actual clock period '8.138', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'WFM_ACQ_0/WVB/WBS/WAVEFORM_BUFFER' at clock pin 'clka' is different from the actual clock period '8.138', this can lead to different synthesis results.
@@ -683,14 +682,14 @@ WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context s
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'WFM_ACQ_1/WVB/WBS/HDR_FIFO_FMT_0' at clock pin 'clk' is different from the actual clock period '8.138', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'WFM_ACQ_1/WVB/WBS/WAVEFORM_BUFFER' at clock pin 'clka' is different from the actual clock period '8.138', this can lead to different synthesis results.
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 990.652 ; gain = 423.852
+Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 994.902 ; gain = 428.172
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 990.652 ; gain = 423.852
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 994.902 ; gain = 428.172
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -721,6 +720,30 @@ Applied set_property IO_BUFFER_TYPE = NONE for DIG0_D8_D9_P. (constraint file  c
 Applied set_property CLOCK_BUFFER_TYPE = NONE for DIG0_D8_D9_P. (constraint file  c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/ADC_SELECT_IO/ADC_SELECT_IO/ADC_SELECT_IO_in_context.xdc, line 22).
 Applied set_property IO_BUFFER_TYPE = NONE for DIG0_D10_D11_P. (constraint file  c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/ADC_SELECT_IO/ADC_SELECT_IO/ADC_SELECT_IO_in_context.xdc, line 23).
 Applied set_property CLOCK_BUFFER_TYPE = NONE for DIG0_D10_D11_P. (constraint file  c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/ADC_SELECT_IO/ADC_SELECT_IO/ADC_SELECT_IO_in_context.xdc, line 24).
+Applied set_property IO_BUFFER_TYPE = NONE for DIG1_D0_D1_N. (constraint file  c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/ADC_SELECT_IO/ADC_SELECT_IO/ADC_SELECT_IO_in_context.xdc, line 1).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DIG1_D0_D1_N. (constraint file  c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/ADC_SELECT_IO/ADC_SELECT_IO/ADC_SELECT_IO_in_context.xdc, line 2).
+Applied set_property IO_BUFFER_TYPE = NONE for DIG1_D2_D3_N. (constraint file  c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/ADC_SELECT_IO/ADC_SELECT_IO/ADC_SELECT_IO_in_context.xdc, line 3).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DIG1_D2_D3_N. (constraint file  c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/ADC_SELECT_IO/ADC_SELECT_IO/ADC_SELECT_IO_in_context.xdc, line 4).
+Applied set_property IO_BUFFER_TYPE = NONE for DIG1_D4_D5_N. (constraint file  c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/ADC_SELECT_IO/ADC_SELECT_IO/ADC_SELECT_IO_in_context.xdc, line 5).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DIG1_D4_D5_N. (constraint file  c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/ADC_SELECT_IO/ADC_SELECT_IO/ADC_SELECT_IO_in_context.xdc, line 6).
+Applied set_property IO_BUFFER_TYPE = NONE for DIG1_D6_D7_N. (constraint file  c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/ADC_SELECT_IO/ADC_SELECT_IO/ADC_SELECT_IO_in_context.xdc, line 7).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DIG1_D6_D7_N. (constraint file  c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/ADC_SELECT_IO/ADC_SELECT_IO/ADC_SELECT_IO_in_context.xdc, line 8).
+Applied set_property IO_BUFFER_TYPE = NONE for DIG1_D8_D9_N. (constraint file  c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/ADC_SELECT_IO/ADC_SELECT_IO/ADC_SELECT_IO_in_context.xdc, line 9).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DIG1_D8_D9_N. (constraint file  c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/ADC_SELECT_IO/ADC_SELECT_IO/ADC_SELECT_IO_in_context.xdc, line 10).
+Applied set_property IO_BUFFER_TYPE = NONE for DIG1_D10_D11_N. (constraint file  c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/ADC_SELECT_IO/ADC_SELECT_IO/ADC_SELECT_IO_in_context.xdc, line 11).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DIG1_D10_D11_N. (constraint file  c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/ADC_SELECT_IO/ADC_SELECT_IO/ADC_SELECT_IO_in_context.xdc, line 12).
+Applied set_property IO_BUFFER_TYPE = NONE for DIG1_D0_D1_P. (constraint file  c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/ADC_SELECT_IO/ADC_SELECT_IO/ADC_SELECT_IO_in_context.xdc, line 13).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DIG1_D0_D1_P. (constraint file  c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/ADC_SELECT_IO/ADC_SELECT_IO/ADC_SELECT_IO_in_context.xdc, line 14).
+Applied set_property IO_BUFFER_TYPE = NONE for DIG1_D2_D3_P. (constraint file  c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/ADC_SELECT_IO/ADC_SELECT_IO/ADC_SELECT_IO_in_context.xdc, line 15).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DIG1_D2_D3_P. (constraint file  c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/ADC_SELECT_IO/ADC_SELECT_IO/ADC_SELECT_IO_in_context.xdc, line 16).
+Applied set_property IO_BUFFER_TYPE = NONE for DIG1_D4_D5_P. (constraint file  c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/ADC_SELECT_IO/ADC_SELECT_IO/ADC_SELECT_IO_in_context.xdc, line 17).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DIG1_D4_D5_P. (constraint file  c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/ADC_SELECT_IO/ADC_SELECT_IO/ADC_SELECT_IO_in_context.xdc, line 18).
+Applied set_property IO_BUFFER_TYPE = NONE for DIG1_D6_D7_P. (constraint file  c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/ADC_SELECT_IO/ADC_SELECT_IO/ADC_SELECT_IO_in_context.xdc, line 19).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DIG1_D6_D7_P. (constraint file  c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/ADC_SELECT_IO/ADC_SELECT_IO/ADC_SELECT_IO_in_context.xdc, line 20).
+Applied set_property IO_BUFFER_TYPE = NONE for DIG1_D8_D9_P. (constraint file  c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/ADC_SELECT_IO/ADC_SELECT_IO/ADC_SELECT_IO_in_context.xdc, line 21).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DIG1_D8_D9_P. (constraint file  c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/ADC_SELECT_IO/ADC_SELECT_IO/ADC_SELECT_IO_in_context.xdc, line 22).
+Applied set_property IO_BUFFER_TYPE = NONE for DIG1_D10_D11_P. (constraint file  c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/ADC_SELECT_IO/ADC_SELECT_IO/ADC_SELECT_IO_in_context.xdc, line 23).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DIG1_D10_D11_P. (constraint file  c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/ADC_SELECT_IO/ADC_SELECT_IO/ADC_SELECT_IO_in_context.xdc, line 24).
 Applied set_property DONT_TOUCH = true for dig0_mmcm_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for lclk_mmcm_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for CUPPA_0/PG_DPRAM. (constraint file  auto generated constraint, line ).
@@ -733,8 +756,9 @@ Applied set_property DONT_TOUCH = true for WFM_ACQ_0/WVB/WBS/HDR_FIFO_FMT_0. (co
 Applied set_property DONT_TOUCH = true for WFM_ACQ_1/WVB/WBS/HDR_FIFO_FMT_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for CUPPA_0/RDOUT_DPRAM. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for DIG0_LVDS/ADC_IO_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for DIG1_LVDS/ADC_IO_0. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 990.652 ; gain = 423.852
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 994.902 ; gain = 428.172
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'fsm_reg' in module 'rs232_ser'
 INFO: [Synth 8-802] inferred FSM for state register 'fsm_reg' in module 'rs232_des'
@@ -773,6 +797,9 @@ INFO: [Synth 8-5546] ROM "dig_spi_wr_data" won't be mapped to RAM because it is 
 INFO: [Synth 8-5546] ROM "io_reset_0" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "in_delay_reset_0" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "in_delay_inc_0" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "io_reset_1" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "in_delay_reset_1" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "in_delay_inc_1" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "led_toggle" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "spi_rst" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-802] inferred FSM for state register 'fsm_reg' in module 'wvb_wr_ctrl'
@@ -928,7 +955,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'fsm_reg' using encoding 's
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'fsm_reg' using encoding 'sequential' in module 'spi_master__parameterized0'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 990.652 ; gain = 423.852
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 994.902 ; gain = 428.172
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -977,16 +1004,16 @@ Detailed RTL Component Info :
 	               18 Bit    Registers := 2     
 	               16 Bit    Registers := 18    
 	               15 Bit    Registers := 28    
-	               12 Bit    Registers := 10    
+	               12 Bit    Registers := 12    
 	               10 Bit    Registers := 1     
 	                8 Bit    Registers := 7     
 	                7 Bit    Registers := 2     
-	                6 Bit    Registers := 13    
+	                6 Bit    Registers := 16    
 	                5 Bit    Registers := 2     
 	                4 Bit    Registers := 1     
 	                3 Bit    Registers := 4     
 	                2 Bit    Registers := 9     
-	                1 Bit    Registers := 120   
+	                1 Bit    Registers := 121   
 +---Muxes : 
 	   2 Input     87 Bit        Muxes := 1     
 	  24 Input     32 Bit        Muxes := 1     
@@ -997,13 +1024,13 @@ Detailed RTL Component Info :
 	   4 Input     32 Bit        Muxes := 2     
 	   4 Input     28 Bit        Muxes := 1     
 	   2 Input     28 Bit        Muxes := 1     
-	  36 Input     24 Bit        Muxes := 1     
+	  39 Input     24 Bit        Muxes := 1     
 	   2 Input     24 Bit        Muxes := 4     
 	  24 Input     16 Bit        Muxes := 6     
 	   4 Input     16 Bit        Muxes := 1     
 	   6 Input     16 Bit        Muxes := 1     
 	   2 Input     16 Bit        Muxes := 41    
-	  50 Input     16 Bit        Muxes := 1     
+	  55 Input     16 Bit        Muxes := 1     
 	  10 Input     16 Bit        Muxes := 1     
 	   2 Input     15 Bit        Muxes := 10    
 	   6 Input     15 Bit        Muxes := 2     
@@ -1017,9 +1044,9 @@ Detailed RTL Component Info :
 	   4 Input      8 Bit        Muxes := 1     
 	  24 Input      8 Bit        Muxes := 2     
 	   2 Input      8 Bit        Muxes := 1     
-	   2 Input      6 Bit        Muxes := 11    
+	   2 Input      6 Bit        Muxes := 13    
 	   4 Input      6 Bit        Muxes := 2     
-	  50 Input      6 Bit        Muxes := 1     
+	  55 Input      6 Bit        Muxes := 1     
 	  24 Input      5 Bit        Muxes := 2     
 	   2 Input      5 Bit        Muxes := 12    
 	   3 Input      5 Bit        Muxes := 2     
@@ -1035,7 +1062,7 @@ Detailed RTL Component Info :
 	   4 Input      2 Bit        Muxes := 5     
 	   2 Input      2 Bit        Muxes := 7     
 	   3 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 215   
+	   2 Input      1 Bit        Muxes := 218   
 	   4 Input      1 Bit        Muxes := 39    
 	   3 Input      1 Bit        Muxes := 20    
 	  24 Input      1 Bit        Muxes := 18    
@@ -1201,24 +1228,24 @@ Detailed RTL Component Info :
 	               16 Bit    Registers := 2     
 	               15 Bit    Registers := 6     
 	               12 Bit    Registers := 2     
-	                6 Bit    Registers := 5     
+	                6 Bit    Registers := 8     
 	                2 Bit    Registers := 1     
-	                1 Bit    Registers := 30    
+	                1 Bit    Registers := 32    
 +---Muxes : 
-	  36 Input     24 Bit        Muxes := 1     
+	  39 Input     24 Bit        Muxes := 1     
 	   2 Input     16 Bit        Muxes := 3     
-	  50 Input     16 Bit        Muxes := 1     
-	   2 Input      6 Bit        Muxes := 2     
-	  50 Input      6 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 36    
+	  55 Input     16 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 4     
+	  55 Input      6 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 39    
+Module ads4129_lvds__xdcDup__1 
+Detailed RTL Component Info : 
++---Registers : 
+	               12 Bit    Registers := 2     
 Module ads4129_lvds 
 Detailed RTL Component Info : 
 +---Registers : 
 	               12 Bit    Registers := 2     
-Module data_gen 
-Detailed RTL Component Info : 
-+---Registers : 
-	                1 Bit    Registers := 1     
 Module cuppa_trigger 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -1504,6 +1531,9 @@ INFO: [Synth 8-5546] ROM "dig_spi_wr_data" won't be mapped to RAM because it is 
 INFO: [Synth 8-5546] ROM "io_reset_0" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "in_delay_reset_0" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "in_delay_inc_0" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "io_reset_1" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "in_delay_reset_1" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "in_delay_inc_1" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "led_toggle" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "wvb_rst" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "wvb_reader_enable" won't be mapped to RAM because it is too sparse
@@ -1654,8 +1684,6 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (DIG_SPI/\
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (DIG_SPI/\SERIAL_RX_0/i_cnt_0_reg[31] )
 INFO: [Synth 8-3333] propagating constant 1 across sequential element (DIG_SPI/\SERIAL_TX_0/i_cnt_0_reg[0] )
 INFO: [Synth 8-3333] propagating constant 1 across sequential element (DAC_SPI/SERIAL_TX_0/\i_cnt_0_reg[0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (i_0/\FAKE_CHAN_1/adc_stream_0_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/\FAKE_CHAN_1/adc_stream_1_reg[0] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (WFM_ACQ_1/\CUPPA_TRIG/trig_src_reg[1] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (WFM_ACQ_0/\CUPPA_TRIG/trig_src_reg[1] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (DIG_SPI/\SERIAL_TX_0/i_cnt_0_reg[31] )
@@ -1669,7 +1697,7 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (DAC_SPI/I
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (DAC_SPI/IILC_SCLK_0/\i_m_0_reg[31] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (DAC_SPI/IILC_MISO_0/\i_m_0_reg[31] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:42 ; elapsed = 00:00:42 . Memory (MB): peak = 990.652 ; gain = 423.852
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:49 ; elapsed = 00:00:50 . Memory (MB): peak = 994.902 ; gain = 428.172
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -1704,13 +1732,13 @@ INFO: [Synth 8-5578] Moved timing constraint from pin 'lclk_mmcm_0/clk_250MHz' t
 INFO: [Synth 8-5578] Moved timing constraint from pin 'lclk_mmcm_0/clk_250MHz_180' to pin 'lclk_mmcm_0/bbstub_clk_250MHz_180/O'
 INFO: [Synth 8-5819] Moved 7 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:50 ; elapsed = 00:00:51 . Memory (MB): peak = 990.652 ; gain = 423.852
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:58 ; elapsed = 00:00:59 . Memory (MB): peak = 994.902 ; gain = 428.172
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:53 ; elapsed = 00:00:54 . Memory (MB): peak = 990.652 ; gain = 423.852
+Finished Timing Optimization : Time (s): cpu = 00:01:01 ; elapsed = 00:01:02 . Memory (MB): peak = 994.902 ; gain = 428.172
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1724,7 +1752,7 @@ Start Technology Mapping
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\WFM_ACQ_0/WVB/RD_ADDR/hdr_rd_cnt_reg[2] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\WFM_ACQ_1/WVB/RD_ADDR/hdr_rd_cnt_reg[2] )
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:57 ; elapsed = 00:00:58 . Memory (MB): peak = 1014.980 ; gain = 448.180
+Finished Technology Mapping : Time (s): cpu = 00:01:05 ; elapsed = 00:01:06 . Memory (MB): peak = 1016.777 ; gain = 450.047
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1785,7 +1813,7 @@ INFO: [Synth 8-4618] Found max_fanout attribute set to 5 on net \WFM_ACQ_0/WVB/h
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:59 ; elapsed = 00:01:00 . Memory (MB): peak = 1020.781 ; gain = 453.980
+Finished IO Insertion : Time (s): cpu = 00:01:08 ; elapsed = 00:01:09 . Memory (MB): peak = 1021.563 ; gain = 454.832
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -1798,7 +1826,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:59 ; elapsed = 00:01:00 . Memory (MB): peak = 1020.781 ; gain = 453.980
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:08 ; elapsed = 00:01:09 . Memory (MB): peak = 1021.563 ; gain = 454.832
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1810,25 +1838,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:00 ; elapsed = 00:01:01 . Memory (MB): peak = 1020.781 ; gain = 453.980
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:09 ; elapsed = 00:01:10 . Memory (MB): peak = 1021.563 ; gain = 454.832
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:00 ; elapsed = 00:01:01 . Memory (MB): peak = 1020.781 ; gain = 453.980
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:09 ; elapsed = 00:01:10 . Memory (MB): peak = 1021.563 ; gain = 454.832
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:00 ; elapsed = 00:01:01 . Memory (MB): peak = 1020.781 ; gain = 453.980
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:09 ; elapsed = 00:01:10 . Memory (MB): peak = 1021.563 ; gain = 454.832
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:00 ; elapsed = 00:01:01 . Memory (MB): peak = 1020.781 ; gain = 453.980
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:09 ; elapsed = 00:01:10 . Memory (MB): peak = 1021.563 ; gain = 454.832
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -1843,7 +1871,7 @@ Report BlackBoxes:
 |3     |SCRATCH_DPRAM      |         1|
 |4     |DIRECT_RDOUT_DPRAM |         1|
 |5     |FIFO_2048_32       |         1|
-|6     |ADC_SELECT_IO      |         1|
+|6     |ADC_SELECT_IO      |         2|
 |7     |DIST_BUFFER_64_28  |         2|
 |8     |BUFFER_32K_28      |         2|
 |9     |FIFO_1024_87       |         2|
@@ -1854,51 +1882,53 @@ Report Cell Usage:
 |      |Cell                 |Count |
 +------+---------------------+------+
 |1     |ADC_SELECT_IO        |     1|
-|2     |BUFFER_32K_28        |     1|
-|3     |BUFFER_32K_28__2     |     1|
-|4     |DIG0_MMCM            |     1|
-|5     |DIRECT_RDOUT_DPRAM   |     1|
-|6     |DIST_BUFFER_64_28    |     1|
-|7     |DIST_BUFFER_64_28__2 |     1|
-|8     |FIFO_1024_87         |     1|
-|9     |FIFO_1024_87__2      |     1|
-|10    |FIFO_2048_32         |     1|
-|11    |LCLK_MMCM            |     1|
-|12    |SCRATCH_DPRAM        |     1|
-|13    |CARRY4               |   588|
-|14    |IDELAYCTRL           |     1|
-|15    |LUT1                 |   264|
-|16    |LUT2                 |  1027|
-|17    |LUT3                 |   820|
-|18    |LUT4                 |   846|
-|19    |LUT5                 |   286|
-|20    |LUT6                 |   654|
-|21    |MUXF7                |     4|
-|22    |ODDR                 |     2|
-|23    |FDCE                 |   576|
-|24    |FDPE                 |     3|
-|25    |FDRE                 |  2297|
-|26    |FDSE                 |   159|
-|27    |IBUF                 |     3|
-|28    |IBUFGDS              |     2|
-|29    |OBUF                 |    19|
-|30    |OBUFDS               |     2|
-|31    |OBUFT                |     1|
+|2     |ADC_SELECT_IO__2     |     1|
+|3     |BUFFER_32K_28        |     1|
+|4     |BUFFER_32K_28__2     |     1|
+|5     |DIG0_MMCM            |     1|
+|6     |DIRECT_RDOUT_DPRAM   |     1|
+|7     |DIST_BUFFER_64_28    |     1|
+|8     |DIST_BUFFER_64_28__2 |     1|
+|9     |FIFO_1024_87         |     1|
+|10    |FIFO_1024_87__2      |     1|
+|11    |FIFO_2048_32         |     1|
+|12    |LCLK_MMCM            |     1|
+|13    |SCRATCH_DPRAM        |     1|
+|14    |CARRY4               |   582|
+|15    |IDELAYCTRL           |     1|
+|16    |LUT1                 |   262|
+|17    |LUT2                 |   970|
+|18    |LUT3                 |   745|
+|19    |LUT4                 |   864|
+|20    |LUT5                 |   331|
+|21    |LUT6                 |   646|
+|22    |MUXF7                |    31|
+|23    |MUXF8                |     6|
+|24    |ODDR                 |     2|
+|25    |FDCE                 |   576|
+|26    |FDPE                 |     3|
+|27    |FDRE                 |  2308|
+|28    |FDSE                 |   155|
+|29    |IBUF                 |     3|
+|30    |IBUFGDS              |     2|
+|31    |OBUF                 |    19|
+|32    |OBUFDS               |     2|
+|33    |OBUFT                |     1|
 +------+---------------------+------+
 
 Report Instance Areas: 
 +------+---------------------+-----------------------------------+------+
 |      |Instance             |Module                             |Cells |
 +------+---------------------+-----------------------------------+------+
-|1     |top                  |                                   |  8008|
-|2     |  CUPPA_0            |cuppa                              |  1497|
-|3     |    CRSM_0           |crs_master                         |   554|
+|1     |top                  |                                   |  8017|
+|2     |  CUPPA_0            |cuppa                              |  1475|
+|3     |    CRSM_0           |crs_master                         |   527|
 |4     |      NEDGE_0        |negedge_detector_20                |     7|
-|5     |    DAC_SPI_TASK_0   |task_reg                           |    38|
-|6     |    DIG_SPI_TASK     |task_reg__parameterized0           |    38|
+|5     |    DAC_SPI_TASK_0   |task_reg                           |    37|
+|6     |    DIG_SPI_TASK     |task_reg__parameterized0           |    37|
 |7     |    LOCK_PE          |posedge_detector_14                |     2|
 |8     |    SYNC0            |sync                               |     2|
-|9     |    UART_DEBUG_0     |ft232r_proc_buffered               |   543|
+|9     |    UART_DEBUG_0     |ft232r_proc_buffered               |   544|
 |10    |      FT232R_HS_0    |ft232r_hs                          |   126|
 |11    |        NEDGE_0      |negedge_detector_16                |     3|
 |12    |        PEDGE_0      |posedge_detector_17                |     1|
@@ -1906,7 +1936,7 @@ Report Instance Areas:
 |14    |          NEDGE0     |negedge_detector_18                |     1|
 |15    |          SYNC0      |sync_19                            |     7|
 |16    |        RS232_SER_0  |rs232_ser                          |    51|
-|17    |      UART_PROC_HS_0 |uart_proc_hs                       |   383|
+|17    |      UART_PROC_HS_0 |uart_proc_hs                       |   384|
 |18    |        CRC16_8B_P_0 |crc                                |    65|
 |19    |        NEDGE_0      |negedge_detector                   |     1|
 |20    |        NEDGE_1      |negedge_detector_15                |     2|
@@ -1916,64 +1946,64 @@ Report Instance Areas:
 |24    |    IILC_SCLK_0      |iter_integer_linear_calc_12        |   291|
 |25    |    SERIAL_CK_0      |serial_ck_13                       |   316|
 |26    |    SERIAL_TX_0      |serial_tx                          |   137|
-|27    |  DIG0_LVDS          |ads4129_lvds                       |   110|
-|28    |  DIG_SPI            |spi_master__parameterized0         |  1670|
-|29    |    IILC_MISO_0      |iter_integer_linear_calc           |   308|
-|30    |    IILC_MOSI_0      |iter_integer_linear_calc_8         |   298|
-|31    |    IILC_SCLK_0      |iter_integer_linear_calc_9         |   248|
-|32    |    SERIAL_CK_0      |serial_ck                          |   316|
-|33    |    SERIAL_RX_0      |serial_rx__parameterized0          |   212|
-|34    |    SERIAL_TX_0      |serial_tx__parameterized0          |   159|
-|35    |  FAKE_CHAN_1        |data_gen                           |    58|
-|36    |  WFM_ACQ_0          |waveform_acquisition__xdcDup__1    |  1088|
-|37    |    CUPPA_TRIG       |cuppa_trigger_1                    |    68|
+|27    |  DIG0_LVDS          |ads4129_lvds__xdcDup__1            |   110|
+|28    |  DIG1_LVDS          |ads4129_lvds                       |   110|
+|29    |  DIG_SPI            |spi_master__parameterized0         |  1670|
+|30    |    IILC_MISO_0      |iter_integer_linear_calc           |   308|
+|31    |    IILC_MOSI_0      |iter_integer_linear_calc_8         |   298|
+|32    |    IILC_SCLK_0      |iter_integer_linear_calc_9         |   248|
+|33    |    SERIAL_CK_0      |serial_ck                          |   316|
+|34    |    SERIAL_RX_0      |serial_rx__parameterized0          |   212|
+|35    |    SERIAL_TX_0      |serial_tx__parameterized0          |   159|
+|36    |  WFM_ACQ_0          |waveform_acquisition__xdcDup__1    |  1075|
+|37    |    CUPPA_TRIG       |cuppa_trigger_1                    |    69|
 |38    |      CMP_0          |cmp_5                              |     5|
 |39    |      CMP_1          |cmp_6                              |     5|
 |40    |      PEDGE_RUN      |posedge_detector_7                 |     1|
-|41    |    WVB              |waveform_buffer__xdcDup__1         |   947|
+|41    |    WVB              |waveform_buffer__xdcDup__1         |   933|
 |42    |      OVERFLOW_CTRL  |wvb_overflow_ctrl_2                |    25|
 |43    |      PTB            |pretrigger_buffer__xdcDup__1       |    69|
 |44    |      RD_ADDR        |wvb_rd_addr_ctrl_3                 |    52|
-|45    |      WBS            |waveform_buffer_storage__xdcDup__1 |   138|
-|46    |      WR_CTRL        |wvb_wr_ctrl_4                      |   662|
-|47    |  WFM_ACQ_1          |waveform_acquisition               |  1093|
-|48    |    CUPPA_TRIG       |cuppa_trigger                      |    72|
+|45    |      WBS            |waveform_buffer_storage__xdcDup__1 |   128|
+|46    |      WR_CTRL        |wvb_wr_ctrl_4                      |   658|
+|47    |  WFM_ACQ_1          |waveform_acquisition               |  1085|
+|48    |    CUPPA_TRIG       |cuppa_trigger                      |    69|
 |49    |      CMP_0          |cmp                                |     5|
 |50    |      CMP_1          |cmp_0                              |     5|
 |51    |      PEDGE_RUN      |posedge_detector                   |     1|
-|52    |    WVB              |waveform_buffer                    |   948|
+|52    |    WVB              |waveform_buffer                    |   943|
 |53    |      OVERFLOW_CTRL  |wvb_overflow_ctrl                  |    26|
 |54    |      PTB            |pretrigger_buffer                  |    69|
 |55    |      RD_ADDR        |wvb_rd_addr_ctrl                   |    52|
 |56    |      WBS            |waveform_buffer_storage            |   139|
-|57    |      WR_CTRL        |wvb_wr_ctrl                        |   661|
+|57    |      WR_CTRL        |wvb_wr_ctrl                        |   656|
 |58    |  WVB_READER         |wvb_reader                         |   922|
 |59    |    RD_CTRL          |wvb_rd_ctrl_fmt_0                  |   339|
 +------+---------------------+-----------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:00 ; elapsed = 00:01:01 . Memory (MB): peak = 1020.781 ; gain = 453.980
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:09 ; elapsed = 00:01:10 . Memory (MB): peak = 1021.563 ; gain = 454.832
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 20 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:50 ; elapsed = 00:00:57 . Memory (MB): peak = 1020.781 ; gain = 291.016
-Synthesis Optimization Complete : Time (s): cpu = 00:01:01 ; elapsed = 00:01:02 . Memory (MB): peak = 1020.781 ; gain = 453.980
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:57 ; elapsed = 00:01:06 . Memory (MB): peak = 1021.563 ; gain = 294.059
+Synthesis Optimization Complete : Time (s): cpu = 00:01:09 ; elapsed = 00:01:10 . Memory (MB): peak = 1021.563 ; gain = 454.832
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 598 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 625 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1020.781 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1021.563 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 4 instances were transformed.
   IBUFGDS => IBUFDS: 2 instances
   OBUFDS => OBUFDS_DUAL_BUF (INV, OBUFDS, OBUFDS): 2 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-411 Infos, 77 Warnings, 0 Critical Warnings and 0 Errors encountered.
+412 Infos, 78 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:08 ; elapsed = 00:01:10 . Memory (MB): peak = 1020.781 ; gain = 722.422
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1020.781 ; gain = 0.000
+synth_design: Time (s): cpu = 00:01:16 ; elapsed = 00:01:19 . Memory (MB): peak = 1021.563 ; gain = 720.266
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1021.563 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.runs/synth_1/top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Oct  8 16:29:18 2020...
+INFO: [Common 17-206] Exiting Vivado at Thu Oct  8 18:12:03 2020...

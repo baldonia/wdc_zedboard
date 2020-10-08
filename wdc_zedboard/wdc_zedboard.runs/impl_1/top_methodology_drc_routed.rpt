@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date         : Thu Oct  8 16:31:45 2020
+| Date         : Thu Oct  8 18:14:28 2020
 | Host         : LAPTOP-GBOUD091 running 64-bit major release  (build 9200)
 | Command      : report_methodology -file top_methodology_drc_routed.rpt -pb top_methodology_drc_routed.pb -rpx top_methodology_drc_routed.rpx
 | Design       : top
@@ -23,12 +23,12 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 15
+             Violations found: 27
 +-----------+----------+-------------------------------+------------+
 | Rule      | Severity | Description                   | Violations |
 +-----------+----------+-------------------------------+------------+
 | LUTAR-1   | Warning  | LUT drives async reset alert  | 3          |
-| TIMING-18 | Warning  | Missing input or output delay | 12         |
+| TIMING-18 | Warning  | Missing input or output delay | 24         |
 +-----------+----------+-------------------------------+------------+
 
 2. REPORT DETAILS
@@ -106,6 +106,66 @@ Related violations: <none>
 TIMING-18#12 Warning
 Missing input or output delay  
 An input delay is missing on DIG0_D8_D9_P relative to clock(s) dig0_clk
+Related violations: <none>
+
+TIMING-18#13 Warning
+Missing input or output delay  
+An input delay is missing on DIG1_D0_D1_N relative to clock(s) dig0_clk
+Related violations: <none>
+
+TIMING-18#14 Warning
+Missing input or output delay  
+An input delay is missing on DIG1_D0_D1_P relative to clock(s) dig0_clk
+Related violations: <none>
+
+TIMING-18#15 Warning
+Missing input or output delay  
+An input delay is missing on DIG1_D10_D11_N relative to clock(s) dig0_clk
+Related violations: <none>
+
+TIMING-18#16 Warning
+Missing input or output delay  
+An input delay is missing on DIG1_D10_D11_P relative to clock(s) dig0_clk
+Related violations: <none>
+
+TIMING-18#17 Warning
+Missing input or output delay  
+An input delay is missing on DIG1_D2_D3_N relative to clock(s) dig0_clk
+Related violations: <none>
+
+TIMING-18#18 Warning
+Missing input or output delay  
+An input delay is missing on DIG1_D2_D3_P relative to clock(s) dig0_clk
+Related violations: <none>
+
+TIMING-18#19 Warning
+Missing input or output delay  
+An input delay is missing on DIG1_D4_D5_N relative to clock(s) dig0_clk
+Related violations: <none>
+
+TIMING-18#20 Warning
+Missing input or output delay  
+An input delay is missing on DIG1_D4_D5_P relative to clock(s) dig0_clk
+Related violations: <none>
+
+TIMING-18#21 Warning
+Missing input or output delay  
+An input delay is missing on DIG1_D6_D7_N relative to clock(s) dig0_clk
+Related violations: <none>
+
+TIMING-18#22 Warning
+Missing input or output delay  
+An input delay is missing on DIG1_D6_D7_P relative to clock(s) dig0_clk
+Related violations: <none>
+
+TIMING-18#23 Warning
+Missing input or output delay  
+An input delay is missing on DIG1_D8_D9_N relative to clock(s) dig0_clk
+Related violations: <none>
+
+TIMING-18#24 Warning
+Missing input or output delay  
+An input delay is missing on DIG1_D8_D9_P relative to clock(s) dig0_clk
 Related violations: <none>
 
 

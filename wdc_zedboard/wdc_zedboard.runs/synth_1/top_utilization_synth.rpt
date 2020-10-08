@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date         : Thu Oct  8 16:29:17 2020
+| Date         : Thu Oct  8 18:12:03 2020
 | Host         : LAPTOP-GBOUD091 running 64-bit major release  (build 9200)
 | Command      : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
 | Design       : top
@@ -30,14 +30,14 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| Slice LUTs*             | 3032 |     0 |     53200 |  5.70 |
-|   LUT as Logic          | 3032 |     0 |     53200 |  5.70 |
+| Slice LUTs*             | 3014 |     0 |     53200 |  5.67 |
+|   LUT as Logic          | 3014 |     0 |     53200 |  5.67 |
 |   LUT as Memory         |    0 |     0 |     17400 |  0.00 |
-| Slice Registers         | 3035 |     0 |    106400 |  2.85 |
-|   Register as Flip Flop | 3035 |     0 |    106400 |  2.85 |
+| Slice Registers         | 3042 |     0 |    106400 |  2.86 |
+|   Register as Flip Flop | 3042 |     0 |    106400 |  2.86 |
 |   Register as Latch     |    0 |     0 |    106400 |  0.00 |
-| F7 Muxes                |    4 |     0 |     26600 |  0.02 |
-| F8 Muxes                |    0 |     0 |     13300 |  0.00 |
+| F7 Muxes                |   31 |     0 |     26600 |  0.12 |
+| F8 Muxes                |    6 |     0 |     13300 |  0.05 |
 +-------------------------+------+-------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
 
@@ -56,8 +56,8 @@ Table of Contents
 | 0     |          Yes |           - |            - |
 | 3     |          Yes |           - |          Set |
 | 576   |          Yes |           - |        Reset |
-| 159   |          Yes |         Set |            - |
-| 2297  |          Yes |       Reset |            - |
+| 155   |          Yes |         Set |            - |
+| 2308  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -147,19 +147,20 @@ Table of Contents
 +------------+------+---------------------+
 |  Ref Name  | Used | Functional Category |
 +------------+------+---------------------+
-| FDRE       | 2297 |        Flop & Latch |
-| LUT2       | 1027 |                 LUT |
-| LUT4       |  846 |                 LUT |
-| LUT3       |  820 |                 LUT |
-| LUT6       |  654 |                 LUT |
-| CARRY4     |  588 |          CarryLogic |
+| FDRE       | 2308 |        Flop & Latch |
+| LUT2       |  970 |                 LUT |
+| LUT4       |  864 |                 LUT |
+| LUT3       |  745 |                 LUT |
+| LUT6       |  646 |                 LUT |
+| CARRY4     |  582 |          CarryLogic |
 | FDCE       |  576 |        Flop & Latch |
-| LUT5       |  286 |                 LUT |
-| LUT1       |  264 |                 LUT |
-| FDSE       |  159 |        Flop & Latch |
+| LUT5       |  331 |                 LUT |
+| LUT1       |  262 |                 LUT |
+| FDSE       |  155 |        Flop & Latch |
+| MUXF7      |   31 |               MuxFx |
 | OBUF       |   19 |                  IO |
+| MUXF8      |    6 |               MuxFx |
 | OBUFDS     |    4 |                  IO |
-| MUXF7      |    4 |               MuxFx |
 | IBUF       |    3 |                  IO |
 | FDPE       |    3 |        Flop & Latch |
 | ODDR       |    2 |                  IO |
@@ -179,12 +180,12 @@ Table of Contents
 | FIFO_1024_87       |    2 |
 | DIST_BUFFER_64_28  |    2 |
 | BUFFER_32K_28      |    2 |
+| ADC_SELECT_IO      |    2 |
 | SCRATCH_DPRAM      |    1 |
 | LCLK_MMCM          |    1 |
 | FIFO_2048_32       |    1 |
 | DIRECT_RDOUT_DPRAM |    1 |
 | DIG0_MMCM          |    1 |
-| ADC_SELECT_IO      |    1 |
 +--------------------+------+
 
 

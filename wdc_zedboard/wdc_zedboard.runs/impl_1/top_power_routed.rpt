@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date             : Thu Oct  8 16:31:48 2020
+| Date             : Thu Oct  8 18:14:31 2020
 | Host             : LAPTOP-GBOUD091 running 64-bit major release  (build 9200)
 | Command          : report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb -rpx top_power_routed.rpx
 | Design           : top
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.551        |
+| Total On-Chip Power (W)  | 0.591        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.432        |
-| Device Static (W)        | 0.119        |
+| Dynamic (W)              | 0.471        |
+| Device Static (W)        | 0.120        |
 | Effective TJA (C/W)      | 11.5         |
-| Max Ambient (C)          | 78.6         |
-| Junction Temperature (C) | 31.4         |
+| Max Ambient (C)          | 78.2         |
+| Junction Temperature (C) | 31.8         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,20 +52,20 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.033 |       12 |       --- |             --- |
-| Slice Logic              |     0.006 |     8704 |       --- |             --- |
-|   LUT as Logic           |     0.005 |     3369 |     53200 |            6.33 |
-|   CARRY4                 |    <0.001 |      618 |     13300 |            4.65 |
-|   Register               |    <0.001 |     3336 |    106400 |            3.14 |
+| Clocks                   |     0.035 |       12 |       --- |             --- |
+| Slice Logic              |     0.006 |     8663 |       --- |             --- |
+|   LUT as Logic           |     0.005 |     3350 |     53200 |            6.30 |
+|   CARRY4                 |    <0.001 |      612 |     13300 |            4.60 |
+|   Register               |    <0.001 |     3344 |    106400 |            3.14 |
 |   LUT as Distributed RAM |    <0.001 |       80 |     17400 |            0.46 |
-|   F7/F8 Muxes            |    <0.001 |       56 |     53200 |            0.11 |
-|   Others                 |     0.000 |      353 |       --- |             --- |
-| Signals                  |     0.009 |     6253 |       --- |             --- |
-| Block RAM                |     0.024 |       59 |       140 |           42.14 |
+|   F7/F8 Muxes            |    <0.001 |       89 |     53200 |            0.17 |
+|   Others                 |     0.000 |      355 |       --- |             --- |
+| Signals                  |     0.008 |     6213 |       --- |             --- |
+| Block RAM                |     0.029 |       59 |       140 |           42.14 |
 | MMCM                     |     0.215 |        2 |         4 |           50.00 |
-| I/O                      |     0.145 |       42 |       200 |           21.00 |
-| Static Power             |     0.119 |          |           |                 |
-| Total                    |     0.551 |          |           |                 |
+| I/O                      |     0.179 |       54 |       200 |           27.00 |
+| Static Power             |     0.120 |          |           |                 |
+| Total                    |     0.591 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -75,20 +75,20 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.089 |       0.078 |      0.010 |
-| Vccaux    |       1.800 |     0.144 |       0.133 |      0.011 |
+| Vccint    |       1.000 |     0.097 |       0.086 |      0.010 |
+| Vccaux    |       1.800 |     0.157 |       0.146 |      0.012 |
 | Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |
-| Vcco25    |       2.500 |     0.046 |       0.045 |      0.001 |
+| Vcco25    |       2.500 |     0.049 |       0.048 |      0.001 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccbram   |       1.000 |     0.005 |       0.002 |      0.003 |
+| Vccbram   |       1.000 |     0.005 |       0.003 |      0.003 |
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
 | MGTVccaux |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccpint   |       1.000 |     0.019 |       0.000 |      0.019 |
+| Vccpint   |       1.000 |     0.020 |       0.000 |      0.020 |
 | Vccpaux   |       1.800 |     0.010 |       0.000 |      0.010 |
 | Vccpll    |       1.800 |     0.003 |       0.000 |      0.003 |
 | Vcco_ddr  |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -159,7 +159,7 @@ Table of Contents
 +----------------------+-----------+
 | Name                 | Power (W) |
 +----------------------+-----------+
-| top                  |     0.432 |
+| top                  |     0.471 |
 |   CUPPA_0            |     0.012 |
 |     CRSM_0           |     0.001 |
 |     PG_DPRAM         |     0.002 |
@@ -173,23 +173,26 @@ Table of Contents
 |     IILC_MOSI_0      |     0.001 |
 |     IILC_SCLK_0      |     0.001 |
 |   DIG0_LVDS          |     0.047 |
-|     ADC_IO_0         |     0.047 |
-|       inst           |     0.047 |
+|     ADC_IO_0         |     0.046 |
+|       inst           |     0.046 |
+|   DIG1_LVDS          |     0.046 |
+|     ADC_IO_0         |     0.046 |
+|       inst           |     0.046 |
 |   DIG_SPI            |     0.005 |
 |     IILC_MISO_0      |     0.001 |
 |     IILC_MOSI_0      |     0.001 |
-|   WFM_ACQ_0          |     0.016 |
-|     WVB              |     0.015 |
+|   WFM_ACQ_0          |     0.019 |
+|     WVB              |     0.018 |
 |       PTB            |     0.002 |
-|       WBS            |     0.010 |
-|       WR_CTRL        |     0.002 |
-|   WFM_ACQ_1          |     0.016 |
-|     WVB              |     0.016 |
-|       PTB            |     0.003 |
-|       WBS            |     0.010 |
-|       WR_CTRL        |     0.002 |
+|       WBS            |     0.012 |
+|       WR_CTRL        |     0.003 |
+|   WFM_ACQ_1          |     0.018 |
+|     WVB              |     0.018 |
+|       PTB            |     0.002 |
+|       WBS            |     0.012 |
+|       WR_CTRL        |     0.003 |
 |   WVB_READER         |     0.006 |
-|     RD_CTRL          |     0.003 |
+|     RD_CTRL          |     0.002 |
 |   dig0_mmcm_0        |     0.110 |
 |     inst             |     0.110 |
 |   lclk_mmcm_0        |     0.108 |
