@@ -67,7 +67,7 @@ class wdcZedboard:
         "lvds_data_strength": (0x26, 0, 0x01),
         "data_format": (0x3D, 6, 0x03),
         "en_offset_corr": (0x3D, 5, 0x01),
-        "custom_pattern_high": (0x3F, 0, 0x3F),
+        "custom_pattern_high": (0x3F, 0, 0xFF),
         "custom_pattern_low": (0x40, 0, 0xFF),
         "lvds_cmos": (0x41, 6, 0x03),
         "cmos_clkout_strength": (0x41, 4, 0x03),
@@ -284,6 +284,28 @@ class wdcZedboard:
         self.check_dig_num(dig_num)
 
         self.adc_write(dig_num, "reset", "reset")
+
+    def set_adc_test_pattern(self, dig_num, pattern):
+        """ set test pattern for digitizer <dig_num> to <pattern> """
+        self.check_dig_num(dig_num)
+
+        self.adc_write(dig_num, "disable_low_latency", "disable_low_latency")
+        self.adc_write(
+            dig_num, "test_patterns", self.adc_data["test_patterns"][pattern]
+        )
+
+    def set_custom_pattern(self, dig_num, custom_pattern):
+        ''' Set the custom pattern for dig <dig_num> to <custom_pattern>'''
+        if not 0 <= int(custom_pattern) < 0x1000:
+            raise ValueError(f'Invalid custom pattern ({custom_pattern}).'
+                             ' It must be a 12-bit integer.')
+
+        #  this seems to work, but doesn't quite match the data sheet...
+        self.adc_write(dig_num, 'custom_pattern_high', custom_pattern >> 6)
+        self.adc_write(dig_num, 'custom_pattern_low', (custom_pattern & 0x3f) << 2)
+
+    def set_deskew_pattern(self, dig_num):
+        self.set_custom_pattern(dig_num, 0xaaa)
 
     def set_dac(self, dac_num, channel, value):
         high_bits = (self.dac_cmds["wr_n_up_all"] << 4) + self.dac_addrs[channel]

@@ -25,6 +25,14 @@ module cuppa #(parameter N_CHANNELS = 2)
   output reg[15:0] dig_spi_wr_data = 0,
   input[7:0] dig_spi_rd_data,
 
+  // dig 0 LVDS IO
+  output reg io_reset_0 = 1,
+  output reg[5:0] bitslip_0 = 0,
+  output reg in_delay_reset_0 = 0,
+  output reg[5:0] in_delay_ce_0 = 0,
+  output reg[5:0] in_delay_inc_0 = 0,
+  input[29:0] in_delay_tap_out_0,
+
   // turn KR pattern on and off
   output reg led_toggle = 1,
 
@@ -335,10 +343,17 @@ always @(*) begin
     12'hbee: begin y_rd_data =       dig_task_val;                          end
     12'hbed: begin y_rd_data =       dig_spi_wr_data;                       end
     12'hbec: begin y_rd_data =       {8'b0, dig_spi_rd_data};               end    
-    12'h8ff: begin y_rd_data =       {15'h0, led_toggle};                   end
+    12'hbdf: begin y_rd_data =       {15'b0, io_reset_0};                   end    
+    12'hbde: begin y_rd_data =       {15'b0, in_delay_reset_0};             end    
+    12'hbdd: begin y_rd_data =       {13'b0, bitslip_0[0],
+                                             in_delay_ce_0[0],
+                                             in_delay_inc_0[0]};            end    
+    12'hbdc: begin y_rd_data =       {2'b0, in_delay_tap_out_0[29:16]};     end    
+    12'hbdb: begin y_rd_data =       in_delay_tap_out_0[15:0];              end    
+    12'h8ff: begin y_rd_data =       {15'b0, led_toggle};                   end
     12'h8fe: begin y_rd_data =       lock_pe_cnt;                           end
-    12'h8fd: begin y_rd_data =       {15'h0, rst_lock_pe_cnt};              end
-    12'h8fc: begin y_rd_data =       {15'h0, spi_rst};                      end
+    12'h8fd: begin y_rd_data =       {15'b0, rst_lock_pe_cnt};              end
+    12'h8fc: begin y_rd_data =       {15'b0, spi_rst};                      end
     default: 
       begin
   	    y_rd_data = xdom_dpram_rd_data;
@@ -358,15 +373,18 @@ always @(posedge clk) begin
   wvb_arm_1 <= 0;
 
   rst_lock_pe_cnt <= 0;
+
+  in_delay_ce_0 <= 6'b0;
+  bitslip_0 <= 6'b0;
   
   if (y_wr) 
     case (y_adr)
       12'hffe: begin
-         wvb_trig_et_0 <= y_wr_data[0];
-         wvb_trig_gt_0 <= y_wr_data[1];
-         wvb_trig_lt_0 <= y_wr_data[2];
-         wvb_trig_thresh_trig_en_0 <= y_wr_data[3];
-         wvb_trig_ext_trig_en_0 <= y_wr_data[4];
+        wvb_trig_et_0 <= y_wr_data[0];
+        wvb_trig_gt_0 <= y_wr_data[1];
+        wvb_trig_lt_0 <= y_wr_data[2];
+        wvb_trig_thresh_trig_en_0 <= y_wr_data[3];
+        wvb_trig_ext_trig_en_0 <= y_wr_data[4];
       end
       12'hffd: begin wvb_trig_thr_0 <= y_wr_data[11:0];                     end
       12'hffc: begin wvb_trig_run_0 <= y_wr_data[0];
@@ -380,11 +398,11 @@ always @(posedge clk) begin
       12'hff5: begin wvb_post_config_0 <= y_wr_data[14:0];                  end
       12'hff4: begin wvb_pre_config_0 <= y_wr_data[5:0];                    end
       12'hefe: begin
-         wvb_trig_et_1 <= y_wr_data[0];
-         wvb_trig_gt_1 <= y_wr_data[1];
-         wvb_trig_lt_1 <= y_wr_data[2];
-         wvb_trig_thresh_trig_en_1 <= y_wr_data[3];
-         wvb_trig_ext_trig_en_1 <= y_wr_data[4];
+        wvb_trig_et_1 <= y_wr_data[0];
+        wvb_trig_gt_1 <= y_wr_data[1];
+        wvb_trig_lt_1 <= y_wr_data[2];
+        wvb_trig_thresh_trig_en_1 <= y_wr_data[3];
+        wvb_trig_ext_trig_en_1 <= y_wr_data[4];
       end
       12'hefd: begin wvb_trig_thr_1 <= y_wr_data[11:0];                     end
       12'hefb: begin wvb_trig_mode_1 <= y_wr_data[0];                       end
@@ -403,6 +421,13 @@ always @(posedge clk) begin
       12'hbfc: begin dac_spi_wr_data[15:0] <= y_wr_data;                    end
       12'hbef: begin dig_sel <= y_wr_data[0];                               end
       12'hbed: begin dig_spi_wr_data <= y_wr_data;                          end
+      12'hbdf: begin io_reset_0 <= y_wr_data[0];                            end
+      12'hbde: begin in_delay_reset_0 <= y_wr_data[0];                      end
+      12'hbdd: begin 
+        in_delay_inc_0[5:0] <= {6{y_wr_data[0]}};
+        in_delay_ce_0[5:0] <= {6{y_wr_data[1]}};
+        bitslip_0[5:0] <= {6{y_wr_data[2]}};
+      end
       12'h8ff: begin led_toggle <= y_wr_data[0];                            end
       12'h8fd: begin rst_lock_pe_cnt <= y_wr_data[0];                       end
       12'h8fc: begin spi_rst <= y_wr_data[0];                               end

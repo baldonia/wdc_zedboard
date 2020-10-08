@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date         : Wed Oct  7 20:10:29 2020
+| Date         : Thu Oct  8 16:31:45 2020
 | Host         : LAPTOP-GBOUD091 running 64-bit major release  (build 9200)
 | Command      : report_methodology -file top_methodology_drc_routed.rpt -pb top_methodology_drc_routed.pb -rpx top_methodology_drc_routed.rpx
 | Design       : top
@@ -23,12 +23,13 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 3
-+---------+----------+------------------------------+------------+
-| Rule    | Severity | Description                  | Violations |
-+---------+----------+------------------------------+------------+
-| LUTAR-1 | Warning  | LUT drives async reset alert | 3          |
-+---------+----------+------------------------------+------------+
+             Violations found: 15
++-----------+----------+-------------------------------+------------+
+| Rule      | Severity | Description                   | Violations |
++-----------+----------+-------------------------------+------------+
+| LUTAR-1   | Warning  | LUT drives async reset alert  | 3          |
+| TIMING-18 | Warning  | Missing input or output delay | 12         |
++-----------+----------+-------------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
@@ -45,6 +46,66 @@ Related violations: <none>
 LUTAR-1#3 Warning
 LUT drives async reset alert  
 LUT cell WVB_READER/RD_CTRL/ack_i_1__1, with 2 or more inputs, drives asynchronous preset/clear pin(s) CUPPA_0/CRSM_0/NEDGE_0/ff_reg/CLR, CUPPA_0/SYNC0/ff_reg[0]/CLR, CUPPA_0/SYNC0/ff_reg[1]/CLR, CUPPA_0/UART_DEBUG_0/FT232R_HS_0/NEDGE_0/ff_reg/CLR, CUPPA_0/UART_DEBUG_0/FT232R_HS_0/RS232_DES_0/NEDGE0/ff_reg/CLR, CUPPA_0/UART_DEBUG_0/FT232R_HS_0/RS232_DES_0/SYNC0/ff_reg[0]/CLR, CUPPA_0/UART_DEBUG_0/FT232R_HS_0/RS232_DES_0/SYNC0/ff_reg[1]/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+TIMING-18#1 Warning
+Missing input or output delay  
+An input delay is missing on DIG0_D0_D1_N relative to clock(s) dig0_clk
+Related violations: <none>
+
+TIMING-18#2 Warning
+Missing input or output delay  
+An input delay is missing on DIG0_D0_D1_P relative to clock(s) dig0_clk
+Related violations: <none>
+
+TIMING-18#3 Warning
+Missing input or output delay  
+An input delay is missing on DIG0_D10_D11_N relative to clock(s) dig0_clk
+Related violations: <none>
+
+TIMING-18#4 Warning
+Missing input or output delay  
+An input delay is missing on DIG0_D10_D11_P relative to clock(s) dig0_clk
+Related violations: <none>
+
+TIMING-18#5 Warning
+Missing input or output delay  
+An input delay is missing on DIG0_D2_D3_N relative to clock(s) dig0_clk
+Related violations: <none>
+
+TIMING-18#6 Warning
+Missing input or output delay  
+An input delay is missing on DIG0_D2_D3_P relative to clock(s) dig0_clk
+Related violations: <none>
+
+TIMING-18#7 Warning
+Missing input or output delay  
+An input delay is missing on DIG0_D4_D5_N relative to clock(s) dig0_clk
+Related violations: <none>
+
+TIMING-18#8 Warning
+Missing input or output delay  
+An input delay is missing on DIG0_D4_D5_P relative to clock(s) dig0_clk
+Related violations: <none>
+
+TIMING-18#9 Warning
+Missing input or output delay  
+An input delay is missing on DIG0_D6_D7_N relative to clock(s) dig0_clk
+Related violations: <none>
+
+TIMING-18#10 Warning
+Missing input or output delay  
+An input delay is missing on DIG0_D6_D7_P relative to clock(s) dig0_clk
+Related violations: <none>
+
+TIMING-18#11 Warning
+Missing input or output delay  
+An input delay is missing on DIG0_D8_D9_N relative to clock(s) dig0_clk
+Related violations: <none>
+
+TIMING-18#12 Warning
+Missing input or output delay  
+An input delay is missing on DIG0_D8_D9_P relative to clock(s) dig0_clk
 Related violations: <none>
 
 

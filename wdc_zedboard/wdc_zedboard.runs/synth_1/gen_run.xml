@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z020clg484-1" LaunchTime="1602115581">
+<GenRun Id="synth_1" LaunchPart="xc7z020clg484-1" LaunchTime="1602188878">
   <File Type="PA-TCL" Name="top.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="top_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="top_reports.tcl"/>
@@ -12,6 +12,13 @@
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/ip/DIG0_MMCM/DIG0_MMCM.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../hdl/ads4129_lvds/ads4129_lvds.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -339,5 +346,6 @@
   <BlockFileSet Type="BlockSrcs" Name="DIST_BUFFER_64_28"/>
   <BlockFileSet Type="BlockSrcs" Name="FIFO_2048_32"/>
   <BlockFileSet Type="BlockSrcs" Name="BUFFER_32K_28"/>
+  <BlockFileSet Type="BlockSrcs" Name="ADC_SELECT_IO"/>
   <BlockFileSet Type="BlockSrcs" Name="FIFO_1024_87"/>
 </GenRun>

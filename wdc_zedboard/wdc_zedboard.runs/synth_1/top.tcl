@@ -40,6 +40,7 @@ set_property include_dirs {
   C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/bundles/cuppa_wvb_hdr_bundle
 } [current_fileset]
 read_verilog -library xil_defaultlib {
+  C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/ads4129_lvds/ads4129_lvds.v
   C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/cmp/cmp.v
   C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/crc16_8b_parallel/crc16_8b_parallel.v
   C:/Users/atfie/watchman-ne1/wdc_zedboard/hdl/crs_master/crs_master.v
@@ -108,6 +109,10 @@ set_property used_in_implementation false [get_files -all c:/Users/atfie/watchma
 
 read_ip -quiet C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/DIRECT_RDOUT_DPRAM/DIRECT_RDOUT_DPRAM.xci
 set_property used_in_implementation false [get_files -all c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/DIRECT_RDOUT_DPRAM/DIRECT_RDOUT_DPRAM_ooc.xdc]
+
+read_ip -quiet c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/ADC_SELECT_IO/ADC_SELECT_IO.xci
+set_property used_in_implementation false [get_files -all c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/ADC_SELECT_IO/ADC_SELECT_IO_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/ADC_SELECT_IO/ADC_SELECT_IO.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the

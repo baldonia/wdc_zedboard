@@ -7,17 +7,32 @@ module top (
   // 100 MHz input clock  
   input GCLK,
 
-  // ADC 0 clocks
+  // ADC 0 
   // from ADC
   input DIG0_CLKOUT_P,
   input DIG0_CLKOUT_N,
+  input DIG0_D0_D1_P,
+  input DIG0_D2_D3_P,
+  input DIG0_D4_D5_P,
+  input DIG0_D6_D7_P,
+  input DIG0_D8_D9_P,
+  input DIG0_D10_D11_P,  
+  input DIG0_D0_D1_N,
+  input DIG0_D2_D3_N,
+  input DIG0_D4_D5_N,
+  input DIG0_D6_D7_N,
+  input DIG0_D8_D9_N,
+  input DIG0_D10_D11_N,
+
   // to ADC
   output DIG0_CLK_P,
   output DIG0_CLK_N,
 
-  // ADC 1 input 
+  // ADC 1 
+  // from ADC
   input DIG1_CLKOUT_P,
   input DIG1_CLKOUT_N,
+  // to ADC
   output DIG1_CLK_P,
   output DIG1_CLK_N,
 
@@ -57,7 +72,7 @@ module top (
 
 
 localparam N_CHANNELS = 2;
-localparam[15:0] FW_VNUM = 16'h9;
+localparam[15:0] FW_VNUM = 16'ha;
 
 localparam P_WVB_DATA_WIDTH = 28;
 localparam P_HDR_WIDTH = 87;
@@ -98,6 +113,12 @@ LCLK_MMCM lclk_mmcm_0
   .reset(1'b0),
   .locked(lclk_mmcm_locked)  
 );
+
+wire   idelayctrl_rdy; 
+IDELAYCTRL delayctrl(.RDY(idelayctrl_rdy),
+                     .REFCLK(ref_clk),
+                     .RST(!lclk_mmcm_locked));
+assign LD3 = idelayctrl_rdy;
 
 // forward encoder clocks to ADCs
 wire i_dig0_clk_out;
@@ -140,7 +161,7 @@ OBUFDS obuf_dig_clock_1(.I(i_dig1_clk_out), .O(DIG1_CLK_P), .OB(DIG1_CLK_N));
 // wire lclk_rst = !lclk_mmcm_locked;
 
 assign LD2 = lclk_mmcm_locked;
-assign LD3 = !lclk_mmcm_locked;
+// assign LD3 = !lclk_mmcm_locked;
 
 assign lclk = clk_122_88_MHz;
 wire lclk_rst = !dig0_pll_locked;
@@ -210,6 +231,15 @@ wire lclk_rst = !dig0_pll_locked;
 //     12'hbed: [15:0] dig spi wr data
 //     12'hbec: [7:0] dig spi rd data
 //
+//     12'hbdf: [0] dig_0 IO reset (defaults to 1)
+//     12'hbde: [0] dig_0 delay reset
+//     12'hbdd: DIG 0 IO tuning
+//              [0] delay_inc
+//              [1] delay_ce (resets automatically)
+//              [2] bitslip (resets automatically)
+//     12'hbdc: [13:0] DIG 0 delay tap out [29:16]
+//     12'hbdb: DIG 0 delay tap out [15:0]
+// 
 //     12'8ff: LED toggle
 //     12'8fe: dig 0 lock PE count
 //     12'8fd: rst dig 0 lock PE
@@ -229,6 +259,14 @@ wire        dig_spi_req;
 wire [15:0] dig_spi_wr_data;
 wire [7:0]  dig_spi_rd_data;
 wire        dig_sel;
+
+// DIG 0 lvds IO
+wire io_reset_0;
+wire[5:0] bitslip_0;
+wire in_delay_reset_0;
+wire[5:0] in_delay_ce_0;
+wire[5:0] in_delay_inc_0;
+wire[29:0] in_delay_tap_out_0; 
 
 // Dig 0 trigger / wvb conf
 wire[L_WIDTH_CUPPA_TRIG_BUNDLE-1:0] cuppa_trig_bundle_0;
@@ -277,6 +315,14 @@ cuppa CUPPA_0
   .dig_spi_ack(dig_spi_ack),
   .dig_spi_wr_data(dig_spi_wr_data),
   .dig_spi_rd_data(dig_spi_rd_data),
+
+  // dig 0 LVDS IO
+  .io_reset_0(io_reset_0),
+  .bitslip_0(bitslip_0),
+  .in_delay_reset_0(in_delay_reset_0),
+  .in_delay_ce_0(in_delay_ce_0),
+  .in_delay_inc_0(in_delay_inc_0),
+  .in_delay_tap_out_0(in_delay_tap_out_0),
 
   // trig / wvb conf
   .trig_bundle_0(cuppa_trig_bundle_0),
@@ -334,13 +380,45 @@ end
 // to be replaced with SERDES + idelay, etc
 wire[11:0] adc_stream_0_0;
 wire[11:0] adc_stream_1_0;
-data_gen #(.P_ADC_RAMP_START(0)) FAKE_CHAN_0
- (
+// data_gen #(.P_ADC_RAMP_START(0)) FAKE_CHAN_0
+//  (
+//   .clk(lclk),
+//   .rst(lclk_rst || cuppa_wvb_rst[0]),
+//   .adc_stream_0(adc_stream_0_0),
+//   .adc_stream_1(adc_stream_1_0)
+//  );
+
+// real data for channel 0
+ads4129_lvds DIG0_LVDS
+(
   .clk(lclk),
+  .dclk(clk_245_76_MHz),
   .rst(lclk_rst || cuppa_wvb_rst[0]),
-  .adc_stream_0(adc_stream_0_0),
-  .adc_stream_1(adc_stream_1_0)
- );
+
+  .data_p({DIG0_D10_D11_P,
+           DIG0_D8_D9_P,
+           DIG0_D6_D7_P,
+           DIG0_D4_D5_P,
+           DIG0_D2_D3_P,
+           DIG0_D0_D1_P}),
+
+  .data_n({DIG0_D10_D11_N,
+           DIG0_D8_D9_N,
+           DIG0_D6_D7_N,
+           DIG0_D4_D5_N,
+           DIG0_D2_D3_N,
+           DIG0_D0_D1_N}),
+
+  .sample_0(adc_stream_0_0),
+  .sample_1(adc_stream_1_0),
+
+  .io_reset(io_reset_0),
+  .bitslip(bitslip_0),
+  .in_delay_reset(in_delay_reset_0),
+  .in_delay_ce(in_delay_ce_0),
+  .in_delay_inc(in_delay_inc_0),
+  .in_delay_tap_out(in_delay_tap_out_0)
+);
 
 // to be replaced with SERDES + idelay, etc
 wire[11:0] adc_stream_0_1;
