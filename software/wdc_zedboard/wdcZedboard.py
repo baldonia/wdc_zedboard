@@ -290,6 +290,16 @@ class wdcZedboard:
 
         self.adc_write(dig_num, "reset", "reset")
 
+    def init_adc(self, dig_num):
+        self.sw_reset(dig_num)
+        self.adc_write(dig_num, "data_format", "offset_binary")
+        self.adc_write(dig_num, "high_perf_mode_1", "high_perf_1")
+        self.adc_write(dig_num, "high_perf_mode_2", "high_perf_2")
+
+    def init_adcs(self):
+        for dig_num in 0, 1:
+            self.init_adc(dig_num)
+
     def set_adc_test_pattern(self, dig_num, pattern):
         """ set test pattern for digitizer <dig_num> to <pattern> """
         self.check_dig_num(dig_num)

@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date             : Thu Oct  8 18:14:31 2020
+| Date             : Fri Oct  9 19:58:05 2020
 | Host             : LAPTOP-GBOUD091 running 64-bit major release  (build 9200)
 | Command          : report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb -rpx top_power_routed.rpx
 | Design           : top
@@ -52,15 +52,15 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.035 |       12 |       --- |             --- |
-| Slice Logic              |     0.006 |     8663 |       --- |             --- |
-|   LUT as Logic           |     0.005 |     3350 |     53200 |            6.30 |
+| Clocks                   |     0.034 |       12 |       --- |             --- |
+| Slice Logic              |     0.006 |     8691 |       --- |             --- |
+|   LUT as Logic           |     0.005 |     3351 |     53200 |            6.30 |
 |   CARRY4                 |    <0.001 |      612 |     13300 |            4.60 |
-|   Register               |    <0.001 |     3344 |    106400 |            3.14 |
+|   Register               |    <0.001 |     3372 |    106400 |            3.17 |
 |   LUT as Distributed RAM |    <0.001 |       80 |     17400 |            0.46 |
 |   F7/F8 Muxes            |    <0.001 |       89 |     53200 |            0.17 |
 |   Others                 |     0.000 |      355 |       --- |             --- |
-| Signals                  |     0.008 |     6213 |       --- |             --- |
+| Signals                  |     0.009 |     6244 |       --- |             --- |
 | Block RAM                |     0.029 |       59 |       140 |           42.14 |
 | MMCM                     |     0.215 |        2 |         4 |           50.00 |
 | I/O                      |     0.179 |       54 |       200 |           27.00 |
@@ -181,7 +181,7 @@ Table of Contents
 |   DIG_SPI            |     0.005 |
 |     IILC_MISO_0      |     0.001 |
 |     IILC_MOSI_0      |     0.001 |
-|   WFM_ACQ_0          |     0.019 |
+|   WFM_ACQ_0          |     0.018 |
 |     WVB              |     0.018 |
 |       PTB            |     0.002 |
 |       WBS            |     0.012 |
@@ -192,7 +192,7 @@ Table of Contents
 |       WBS            |     0.012 |
 |       WR_CTRL        |     0.003 |
 |   WVB_READER         |     0.006 |
-|     RD_CTRL          |     0.002 |
+|     RD_CTRL          |     0.003 |
 |   dig0_mmcm_0        |     0.110 |
 |     inst             |     0.110 |
 |   lclk_mmcm_0        |     0.108 |

@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date         : Thu Oct  8 18:12:03 2020
+| Date         : Fri Oct  9 19:55:35 2020
 | Host         : LAPTOP-GBOUD091 running 64-bit major release  (build 9200)
 | Command      : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
 | Design       : top
@@ -33,8 +33,8 @@ Table of Contents
 | Slice LUTs*             | 3014 |     0 |     53200 |  5.67 |
 |   LUT as Logic          | 3014 |     0 |     53200 |  5.67 |
 |   LUT as Memory         |    0 |     0 |     17400 |  0.00 |
-| Slice Registers         | 3042 |     0 |    106400 |  2.86 |
-|   Register as Flip Flop | 3042 |     0 |    106400 |  2.86 |
+| Slice Registers         | 3048 |     0 |    106400 |  2.86 |
+|   Register as Flip Flop | 3048 |     0 |    106400 |  2.86 |
 |   Register as Latch     |    0 |     0 |    106400 |  0.00 |
 | F7 Muxes                |   31 |     0 |     26600 |  0.12 |
 | F8 Muxes                |    6 |     0 |     13300 |  0.05 |
@@ -57,7 +57,7 @@ Table of Contents
 | 3     |          Yes |           - |          Set |
 | 576   |          Yes |           - |        Reset |
 | 155   |          Yes |         Set |            - |
-| 2308  |          Yes |       Reset |            - |
+| 2314  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -147,7 +147,7 @@ Table of Contents
 +------------+------+---------------------+
 |  Ref Name  | Used | Functional Category |
 +------------+------+---------------------+
-| FDRE       | 2308 |        Flop & Latch |
+| FDRE       | 2314 |        Flop & Latch |
 | LUT2       |  970 |                 LUT |
 | LUT4       |  864 |                 LUT |
 | LUT3       |  745 |                 LUT |

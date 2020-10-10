@@ -4,10 +4,10 @@
 // Top level module for the CUPPA WDC prototype zedboard project
 
 module top (
-  // 100 MHz input clock  
+  // 100 MHz input clock
   input GCLK,
 
-  // ADC 0 
+  // ADC 0
   // from ADC
   input DIG0_CLKOUT_P,
   input DIG0_CLKOUT_N,
@@ -16,7 +16,7 @@ module top (
   input DIG0_D4_D5_P,
   input DIG0_D6_D7_P,
   input DIG0_D8_D9_P,
-  input DIG0_D10_D11_P,  
+  input DIG0_D10_D11_P,
   input DIG0_D0_D1_N,
   input DIG0_D2_D3_N,
   input DIG0_D4_D5_N,
@@ -27,7 +27,7 @@ module top (
   output DIG0_CLK_P,
   output DIG0_CLK_N,
 
-  // ADC 1 
+  // ADC 1
   // from ADC
   input DIG1_CLKOUT_P,
   input DIG1_CLKOUT_N,
@@ -36,7 +36,7 @@ module top (
   input DIG1_D4_D5_P,
   input DIG1_D6_D7_P,
   input DIG1_D8_D9_P,
-  input DIG1_D10_D11_P,  
+  input DIG1_D10_D11_P,
   input DIG1_D0_D1_N,
   input DIG1_D2_D3_N,
   input DIG1_D4_D5_N,
@@ -83,7 +83,7 @@ module top (
 
 
 localparam N_CHANNELS = 2;
-localparam[15:0] FW_VNUM = 16'hb;
+localparam[15:0] FW_VNUM = 16'hc;
 
 localparam P_WVB_DATA_WIDTH = 28;
 localparam P_HDR_WIDTH = 87;
@@ -122,10 +122,10 @@ LCLK_MMCM lclk_mmcm_0
   .clk_250MHz(enc_clk0),
   .clk_250MHz_180(enc_clk1),
   .reset(1'b0),
-  .locked(lclk_mmcm_locked)  
+  .locked(lclk_mmcm_locked)
 );
 
-wire   idelayctrl_rdy; 
+wire   idelayctrl_rdy;
 IDELAYCTRL delayctrl(.RDY(idelayctrl_rdy),
                      .REFCLK(ref_clk),
                      .RST(!lclk_mmcm_locked));
@@ -188,7 +188,7 @@ wire lclk_rst = !dig0_pll_locked;
 //             [3] thresh_trig_en
 //             [4] ext_trig_en
 //     12'hffd: DIG 0 trig threshold [11:0]
-//     12'hffc: 
+//     12'hffc:
 //             [i] sw_trig (channel i, up to 1)
 //     12'hffb: DIG 0
 //             [0] trig_mode
@@ -200,7 +200,7 @@ wire lclk_rst = !dig0_pll_locked;
 //             [0] cnst_run
 //     12'hff7: DIG 0 const config [14:0]
 //     12'hff6: DIG 0 test config  [14:0]
-//     12'hff5: DIG 0 post config [14:0] 
+//     12'hff5: DIG 0 post config [14:0]
 //     12'hff4: DIG 0 pre config [5:0]
 //     12'hefe: DIG 1 trig settings
 //             [0] et
@@ -215,23 +215,23 @@ wire lclk_rst = !dig0_pll_locked;
 //             [0] cnst_run
 //     12'hef7: DIG 1 const config [14:0]
 //     12'hef6: DIG 1 test config  [14:0]
-//     12'hef5: DIG 1 post config [14:0] 
+//     12'hef5: DIG 1 post config [14:0]
 //     12'hef4: DIG 1 pre config [5:0]
 //     12'hdff: dpram_len [10:0]
-//     12'hdfe: 
-//             [0] dpram_done  
-//     12'hdfd: 
-//             [0] dpram_sel (0: scratch dpram, 1: direct rdout (rd only))       
+//     12'hdfe:
+//             [0] dpram_done
+//     12'hdfd:
+//             [0] dpram_sel (0: scratch dpram, 1: direct rdout (rd only))
 //     12'hdfc: DIG 0 n_waveforms in waveform buffer
 //     12'hdfb: DIG 0 words used in waveform buffer
 //     12'hdfa: waveform buffer overflow [1:0] (DIG 1, DIG 0)
 //     12'hdf9: waveform buffer reset [1:0] (DIG 1, DIG 0)
-//     12'hdf8: wvb_reader enable 
-//     12'hdf7: wvb_reader dpram mode 
+//     12'hdf8: wvb_reader enable
+//     12'hdf7: wvb_reader dpram mode
 //     12'hdf6: wvb header full ([i] for channel i, up to 1)
 //     12'hdf5: DIG 1 n_waveforms in waveform buffer
 //     12'hdf4: DIG 1 words used in waveform buffer
-// 
+//
 //     12'hbff: [0] DAC spi chip select (0 or 1)
 //     12'hbfe: [0] DAC spi task reg
 //     12'hbfd: [7:0] DAC spi wr data [23:16]
@@ -250,7 +250,7 @@ wire lclk_rst = !dig0_pll_locked;
 //              [2] bitslip (resets automatically)
 //     12'hbdc: [13:0] DIG 0 delay tap out [29:16]
 //     12'hbdb: DIG 0 delay tap out [15:0]
-// 
+//
 //     12'hbda: [0] DIG 1 IO reset (defaults to 1)
 //     12'hbd9: [0] DIG 1 delay reset
 //     12'hbd8: DIG 1 IO tuning
@@ -259,7 +259,7 @@ wire lclk_rst = !dig0_pll_locked;
 //              [2] bitslip (resets automatically)
 //     12'hbd7: [13:0] DIG 1 delay tap out [29:16]
 //     12'hbd6: DIG 1 delay tap out [15:0]
-// 
+//
 //     12'8ff: LED toggle
 //     12'8fe: dig 0 lock PE count
 //     12'8fd: rst dig 0 lock PE
@@ -286,7 +286,7 @@ wire[5:0] bitslip_0;
 wire in_delay_reset_0;
 wire[5:0] in_delay_ce_0;
 wire[5:0] in_delay_inc_0;
-wire[29:0] in_delay_tap_out_0; 
+wire[29:0] in_delay_tap_out_0;
 
 // DIG 1 lvds IO
 wire io_reset_1;
@@ -294,7 +294,7 @@ wire[5:0] bitslip_1;
 wire in_delay_reset_1;
 wire[5:0] in_delay_ce_1;
 wire[5:0] in_delay_inc_1;
-wire[29:0] in_delay_tap_out_1; 
+wire[29:0] in_delay_tap_out_1;
 
 // Dig 0 trigger / wvb conf
 wire[L_WIDTH_CUPPA_TRIG_BUNDLE-1:0] cuppa_trig_bundle_0;
@@ -306,7 +306,7 @@ wire[L_WIDTH_CUPPA_WVB_CONF_BUNDLE-1:0] cuppa_wvb_conf_bundle_1;
 wire[N_CHANNELS-1:0] cuppa_wvb_rst;
 wire[N_CHANNELS-1:0] cuppa_wvb_armed;
 wire[N_CHANNELS-1:0] cuppa_wvb_overflow;
-wire[N_CHANNELS-1:0] cuppa_wvb_hdr_full; 
+wire[N_CHANNELS-1:0] cuppa_wvb_hdr_full;
 
 wire[15:0] cuppa_wvb_wused_0;
 wire[15:0] cuppa_wvb_wused_1;
@@ -350,7 +350,7 @@ cuppa CUPPA_0
   .in_delay_reset_0(in_delay_reset_0),
   .in_delay_ce_0(in_delay_ce_0),
   .in_delay_inc_0(in_delay_inc_0),
-  .in_delay_tap_out_0(in_delay_tap_out_0),  
+  .in_delay_tap_out_0(in_delay_tap_out_0),
 
   // DIG 1 LVDS IO
   .io_reset_1(io_reset_1),
@@ -410,9 +410,9 @@ always @(posedge lclk) begin
   end
 end
 
-// 
+//
 // fake data generation
-// 
+//
 wire[11:0] adc_stream_0_0;
 wire[11:0] adc_stream_1_0;
 // to be replaced with SERDES + idelay, etc
@@ -425,7 +425,7 @@ wire[11:0] adc_stream_1_0;
 //  );
 
 // real data for channel 0
-ads4129_lvds DIG0_LVDS
+ads4129_lvds #(.P_ODD_CHANNEL("FALSE")) DIG0_LVDS
 (
   .clk(lclk),
   .dclk(clk_245_76_MHz),
@@ -470,7 +470,7 @@ wire[11:0] adc_stream_1_1;
 //  );
 
 // real data for channel 1
-ads4129_lvds DIG1_LVDS
+ads4129_lvds #(.P_ODD_CHANNEL("TRUE")) DIG1_LVDS
 (
   .clk(lclk),
   .dclk(clk_245_76_MHz),
@@ -512,30 +512,30 @@ wire[N_CHANNELS*P_HDR_WIDTH-1:0] wvb_hdr_data;
 
 waveform_acquisition #(.P_DATA_WIDTH(P_WVB_DATA_WIDTH),
                        .P_ADR_WIDTH(P_WVB_ADR_WIDTH),
-                       .P_HDR_WIDTH(P_HDR_WIDTH)) 
+                       .P_HDR_WIDTH(P_HDR_WIDTH))
 WFM_ACQ_0
 (
   .clk(lclk),
   .rst(lclk_rst || cuppa_wvb_rst[0]),
-  
+
   // WVB reader interface
   .wvb_data_out(wvb_data_out[P_WVB_DATA_WIDTH*(0+1)-1:P_WVB_DATA_WIDTH*0]),
-  .wvb_hdr_data_out(wvb_hdr_data[P_HDR_WIDTH*(0+1)-1:P_HDR_WIDTH*0]),  
+  .wvb_hdr_data_out(wvb_hdr_data[P_HDR_WIDTH*(0+1)-1:P_HDR_WIDTH*0]),
   .wvb_hdr_full(cuppa_wvb_hdr_full[0]),
   .wvb_hdr_empty(wvb_hdr_empty[0]),
   .wvb_n_wvf_in_buf(cuppa_wvb_n_wvf_in_buf_0),
-  .wvb_wused(cuppa_wvb_wused_0), 
-  .wvb_hdr_rdreq(wvb_hdr_rdreq[0]), 
-  .wvb_wvb_rdreq(wvb_wvb_rdreq[0]), 
-  .wvb_wvb_rddone(wvb_rddone[0]), 
-  
+  .wvb_wused(cuppa_wvb_wused_0),
+  .wvb_hdr_rdreq(wvb_hdr_rdreq[0]),
+  .wvb_wvb_rdreq(wvb_wvb_rdreq[0]),
+  .wvb_wvb_rddone(wvb_rddone[0]),
+
   // datastream
   .adc_samp_0_0(adc_stream_0_0),
   .adc_samp_1_0(adc_stream_1_0),
 
   // Local time counter
-  .ltc_in(ltc), 
-  
+  .ltc_in(ltc),
+
   // External
   .ext_trig_in(1'b0),
   .wvb_trig_out(),
@@ -543,8 +543,8 @@ WFM_ACQ_0
 
   // cuppa interface
   .cuppa_wvb_trig_bundle(cuppa_trig_bundle_0),
-  .cuppa_wvb_config_bundle(cuppa_wvb_conf_bundle_0),  
-  .cuppa_wvb_armed(cuppa_wvb_armed[0]), 
+  .cuppa_wvb_config_bundle(cuppa_wvb_conf_bundle_0),
+  .cuppa_wvb_armed(cuppa_wvb_armed[0]),
   .cuppa_wvb_overflow(cuppa_wvb_overflow[0])
 );
 
@@ -555,25 +555,25 @@ WFM_ACQ_1
 (
   .clk(lclk),
   .rst(lclk_rst || cuppa_wvb_rst[1]),
-  
+
   // WVB reader interface
   .wvb_data_out(wvb_data_out[P_WVB_DATA_WIDTH*(1+1)-1:P_WVB_DATA_WIDTH*1]),
-  .wvb_hdr_data_out(wvb_hdr_data[P_HDR_WIDTH*(1+1)-1:P_HDR_WIDTH*1]),  
+  .wvb_hdr_data_out(wvb_hdr_data[P_HDR_WIDTH*(1+1)-1:P_HDR_WIDTH*1]),
   .wvb_hdr_full(cuppa_wvb_hdr_full[1]),
   .wvb_hdr_empty(wvb_hdr_empty[1]),
   .wvb_n_wvf_in_buf(cuppa_wvb_n_wvf_in_buf_1),
-  .wvb_wused(cuppa_wvb_wused_1), 
-  .wvb_hdr_rdreq(wvb_hdr_rdreq[1]), 
-  .wvb_wvb_rdreq(wvb_wvb_rdreq[1]), 
-  .wvb_wvb_rddone(wvb_rddone[1]), 
-  
+  .wvb_wused(cuppa_wvb_wused_1),
+  .wvb_hdr_rdreq(wvb_hdr_rdreq[1]),
+  .wvb_wvb_rdreq(wvb_wvb_rdreq[1]),
+  .wvb_wvb_rddone(wvb_rddone[1]),
+
   // datastream
   .adc_samp_0_0(adc_stream_0_1),
   .adc_samp_1_0(adc_stream_1_1),
 
   // Local time counter
-  .ltc_in(ltc), 
-  
+  .ltc_in(ltc),
+
   // External
   .ext_trig_in(1'b0),
   .wvb_trig_out(),
@@ -581,8 +581,8 @@ WFM_ACQ_1
 
   // cuppa interface
   .cuppa_wvb_trig_bundle(cuppa_trig_bundle_1),
-  .cuppa_wvb_config_bundle(cuppa_wvb_conf_bundle_1),  
-  .cuppa_wvb_armed(cuppa_wvb_armed[1]), 
+  .cuppa_wvb_config_bundle(cuppa_wvb_conf_bundle_1),
+  .cuppa_wvb_armed(cuppa_wvb_armed[1]),
   .cuppa_wvb_overflow(cuppa_wvb_overflow[1])
 );
 
@@ -594,19 +594,19 @@ assign LD7 = cuppa_wvb_overflow[1];
 
 //
 // Waveform buffer reader
-// 
+//
 
 wvb_reader #(.N_CHANNELS(N_CHANNELS),
              .P_DATA_WIDTH(P_WVB_DATA_WIDTH),
              .P_WVB_ADR_WIDTH(P_WVB_ADR_WIDTH),
              .P_HDR_WIDTH(P_HDR_WIDTH))
-WVB_READER 
+WVB_READER
 (
   .clk(lclk),
   .rst(lclk_rst),
   .en(wvb_reader_enable),
 
-  // dpram interface 
+  // dpram interface
   .dpram_data(rdout_dpram_data),
   .dpram_addr(rdout_dpram_wr_addr),
   .dpram_wren(rdout_dpram_wren),
@@ -628,7 +628,7 @@ WVB_READER
 // LTC2612 DAC controls
 //
 wire        dac_spi_mosi;
-wire        dac_spi_sclk; 
+wire        dac_spi_sclk;
 spi_master #(.P_RD_DATA_WIDTH(24),.P_WR_DATA_WIDTH(24)) DAC_SPI
  (
   // Outputs
@@ -700,7 +700,7 @@ spi_master #(.P_RD_DATA_WIDTH(8),.P_WR_DATA_WIDTH(16)) DIG_SPI
   .wr_data (dig_spi_wr_data),
   .rd_req  (dig_spi_req),
   .miso    (dig_spi_miso)
-); 
+);
 // associated input/output signal assignments
 assign DIG0_SEN = !(dig_spi_req && (dig_sel == 0));
 assign DIG1_SEN = !(dig_spi_req && (dig_sel == 1));
@@ -708,7 +708,7 @@ assign DIG_SCK = dig_spi_sclk;
 assign DIG_SDATA = dig_spi_mosi;
 
 assign dig_spi_miso = dig_sel == 0 ? DIG0_OVR_SDOUT : DIG1_OVR_SDOUT;
-// for now hold reset at 0 
+// for now hold reset at 0
 // (could add it to reg interface, but datasheet indicates that SW reset is sufficient)
 assign DIG_RESET = 0;
 // set DIG_DFS to 1'bz

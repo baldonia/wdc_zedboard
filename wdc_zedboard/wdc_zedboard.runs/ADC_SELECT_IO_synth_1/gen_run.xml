@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="ADC_SELECT_IO_synth_1" LaunchPart="xc7z020clg484-1" LaunchTime="1602182067">
   <File Type="PA-TCL" Name="ADC_SELECT_IO.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="ADC_SELECT_IO_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="ADC_SELECT_IO_reports.tcl"/>
   <File Type="RDS-RDS" Name="ADC_SELECT_IO.vds"/>
   <File Type="RDS-UTIL" Name="ADC_SELECT_IO_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="ADC_SELECT_IO_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="ADC_SELECT_IO.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="ADC_SELECT_IO_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="ADC_SELECT_IO_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/ADC_SELECT_IO">
     <File Path="$PSRCDIR/sources_1/ip/ADC_SELECT_IO/ADC_SELECT_IO.xci">
       <FileInfo>
@@ -42,9 +39,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019"/>
     <Step Id="synth_design"/>
   </Strategy>
 </GenRun>
