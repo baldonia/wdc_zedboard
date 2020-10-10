@@ -81,9 +81,7 @@ module DIG0_MMCM_clk_wiz
   //------------------------------------
 wire clk_in1_DIG0_MMCM;
 wire clk_in2_DIG0_MMCM;
-  BUFG clkin1_bufg
-   (.O (clk_in1_DIG0_MMCM),
-    .I (clk_in1));
+  assign clk_in1_DIG0_MMCM = clk_in1;
 
 
 

@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date             : Fri Oct  9 19:58:05 2020
+| Date             : Sat Oct 10 16:15:40 2020
 | Host             : LAPTOP-GBOUD091 running 64-bit major release  (build 9200)
 | Command          : report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb -rpx top_power_routed.rpx
 | Design           : top
@@ -33,7 +33,7 @@ Table of Contents
 | Total On-Chip Power (W)  | 0.591        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.471        |
+| Dynamic (W)              | 0.472        |
 | Device Static (W)        | 0.120        |
 | Effective TJA (C/W)      | 11.5         |
 | Max Ambient (C)          | 78.2         |
@@ -53,14 +53,14 @@ Table of Contents
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
 | Clocks                   |     0.034 |       12 |       --- |             --- |
-| Slice Logic              |     0.006 |     8691 |       --- |             --- |
-|   LUT as Logic           |     0.005 |     3351 |     53200 |            6.30 |
+| Slice Logic              |     0.006 |     8729 |       --- |             --- |
+|   LUT as Logic           |     0.005 |     3390 |     53200 |            6.37 |
 |   CARRY4                 |    <0.001 |      612 |     13300 |            4.60 |
-|   Register               |    <0.001 |     3372 |    106400 |            3.17 |
+|   Register               |    <0.001 |     3380 |    106400 |            3.18 |
 |   LUT as Distributed RAM |    <0.001 |       80 |     17400 |            0.46 |
 |   F7/F8 Muxes            |    <0.001 |       89 |     53200 |            0.17 |
 |   Others                 |     0.000 |      355 |       --- |             --- |
-| Signals                  |     0.009 |     6244 |       --- |             --- |
+| Signals                  |     0.009 |     6251 |       --- |             --- |
 | Block RAM                |     0.029 |       59 |       140 |           42.14 |
 | MMCM                     |     0.215 |        2 |         4 |           50.00 |
 | I/O                      |     0.179 |       54 |       200 |           27.00 |
@@ -75,7 +75,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.097 |       0.086 |      0.010 |
+| Vccint    |       1.000 |     0.097 |       0.087 |      0.010 |
 | Vccaux    |       1.800 |     0.157 |       0.146 |      0.012 |
 | Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |
 | Vcco25    |       2.500 |     0.049 |       0.048 |      0.001 |
@@ -159,9 +159,9 @@ Table of Contents
 +----------------------+-----------+
 | Name                 | Power (W) |
 +----------------------+-----------+
-| top                  |     0.471 |
-|   CUPPA_0            |     0.012 |
-|     CRSM_0           |     0.001 |
+| top                  |     0.472 |
+|   CUPPA_0            |     0.013 |
+|     CRSM_0           |     0.002 |
 |     PG_DPRAM         |     0.002 |
 |       U0             |     0.002 |
 |     RDOUT_DPRAM      |     0.004 |
@@ -175,13 +175,14 @@ Table of Contents
 |   DIG0_LVDS          |     0.047 |
 |     ADC_IO_0         |     0.046 |
 |       inst           |     0.046 |
-|   DIG1_LVDS          |     0.046 |
+|   DIG1_LVDS          |     0.047 |
 |     ADC_IO_0         |     0.046 |
 |       inst           |     0.046 |
-|   DIG_SPI            |     0.005 |
+|   DIG_SPI            |     0.006 |
 |     IILC_MISO_0      |     0.001 |
 |     IILC_MOSI_0      |     0.001 |
-|   WFM_ACQ_0          |     0.018 |
+|     IILC_SCLK_0      |     0.001 |
+|   WFM_ACQ_0          |     0.019 |
 |     WVB              |     0.018 |
 |       PTB            |     0.002 |
 |       WBS            |     0.012 |
@@ -192,7 +193,7 @@ Table of Contents
 |       WBS            |     0.012 |
 |       WR_CTRL        |     0.003 |
 |   WVB_READER         |     0.006 |
-|     RD_CTRL          |     0.003 |
+|     RD_CTRL          |     0.002 |
 |   dig0_mmcm_0        |     0.110 |
 |     inst             |     0.110 |
 |   lclk_mmcm_0        |     0.108 |

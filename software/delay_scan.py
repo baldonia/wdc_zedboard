@@ -40,7 +40,7 @@ def check_deskew_wfm(wfm):
     for pair_ind in range(6):
         pair_vals = (wfm["samples"] >> (2 * pair_ind)) & 0x3
 
-        good = np.all(pair_vals == 0x2)
+        good = np.all(pair_vals == 0x2) | np.all(pair_vals == 0x1)
 
         results.append((pair_ind, good))
 
@@ -111,49 +111,40 @@ def get_best_delay(scan_result):
     """ find a good delay setting.
     Assumes the delay settings in scan_result start from 0 """
 
-    combined_res = np.array(get_combined_results(scan_result), dtype=np.bool)
+    combined_res = get_combined_results(scan_result)
 
     delay_step = 1.0 / ref_clk_freq / 64
-
     bitclock_period = 1.0 / 2 / en_clk_freq
-
     delay_period = round(bitclock_period / delay_step)
 
-    # keep delay < delay_period / 2
-    # to avoid requiring any bitslips
-    max_delay = int(delay_period / 2)
+    try:
+        first_good = combined_res[:delay_period].index(True)
+    except ValueError:
+        print("No good delay settings found!")
+        return 0
+    try:
+        past_good = first_good + combined_res[first_good:delay_period].index(False)
+    except ValueError:
+        past_good = delay_period
 
-    rollover_delays = combined_res[max_delay + 1 : delay_period]
+    # delay goodness should be periodic in delay_period
+    # so, if first_good is 0, we can assume there were good negative delay settings
+    # (even though we can't actually access those with the IDELAY)
+    # Find the adjusted first good by locating the first good setting past the bad region
+    if first_good == 0:
+        try:
+            next_good = past_good + combined_res[past_good:delay_period].index(True)
+        except ValueError:
+            next_good = delay_period
 
-    search_window = np.hstack((rollover_delays, combined_res[: max_delay + 1]))
+        first_good = next_good - delay_period
+        print(f"adjusted first good setting: {first_good}")
 
-    offset = search_window[1:]
-    bad_to_good = (search_window[:-1] == False) & (offset == True)
+    best_delay = (first_good + past_good) / 2
+    if best_delay < 0:
+        best_delay = 0
 
-    transitions = np.argwhere(bad_to_good)
-
-    if len(transitions) == 0:
-        good_len = np.count_nonzero(search_window)
-        recommended_delay = 0
-    else:
-        transition_ind = transitions[0][0] + 1
-
-        next_bads = np.argwhere(search_window[transition_ind:] == False)
-
-        if len(next_bads) == 0:
-            bad_ind = len(search_window)
-        else:
-            bad_ind = transition_ind + next_bads[0][0]
-
-        good_len = np.count_nonzero(search_window[transition_ind:bad_ind])
-
-        center = int(transition_ind + good_len / 2)
-
-        recommended_delay = center - len(rollover_delays)
-        if recommended_delay < 0:
-            recommended_delay = 0
-
-    return (recommended_delay, good_len)
+    return int(best_delay)
 
 
 def main():
@@ -208,7 +199,7 @@ def main():
     for chan in 0, 1:
         print(f"Channel {chan} results:")
         print_delay_scan_result(scan_results[chan])
-        best_delay, good_len = get_best_delay(scan_results[chan])
+        best_delay = get_best_delay(scan_results[chan])
         print(f"setting delay for channel {chan} to {best_delay}")
         set_delay(zed, chan, best_delay)
         print(f"Chan {chan} delay readback: {read_all_delays(zed, chan)}")

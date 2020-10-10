@@ -1,7 +1,7 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-// Date        : Fri Oct  2 14:21:18 2020
+// Date        : Thu Oct  1 17:53:39 2020
 // Host        : LAPTOP-GBOUD091 running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim -rename_top DIG0_MMCM -prefix
 //               DIG0_MMCM_ DIG0_MMCM_sim_netlist.v
@@ -56,7 +56,6 @@ module DIG0_MMCM_DIG0_MMCM_clk_wiz
   wire clk_245_76_MHz;
   wire clk_245_76_MHz_DIG0_MMCM;
   wire clk_in1;
-  wire clk_in1_DIG0_MMCM;
   wire clkfbout_DIG0_MMCM;
   wire clkfbout_buf_DIG0_MMCM;
   wire locked;
@@ -81,10 +80,6 @@ module DIG0_MMCM_DIG0_MMCM_clk_wiz
   BUFG clkf_buf
        (.I(clkfbout_DIG0_MMCM),
         .O(clkfbout_buf_DIG0_MMCM));
-  (* BOX_TYPE = "PRIMITIVE" *) 
-  BUFG clkin1_bufg
-       (.I(clk_in1),
-        .O(clk_in1_DIG0_MMCM));
   (* BOX_TYPE = "PRIMITIVE" *) 
   BUFG clkout1_buf
        (.I(clk_245_76_MHz_DIG0_MMCM),
@@ -130,7 +125,7 @@ module DIG0_MMCM_DIG0_MMCM_clk_wiz
     .CLKOUT6_DUTY_CYCLE(0.500000),
     .CLKOUT6_PHASE(0.000000),
     .CLKOUT6_USE_FINE_PS("FALSE"),
-    .COMPENSATION("BUF_IN"),
+    .COMPENSATION("ZHOLD"),
     .DIVCLK_DIVIDE(1),
     .IS_CLKINSEL_INVERTED(1'b0),
     .IS_PSEN_INVERTED(1'b0),
@@ -148,7 +143,7 @@ module DIG0_MMCM_DIG0_MMCM_clk_wiz
         .CLKFBOUT(clkfbout_DIG0_MMCM),
         .CLKFBOUTB(NLW_mmcm_adv_inst_CLKFBOUTB_UNCONNECTED),
         .CLKFBSTOPPED(NLW_mmcm_adv_inst_CLKFBSTOPPED_UNCONNECTED),
-        .CLKIN1(clk_in1_DIG0_MMCM),
+        .CLKIN1(clk_in1),
         .CLKIN2(1'b0),
         .CLKINSEL(1'b1),
         .CLKINSTOPPED(NLW_mmcm_adv_inst_CLKINSTOPPED_UNCONNECTED),

@@ -83,7 +83,7 @@ module top (
 
 
 localparam N_CHANNELS = 2;
-localparam[15:0] FW_VNUM = 16'hc;
+localparam[15:0] FW_VNUM = 16'hd;
 
 localparam P_WVB_DATA_WIDTH = 28;
 localparam P_HDR_WIDTH = 87;

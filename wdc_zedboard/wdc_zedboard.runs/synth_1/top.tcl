@@ -83,6 +83,7 @@ read_ip -quiet C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboar
 set_property used_in_implementation false [get_files -all c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/DIG0_MMCM/DIG0_MMCM_board.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/DIG0_MMCM/DIG0_MMCM.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/DIG0_MMCM/DIG0_MMCM_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/DIG0_MMCM/DIG0_MMCM_late.xdc]
 
 read_ip -quiet C:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/LCLK_MMCM/LCLK_MMCM.xci
 set_property used_in_implementation false [get_files -all c:/Users/atfie/watchman-ne1/wdc_zedboard/wdc_zedboard/wdc_zedboard.srcs/sources_1/ip/LCLK_MMCM/LCLK_MMCM_board.xdc]

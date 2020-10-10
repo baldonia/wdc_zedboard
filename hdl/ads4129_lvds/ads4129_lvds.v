@@ -84,7 +84,7 @@ end
 endgenerate
 
 // select_io wiz presents data as a sequence of
-// 6-bit words; [5:0] are the even bits of the of the first word
+// 6-bit words; [5:0] are the even bits of the first word
 // here I manually interleave the bits to build the ADC words
 wire[11:0] i_sample_0 = {adjusted_raw_bits_out[11],
                          adjusted_raw_bits_out[5],

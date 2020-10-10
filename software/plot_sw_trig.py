@@ -20,7 +20,7 @@ colors = dict(combined=color_cycle[2])
 for i in 0, 1:
     colors[i] = color_cycle[i]
 
-test_conf = 50
+default_test_conf = 50
 clock_freq = 245.76  # MHz
 
 
@@ -97,6 +97,8 @@ def main():
 
     if len(sys.argv) == 2:
         test_conf = int(sys.argv[1])
+    else:
+        test_conf = default_test_conf
 
     print("Resetting waveform buffers and adc...")
     zed.fpga_write("buf_rst", 0xFFFF)
