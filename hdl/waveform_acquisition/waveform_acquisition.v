@@ -2,7 +2,7 @@
 // October 2020
 //
 // waveform acquisition for the wdc zedboard prototype
-// 
+//
 // Includes triggering and buffering
 //
 
@@ -17,40 +17,45 @@ module waveform_acquisition #(parameter P_DATA_WIDTH = 28,
 (
   input clk,
   input rst,
-  
+
   // WVB reader interface
   output[P_DATA_WIDTH-1:0] wvb_data_out,
-  output[P_HDR_WIDTH-1:0]  wvb_hdr_data_out,  
+  output[P_HDR_WIDTH-1:0]  wvb_hdr_data_out,
   output wvb_hdr_full,
   output wvb_hdr_empty,
   output[P_N_WVF_IN_BUF_WIDTH-1:0] wvb_n_wvf_in_buf,
-  output[P_ADR_WIDTH:0] wvb_wused, 
-  input wvb_hdr_rdreq, 
-  input wvb_wvb_rdreq, 
-  input wvb_wvb_rddone, 
-  
-  // raw datastream 
+  output[P_ADR_WIDTH:0] wvb_wused,
+  input wvb_hdr_rdreq,
+  input wvb_wvb_rdreq,
+  input wvb_wvb_rddone,
+
+  // raw datastream
   input[P_ADC_BIT_WIDTH-1:0] adc_samp_0_0,
   input[P_ADC_BIT_WIDTH-1:0] adc_samp_1_0,
 
   // Local time counter
-  input [P_LTC_WIDTH-1:0] ltc_in, 
-  
+  input [P_LTC_WIDTH-1:0] ltc_in,
+
+  // trigger link
+  input trig_link_enable,
+  input link_trig_in,
+
   // External
   input ext_trig_in,
   output wvb_trig_out,
   output wvb_trig_test_out,
 
   // Rate scaler
-  // input[P_RATE_SCALER_CTRL_BUNDLE_WIDTH-1:0] rate_scaler_ctrl_bundle, 
+  // input[P_RATE_SCALER_CTRL_BUNDLE_WIDTH-1:0] rate_scaler_ctrl_bundle,
   // output[P_RATE_SCALER_STS_BUNDLE_WIDTH-1:0] rate_scaler_sts_bundle,
 
   // cuppa interface
   input[P_WVB_TRIG_BUNDLE_WIDTH-1:0] cuppa_wvb_trig_bundle,
-  input[P_WVB_CONFIG_BUNDLE_WIDTH-1:0] cuppa_wvb_config_bundle,  
-  output          cuppa_wvb_armed, 
+  input[P_WVB_CONFIG_BUNDLE_WIDTH-1:0] cuppa_wvb_config_bundle,
+  output          cuppa_wvb_armed,
   output          cuppa_wvb_overflow
 );
+`include "trigger_src_inc.v"
 
 // register synchronous reset & cuppa bundles
 (* max_fanout = 20 *) reg i_rst = 0;
@@ -64,12 +69,12 @@ end
 
 // trig fan out
 wire wvb_trig_et;
-wire wvb_trig_gt;    
-wire wvb_trig_lt;   
+wire wvb_trig_gt;
+wire wvb_trig_lt;
 wire wvb_trig_run;
-wire [P_ADC_BIT_WIDTH-1:0] wvb_trig_thr;   
-wire wvb_trig_thresh_trig_en; 
-wire wvb_trig_ext_trig_en; 
+wire [P_ADC_BIT_WIDTH-1:0] wvb_trig_thr;
+wire wvb_trig_thresh_trig_en;
+wire wvb_trig_ext_trig_en;
 cuppa_trig_bundle_fan_out TRIG_FAN_OUT
   (
    .bundle(i_cuppa_wvb_trig_bundle),
@@ -105,9 +110,9 @@ cuppa_wvb_conf_bundle_fan_out CONF_FAN_OUT
 
 wire[P_ADC_BIT_WIDTH-1:0] adc_samp_0_1;
 wire[P_ADC_BIT_WIDTH-1:0] adc_samp_1_1;
-wire[1:0] trig_src; 
+wire[1:0] raw_trig_src;
 wire[1:0] thresh_tot;
-wire wvb_trig;
+wire raw_wvb_trig;
 cuppa_trigger CUPPA_TRIG
   (
    .clk(clk),
@@ -118,8 +123,8 @@ cuppa_trigger CUPPA_TRIG
    .adc_stream_in_1(adc_samp_1_0),
    .adc_stream_out_0(adc_samp_0_1),
    .adc_stream_out_1(adc_samp_1_1),
-   
-   // threshold trigger settings 
+
+   // threshold trigger settings
    .gt(wvb_trig_gt),
    .et(wvb_trig_et),
    .lt(wvb_trig_lt),
@@ -132,18 +137,32 @@ cuppa_trigger CUPPA_TRIG
    // ext trig
    .ext_trig_en(wvb_trig_ext_trig_en),
    .ext_run(ext_trig_in),
-      
+
    // trigger outputs
-   .trig_src(trig_src),
-   .trig(wvb_trig),
+   .trig_src(raw_trig_src),
+   .trig(raw_wvb_trig),
    .thresh_tot(thresh_tot)
   );
-assign wvb_trig_out = wvb_trig;
+
+assign wvb_trig_out = raw_wvb_trig;
+// "link" triggers have to leapfrog the cuppa_trigger module
+// to ensure that the triggers occur on the same clock cycle between channels
+reg[1:0] trig_src;
+reg wvb_trig;
+always @(*) begin
+  if (trig_link_enable && link_trig_in && !raw_wvb_trig) begin
+    trig_src = TRIG_SRC_LINK;
+    wvb_trig = 1'b1;
+  end else begin
+    trig_src = raw_trig_src;
+    wvb_trig = raw_wvb_trig;
+  end
+end
 
 wire [P_DATA_WIDTH-1:0] buff_stream = {adc_samp_1_1, thresh_tot[1], 1'b0,
                                        adc_samp_0_1, thresh_tot[0], 1'b0};
 
-waveform_buffer 
+waveform_buffer
   #(.P_DATA_WIDTH(P_DATA_WIDTH),
     .P_ADR_WIDTH(P_ADR_WIDTH),
     .P_HDR_WIDTH(P_HDR_WIDTH),
@@ -156,7 +175,7 @@ waveform_buffer
    .wvb_wused(wvb_wused),
    .n_wvf_in_buf(wvb_n_wvf_in_buf),
    .wvb_overflow(cuppa_wvb_overflow),
-   .armed(cuppa_wvb_armed),   
+   .armed(cuppa_wvb_armed),
    .wvb_data_out(wvb_data_out),
    .hdr_data_out(wvb_hdr_data_out),
    .hdr_full(wvb_hdr_full),

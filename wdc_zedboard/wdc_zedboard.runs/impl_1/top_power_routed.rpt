@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date             : Sat Oct 10 16:15:40 2020
+| Date             : Tue Oct 13 14:25:24 2020
 | Host             : LAPTOP-GBOUD091 running 64-bit major release  (build 9200)
 | Command          : report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb -rpx top_power_routed.rpx
 | Design           : top
@@ -30,7 +30,7 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.591        |
+| Total On-Chip Power (W)  | 0.592        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
 | Dynamic (W)              | 0.472        |
@@ -52,20 +52,20 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.034 |       12 |       --- |             --- |
-| Slice Logic              |     0.006 |     8729 |       --- |             --- |
-|   LUT as Logic           |     0.005 |     3390 |     53200 |            6.37 |
+| Clocks                   |     0.035 |       12 |       --- |             --- |
+| Slice Logic              |     0.006 |     8759 |       --- |             --- |
+|   LUT as Logic           |     0.005 |     3398 |     53200 |            6.39 |
 |   CARRY4                 |    <0.001 |      612 |     13300 |            4.60 |
-|   Register               |    <0.001 |     3380 |    106400 |            3.18 |
+|   Register               |    <0.001 |     3385 |    106400 |            3.18 |
 |   LUT as Distributed RAM |    <0.001 |       80 |     17400 |            0.46 |
-|   F7/F8 Muxes            |    <0.001 |       89 |     53200 |            0.17 |
-|   Others                 |     0.000 |      355 |       --- |             --- |
-| Signals                  |     0.009 |     6251 |       --- |             --- |
+|   F7/F8 Muxes            |    <0.001 |      102 |     53200 |            0.19 |
+|   Others                 |     0.000 |      353 |       --- |             --- |
+| Signals                  |     0.009 |     6250 |       --- |             --- |
 | Block RAM                |     0.029 |       59 |       140 |           42.14 |
 | MMCM                     |     0.215 |        2 |         4 |           50.00 |
 | I/O                      |     0.179 |       54 |       200 |           27.00 |
 | Static Power             |     0.120 |          |           |                 |
-| Total                    |     0.591 |          |           |                 |
+| Total                    |     0.592 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -75,7 +75,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.097 |       0.087 |      0.010 |
+| Vccint    |       1.000 |     0.098 |       0.087 |      0.010 |
 | Vccaux    |       1.800 |     0.157 |       0.146 |      0.012 |
 | Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |
 | Vcco25    |       2.500 |     0.049 |       0.048 |      0.001 |
@@ -193,7 +193,7 @@ Table of Contents
 |       WBS            |     0.012 |
 |       WR_CTRL        |     0.003 |
 |   WVB_READER         |     0.006 |
-|     RD_CTRL          |     0.002 |
+|     RD_CTRL          |     0.003 |
 |   dig0_mmcm_0        |     0.110 |
 |     inst             |     0.110 |
 |   lclk_mmcm_0        |     0.108 |

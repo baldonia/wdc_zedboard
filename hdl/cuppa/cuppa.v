@@ -14,7 +14,7 @@ module cuppa #(parameter N_CHANNELS = 2)
 
   // DAC SPI controls
   output reg dac_sel = 0,
-  output dac_spi_wr_req, 
+  output dac_spi_wr_req,
   input dac_spi_ack,
   output reg[23:0] dac_spi_wr_data = 0,
 
@@ -59,6 +59,8 @@ module cuppa #(parameter N_CHANNELS = 2)
   input[15:0] wvb_wused_0,
   input[15:0] wvb_wused_1,
 
+  output reg[N_CHANNELS-1:0] trig_link_enable,
+
   // wvb reader
   input[15:0] dpram_len_in,
   input rdout_dpram_run,
@@ -77,7 +79,7 @@ module cuppa #(parameter N_CHANNELS = 2)
   input             debug_txd,
   output            debug_rxd,
   input             debug_rts_n,
-  output            debug_cts_n   
+  output            debug_cts_n
 );
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -90,7 +92,7 @@ wire        debug_err_req;
 wire [31:0] debug_err_data;
 wire [15:0] debug_logic_rd_data;
 wire        debug_logic_ack;
-wire        debug_err_ack; 
+wire        debug_err_ack;
 ft232r_proc_buffered UART_DEBUG_0
  (
   // Outputs
@@ -110,14 +112,14 @@ ft232r_proc_buffered UART_DEBUG_0
   .logic_rd_data    (debug_logic_rd_data[15:0]),
   .logic_ack        (debug_logic_ack),
   .err_ack          (debug_err_ack)
-); 
+);
 
 //////////////////////////////////////////////////////////////////////////////
 // 2.) Command, repsonse, status
 wire [11:0] y_adr;
 wire [15:0] y_wr_data;
-wire        y_wr; 
-reg [15:0] y_rd_data; 
+wire        y_wr;
+reg [15:0] y_rd_data;
 crs_master CRSM_0
  (
   // Outputs
@@ -207,12 +209,12 @@ assign dig_task_ack[0] = dig_spi_ack;
 
 // Dig 0 wvb trig bundle
 reg wvb_trig_et_0 = 0;
-reg wvb_trig_gt_0 = 0;    
-reg wvb_trig_lt_0 = 0;   
+reg wvb_trig_gt_0 = 0;
+reg wvb_trig_lt_0 = 0;
 reg wvb_trig_run_0 = 0;
-reg [11:0] wvb_trig_thr_0 = 0;   
-reg wvb_trig_thresh_trig_en_0 = 0; 
-reg wvb_trig_ext_trig_en_0 = 0; 
+reg [11:0] wvb_trig_thr_0 = 0;
+reg wvb_trig_thresh_trig_en_0 = 0;
+reg wvb_trig_ext_trig_en_0 = 0;
 cuppa_trig_bundle_fan_in TRIG_FAN_IN_0
   (
    .bundle(trig_bundle_0),
@@ -227,12 +229,12 @@ cuppa_trig_bundle_fan_in TRIG_FAN_IN_0
 
 // Dig 1 wvb trig bundle
 reg wvb_trig_et_1 = 0;
-reg wvb_trig_gt_1 = 0;    
-reg wvb_trig_lt_1 = 0;   
+reg wvb_trig_gt_1 = 0;
+reg wvb_trig_lt_1 = 0;
 reg wvb_trig_run_1 = 0;
-reg [11:0] wvb_trig_thr_1 = 0;   
-reg wvb_trig_thresh_trig_en_1 = 0; 
-reg wvb_trig_ext_trig_en_1 = 0; 
+reg [11:0] wvb_trig_thr_1 = 0;
+reg wvb_trig_thresh_trig_en_1 = 0;
+reg wvb_trig_ext_trig_en_1 = 0;
 cuppa_trig_bundle_fan_in TRIG_FAN_IN_1
   (
    .bundle(trig_bundle_1),
@@ -300,7 +302,7 @@ reg rst_lock_pe_cnt = 0;
 always @(*) begin
   case(y_adr)
     12'hfff: begin y_rd_data =       vnum;                                  end
-    12'hffe: begin y_rd_data =       {11'b0, 
+    12'hffe: begin y_rd_data =       {11'b0,
                                       wvb_trig_ext_trig_en_0,
                                       wvb_trig_thresh_trig_en_0,
                                       wvb_trig_lt_0,
@@ -318,7 +320,7 @@ always @(*) begin
     12'hff6: begin y_rd_data =       {1'b0, wvb_test_config_0};             end
     12'hff5: begin y_rd_data =       {1'b0, wvb_post_config_0};             end
     12'hff4: begin y_rd_data =       {10'b0, wvb_pre_config_0};             end
-    12'hefe: begin y_rd_data =       {11'b0, 
+    12'hefe: begin y_rd_data =       {11'b0,
                                       wvb_trig_ext_trig_en_1,
                                       wvb_trig_thresh_trig_en_1,
                                       wvb_trig_lt_1,
@@ -331,6 +333,7 @@ always @(*) begin
     12'hef6: begin y_rd_data =       {1'b0, wvb_test_config_1};             end
     12'hef5: begin y_rd_data =       {1'b0, wvb_post_config_1};             end
     12'hef4: begin y_rd_data =       {10'b0, wvb_pre_config_1};             end
+    12'hef3: begin y_rd_data =       {14'b0, trig_link_enable};             end
     12'hdff: begin y_rd_data =       dpram_len;                             end
     12'hdfe: begin y_rd_data =       {15'b0, dpram_done};                   end
     12'hdfd: begin y_rd_data =       {15'b0, dpram_sel};                    end
@@ -346,33 +349,33 @@ always @(*) begin
     12'hbff: begin y_rd_data =       dac_sel;                               end
     12'hbfe: begin y_rd_data =       dac_task_val;                          end
     12'hbfd: begin y_rd_data =       {8'b0, dac_spi_wr_data[23:16]};        end
-    12'hbfc: begin y_rd_data =       dac_spi_wr_data[15:0];                 end    
+    12'hbfc: begin y_rd_data =       dac_spi_wr_data[15:0];                 end
     12'hbef: begin y_rd_data =       dig_sel;                               end
     12'hbee: begin y_rd_data =       dig_task_val;                          end
     12'hbed: begin y_rd_data =       dig_spi_wr_data;                       end
-    12'hbec: begin y_rd_data =       {8'b0, dig_spi_rd_data};               end    
-    12'hbdf: begin y_rd_data =       {15'b0, io_reset_0};                   end    
-    12'hbde: begin y_rd_data =       {15'b0, in_delay_reset_0};             end    
+    12'hbec: begin y_rd_data =       {8'b0, dig_spi_rd_data};               end
+    12'hbdf: begin y_rd_data =       {15'b0, io_reset_0};                   end
+    12'hbde: begin y_rd_data =       {15'b0, in_delay_reset_0};             end
     12'hbdd: begin y_rd_data =       {13'b0, bitslip_0[0],
                                              in_delay_ce_0[0],
-                                             in_delay_inc_0[0]};            end    
-    12'hbdc: begin y_rd_data =       {2'b0, in_delay_tap_out_0[29:16]};     end    
+                                             in_delay_inc_0[0]};            end
+    12'hbdc: begin y_rd_data =       {2'b0, in_delay_tap_out_0[29:16]};     end
     12'hbdb: begin y_rd_data =       in_delay_tap_out_0[15:0];              end
-    12'hbda: begin y_rd_data =       {15'b0, io_reset_1};                   end    
-    12'hbd9: begin y_rd_data =       {15'b0, in_delay_reset_1};             end    
+    12'hbda: begin y_rd_data =       {15'b0, io_reset_1};                   end
+    12'hbd9: begin y_rd_data =       {15'b0, in_delay_reset_1};             end
     12'hbd8: begin y_rd_data =       {13'b0, bitslip_1[0],
                                              in_delay_ce_1[0],
-                                             in_delay_inc_1[0]};            end    
-    12'hbd7: begin y_rd_data =       {2'b0, in_delay_tap_out_1[29:16]};     end    
-    12'hbd6: begin y_rd_data =       in_delay_tap_out_1[15:0];              end    
+                                             in_delay_inc_1[0]};            end
+    12'hbd7: begin y_rd_data =       {2'b0, in_delay_tap_out_1[29:16]};     end
+    12'hbd6: begin y_rd_data =       in_delay_tap_out_1[15:0];              end
     12'h8ff: begin y_rd_data =       {15'b0, led_toggle};                   end
     12'h8fe: begin y_rd_data =       lock_pe_cnt;                           end
     12'h8fd: begin y_rd_data =       {15'b0, rst_lock_pe_cnt};              end
     12'h8fc: begin y_rd_data =       {15'b0, spi_rst};                      end
-    default: 
+    default:
       begin
   	    y_rd_data = xdom_dpram_rd_data;
-      end 
+      end
   endcase
 end
 
@@ -381,9 +384,9 @@ end
 always @(posedge clk) begin
   wvb_trig_run_0 <= 0;
   wvb_trig_run_1 <= 0;
-  
+
   dpram_done <= 0;
-  
+
   wvb_arm_0 <= 0;
   wvb_arm_1 <= 0;
 
@@ -393,8 +396,8 @@ always @(posedge clk) begin
   bitslip_0 <= 6'b0;
   in_delay_ce_1 <= 6'b0;
   bitslip_1 <= 6'b0;
-  
-  if (y_wr) 
+
+  if (y_wr)
     case (y_adr)
       12'hffe: begin
         wvb_trig_et_0 <= y_wr_data[0];
@@ -428,6 +431,7 @@ always @(posedge clk) begin
       12'hef6: begin wvb_test_config_1 <= y_wr_data[14:0];                  end
       12'hef5: begin wvb_post_config_1 <= y_wr_data[14:0];                  end
       12'hef4: begin wvb_pre_config_1 <= y_wr_data[5:0];                    end
+      12'hef3: begin trig_link_enable <= y_wr_data[1:0];                    end
       12'hdfe: begin dpram_done <= y_wr_data[0];                            end
       12'hdfd: begin dpram_sel <= y_wr_data[0];                             end
       12'hdf9: begin wvb_rst[1:0] <= y_wr_data[1:0];                        end
@@ -440,14 +444,14 @@ always @(posedge clk) begin
       12'hbed: begin dig_spi_wr_data <= y_wr_data;                          end
       12'hbdf: begin io_reset_0 <= y_wr_data[0];                            end
       12'hbde: begin in_delay_reset_0 <= y_wr_data[0];                      end
-      12'hbdd: begin 
+      12'hbdd: begin
         in_delay_inc_0[5:0] <= {6{y_wr_data[0]}};
         in_delay_ce_0[5:0] <= {6{y_wr_data[1]}};
         bitslip_0[5:0] <= {6{y_wr_data[2]}};
       end
       12'hbda: begin io_reset_1 <= y_wr_data[0];                            end
       12'hbd9: begin in_delay_reset_1 <= y_wr_data[0];                      end
-      12'hbd8: begin 
+      12'hbd8: begin
         in_delay_inc_1[5:0] <= {6{y_wr_data[0]}};
         in_delay_ce_1[5:0] <= {6{y_wr_data[1]}};
         bitslip_1[5:0] <= {6{y_wr_data[2]}};
@@ -459,7 +463,7 @@ always @(posedge clk) begin
     endcase
 end
 
-// scratch DPRAM for comms testing currently 
+// scratch DPRAM for comms testing currently
 wire[15:0] scratch_dpram_rd_data;
 SCRATCH_DPRAM PG_DPRAM
 (
@@ -514,7 +518,7 @@ end
 // DPRAM read mux
 //
 always @(*) begin
-  case (dpram_sel) 
+  case (dpram_sel)
     0: xdom_dpram_rd_data = scratch_dpram_rd_data;
     1: xdom_dpram_rd_data = direct_rdout_dpram_data;
     default: xdom_dpram_rd_data = scratch_dpram_rd_data;
@@ -524,14 +528,14 @@ end
 // count dig 0 lock PE
 wire dig0_lock_s;
 wire dig0_lock_pe;
-sync SYNC0(.clk(clk), .rst_n(!rst), 
+sync SYNC0(.clk(clk), .rst_n(!rst),
            .a(dig0_mmcm_locked), .y(dig0_lock_s));
-posedge_detector LOCK_PE(.clk(clk), .rst_n(!rst), 
+posedge_detector LOCK_PE(.clk(clk), .rst_n(!rst),
                          .a(dig0_lock_s), .y(dig0_lock_pe));
 
 always @(posedge clk) begin
   if (rst_lock_pe_cnt) begin
-    lock_pe_cnt <= 0;    
+    lock_pe_cnt <= 0;
   end
 
   else if (dig0_lock_pe && (lock_pe_cnt != 16'hffff)) begin

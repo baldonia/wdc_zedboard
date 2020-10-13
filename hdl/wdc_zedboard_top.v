@@ -83,7 +83,7 @@ module top (
 
 
 localparam N_CHANNELS = 2;
-localparam[15:0] FW_VNUM = 16'hd;
+localparam[15:0] FW_VNUM = 16'he;
 
 localparam P_WVB_DATA_WIDTH = 28;
 localparam P_HDR_WIDTH = 87;
@@ -217,6 +217,7 @@ wire lclk_rst = !dig0_pll_locked;
 //     12'hef6: DIG 1 test config  [14:0]
 //     12'hef5: DIG 1 post config [14:0]
 //     12'hef4: DIG 1 pre config [5:0]
+//     12'hef3: [i] trig_link_enable (channel i)
 //     12'hdff: dpram_len [10:0]
 //     12'hdfe:
 //             [0] dpram_done
@@ -301,6 +302,8 @@ wire[L_WIDTH_CUPPA_TRIG_BUNDLE-1:0] cuppa_trig_bundle_0;
 wire[L_WIDTH_CUPPA_TRIG_BUNDLE-1:0] cuppa_trig_bundle_1;
 wire[L_WIDTH_CUPPA_WVB_CONF_BUNDLE-1:0] cuppa_wvb_conf_bundle_0;
 wire[L_WIDTH_CUPPA_WVB_CONF_BUNDLE-1:0] cuppa_wvb_conf_bundle_1;
+// trigger link enable (separate from trig bundle for now)
+wire[N_CHANNELS-1:0] trig_link_enable;
 
 // Acquisition controls / status
 wire[N_CHANNELS-1:0] cuppa_wvb_rst;
@@ -373,6 +376,7 @@ cuppa CUPPA_0
   .wvb_n_wvf_in_buf_1(cuppa_wvb_n_wvf_in_buf_1),
   .wvb_wused_0(cuppa_wvb_wused_0),
   .wvb_wused_1(cuppa_wvb_wused_1),
+  .trig_link_enable(trig_link_enable),
 
   // wvb reader
   .dpram_len_in(rdout_dpram_len),
@@ -502,6 +506,7 @@ ads4129_lvds #(.P_ODD_CHANNEL("TRUE")) DIG1_LVDS
 );
 
 // Waveform acquisition modules
+wire trig_out[N_CHANNELS-1:0];
 
 wire[N_CHANNELS-1:0] wvb_hdr_empty;
 wire[N_CHANNELS-1:0] wvb_hdr_rdreq;
@@ -536,9 +541,13 @@ WFM_ACQ_0
   // Local time counter
   .ltc_in(ltc),
 
+  // trigger link
+  .trig_link_enable(trig_link_enable[0]),
+  .link_trig_in(trig_out[1]),
+
   // External
   .ext_trig_in(1'b0),
-  .wvb_trig_out(),
+  .wvb_trig_out(trig_out[0]),
   .wvb_trig_test_out(),
 
   // cuppa interface
@@ -574,9 +583,13 @@ WFM_ACQ_1
   // Local time counter
   .ltc_in(ltc),
 
+  // trigger link
+  .trig_link_enable(trig_link_enable[1]),
+  .link_trig_in(trig_out[0]),
+
   // External
   .ext_trig_in(1'b0),
-  .wvb_trig_out(),
+  .wvb_trig_out(trig_out[1]),
   .wvb_trig_test_out(),
 
   // cuppa interface
