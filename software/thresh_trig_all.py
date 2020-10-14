@@ -57,9 +57,9 @@ def main():
 
     zed.fpga_write("buf_reader_dpram_mode", 1)
     print("Arming triggers")
-    print(zed.fpga_write("trig_arm", 0x3))
+    zed.fpga_write("trig_arm", 0x3)
     print("Armed readback:")
-    zed.fpga_read("trig_armed")
+    print(zed.fpga_read("trig_armed"))
 
     print_wfm_count(zed)
 

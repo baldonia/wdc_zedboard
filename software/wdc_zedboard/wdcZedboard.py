@@ -30,6 +30,7 @@ class wdcZedboard:
         "test_conf": [0xFF6, 0xEF6],
         "post_conf": [0xFF5, 0xEF5],
         "pre_conf": [0xFF4, 0xEF4],
+        "trig_link_en": 0xEF3,
         "dpram_len": 0xDFF,
         "dpram_done": 0xDFE,
         "dpram_sel": 0xDFD,
