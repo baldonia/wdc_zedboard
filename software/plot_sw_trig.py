@@ -41,14 +41,18 @@ def plot_wfm(wfm, ax):
     color = colors[chan_num]
 
     if chan_num == "combined":
-        ax.set_title("interleaved")
+        title = "interleaved"
         samps = wfm["samples"]
         n_samps = len(samps)
         ax.plot(samps[::2], "o", color=colors[1])
         ax.plot(np.arange(int(n_samps / 2)) + 0.5, samps[1::2], "o", color=colors[0])
     else:
-        ax.set_title(f"channel {chan_num}")
+        title = f"channel {chan_num}"
         ax.plot(wfm["samples"], "-", color=color)
+
+    mean = np.average(wfm["samples"])
+    std = np.std(wfm["samples"])
+    ax.set_title(f"{title}, mean: {mean:.2f}, std: {std:.2f}")
 
     ax.set_ylabel("ADU")
 
