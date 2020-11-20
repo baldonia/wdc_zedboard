@@ -3,12 +3,12 @@
 //
 // spi_master.v
 //
-// Generic SPI master. Signaling in/out is determined by events at number of 
-// cycles, rather than CPOL CPHA. Shifts out MSB first, so need to reflect the 
+// Generic SPI master. Signaling in/out is determined by events at number of
+// cycles, rather than CPOL CPHA. Shifts out MSB first, so need to reflect the
 // data word if you need LSB first.
 //
-// The total execuation time words is calculated dynamically, and is based on the 
-// longest of the required waveforms for mosi, miso, and sclk. 
+// The total execuation time words is calculated dynamically, and is based on the
+// longest of the required waveforms for mosi, miso, and sclk.
 ///////////////////////////////////////////////////////////////////////////////////
 
 module spi_master #(parameter P_RD_DATA_WIDTH=256, parameter P_WR_DATA_WIDTH=256)
@@ -39,7 +39,7 @@ module spi_master #(parameter P_RD_DATA_WIDTH=256, parameter P_WR_DATA_WIDTH=256
    // Read data
    input 			rd_req, // read request
    output [P_RD_DATA_WIDTH-1:0] rd_data, // read data
-   output reg 			ack=0, // acknowledge 
+   output reg 			ack=0, // acknowledge
    // SPI outputs
    output 			mosi, // master out, slave in
    output 			sclk, // master in, slave out
@@ -52,22 +52,22 @@ module spi_master #(parameter P_RD_DATA_WIDTH=256, parameter P_WR_DATA_WIDTH=256
    // These manage the counter
    reg 		 is_rd=0;
    reg 		 is_wr=0;
-  
+
    // This manages determining the max count.
    reg [31:0] 	 i_max_cnt;
-   wire 	 i_valid_max_cnt; 
+   wire 	 i_valid_max_cnt;
    wire [31:0] 	 max_cnt_mosi;
    wire [31:0] 	 max_cnt_sclk;
-   wire [31:0] 	 max_cnt_miso;   
+   wire [31:0] 	 max_cnt_miso;
    wire valid_max_cnt_mosi;
    wire valid_max_cnt_sclk;
    wire valid_max_cnt_miso;
 
    // Counter
-   reg [31:0] 	 cnt=0; // main counter 
+   reg [31:0] 	 cnt=0; // main counter
 
    // This handles the max count
-   assign i_valid_max_cnt = valid_max_cnt_mosi && valid_max_cnt_miso && valid_max_cnt_sclk; 
+   assign i_valid_max_cnt = valid_max_cnt_mosi && valid_max_cnt_miso && valid_max_cnt_sclk;
    always @(*)
      if( (max_cnt_mosi >= max_cnt_sclk) && (max_cnt_mosi >= max_cnt_miso) )
        i_max_cnt = max_cnt_mosi;
@@ -76,8 +76,8 @@ module spi_master #(parameter P_RD_DATA_WIDTH=256, parameter P_WR_DATA_WIDTH=256
      else if( (max_cnt_miso >= max_cnt_sclk) && (max_cnt_miso >= max_cnt_mosi) )
        i_max_cnt = max_cnt_miso;
      else
-       i_max_cnt = 32'hffffffff; 
-   
+       i_max_cnt = 32'hffffffff;
+
    // pipeline max_cnt and valid_max_cnt for timing
    reg[31:0] max_cnt = 0;
    reg valid_max_cnt = 0;
@@ -86,14 +86,14 @@ module spi_master #(parameter P_RD_DATA_WIDTH=256, parameter P_WR_DATA_WIDTH=256
        max_cnt <= 0;
        valid_max_cnt <= 0;
      end
-     
+
      else begin
        max_cnt <= i_max_cnt;
        valid_max_cnt <= i_valid_max_cnt;
      end
-   end 
+   end
 
-   // these iteratively calculate max count, so as to allow arbitrary bit lengths. 
+   // these iteratively calculate max count, so as to allow arbitrary bit lengths.
    iter_integer_linear_calc IILC_MOSI_0
      (
       .clk(clk),
@@ -128,8 +128,8 @@ module spi_master #(parameter P_RD_DATA_WIDTH=256, parameter P_WR_DATA_WIDTH=256
       .valid(valid_max_cnt_sclk)
       );
 
-   
-   // The serial PHY   
+
+   // The serial PHY
    serial_ck SERIAL_CK_0(
 			 // Outputs
 			 .y			(sclk),
@@ -141,8 +141,8 @@ module spi_master #(parameter P_RD_DATA_WIDTH=256, parameter P_WR_DATA_WIDTH=256
 			 .n0			(n0_sclk),
 			 .n1			(n1_sclk),
 			 .n2			(n2_sclk),
-			 .cnt			((is_wr || is_rd) ? cnt : 0)); 
-   
+			 .cnt			((is_wr || is_rd) ? cnt : 0));
+
    serial_rx #(.P_DATA_WIDTH(P_RD_DATA_WIDTH)) SERIAL_RX_0
      (
       // Outputs
@@ -169,16 +169,16 @@ module spi_master #(parameter P_RD_DATA_WIDTH=256, parameter P_WR_DATA_WIDTH=256
       .n0			(n0_mosi),
       .n1			(n1_mosi),
       .cnt			(is_wr ? cnt : 0));
-   
+
    ///////////////////////////////////////////////////////////////////////////////
    // FSM definitions
    reg [1:0] fsm=0;
    localparam
      S_IDLE = 0,
-     S_VALID_MAX_CNT_CHECK = 1, 
-     S_COUNT = 2, 
+     S_VALID_MAX_CNT_CHECK = 1,
+     S_COUNT = 2,
      S_ACK = 3;
-   
+
 
 `ifdef MODEL_TECH // This works well for modelsim
    reg [127:0] state_str;
@@ -188,11 +188,11 @@ module spi_master #(parameter P_RD_DATA_WIDTH=256, parameter P_WR_DATA_WIDTH=256
        S_VALID_MAX_CNT_CHECK: state_str = "S_VALID_MAX_CNT_CHECK";
        S_COUNT:               state_str = "S_COUNT";
        S_ACK:                 state_str = "S_ACK";
-       default:               state_str = "*** UNKNOWN ***"; 
+       default:               state_str = "*** UNKNOWN ***";
      endcase // case (fsm)
 `endif
 
-   
+
 
    ///////////////////////////////////////////////////////////////////////////////
    // FSM Flow
@@ -204,7 +204,7 @@ module spi_master #(parameter P_RD_DATA_WIDTH=256, parameter P_WR_DATA_WIDTH=256
 	  ack <= 0;
 	  is_wr <= 0;
 	  is_rd <= 0;
-	  fsm <= 0; 
+	  fsm <= 0;
        end
      else
        begin
@@ -219,21 +219,21 @@ module spi_master #(parameter P_RD_DATA_WIDTH=256, parameter P_WR_DATA_WIDTH=256
 		   begin
 		      if(wr_req) is_wr <= 1;
 		      if(rd_req) is_rd <= 1;
-		      fsm <= S_VALID_MAX_CNT_CHECK; 
+		      fsm <= S_VALID_MAX_CNT_CHECK;
 		   end
 	      end
 
 	    S_VALID_MAX_CNT_CHECK:
 	      begin
 		 if(valid_max_cnt)
-		   fsm <= S_COUNT; 
+		   fsm <= S_COUNT;
 	      end
 
 	    S_COUNT:
 	      begin
 		 cnt <= cnt + 1;
 		 if(cnt == max_cnt)
-		   fsm <= S_ACK; 
+		   fsm <= S_ACK;
 	      end
 
 	    S_ACK:
@@ -252,7 +252,7 @@ module spi_master #(parameter P_RD_DATA_WIDTH=256, parameter P_WR_DATA_WIDTH=256
 	    default: fsm <= S_IDLE;
 	  endcase // case (fsm)
        end
-          
+
 endmodule
 
 // For emacs verilog-mode

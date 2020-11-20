@@ -6,7 +6,6 @@
 #
 
 from wdc_zedboard import wdcZedboard, read_dev_path
-import sys
 import numpy as np
 import time
 

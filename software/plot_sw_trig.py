@@ -44,6 +44,7 @@ def plot_wfm(wfm, ax):
         title = "interleaved"
         samps = wfm["samples"]
         n_samps = len(samps)
+        ax.plot(np.arange(len(samps)) / 2, samps, "k--")
         ax.plot(samps[::2], "o", color=colors[1])
         ax.plot(np.arange(int(n_samps / 2)) + 0.5, samps[1::2], "o", color=colors[0])
     else:
