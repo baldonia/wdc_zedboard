@@ -1,2 +1,5 @@
 *png
+*npy
+*npz
 *ipynb_checkpoints/*
+*old/*
