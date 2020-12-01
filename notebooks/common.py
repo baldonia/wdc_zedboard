@@ -21,7 +21,7 @@ def build_combined_wfm(wfms):
     return combined_wfm
 
 
-def plot_wfm(wfm, ax, colors=colors, xlim=None):
+def plot_wfm(wfm, ax, colors=colors, xlim=None, show_stats=True):
     chan_num = wfm["chan_num"]
 
     if chan_num == "combined":
@@ -37,16 +37,19 @@ def plot_wfm(wfm, ax, colors=colors, xlim=None):
         title = f"channel {chan_num}"
         ax.plot(wfm["samples"], "-", color=color)
 
-    mean = np.average(wfm["samples"])
-    std = np.std(wfm["samples"])
-    ax.set_title(f"{title}, mean: {mean:.2f}, std: {std:.2f}")
-
+    if show_stats:
+        mean = np.average(wfm["samples"])
+        std = np.std(wfm["samples"])
+        ax.set_title(f"{title}, mean: {mean:.2f}, std: {std:.2f}")
+    else:
+        ax.set_title(title)
+        
     ax.set_ylabel("ADU")
     if xlim is not None:
         ax.set_xlim(*xlim)
 
 
-def plot_wfms(wfms, n_samples=None, xlim=None):
+def plot_wfms(wfms, n_samples=None, xlim=None, show_stats=True):
     if n_samples is None:
         n_samples = len(wfms[0]["samples"])
 
@@ -60,7 +63,7 @@ def plot_wfms(wfms, n_samples=None, xlim=None):
     plt.subplots_adjust(hspace=0.3)
     for chan, ax in zip([0, 1, "combined"], axes.flat):
         wfm = wfms[chan] if chan != "combined" else combined_wfm
-        plot_wfm(wfm, ax, xlim=xlim)
+        plot_wfm(wfm, ax, xlim=xlim, show_stats=show_stats)
 
 
 #
